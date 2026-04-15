@@ -132,32 +132,110 @@ export default function Home() {
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Claude Cowork works for every department</h2>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              That's the whole point — it's not just for devs. Real use cases, real time saved, across every role on your team.
+              That's the whole point — it's not just for devs. Real use cases, real hours saved, across every role on your team.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Marketing", icon: <LineChart className="w-6 h-6" />, desc: "Campaign analysis, ad copy at scale, CRO recommendations, automated reporting." },
-              { title: "Sales", icon: <Users className="w-6 h-6" />, desc: "Personalized outbound, lead research instantly, follow-up automation, call prep." },
-              { title: "Operations", icon: <Zap className="w-6 h-6" />, desc: "Process automation, internal doc generation, AI agent workflows, eliminating manual busywork." },
-              { title: "Support", icon: <Bot className="w-6 h-6" />, desc: "AI-assisted responses, knowledge base generation, faster ticket handling." },
-              { title: "Dev / AI Coding", icon: <Code2 className="w-6 h-6" />, desc: "Specialized training on Claude Code, Replit, and Codex. Ship faster, automate more, stop waiting on dev cycles." },
-              { title: "Leadership", icon: <Briefcase className="w-6 h-6" />, desc: "Faster decisions with AI analysis, report summarization, strategic support." }
+              {
+                title: "Marketing",
+                icon: <LineChart className="w-6 h-6" />,
+                tagline: "More output. Less time staring at a blank doc.",
+                uses: [
+                  "Write and A/B test ad copy, headlines, and CTAs in minutes",
+                  "Analyze campaign data and get prioritized improvement recommendations",
+                  "Generate full content briefs, social calendars, and email sequences on-brand",
+                  "Summarize competitor research and trend reports without reading everything"
+                ]
+              },
+              {
+                title: "Sales",
+                icon: <Users className="w-6 h-6" />,
+                tagline: "Research faster. Write better. Close more.",
+                uses: [
+                  "Research any prospect or company in under a minute before a call",
+                  "Draft personalized outbound that sounds human, not like a template",
+                  "Generate follow-ups, proposals, and objection responses automatically",
+                  "Prep for discovery calls with instant summaries of pain points and context"
+                ]
+              },
+              {
+                title: "Operations",
+                icon: <Zap className="w-6 h-6" />,
+                tagline: "Turn chaos into clean process — automatically.",
+                uses: [
+                  "Convert meeting notes and recordings into clean SOPs and action items",
+                  "Build and maintain internal knowledge bases without a dedicated writer",
+                  "Automate recurring status reports, updates, and dashboards",
+                  "Analyze workflow data to surface bottlenecks before they become problems"
+                ]
+              },
+              {
+                title: "Customer Support",
+                icon: <Bot className="w-6 h-6" />,
+                tagline: "Handle more tickets. Burn out less.",
+                uses: [
+                  "Draft accurate, on-brand replies to support tickets in seconds",
+                  "Summarize long threads instantly for faster handoffs between agents",
+                  "Build a self-updating knowledge base from existing support history",
+                  "Spot recurring issues by analyzing patterns across ticket data"
+                ]
+              },
+              {
+                title: "Dev & AI Coding",
+                icon: <Code2 className="w-6 h-6" />,
+                tagline: "Ship faster. Stop waiting on backlogs.",
+                badge: "Specialized track",
+                uses: [
+                  "Code reviews, refactoring, and debugging with Claude Code — live",
+                  "Build internal tools and automations in Replit without a full dev cycle",
+                  "Write, document, and test functions faster with Codex and GitHub Copilot",
+                  "Use AI agents to handle routine dev tasks end-to-end"
+                ]
+              },
+              {
+                title: "Leadership",
+                icon: <Briefcase className="w-6 h-6" />,
+                tagline: "Make better decisions. Communicate more clearly.",
+                uses: [
+                  "Summarize lengthy reports and board materials before every meeting",
+                  "Draft strategic memos, OKRs, and company comms in a fraction of the time",
+                  "Get AI-assisted analysis on decisions, trade-offs, and second-order effects",
+                  "Prep for investor and board conversations with structured AI-generated briefings"
+                ]
+              }
             ].map((dept, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 border border-border bg-card hover:border-primary/50 transition-colors group rounded-xl"
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="p-8 border border-border bg-card hover:border-primary/40 transition-colors group rounded-xl relative"
               >
-                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-6 text-foreground group-hover:text-primary transition-colors">
-                  {dept.icon}
+                {'badge' in dept && dept.badge && (
+                  <span className="absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    {dept.badge}
+                  </span>
+                )}
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-11 h-11 bg-secondary rounded-lg flex items-center justify-center shrink-0 text-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                    {dept.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{dept.title}</h3>
+                    <p className="text-sm text-primary font-medium mt-0.5">{dept.tagline}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{dept.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{dept.desc}</p>
+                <ul className="space-y-3">
+                  {dept.uses.map((use, j) => (
+                    <li key={j} className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span>{use}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
