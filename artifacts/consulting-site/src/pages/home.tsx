@@ -1,18 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useListPackages, useCreateCheckoutSession } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap } from "lucide-react";
+// @ts-ignore
+import evanProfile from "../assets/evan-profile.jpeg";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote } from "lucide-react";
 
 export default function Home() {
   const { data: packagesData, isLoading, error } = useListPackages();
   const createCheckout = useCreateCheckoutSession();
   const { toast } = useToast();
-  
+
   const handleCheckout = (priceId: string) => {
     createCheckout.mutate(
       {
@@ -37,17 +38,83 @@ export default function Home() {
     );
   };
 
+  const testimonials = [
+    {
+      tag: "Educator",
+      quote: "He is always ready to share endless insider knowledge and to really educate his clients about all the ins and outs of the task at hand. I've learned so much from Evan in just a short time frame. Not only does he have the know-how, he also has a great sense of humor to top it off.",
+      name: "Katie S., MBA",
+      role: "Digital Marketing Expert & Paid Search Manager",
+      featured: true
+    },
+    {
+      tag: "Makes Complex Things Simple",
+      quote: "He is a great mix of technical know-how, business intelligence, strategic vision and the ability to explain complex ideas in an easily understandable manner. If there are men who work harder than Evan, I have not met them.",
+      name: "Allison Padgett",
+      role: "Experienced Digital & Social Marketing Manager",
+      featured: true
+    },
+    {
+      tag: "Born Teacher",
+      quote: "Evan shared an encyclopedic level of knowledge with me. I took a full page of notes that included numerous actionable insights. Immediately after our call, I implemented his suggestions and improved our results by 100%.",
+      name: "Mike Blackwell",
+      role: "Account Executive & Principal | EdTech"
+    },
+    {
+      tag: "Meets You Where You Are",
+      quote: "He meets you and your business where you are at. His personal approach — learning as much as possible about you so he can take you higher. His expertise is second to none, and there is not a better mentor out there.",
+      name: "Krissy Hitz",
+      role: "National Fundraising Leader"
+    },
+    {
+      tag: "Patience & Generosity",
+      quote: "He's willing to help people that need to get a clue, which no one else even tries to do — Evan does it with grace and patience. His content is truly practical and insightful, he holds nothing back.",
+      name: "Rodney Granderson",
+      role: "Paid Media Strategist | Google Ads & PPC Specialist"
+    },
+    {
+      tag: "Cuts the Learning Curve",
+      quote: "Evan has been my mentor for many years. I thank Evan for cutting out the learning curve so I don't have to lose money through trial and error. He has helped me in all facets of digital marketing. Evan truly is a godsend.",
+      name: "Jason Clark",
+      role: "Business Owner | South Florida"
+    },
+    {
+      tag: "The Real Deal",
+      quote: "Your business will get better the moment he gets his arms around it. In an industry of pretend gurus, Evan is the REAL DEAL.",
+      name: "Kelly O'Shea",
+      role: "High Growth Entrepreneur"
+    },
+    {
+      tag: "Master of His Craft",
+      quote: "Evan is not only a thought leader but he is thoughtful. He puts maximum intention into every project. His knowledge, while wide-ranging, is focused on your individual needs. He executes. He is a Master of his craft.",
+      name: "Scott Graham",
+      role: "AI PM"
+    },
+    {
+      tag: "Teaches While Delivering",
+      quote: "Evan can significantly grow your business while teaching your team world-class skills. A true expert in his field with the insight, experience, and proven track record to yield unprecedented results.",
+      name: "Michael Scansaroli",
+      role: "Growth & Performance Marketing Executive"
+    },
+    {
+      tag: "Industry Legend",
+      quote: "Nobody knows more or services clients better. His career spans the entire evolution of this channel and he should be regarded as one of the best in his field.",
+      name: "Matt Kemp",
+      role: "Chief Marketing Officer | Private Equity & VC"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+
       {/* Hero Section */}
       <section className="relative min-h-[90dvh] flex items-center pt-24 pb-12 px-6 lg:px-12 border-b border-border">
         <div className="absolute inset-0 z-0 opacity-20">
           {heroBg && <img src={heroBg} alt="" className="w-full h-full object-cover grayscale" />}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
         </div>
-        
+
         <div className="container max-w-6xl mx-auto relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -57,17 +124,17 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Live 1-on-1 training · Limited spots available
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-8 text-balance">
               Your team needs<br />
               <span className="text-primary">Claude Cowork.</span><br />
               <span className="text-muted-foreground">Let me show them how.</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
               Claude Cowork is the most powerful AI productivity tool available — and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="text-lg px-8 h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                 Book a Session
@@ -80,8 +147,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Problem / Approach Section */}
-      <section className="py-24 px-6 lg:px-12 border-b border-border bg-secondary/30">
+      {/* Stats Bar */}
+      <section className="py-12 px-6 border-b border-border bg-secondary/40">
+        <div className="container max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: "25+", label: "Years in Digital Marketing & Tech" },
+              { number: "400+", label: "Companies Helped Grow" },
+              { number: "20+", label: "AI Projects Built with Claude" },
+              { number: "100+", label: "LinkedIn Recommendations" }
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl font-black text-primary mb-1">{stat.number}</div>
+                <div className="text-sm text-muted-foreground font-medium leading-snug">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Evan Section */}
+      <section id="about" className="py-24 px-6 lg:px-12 border-b border-border bg-secondary/30">
         <div className="container max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <motion.div
@@ -90,37 +182,51 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Claude Cowork changes how work gets done. I'll show your team.</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                I use Claude Cowork every day across writing, research, analysis, planning, and strategy. The difference it makes isn't incremental — it's transformational. And it's one of the few AI tools that genuinely works for everyone, not just technical teams.
+              <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Your Trainer</p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Meet Evan Weber</h2>
+              <p className="text-lg text-muted-foreground mb-5">
+                I've spent 25 years in the trenches of digital marketing — building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
+              </p>
+              <p className="text-lg text-muted-foreground mb-5">
+                When AI tools emerged, I didn't watch from the sidelines — I dove in. I've built 20+ projects using Claude Code, and I use Claude Cowork and AI agents every single day to run my businesses. I built AffiliateFinders.com, Publisher Finders, and Digital Marketing U, all leveraging AI-powered workflows.
               </p>
               <p className="text-lg text-muted-foreground">
-                For teams with developers, I also train on AI coding with Claude Code, Replit, and Codex. But Claude Cowork is where we start — because it's the tool that unlocks productivity across your entire company.
+                But here's what makes me different as a trainer: I don't just know the tools — I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card border border-border p-8 rounded-xl relative overflow-hidden"
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="flex flex-col gap-6"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-              <h3 className="text-xl font-semibold mb-6">Why me</h3>
-              <ul className="space-y-4">
+              <div className="flex items-center gap-5">
+                <img
+                  src={evanProfile}
+                  alt="Evan Weber"
+                  className="w-24 h-24 rounded-2xl object-cover shadow-md shrink-0"
+                />
+                <div>
+                  <div className="text-2xl font-bold">Evan Weber</div>
+                  <div className="text-muted-foreground text-sm mt-1">AI Coding Enthusiast · Digital Marketing Expert<br />Founder, Experience Advertising · Miami, FL</div>
+                </div>
+              </div>
+
+              <div className="grid gap-4">
                 {[
-                  "Daily Claude Cowork user — I know exactly what moves the needle and what doesn't",
-                  "Also trained in Claude Code, Replit, Codex, and GitHub Copilot for dev teams",
-                  "Shows 'here's how this saves 2 hours a day' — not 'here's a prompt to memorize'",
-                  "Experience spans marketing, sales, ops, support, dev, and leadership"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
+                  { title: "Founder & CEO, Experience Advertising", desc: "19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical." },
+                  { title: "Founder, AffiliateFinders.com", desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search." },
+                  { title: "Founder, Digital Marketing U", desc: "11+ years creating courses and education. Teaching is in my DNA — not an afterthought." },
+                  { title: "Daily AI Builder", desc: "20+ projects built with Claude Code and Cowork. I live in these tools so you don't have to figure them out alone." }
+                ].map((card, i) => (
+                  <div key={i} className="bg-card border border-border rounded-xl p-4">
+                    <div className="font-semibold text-sm mb-1">{card.title}</div>
+                    <div className="text-muted-foreground text-sm leading-relaxed">{card.desc}</div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -206,7 +312,7 @@ export default function Home() {
                 ]
               }
             ].map((dept, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -242,6 +348,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-24 px-6 lg:px-12 border-b border-border bg-secondary/30">
+        <div className="container max-w-6xl mx-auto">
+          <div className="mb-16">
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">What People Say</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Proof I Can Teach Anyone</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl">
+              Curated from 100+ LinkedIn recommendations — these are the ones that show why Evan is the right trainer for AI.
+            </p>
+          </div>
+
+          {/* Featured testimonials */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {testimonials.filter(t => t.featured).map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card border border-primary/30 rounded-xl p-8 relative"
+              >
+                <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-4">{t.tag}</span>
+                <p className="text-foreground leading-relaxed mb-6 italic">"{t.quote}"</p>
+                <div className="border-t border-border pt-4">
+                  <div className="font-bold text-sm">{t.name}</div>
+                  <div className="text-muted-foreground text-xs mt-0.5">{t.role}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Grid testimonials */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {testimonials.filter(t => !t.featured).map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                className="bg-card border border-border rounded-xl p-6 flex flex-col hover:border-primary/30 transition-colors"
+              >
+                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-3 self-start">{t.tag}</span>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4 italic">"{t.quote}"</p>
+                <div className="border-t border-border pt-3">
+                  <div className="font-bold text-sm">{t.name}</div>
+                  <div className="text-muted-foreground text-xs mt-0.5">{t.role}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing / Packages Section */}
       <section id="pricing" className="py-32 px-6 lg:px-12 bg-card relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
@@ -249,7 +411,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ready to move faster?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Book a session directly below. Payment is secure via Stripe.
+              Book a live session with Evan directly below. Payment is secure via Stripe.
             </p>
           </div>
 
@@ -259,21 +421,21 @@ export default function Home() {
               <Skeleton className="h-[400px] w-full rounded-xl" />
             </div>
           ) : error ? (
-            <div className="text-center p-12 border border-destructive/30 bg-destructive/10 text-destructive">
+            <div className="text-center p-12 border border-destructive/30 bg-destructive/10 text-destructive rounded-xl">
               <p>Failed to load packages. Please try refreshing.</p>
             </div>
           ) : packagesData?.data ? (
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
               {packagesData.data.map((pkg, i) => (
-                <motion.div 
+                <motion.div
                   key={pkg.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.2 }}
                   className={`relative flex flex-col p-8 rounded-xl border ${
-                    pkg.hours > 1 
-                      ? "border-primary/60 bg-accent shadow-lg" 
+                    pkg.hours > 1
+                      ? "border-primary/60 bg-accent shadow-lg"
                       : "border-border bg-card shadow-sm"
                   }`}
                 >
@@ -282,34 +444,34 @@ export default function Home() {
                       Most Popular
                     </div>
                   )}
-                  
+
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
                     <p className="text-muted-foreground leading-relaxed">{pkg.description}</p>
                   </div>
-                  
+
                   <div className="mb-8">
                     <span className="text-5xl font-black">${pkg.unitAmount / 100}</span>
                     {pkg.hours > 1 && <span className="text-muted-foreground ml-2">total</span>}
                   </div>
-                  
+
                   <ul className="space-y-4 mb-8 flex-grow">
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
-                      <span>{pkg.hours} Hour{pkg.hours > 1 ? 's' : ''} live screen-share</span>
+                      <span>{pkg.hours} Hour{pkg.hours > 1 ? 's' : ''} live screen-share with Evan</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
-                      <span>Workflow analysis</span>
+                      <span>Workflow analysis tailored to your team</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary" />
-                      <span>Actionable automation setup</span>
+                      <span>Actionable Claude Cowork setup</span>
                     </li>
                   </ul>
-                  
-                  <Button 
-                    size="lg" 
+
+                  <Button
+                    size="lg"
                     className="w-full h-14 text-lg"
                     variant={pkg.hours > 1 ? "default" : "outline"}
                     onClick={() => handleCheckout(pkg.priceId)}
@@ -327,7 +489,12 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 border-t border-border text-center text-muted-foreground">
-        <p>© {new Date().getFullYear()} AI Consulting & Training. All rights reserved.</p>
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <img src={evanProfile} alt="Evan Weber" className="w-8 h-8 rounded-full object-cover" />
+          <span className="font-semibold text-foreground">Evan Weber</span>
+        </div>
+        <p className="text-sm">AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
+        <p className="text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
       </footer>
     </div>
   );
