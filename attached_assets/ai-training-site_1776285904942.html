@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Training by Evan Weber | Claude Code & Cowork Training for Teams & Individuals</title>
+  <meta name="description" content="Learn Claude Code, Cowork, and AI-powered workflows from a 25-year digital marketing veteran who's built 20+ projects with AI coding tools. Training for companies and individuals.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1a1a2e;
+      --accent: #6c63ff;
+      --accent-light: #8b83ff;
+      --accent-glow: rgba(108, 99, 255, 0.15);
+      --text: #e0e0e0;
+      --text-muted: #a0a0b0;
+      --bg: #0f0f1a;
+      --bg-card: #1a1a2e;
+      --bg-card-hover: #22223a;
+      --border: #2a2a40;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 15, 26, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1rem 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 30%, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { max-width: 800px; position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 3rem;
+    }
+
+    /* STATS BAR */
+    .stats {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ABOUT */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 1.25rem;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    .highlight-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+    }
+    .highlight-card h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* TRAINING OFFERINGS */
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .offering-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .offering-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .offering-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .offering-card:hover::before { opacity: 1; }
+    .offering-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-glow);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .offering-card h3 {
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .offering-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .offering-card ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .offering-card ul li {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 0.3rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .offering-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section { background: var(--bg-card); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-card:hover {
+      border-color: var(--accent);
+    }
+    .testimonial-tag {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent-light);
+      padding: 0.2rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .testimonial-quote {
+      font-size: 1rem;
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.7;
+      flex-grow: 1;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-quote::before { content: '\201C'; color: var(--accent); font-size: 1.5rem; font-weight: 700; }
+    .testimonial-quote::after { content: '\201D'; color: var(--accent); font-size: 1.5rem; font-weight: 700; }
+    .testimonial-author {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* FEATURED (full-width) testimonials */
+    .featured-testimonial {
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .featured-testimonial .testimonial-quote {
+      font-size: 1.15rem;
+    }
+
+    /* WHY EVAN */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .why-card {
+      text-align: center;
+      padding: 2rem;
+    }
+    .why-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .why-card h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .why-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 50%, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.25rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-content { grid-template-columns: 1fr; gap: 2rem; }
+      .offerings-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand"><span>AI</span> Training by Evan Weber</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Claude Code &bull; Cowork &bull; AI Agents</div>
+      <h1>Learn to Build with AI<br>from Someone Who <span class="highlight">Actually Does It</span></h1>
+      <p>Hands-on Claude Code and Cowork training from a 25-year tech veteran who's built 20+ projects with AI coding tools and uses AI agents every single day.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Book a Training</a>
+        <a href="#about" class="btn btn-secondary">See My Background</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Years in Digital Marketing &amp; Tech</div>
+      </div>
+      <div>
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Projects Built with AI Coding</div>
+      </div>
+      <div>
+        <div class="stat-number">400+</div>
+        <div class="stat-label">Companies Helped Grow</div>
+      </div>
+      <div>
+        <div class="stat-number">100+</div>
+        <div class="stat-label">LinkedIn Recommendations</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label">About Your Trainer</div>
+      <div class="section-title">Meet Evan Weber</div>
+      <div class="section-subtitle">A rare combination: decades of business expertise + hands-on AI building experience + a proven gift for teaching.</div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategies.</p>
+          <p>When AI coding tools emerged, I didn't watch from the sidelines &mdash; I dove in. I've now built 20+ projects using AI coding tools like Claude Code and I use AI agents daily to run my businesses. I built AffiliateFinders.com, Publisher Finders, and Digital Marketing U, all leveraging AI-powered development workflows.</p>
+          <p>But here's what makes me different as a trainer: I don't just know the tools &mdash; I know how to teach them. Over 100 colleagues, clients, and partners have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast. That's exactly what I'll do for you with AI.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <h4>Founder &amp; CEO, Experience Advertising</h4>
+            <p>19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical.</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Founder, AffiliateFinders.com</h4>
+            <p>Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search.</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Founder, Digital Marketing U</h4>
+            <p>11+ years creating courses and education in digital marketing. Teaching is in my DNA.</p>
+          </div>
+          <div class="highlight-card">
+            <h4>Daily AI Builder</h4>
+            <p>20+ projects built with AI coding tools. I use Claude Code, Cowork, and AI agents every single day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING OFFERINGS -->
+  <section id="training" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="section-label">What You'll Learn</div>
+      <div class="section-title">Training Programs</div>
+      <div class="section-subtitle">Whether you're an individual looking to build with AI or a company wanting to upskill your team, I've got you covered.</div>
+
+      <div class="offerings-grid">
+        <div class="offering-card">
+          <div class="offering-icon">&#x1F4BB;</div>
+          <h3>Claude Code Mastery</h3>
+          <p>Learn to use Claude Code as your AI coding partner &mdash; from setup to shipping real projects.</p>
+          <ul>
+            <li>Environment setup and configuration</li>
+            <li>Prompt engineering for code generation</li>
+            <li>Building full-stack applications with AI</li>
+            <li>Debugging, refactoring, and deployment workflows</li>
+          </ul>
+        </div>
+        <div class="offering-card">
+          <div class="offering-icon">&#x1F91D;</div>
+          <h3>Cowork for Teams</h3>
+          <p>Unlock Cowork mode to automate file management, research, and multi-step workflows on your desktop.</p>
+          <ul>
+            <li>Setting up Cowork with your existing tools</li>
+            <li>Automating repetitive business tasks</li>
+            <li>Connecting MCP servers and plugins</li>
+            <li>Building custom workflows for your team</li>
+          </ul>
+        </div>
+        <div class="offering-card">
+          <div class="offering-icon">&#x1F916;</div>
+          <h3>AI Agents &amp; Automation</h3>
+          <p>Go beyond chat &mdash; learn to build and deploy AI agents that work autonomously for your business.</p>
+          <ul>
+            <li>Understanding the agent ecosystem</li>
+            <li>Building multi-step AI workflows</li>
+            <li>Integrating agents with your business tools</li>
+            <li>Scaling AI automation across your org</li>
+          </ul>
+        </div>
+        <div class="offering-card">
+          <div class="offering-icon">&#x1F3AF;</div>
+          <h3>Custom Enterprise Training</h3>
+          <p>Tailored programs for companies ready to transform how their teams build and work with AI.</p>
+          <ul>
+            <li>Team-wide AI adoption strategy</li>
+            <li>Hands-on workshops (virtual or in-person)</li>
+            <li>Role-specific training tracks</li>
+            <li>Ongoing support and office hours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EVAN -->
+  <section>
+    <div class="container">
+      <div class="section-label">Why Train With Me</div>
+      <div class="section-title">I Don't Just Know It &mdash; I Teach It</div>
+      <div class="section-subtitle">Here's what 100+ people say sets me apart.</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-number">01</div>
+          <h4>I Meet You Where You Are</h4>
+          <p>Whether you're a total beginner or a seasoned developer, I tailor my teaching to your level and get you producing results fast.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">02</div>
+          <h4>Practitioner, Not Theorist</h4>
+          <p>I build with these tools every single day. You're learning from someone with 20+ real AI projects, not someone who read a blog post.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">03</div>
+          <h4>I Actually Care If You Succeed</h4>
+          <p>100+ people went out of their way to publicly say I'm generous, patient, and genuinely invested in their success. That's how I train.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-label">What People Say</div>
+      <div class="section-title">Proof I Can Teach Anyone</div>
+      <div class="section-subtitle">Curated from 100+ LinkedIn recommendations &mdash; these are the ones that show why I'm the right trainer for AI.</div>
+
+      <!-- FEATURED -->
+      <div class="featured-testimonial">
+        <div class="testimonial-tag">EDUCATOR</div>
+        <div class="testimonial-quote">He is always ready to share endless insider knowledge and to really educate his clients about all the ins and outs of the task at hand. I've learned so much from Evan in just a short time frame. Not only does he have the know-how, he also has a great sense of humor to top it off.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Katie S., MBA</div>
+          <div class="testimonial-role">Digital Marketing Expert &amp; Paid Search Manager</div>
+        </div>
+      </div>
+
+      <div class="featured-testimonial">
+        <div class="testimonial-tag">MAKES COMPLEX THINGS SIMPLE</div>
+        <div class="testimonial-quote">He is a great mix of technical know-how, business intelligence, strategic vision and the ability to explain complex ideas in an easily understandable manner. If there are men who work harder than Evan, I have not met them.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Allison Padgett</div>
+          <div class="testimonial-role">Experienced Digital &amp; Social Marketing Manager</div>
+        </div>
+      </div>
+
+      <!-- GRID -->
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-tag">BORN TEACHER</div>
+          <div class="testimonial-quote">Evan shared an encyclopedic level of knowledge with me. I took a full page of notes that included numerous actionable insights. Immediately after our call, I implemented his suggestions and improved our results by 100%.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Mike Blackwell</div>
+            <div class="testimonial-role">Account Executive &amp; Principal | EdTech</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">MEETS YOU WHERE YOU ARE</div>
+          <div class="testimonial-quote">He meets you and your business where you are at. His personal approach &mdash; learning as much as possible about you so he can take you higher. His expertise is second to none, and there is not a better mentor out there.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Krissy Hitz</div>
+            <div class="testimonial-role">National Fundraising Leader</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">PATIENCE &amp; GENEROSITY</div>
+          <div class="testimonial-quote">He's willing to help people that need to get a clue, which no one else even tries to do &mdash; Evan does it with grace and patience. His content is truly practical and insightful, he holds nothing back.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Rodney Granderson</div>
+            <div class="testimonial-role">Paid Media Strategist | Google Ads &amp; PPC Specialist</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">CUTS THE LEARNING CURVE</div>
+          <div class="testimonial-quote">Evan has been my mentor for many years. I thank Evan for cutting out the learning curve so I don't have to lose money through trial and error. He has helped me in all facets of digital marketing. Evan truly is a godsend.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Jason Clark</div>
+            <div class="testimonial-role">Business Owner | South Florida</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">SKIPPED MONTHS OF TRIAL &amp; ERROR</div>
+          <div class="testimonial-quote">Being somewhat new in the game, he answered directly and we talked for 46 minutes. I was amazed with his generosity. I feel that the knowledge I received from Evan allowed me to skip over months, maybe years, of trial and error.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Martin Andre</div>
+            <div class="testimonial-role">Medical Professional</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">TEACHES WHILE DELIVERING</div>
+          <div class="testimonial-quote">Evan can significantly grow your business while teaching your team world-class skills. A true expert in his field with the insight, experience, and proven track record to yield unprecedented results.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Michael Scansaroli</div>
+            <div class="testimonial-role">Growth &amp; Performance Marketing Executive</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">PATIENT MENTOR</div>
+          <div class="testimonial-quote">I came into a role I wasn't comfortable with, but Evan was more than willing and patient to share his knowledge. Because of his mindset that my success was his success, we excelled as a team and achieved a huge increase in results.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Karen Kung</div>
+            <div class="testimonial-role">Product Marketing | Digital Strategies</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">CONFIDENCE BUILDER</div>
+          <div class="testimonial-quote">My confidence reached new heights from our two-hour conversation. It's people like you that are hugely admirable &mdash; not just determined and driven in their own mind but also wanting to embed that into others.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Scott Corney</div>
+            <div class="testimonial-role">Food &amp; Beverage Experience</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">THE REAL DEAL</div>
+          <div class="testimonial-quote">Your business will get better the moment he gets his arms around it. In an industry of pretend gurus, Evan is the REAL DEAL.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Kelly O'Shea</div>
+            <div class="testimonial-role">High Growth Entrepreneur</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">MASTER OF HIS CRAFT</div>
+          <div class="testimonial-quote">Evan is not only a thought leader but he is thoughtful. He puts maximum intention into every project. His knowledge, while wide-ranging, is focused on your individual needs. He executes. He is a Master of his craft.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Scott Graham</div>
+            <div class="testimonial-role">AI PM</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">SELFLESS TEACHER</div>
+          <div class="testimonial-quote">He selflessly taught me, gave me strategic advice that defined key aspects of my company, and even ran a campaign for us since we had never done one. Given how generous Evan has been, I'm not surprised by what his clients say about him.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Stefanie Bohrt</div>
+            <div class="testimonial-role">GTM Latin America | B2B Sales</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">INDUSTRY LEGEND</div>
+          <div class="testimonial-quote">Nobody knows more or services clients better. His career spans the entire evolution of this channel and he should be regarded as one of the best in his field.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Matt Kemp</div>
+            <div class="testimonial-role">Chief Marketing Officer | Private Equity &amp; VC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="cta-content">
+      <div class="section-label">Get Started</div>
+      <h2>Ready to Build with AI?</h2>
+      <p>Whether you're an individual who wants to start building or a company that wants to upskill your entire team &mdash; let's talk.</p>
+      <div class="hero-buttons">
+        <a href="mailto:evan@experienceadvertising.com" class="btn btn-primary">Email Me to Get Started</a>
+        <a href="https://www.linkedin.com/in/worldsgreatestmarketer/" class="btn btn-secondary" target="_blank">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 AI Training by Evan Weber. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;"><a href="https://experienceadvertising.com" target="_blank">Experience Advertising, Inc.</a> &bull; Fort Lauderdale, FL &bull; <a href="mailto:evan@experienceadvertising.com">evan@experienceadvertising.com</a></p>
+  </footer>
+
+</body>
+</html>
