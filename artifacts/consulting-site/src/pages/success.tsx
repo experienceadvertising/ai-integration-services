@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { CheckCircle2, ArrowLeft, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SiteNav from "@/components/site-nav";
-import { BASE_URL } from "@/lib/api";
+const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const CALENDLY_1HR = "https://calendly.com/evanexperience/claude-cowork-1-on-1-training";
 const CALENDLY_4HR = "https://calendly.com/evanexperience/claude-cowork-1-on-1-training-clone";
