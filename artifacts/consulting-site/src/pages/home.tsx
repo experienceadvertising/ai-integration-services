@@ -115,39 +115,39 @@ export default function Home() {
       <SiteNav />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90dvh] flex items-center pt-24 pb-12 px-6 lg:px-12 border-b border-border">
+      <section className="relative flex items-center pt-20 pb-10 md:pt-24 md:pb-12 px-5 md:px-12 border-b border-border">
         <div className="absolute inset-0 z-0 opacity-20">
           {heroBg && <img src={heroBg} alt="" className="w-full h-full object-cover grayscale" />}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
         </div>
 
-        <div className="container max-w-6xl mx-auto relative z-10">
+        <div className="container max-w-6xl mx-auto relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8 border border-border">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs md:text-sm font-medium mb-4 md:mb-8 border border-border">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
               Live 1-on-1 training · Limited spots available
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-8 text-balance">
+            <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
               Your team needs<br />
               <span className="text-primary">Claude Cowork.</span><br />
               <span className="text-muted-foreground">Let me show them how.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
+            <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
               Claude Cowork is the most powerful AI productivity tool available — and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                 Book a Session
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 h-14" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" variant="outline" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
                 Who it's for
               </Button>
             </div>
@@ -156,13 +156,13 @@ export default function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-12 px-6 border-b border-border bg-secondary/40">
+      <section className="py-8 md:py-12 px-5 border-b border-border bg-secondary/40">
         <div className="container max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center">
             {[
-              { number: "25+", label: "Years in Digital Marketing & Tech" },
+              { number: "25+", label: "Years in Digital Marketing" },
               { number: "400+", label: "Companies Helped Grow" },
-              { number: "20+", label: "AI Projects Built with Claude" },
+              { number: "20+", label: "AI Projects Built" },
               { number: "100+", label: "LinkedIn Recommendations" }
             ].map((stat, i) => (
               <motion.div
@@ -172,8 +172,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="text-4xl md:text-5xl font-black text-primary mb-1">{stat.number}</div>
-                <div className="text-sm text-muted-foreground font-medium leading-snug">{stat.label}</div>
+                <div className="text-3xl md:text-5xl font-black text-primary mb-1">{stat.number}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium leading-snug">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -181,9 +181,9 @@ export default function Home() {
       </section>
 
       {/* Meet Evan Section */}
-      <section id="about" className="py-24 px-6 lg:px-12 border-b border-border bg-secondary/30">
+      <section id="about" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/30">
         <div className="container max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -191,14 +191,14 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Your Trainer</p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Meet Evan Weber</h2>
-              <p className="text-lg text-muted-foreground mb-5">
+              <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">Meet Evan Weber</h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-4">
                 I've spent 25 years in the trenches of digital marketing — building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
               </p>
-              <p className="text-lg text-muted-foreground mb-5">
+              <p className="text-base md:text-lg text-muted-foreground mb-4">
                 When AI tools emerged, I didn't watch from the sidelines — I dove in. I've built 20+ projects using Claude Code, and I use Claude Cowork and AI agents every single day to run my businesses. I built AffiliateFinders.com, Publisher Finders, and Digital Marketing U, all leveraging AI-powered workflows.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base md:text-lg text-muted-foreground">
                 But here's what makes me different as a trainer: I don't just know the tools — I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
               </p>
             </motion.div>
@@ -208,28 +208,28 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="flex flex-col gap-6"
+              className="flex flex-col gap-5"
             >
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
                 <img
                   src={evanProfile}
                   alt="Evan Weber"
-                  className="w-24 h-24 rounded-2xl object-cover shadow-md shrink-0"
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-2xl object-cover shadow-md shrink-0"
                 />
                 <div>
-                  <div className="text-2xl font-bold">Evan Weber</div>
+                  <div className="text-xl md:text-2xl font-bold">Evan Weber</div>
                   <div className="text-muted-foreground text-sm mt-1">AI Coding Enthusiast · Digital Marketing Expert<br />Founder, Experience Advertising · Miami, FL</div>
                 </div>
               </div>
 
-              <div className="grid gap-4">
+              <div className="grid gap-3">
                 {[
                   { title: "Founder & CEO, Experience Advertising", desc: "19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical." },
                   { title: "Founder, AffiliateFinders.com", desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search." },
                   { title: "Founder, Digital Marketing U", desc: "11+ years creating courses and education. Teaching is in my DNA — not an afterthought." },
                   { title: "Daily AI Builder", desc: "20+ projects built with Claude Code and Cowork. I live in these tools so you don't have to figure them out alone." }
                 ].map((card, i) => (
-                  <div key={i} className="bg-card border border-border rounded-xl p-4">
+                  <div key={i} className="bg-card border border-border rounded-xl p-3.5 md:p-4">
                     <div className="font-semibold text-sm mb-1">{card.title}</div>
                     <div className="text-muted-foreground text-sm leading-relaxed">{card.desc}</div>
                   </div>
@@ -241,20 +241,20 @@ export default function Home() {
       </section>
 
       {/* Department Breakdown Section */}
-      <section id="departments" className="py-24 px-6 lg:px-12 border-b border-border">
+      <section id="departments" className="py-12 md:py-24 px-5 md:px-12 border-b border-border">
         <div className="container max-w-6xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Claude Cowork works for every department</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+          <div className="mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Claude Cowork works for every department</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl">
               That's the whole point — it's not just for devs. Real use cases, real hours saved, across every role on your team.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {[
               {
                 title: "Marketing",
-                icon: <LineChart className="w-6 h-6" />,
+                icon: <LineChart className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "More output. Less time staring at a blank doc.",
                 uses: [
                   "Write and A/B test ad copy, headlines, and CTAs in minutes",
@@ -265,7 +265,7 @@ export default function Home() {
               },
               {
                 title: "Sales",
-                icon: <Users className="w-6 h-6" />,
+                icon: <Users className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "Research faster. Write better. Close more.",
                 uses: [
                   "Research any prospect or company in under a minute before a call",
@@ -276,7 +276,7 @@ export default function Home() {
               },
               {
                 title: "Operations",
-                icon: <Zap className="w-6 h-6" />,
+                icon: <Zap className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "Turn chaos into clean process — automatically.",
                 uses: [
                   "Convert meeting notes and recordings into clean SOPs and action items",
@@ -287,7 +287,7 @@ export default function Home() {
               },
               {
                 title: "Customer Support",
-                icon: <Bot className="w-6 h-6" />,
+                icon: <Bot className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "Handle more tickets. Burn out less.",
                 uses: [
                   "Draft accurate, on-brand replies to support tickets in seconds",
@@ -298,7 +298,7 @@ export default function Home() {
               },
               {
                 title: "Dev & AI Coding",
-                icon: <Code2 className="w-6 h-6" />,
+                icon: <Code2 className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "Ship faster. Stop waiting on backlogs.",
                 badge: "Specialized track",
                 uses: [
@@ -310,7 +310,7 @@ export default function Home() {
               },
               {
                 title: "Leadership",
-                icon: <Briefcase className="w-6 h-6" />,
+                icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6" />,
                 tagline: "Make better decisions. Communicate more clearly.",
                 uses: [
                   "Summarize lengthy reports and board materials before every meeting",
@@ -326,25 +326,25 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-8 border border-border bg-card hover:border-primary/40 transition-colors group rounded-xl relative"
+                className="p-5 md:p-8 border border-border bg-card hover:border-primary/40 transition-colors group rounded-xl relative"
               >
                 {'badge' in dept && dept.badge && (
-                  <span className="absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  <span className="absolute top-3 right-3 md:top-4 md:right-4 text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                     {dept.badge}
                   </span>
                 )}
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-11 h-11 bg-secondary rounded-lg flex items-center justify-center shrink-0 text-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                <div className="flex items-start gap-3 md:gap-4 mb-4">
+                  <div className="w-9 h-9 md:w-11 md:h-11 bg-secondary rounded-lg flex items-center justify-center shrink-0 text-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors">
                     {dept.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">{dept.title}</h3>
-                    <p className="text-sm text-primary font-medium mt-0.5">{dept.tagline}</p>
+                    <h3 className="text-lg md:text-xl font-bold">{dept.title}</h3>
+                    <p className="text-xs md:text-sm text-primary font-medium mt-0.5">{dept.tagline}</p>
                   </div>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {dept.uses.map((use, j) => (
-                    <li key={j} className="flex items-start gap-3 text-muted-foreground text-sm leading-relaxed">
+                    <li key={j} className="flex items-start gap-2.5 text-muted-foreground text-sm leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <span>{use}</span>
                     </li>
@@ -357,18 +357,18 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 px-6 lg:px-12 border-b border-border bg-secondary/30">
+      <section id="testimonials" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/30">
         <div className="container max-w-6xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">What People Say</p>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Proof I Can Teach Anyone</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Proof I Can Teach Anyone</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl">
               Curated from 100+ LinkedIn recommendations — these are the ones that show why Evan is the right trainer for AI.
             </p>
           </div>
 
           {/* Featured testimonials */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
             {testimonials.filter(t => t.featured).map((t, i) => (
               <motion.div
                 key={i}
@@ -376,12 +376,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card border border-primary/30 rounded-xl p-8 relative"
+                className="bg-card border border-primary/30 rounded-xl p-5 md:p-8 relative"
               >
-                <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-4">{t.tag}</span>
-                <p className="text-foreground leading-relaxed mb-6 italic">"{t.quote}"</p>
-                <div className="border-t border-border pt-4">
+                <Quote className="w-6 h-6 md:w-8 md:h-8 text-primary/30 mb-3 md:mb-4" />
+                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-3 md:mb-4">{t.tag}</span>
+                <p className="text-foreground leading-relaxed mb-4 md:mb-6 italic text-sm md:text-base">"{t.quote}"</p>
+                <div className="border-t border-border pt-3 md:pt-4">
                   <div className="font-bold text-sm">{t.name}</div>
                   <div className="text-muted-foreground text-xs mt-0.5">{t.role}</div>
                 </div>
@@ -390,7 +390,7 @@ export default function Home() {
           </div>
 
           {/* Grid testimonials */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {testimonials.filter(t => !t.featured).map((t, i) => (
               <motion.div
                 key={i}
@@ -398,10 +398,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-card border border-border rounded-xl p-6 flex flex-col hover:border-primary/30 transition-colors"
+                className="bg-card border border-border rounded-xl p-4 md:p-6 flex flex-col hover:border-primary/30 transition-colors"
               >
                 <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-3 self-start">{t.tag}</span>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4 italic">"{t.quote}"</p>
+                <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-3 md:mb-4 italic">"{t.quote}"</p>
                 <div className="border-t border-border pt-3">
                   <div className="font-bold text-sm">{t.name}</div>
                   <div className="text-muted-foreground text-xs mt-0.5">{t.role}</div>
@@ -413,27 +413,27 @@ export default function Home() {
       </section>
 
       {/* Pricing / Packages Section */}
-      <section id="pricing" className="py-32 px-6 lg:px-12 bg-card relative overflow-hidden">
+      <section id="pricing" className="py-14 md:py-32 px-5 md:px-12 bg-card relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ready to move faster?</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-3 md:mb-6">Ready to move faster?</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Book a live session with Evan directly below. Payment is secure via Stripe.
             </p>
           </div>
 
           {isLoading ? (
-            <div className="grid md:grid-cols-2 gap-8">
-              <Skeleton className="h-[400px] w-full rounded-xl" />
-              <Skeleton className="h-[400px] w-full rounded-xl" />
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <Skeleton className="h-[360px] w-full rounded-xl" />
+              <Skeleton className="h-[360px] w-full rounded-xl" />
             </div>
           ) : error ? (
-            <div className="text-center p-12 border border-destructive/30 bg-destructive/10 text-destructive rounded-xl">
+            <div className="text-center p-10 border border-destructive/30 bg-destructive/10 text-destructive rounded-xl">
               <p>Failed to load packages. Please try refreshing.</p>
             </div>
           ) : packagesData?.data ? (
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
+            <div className="grid md:grid-cols-2 gap-5 md:gap-8 max-w-4xl mx-auto items-start">
               {packagesData.data.map((pkg, i) => (
                 <motion.div
                   key={pkg.id}
@@ -441,46 +441,46 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.2 }}
-                  className={`relative flex flex-col p-8 rounded-xl border ${
+                  className={`relative flex flex-col p-6 md:p-8 rounded-xl border ${
                     pkg.hours > 1
                       ? "border-primary/60 bg-accent shadow-lg"
                       : "border-border bg-card shadow-sm"
                   }`}
                 >
                   {pkg.hours > 1 && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap">
                       Most Popular
                     </div>
                   )}
 
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{pkg.description}</p>
+                  <div className="mb-4 md:mb-6">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">{pkg.name}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{pkg.description}</p>
                   </div>
 
-                  <div className="mb-8">
-                    <span className="text-5xl font-black">${pkg.unitAmount / 100}</span>
+                  <div className="mb-5 md:mb-8">
+                    <span className="text-4xl md:text-5xl font-black">${pkg.unitAmount / 100}</span>
                     {pkg.hours > 1 && <span className="text-muted-foreground ml-2">total</span>}
                   </div>
 
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                  <ul className="space-y-3 mb-6 md:mb-8 flex-grow">
+                    <li className="flex items-center gap-3 text-sm md:text-base">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                       <span>{pkg.hours} Hour{pkg.hours > 1 ? 's' : ''} live screen-share with Evan</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <li className="flex items-center gap-3 text-sm md:text-base">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                       <span>Workflow analysis tailored to your team</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                    <li className="flex items-center gap-3 text-sm md:text-base">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                       <span>Actionable Claude Cowork setup</span>
                     </li>
                   </ul>
 
                   <Button
                     size="lg"
-                    className="w-full h-14 text-lg"
+                    className="w-full h-12 md:h-14 text-base md:text-lg"
                     variant={pkg.hours > 1 ? "default" : "outline"}
                     onClick={() => handleCheckout(pkg.priceId)}
                     disabled={createCheckout.isPending}
@@ -496,13 +496,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border text-center text-muted-foreground">
+      <footer className="py-8 md:py-12 border-t border-border text-center text-muted-foreground px-5">
         <div className="flex items-center justify-center gap-3 mb-3">
-          <img src={evanProfile} alt="Evan Weber" className="w-8 h-8 rounded-full object-cover" />
-          <span className="font-semibold text-foreground">Evan Weber</span>
+          <img src={evanProfile} alt="Evan Weber" className="w-7 h-7 md:w-8 md:h-8 rounded-full object-cover" />
+          <span className="font-semibold text-foreground text-sm md:text-base">Evan Weber</span>
         </div>
-        <p className="text-sm">AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
-        <p className="text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
+        <p className="text-xs md:text-sm">AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
+        <p className="text-xs md:text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
       </footer>
     </div>
   );
