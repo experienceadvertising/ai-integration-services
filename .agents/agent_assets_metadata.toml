@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "p21TxLQB2ZSI3JbGDiBhP"
+uri = "file://artifacts/consulting-site/src/assets/hero-bg.png"
+type = "image"
+title = "Abstract 3D tech architectural shapes"
