@@ -93,6 +93,43 @@ export async function sendWelcomeEmail(lead: {
   await sendEmail(lead.email, subject, html, EVAN_EMAIL);
 }
 
+export async function sendIntakeEmail(intake: {
+  name?: string;
+  email: string;
+  packageType?: string;
+  workflows?: string;
+  tools?: string;
+  teamSize?: string;
+  goals?: string;
+  extra?: string;
+}) {
+  const subject = `Pre-session intake: ${intake.name || intake.email}`;
+  const pkg = intake.packageType === "4" ? "4-Hour Deep Dive" : "1-Hour Session";
+  const row = (label: string, value?: string) =>
+    value ? `<tr><td style="padding:8px 0;color:#666;width:180px;vertical-align:top;">${label}</td><td style="padding:8px 0;">${value.replace(/\n/g, "<br/>")}</td></tr>` : "";
+
+  const html = `
+    <div style="font-family: system-ui, sans-serif; max-width: 600px; padding: 24px;">
+      <h2 style="color: #D4703A; margin-top: 0;">Pre-Session Intake: ${intake.name || intake.email}</h2>
+      <p style="color: #666; margin-bottom: 20px;">Package: <strong>${pkg}</strong></p>
+      <table style="width: 100%; border-collapse: collapse; border-top: 1px solid #eee;">
+        ${row("Name", intake.name)}
+        ${row("Email", `<a href="mailto:${intake.email}">${intake.email}</a>`)}
+        ${row("Top workflows / pain points", intake.workflows)}
+        ${row("Tools used daily", intake.tools)}
+        ${row("Team size / role", intake.teamSize)}
+        ${row("Goals for the session", intake.goals)}
+        ${row("Anything else", intake.extra)}
+      </table>
+      <div style="margin-top: 24px;">
+        <a href="mailto:${intake.email}" style="background: #D4703A; color: white; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: 600;">Reply to ${intake.name || "client"}</a>
+      </div>
+      <p style="color: #999; font-size: 12px; margin-top: 24px;">Sent automatically from learncowork.net after Stripe checkout.</p>
+    </div>
+  `;
+  await sendEmail(EVAN_EMAIL, subject, html);
+}
+
 export async function sendDripEmail(lead: {
   name?: string | null;
   email: string;

@@ -22,7 +22,7 @@ export default function Home() {
       {
         data: {
           priceId,
-          successUrl: window.location.origin + "/success",
+          successUrl: window.location.origin + `/success?pkg=${pkg.hours}`,
           cancelUrl: window.location.origin + "/cancel"
         }
       },
