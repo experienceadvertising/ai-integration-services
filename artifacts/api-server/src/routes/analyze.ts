@@ -1,8 +1,12 @@
 import { Router, type IRouter } from "express";
 import { anthropic } from "@workspace/integrations-anthropic-ai";
+import { db } from "@workspace/db";
+import { leadsTable } from "@workspace/db/schema";
+import { sendLeadNotification, sendWelcomeEmail } from "../lib/postmark";
 
 const router: IRouter = Router();
 
+// POST /api/analyze — streaming AI report generation
 router.post("/analyze", async (req, res) => {
   const { type, website, description, industry } = req.body;
 
@@ -69,21 +73,59 @@ Be specific to their role. Avoid generic AI platitudes.`;
       messages: [{ role: "user", content: userPrompt }],
     });
 
+    let fullReport = "";
     for await (const event of stream) {
       if (
         event.type === "content_block_delta" &&
         event.delta.type === "text_delta"
       ) {
+        fullReport += event.delta.text;
         res.write(`data: ${JSON.stringify({ content: event.delta.text })}\n\n`);
       }
     }
 
-    res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+    res.write(`data: ${JSON.stringify({ done: true, reportHtml: fullReport })}\n\n`);
     res.end();
   } catch (error: any) {
     req.log.error({ err: error }, "Failed to generate analysis");
     res.write(`data: ${JSON.stringify({ error: "Failed to generate report. Please try again." })}\n\n`);
     res.end();
+  }
+});
+
+// POST /api/leads — save lead + send emails
+router.post("/leads", async (req, res) => {
+  const { email, name, type, website, industry, description, reportHtml } = req.body;
+
+  if (!email || !type) {
+    res.status(400).json({ error: "email and type are required" });
+    return;
+  }
+
+  try {
+    const [lead] = await db
+      .insert(leadsTable)
+      .values({ email, name, type, website, industry, description, reportHtml })
+      .returning();
+
+    // Send emails in background — don't block the response
+    Promise.allSettled([
+      sendLeadNotification(lead).then(async () => {
+        await db.update(leadsTable)
+          .set({ notificationSent: true });
+      }),
+      sendWelcomeEmail(lead).then(async () => {
+        await db.update(leadsTable)
+          .set({ welcomeSent: true });
+      }),
+    ]).catch((err) => {
+      console.error("Email send error:", err);
+    });
+
+    res.json({ success: true, id: lead.id });
+  } catch (error: any) {
+    req.log.error({ err: error }, "Failed to save lead");
+    res.status(500).json({ error: "Failed to save lead" });
   }
 });
 
