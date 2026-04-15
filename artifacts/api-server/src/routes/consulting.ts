@@ -22,7 +22,7 @@ router.get("/packages", async (req, res) => {
       pricesByProduct.get(productId)!.push(price);
     }
 
-    const packages = productsResult.data
+    const allPackages = productsResult.data
       .filter((product) => pricesByProduct.has(product.id))
       .flatMap((product) => {
         const prices = pricesByProduct.get(product.id) ?? [];
@@ -38,6 +38,14 @@ router.get("/packages", async (req, res) => {
         }));
       })
       .sort((a, b) => a.unitAmount - b.unitAmount);
+
+    // Deduplicate by name — keep first occurrence of each unique product name
+    const seen = new Set<string>();
+    const packages = allPackages.filter((pkg) => {
+      if (seen.has(pkg.name)) return false;
+      seen.add(pkg.name);
+      return true;
+    });
 
     res.json({ data: packages });
   } catch (error: any) {
