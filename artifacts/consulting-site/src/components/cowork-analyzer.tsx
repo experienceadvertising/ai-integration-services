@@ -67,7 +67,12 @@ export default function CoworkAnalyzer() {
               reportRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
             }
             if (parsed.done) {
-              setReportHtml(fullReport);
+              const cleaned = fullReport
+                .replace(/^```html\s*/i, "")
+                .replace(/^```\s*/i, "")
+                .replace(/```\s*$/i, "")
+                .trim();
+              setReportHtml(cleaned);
               setPhase("done");
 
               // Fire-and-forget: save lead + send emails
@@ -119,7 +124,7 @@ export default function CoworkAnalyzer() {
             What could Claude Cowork do for <em>you</em>?
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-xl">
-            Enter your website or describe what you do. Get a tailored AI-generated report with specific use cases in under 30 seconds — free, no commitment.
+            Enter your website or describe what you do. Get a tailored AI-generated report with specific use cases in under 30 seconds — free, no commitment. Then book a session and I'll help you implement every item in it.
           </p>
         </div>
 
@@ -259,7 +264,7 @@ export default function CoworkAnalyzer() {
                 ) : (
                   <>
                     <Sparkles className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm font-medium">Your report is ready — we've also emailed you a copy.</span>
+                    <span className="text-sm font-medium">Your report is ready — we've also emailed you a copy. Evan can help you implement every item in it.</span>
                   </>
                 )}
               </div>

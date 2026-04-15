@@ -36,7 +36,7 @@ router.post("/analyze", async (req, res) => {
 
 Your job is to generate a personalized, specific, enthusiastic report showing someone exactly how Claude Cowork could help them. The report should feel tailored, not generic. Use specific job functions and realistic tasks.
 
-Format your response as clean HTML using only these tags: <h3>, <p>, <ul>, <li>, <strong>, <em>. No markdown. No code blocks. No extra commentary before or after — just the HTML.`;
+Output ONLY raw HTML — do not wrap it in a code block, do not use backticks, do not add \`\`\`html or any other markdown syntax. Use only these tags: <h3>, <p>, <ul>, <li>, <strong>, <em>. No commentary before or after — just the HTML.`;
 
   const userPrompt = type === "business"
     ? `Generate a Claude Cowork opportunity report for this business:
