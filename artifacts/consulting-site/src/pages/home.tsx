@@ -111,7 +111,7 @@ export default function Home() {
       <SEO
         title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
         description="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
-        canonical="https://evanweberai.com/"
+        canonical="https://learncowork.net/"
       />
       <SiteNav />
 

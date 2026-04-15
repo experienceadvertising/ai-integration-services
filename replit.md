@@ -28,7 +28,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - Nav: sticky `SiteNav` component in `src/components/site-nav.tsx` with active route highlighting
 - Static SEO files in `public/`: `robots.txt` (blocks GPTBot + Google-Extended), `sitemap.xml`, `og-evan.jpg`, `favicon.svg`
 - `index.html` has full JSON-LD structured data (Person + Service + WebSite), OG tags, Twitter card, canonical URL
-- Domain configured: `https://evanweberai.com` (update across `index.html`, `sitemap.xml`, `seo.tsx` pages if domain changes)
+- Domain: `https://learncowork.net` — update across `index.html`, `sitemap.xml`, page canonical props, `seo.tsx`, and `postmark.ts` if domain changes
 
 ### api-server
 - Preview path: `/api`

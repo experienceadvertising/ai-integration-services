@@ -11,7 +11,7 @@ export default function AiCodingTraining() {
       <SEO
         title="AI Coding Training — Claude Code, Replit & Codex"
         description="Live AI coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from a developer who has built 20+ projects with these tools. Teams and individuals."
-        canonical="https://evanweberai.com/ai-coding-training"
+        canonical="https://learncowork.net/ai-coding-training"
       />
       <SiteNav />
 
