@@ -78,6 +78,7 @@ export async function sendWelcomeEmail(lead: {
       <ul style="line-height: 1.8;">
         <li><strong>Claude Cowork isn't just another chatbot.</strong> It's an AI that operates your computer — reading files, running automations, and working in your actual tools.</li>
         <li><strong>Most teams see results in the first session.</strong> We don't do theory. We build real workflows together on the call.</li>
+        <li><strong>I'll help you implement everything in your report.</strong> The reports, tasks, and agents outlined above aren't just ideas — we build them live in your session so you leave with working automations.</li>
         <li><strong>The 1-hour session is a great starting point.</strong> It's $300, runs on screen share, and is tailored entirely to your situation.</li>
       </ul>
       <p>If you're ready to book, you can do it directly here:</p>
