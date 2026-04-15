@@ -38,12 +38,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground dark">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       {/* Hero Section */}
       <section className="relative min-h-[90dvh] flex items-center pt-24 pb-12 px-6 lg:px-12 border-b border-border">
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity">
-          {heroBg && <img src={heroBg} alt="" className="w-full h-full object-cover grayscale opacity-50" />}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 z-0 opacity-20">
+          {heroBg && <img src={heroBg} alt="" className="w-full h-full object-cover grayscale" />}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
         </div>
         
         <div className="container max-w-6xl mx-auto relative z-10">
@@ -69,10 +69,10 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 h-14 bg-primary text-primary-foreground hover:bg-primary/90 rounded-none" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" className="text-lg px-8 h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                 See Packages
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 h-14 rounded-none border-border" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" variant="outline" className="text-lg px-8 h-14" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
                 How it works
               </Button>
             </div>
@@ -232,9 +232,7 @@ export default function Home() {
                   
                   <Button 
                     size="lg" 
-                    className={`w-full h-14 rounded-none text-lg ${
-                      pkg.hours > 1 ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""
-                    }`}
+                    className="w-full h-14 text-lg"
                     variant={pkg.hours > 1 ? "default" : "outline"}
                     onClick={() => handleCheckout(pkg.priceId)}
                     disabled={createCheckout.isPending}
