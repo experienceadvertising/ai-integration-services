@@ -21,9 +21,14 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 
 ### consulting-site (react-vite)
 - Preview path: `/`
-- Landing page for AI consulting and training services
+- Landing page for AI consulting and training services by Evan Weber
 - Uses `useListPackages` and `useCreateCheckoutSession` hooks from `@workspace/api-client-react`
-- Has `/`, `/success`, `/cancel` routes
+- Routes: `/`, `/claude-cowork-training`, `/ai-coding-training`, `/about`, `/success`, `/cancel`
+- SEO: react-helmet-async with HelmetProvider wrapping App; reusable `SEO` component in `src/components/seo.tsx`
+- Nav: sticky `SiteNav` component in `src/components/site-nav.tsx` with active route highlighting
+- Static SEO files in `public/`: `robots.txt` (blocks GPTBot + Google-Extended), `sitemap.xml`, `og-evan.jpg`, `favicon.svg`
+- `index.html` has full JSON-LD structured data (Person + Service + WebSite), OG tags, Twitter card, canonical URL
+- Domain configured: `https://evanweberai.com` (update across `index.html`, `sitemap.xml`, `seo.tsx` pages if domain changes)
 
 ### api-server
 - Preview path: `/api`

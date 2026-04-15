@@ -3,6 +3,8 @@ import { useListPackages, useCreateCheckoutSession } from "@workspace/api-client
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/seo";
+import SiteNav from "@/components/site-nav";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
@@ -105,6 +107,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+      <SEO
+        title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
+        description="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
+        canonical="https://evanweberai.com/"
+      />
+      <SiteNav />
 
       {/* Hero Section */}
       <section className="relative min-h-[90dvh] flex items-center pt-24 pb-12 px-6 lg:px-12 border-b border-border">
