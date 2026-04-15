@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
+import CoworkAnalyzer from "@/components/cowork-analyzer";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
@@ -179,6 +180,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* AI Report Analyzer */}
+      <CoworkAnalyzer />
 
       {/* Meet Evan Section */}
       <section id="about" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/30">
