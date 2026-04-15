@@ -104,7 +104,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card border border-border p-8 relative overflow-hidden"
+              className="bg-card border border-border p-8 rounded-xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
               <h3 className="text-xl font-semibold mb-6">The Consultant</h3>
@@ -151,9 +151,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 border border-border bg-card hover:border-primary/50 transition-colors group"
+                className="p-8 border border-border bg-card hover:border-primary/50 transition-colors group rounded-xl"
               >
-                <div className="w-12 h-12 bg-secondary flex items-center justify-center mb-6 text-foreground group-hover:text-primary transition-colors">
+                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-6 text-foreground group-hover:text-primary transition-colors">
                   {dept.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{dept.title}</h3>
@@ -177,15 +177,15 @@ export default function Home() {
 
           {isLoading ? (
             <div className="grid md:grid-cols-2 gap-8">
-              <Skeleton className="h-[400px] w-full rounded-none" />
-              <Skeleton className="h-[400px] w-full rounded-none" />
+              <Skeleton className="h-[400px] w-full rounded-xl" />
+              <Skeleton className="h-[400px] w-full rounded-xl" />
             </div>
           ) : error ? (
             <div className="text-center p-12 border border-destructive/30 bg-destructive/10 text-destructive">
               <p>Failed to load packages. Please try refreshing.</p>
             </div>
           ) : packagesData?.data ? (
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
               {packagesData.data.map((pkg, i) => (
                 <motion.div 
                   key={pkg.id}
@@ -193,21 +193,21 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.2 }}
-                  className={`relative flex flex-col p-8 border ${
+                  className={`relative flex flex-col p-8 rounded-xl border ${
                     pkg.hours > 1 
-                      ? "border-primary bg-background shadow-[0_0_40px_-15px_hsl(var(--primary))]" 
-                      : "border-border bg-card"
+                      ? "border-primary/60 bg-accent shadow-lg" 
+                      : "border-border bg-card shadow-sm"
                   }`}
                 >
                   {pkg.hours > 1 && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-full">
                       Most Popular
                     </div>
                   )}
                   
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                    <p className="text-muted-foreground h-12">{pkg.description}</p>
+                    <p className="text-muted-foreground leading-relaxed">{pkg.description}</p>
                   </div>
                   
                   <div className="mb-8">
