@@ -13,7 +13,7 @@ export default function About() {
       <SEO
         title="About Evan Weber — AI Trainer & Digital Marketing Veteran"
         description="25 years in digital marketing. Founder of Experience Advertising. Daily Claude Cowork and Claude Code user. 400+ companies helped. 100+ LinkedIn recommendations. Meet your AI trainer."
-        canonical="https://evanweberai.com/about"
+        canonical="https://learncowork.net/about"
       />
       <SiteNav />
 

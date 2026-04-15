@@ -45,7 +45,7 @@ export async function sendLeadNotification(lead: {
   const subject = `New AI training lead: ${lead.name || lead.email}`;
   const html = `
     <div style="font-family: system-ui, sans-serif; max-width: 600px; padding: 24px;">
-      <h2 style="color: #D4703A; margin-top: 0;">New Lead from evanweberai.com</h2>
+      <h2 style="color: #D4703A; margin-top: 0;">New Lead from learncowork.net</h2>
       <table style="width: 100%; border-collapse: collapse;">
         <tr><td style="padding: 8px 0; color: #666; width: 130px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${lead.name || "Not provided"}</td></tr>
         <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
@@ -86,7 +86,7 @@ export async function sendWelcomeEmail(lead: {
       </div>
       <p>Or if you have questions first, just reply to this email. I read everything.</p>
       <p style="margin-bottom: 4px;">— Evan</p>
-      <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · AI Training · Experience Advertising<br/><a href="${SITE_URL}" style="color: #D4703A;">evanweberai.com</a></p>
+      <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · AI Training · Experience Advertising<br/><a href="${SITE_URL}" style="color: #D4703A;">learncowork.net</a></p>
     </div>
   `;
   await sendEmail(lead.email, subject, html, EVAN_EMAIL);
@@ -120,7 +120,7 @@ export async function sendDripEmail(lead: {
           <a href="${SITE_URL}/#pricing" style="background: #D4703A; color: white; padding: 14px 24px; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 16px;">Book a Session →</a>
         </div>
         <p style="margin-bottom: 4px;">— Evan</p>
-        <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · <a href="${SITE_URL}" style="color: #D4703A;">evanweberai.com</a></p>
+        <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · <a href="${SITE_URL}" style="color: #D4703A;">learncowork.net</a></p>
       </div>
     `;
     await sendEmail(lead.email, subject, html, EVAN_EMAIL);
@@ -142,7 +142,7 @@ export async function sendDripEmail(lead: {
         </div>
         <p>If you want to chat before committing, just reply to this email. I'm happy to answer any questions.</p>
         <p style="margin-bottom: 4px;">— Evan</p>
-        <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · <a href="${SITE_URL}" style="color: #D4703A;">evanweberai.com</a></p>
+        <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · <a href="${SITE_URL}" style="color: #D4703A;">learncowork.net</a></p>
       </div>
     `;
     await sendEmail(lead.email, subject, html, EVAN_EMAIL);

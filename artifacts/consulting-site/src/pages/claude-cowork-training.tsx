@@ -11,7 +11,7 @@ export default function ClaudeCoworkTraining() {
       <SEO
         title="Claude Cowork Training for Teams"
         description="Live Claude Cowork training by Evan Weber — 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
-        canonical="https://evanweberai.com/claude-cowork-training"
+        canonical="https://learncowork.net/claude-cowork-training"
       />
       <SiteNav />
 
