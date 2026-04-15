@@ -14,3 +14,36 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Returns all active consulting packages with their prices
+ * @summary List consulting packages
+ */
+export const ListPackagesResponse = zod.object({
+  data: zod.array(
+    zod.object({
+      id: zod.string(),
+      priceId: zod.string(),
+      name: zod.string(),
+      description: zod.string(),
+      hours: zod.number(),
+      unitAmount: zod.number(),
+      currency: zod.string(),
+      metadata: zod.record(zod.string(), zod.string()).optional(),
+    }),
+  ),
+});
+
+/**
+ * Creates a Stripe checkout session for a package
+ * @summary Create Stripe checkout session
+ */
+export const CreateCheckoutSessionBody = zod.object({
+  priceId: zod.string(),
+  successUrl: zod.string(),
+  cancelUrl: zod.string(),
+});
+
+export const CreateCheckoutSessionResponse = zod.object({
+  url: zod.string(),
+});

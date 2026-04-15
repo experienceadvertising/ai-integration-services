@@ -8,3 +8,34 @@
 export interface HealthStatus {
   status: string;
 }
+
+export type PackageMetadata = { [key: string]: string };
+
+export interface Package {
+  id: string;
+  priceId: string;
+  name: string;
+  description: string;
+  hours: number;
+  unitAmount: number;
+  currency: string;
+  metadata?: PackageMetadata;
+}
+
+export interface PackagesResponse {
+  data: Package[];
+}
+
+export interface CreateCheckoutRequest {
+  priceId: string;
+  successUrl: string;
+  cancelUrl: string;
+}
+
+export interface CheckoutResponse {
+  url: string;
+}
+
+export interface ErrorResponse {
+  error: string;
+}

@@ -10,6 +10,10 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: packages
+    description: Consulting packages and pricing
+  - name: checkout
+    description: Stripe checkout operations
 paths:
   /healthz:
     get:
@@ -24,6 +28,47 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /packages:
+    get:
+      operationId: listPackages
+      tags: [packages]
+      summary: List consulting packages
+      description: Returns all active consulting packages with their prices
+      responses:
+        "200":
+          description: List of packages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PackagesResponse"
+
+  /checkout:
+    post:
+      operationId: createCheckoutSession
+      tags: [checkout]
+      summary: Create Stripe checkout session
+      description: Creates a Stripe checkout session for a package
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCheckoutRequest"
+      responses:
+        "200":
+          description: Checkout session created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CheckoutResponse"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +79,72 @@ components:
       required:
         - status
 
+    Package:
+      type: object
+      properties:
+        id:
+          type: string
+        priceId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        hours:
+          type: number
+        unitAmount:
+          type: number
+        currency:
+          type: string
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - id
+        - priceId
+        - name
+        - description
+        - hours
+        - unitAmount
+        - currency
+
+    PackagesResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Package"
+      required:
+        - data
+
+    CreateCheckoutRequest:
+      type: object
+      properties:
+        priceId:
+          type: string
+        successUrl:
+          type: string
+        cancelUrl:
+          type: string
+      required:
+        - priceId
+        - successUrl
+        - cancelUrl
+
+    CheckoutResponse:
+      type: object
+      properties:
+        url:
+          type: string
+      required:
+        - url
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
