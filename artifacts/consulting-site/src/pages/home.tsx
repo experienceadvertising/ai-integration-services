@@ -55,25 +55,25 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8 border border-border">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Accepting new clients for Q3
+              Live 1-on-1 training · Limited spots available
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-8 text-balance">
-              Your team is busy.<br />
-              <span className="text-muted-foreground">They're not productive enough.</span><br />
-              Let's fix that.
+              Your team needs<br />
+              <span className="text-primary">Claude Cowork.</span><br />
+              <span className="text-muted-foreground">Let me show them how.</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
-              Most AI training is generic, surface-level, and forgotten after the call. This isn't that. I do live screen-share sessions built around your team's actual workflows.
+              Claude Cowork is the most powerful AI productivity tool available — and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="text-lg px-8 h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
-                See Packages
+                Book a Session
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 h-14" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
-                How it works
+                Who it's for
               </Button>
             </div>
           </motion.div>
@@ -90,12 +90,12 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Stop talking about AI. Start using it.</h2>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Claude Cowork changes how work gets done. I'll show your team.</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                I've been using Claude Cowork and Claude Code every day across my workflows and it's completely changed how much I can get done.
+                I use Claude Cowork every day across writing, research, analysis, planning, and strategy. The difference it makes isn't incremental — it's transformational. And it's one of the few AI tools that genuinely works for everyone, not just technical teams.
               </p>
               <p className="text-lg text-muted-foreground">
-                I'm now offering live trainings where I'll show your team exactly how to use AI to save time, automate tasks, and become way more productive starting day one.
+                For teams with developers, I also train on AI coding with Claude Code, Replit, and Codex. But Claude Cowork is where we start — because it's the tool that unlocks productivity across your entire company.
               </p>
             </motion.div>
             
@@ -107,13 +107,13 @@ export default function Home() {
               className="bg-card border border-border p-8 rounded-xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-              <h3 className="text-xl font-semibold mb-6">The Consultant</h3>
+              <h3 className="text-xl font-semibold mb-6">Why me</h3>
               <ul className="space-y-4">
                 {[
-                  "Worked with hundreds of companies across the customer lifecycle",
-                  "Thinks in systems, not tasks",
-                  "Shows 'here's how this automates 2 hours of work' not 'here's a prompt'",
-                  "Experience spans marketing, sales, ops, dev, and leadership"
+                  "Daily Claude Cowork user — I know exactly what moves the needle and what doesn't",
+                  "Also trained in Claude Code, Replit, Codex, and GitHub Copilot for dev teams",
+                  "Shows 'here's how this saves 2 hours a day' — not 'here's a prompt to memorize'",
+                  "Experience spans marketing, sales, ops, support, dev, and leadership"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -130,9 +130,9 @@ export default function Home() {
       <section id="departments" className="py-24 px-6 lg:px-12 border-b border-border">
         <div className="container max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Value across every department</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Claude Cowork works for every department</h2>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Real workflows. Real hours saved. No generic prompt engineering advice.
+              That's the whole point — it's not just for devs. Real use cases, real time saved, across every role on your team.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export default function Home() {
               { title: "Sales", icon: <Users className="w-6 h-6" />, desc: "Personalized outbound, lead research instantly, follow-up automation, call prep." },
               { title: "Operations", icon: <Zap className="w-6 h-6" />, desc: "Process automation, internal doc generation, AI agent workflows, eliminating manual busywork." },
               { title: "Support", icon: <Bot className="w-6 h-6" />, desc: "AI-assisted responses, knowledge base generation, faster ticket handling." },
-              { title: "Dev/Tech", icon: <Code2 className="w-6 h-6" />, desc: "Claude Code for internal tools, rapid prototyping, automations without waiting on dev cycles." },
+              { title: "Dev / AI Coding", icon: <Code2 className="w-6 h-6" />, desc: "Specialized training on Claude Code, Replit, and Codex. Ship faster, automate more, stop waiting on dev cycles." },
               { title: "Leadership", icon: <Briefcase className="w-6 h-6" />, desc: "Faster decisions with AI analysis, report summarization, strategic support." }
             ].map((dept, i) => (
               <motion.div 
