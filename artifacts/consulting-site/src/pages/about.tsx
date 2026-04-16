@@ -11,7 +11,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="About Evan Weber — AI Trainer & Digital Marketing Veteran"
+        title="About Evan Weber, AI Trainer and Digital Marketing Veteran"
         description="25 years in digital marketing. Founder of Experience Advertising. Daily Claude Cowork and Claude Code user. 400+ companies helped. 100+ LinkedIn recommendations. Meet your AI trainer."
         canonical="https://learncowork.net/about"
       />
@@ -29,7 +29,7 @@ export default function About() {
             >
               <img
                 src={evanProfile}
-                alt="Evan Weber — AI Trainer & Digital Marketing Expert"
+                alt="Evan Weber, AI Trainer and Digital Marketing Expert"
                 className="w-48 h-48 rounded-2xl object-cover shadow-lg"
               />
             </motion.div>
@@ -91,13 +91,13 @@ export default function About() {
               <h2 className="text-3xl font-bold tracking-tight mb-6">The Background</h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  I've spent 25 years in the trenches of digital marketing — building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy, paid media, and affiliate marketing.
+                  I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy, paid media, and affiliate marketing.
                 </p>
                 <p>
-                  When AI coding tools emerged, I didn't watch from the sidelines — I dove in. I've now built 20+ projects using Claude Code, Replit, and related AI tools, and I use Claude Cowork and AI agents every single day to run my businesses.
+                  When AI coding tools emerged, I didn't watch from the sidelines. I dove in. I've now built 20+ projects using Claude Code, Replit, and related AI tools, and I use Claude Cowork and AI agents every single day to run my businesses.
                 </p>
                 <p>
-                  I built AffiliateFinders.com (an AI-powered affiliate marketplace with 10,000+ pre-vetted partners), Publisher Finders, and Digital Marketing U — all leveraging AI-powered development workflows. These aren't demo projects. They're live businesses I run.
+                  I built AffiliateFinders.com (an AI-powered affiliate marketplace with 10,000+ pre-vetted partners), Publisher Finders, and leveraging AI-powered development workflows. These aren't demo projects. They're live businesses I run.
                 </p>
                 <p>
                   But here's what makes me different as a trainer: I know how to teach. Over 100 colleagues, clients, and partners have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast. That's exactly what I'll do for you with AI.
@@ -117,12 +117,7 @@ export default function About() {
                   {
                     title: "AffiliateFinders.com",
                     meta: "Founder · AI-Powered Platform",
-                    desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, smart matching, and advanced search — using Claude Code and Replit."
-                  },
-                  {
-                    title: "Digital Marketing U",
-                    meta: "Founder · 11+ Years",
-                    desc: "Online education platform for digital marketing training. 11+ years teaching marketers, agencies, and business owners the skills that actually grow revenue."
+                    desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, smart matching, and advanced search, using Claude Code and Replit."
                   },
                   {
                     title: "Publisher Finders",
@@ -147,7 +142,7 @@ export default function About() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight mb-4">Why I Train</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-12">
-            Teaching isn't an afterthought for me — it's been a core part of how I work for over a decade.
+            Teaching isn't an afterthought for me. It's been a core part of how I work for over a decade.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -159,7 +154,7 @@ export default function About() {
               {
                 num: "02",
                 title: "Practitioner, Not Theorist",
-                desc: "I build with these tools every single day. You're learning from someone with 20+ real AI projects shipped — not someone who read the documentation."
+                desc: "I build with these tools every single day. You're learning from someone with 20+ real AI projects shipped, not someone who read the documentation."
               },
               {
                 num: "03",

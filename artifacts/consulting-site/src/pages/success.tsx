@@ -59,7 +59,7 @@ export default function Success() {
       {/* Calendly embed */}
       <section className="py-10 px-5 border-b border-border bg-secondary/20">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold mb-1 text-center">Step 1 — Pick your time</h2>
+          <h2 className="text-xl font-bold mb-1 text-center">Step 1: Pick your time</h2>
           <p className="text-muted-foreground text-sm text-center mb-6">Choose any open slot. You'll get a calendar invite immediately.</p>
           <div className="rounded-2xl overflow-hidden border border-border shadow-sm bg-background">
             <iframe
@@ -77,7 +77,7 @@ export default function Success() {
       <section className="py-12 px-5">
         <div className="max-w-2xl mx-auto">
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-1">Step 2 — Help Evan prepare</h2>
+            <h2 className="text-xl font-bold mb-1">Step 2: Help Evan prepare</h2>
             <p className="text-muted-foreground text-sm">
               A few quick questions so Evan can hit the ground running. The more detail, the better the session.
             </p>
@@ -86,7 +86,7 @@ export default function Success() {
           {status === "sent" ? (
             <div className="bg-primary/10 border border-primary/20 rounded-2xl p-8 text-center">
               <CheckCircle2 className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-2">Got it — Evan will be prepared.</h3>
+              <h3 className="text-lg font-bold mb-2">Got it. Evan will be prepared.</h3>
               <p className="text-muted-foreground text-sm">Your intake notes have been sent. See you at the session!</p>
             </div>
           ) : (
@@ -185,7 +185,7 @@ export default function Success() {
               </div>
 
               {status === "error" && (
-                <p className="text-destructive text-sm">Something went wrong — please email the info directly to evan@experienceadvertising.com.</p>
+                <p className="text-destructive text-sm">Something went wrong. Please email the info directly to evan@experienceadvertising.com.</p>
               )}
 
               <Button type="submit" size="lg" className="w-full h-12 text-base font-semibold" disabled={!form.email || status === "sending"}>
