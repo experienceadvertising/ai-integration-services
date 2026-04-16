@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { useListPackages, useCreateCheckoutSession } from "@workspace/api-client-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -6,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
+import { industries } from "@/data/industries";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
@@ -411,6 +413,25 @@ export default function Home() {
                   <div className="text-muted-foreground text-xs mt-0.5">{t.role}</div>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section className="py-14 md:py-20 px-5 md:px-12 border-b border-border">
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Training for every industry</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Claude Cowork works across every department and sector. Click your industry for a tailored overview.</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            {industries.map((ind) => (
+              <Link key={ind.slug} href={`/industries/${ind.slug}`}>
+                <div className="group border border-border rounded-xl px-4 py-4 text-center hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer">
+                  <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">{ind.name}</div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
