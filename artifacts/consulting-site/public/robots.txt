@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /success
+Disallow: /cancel
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 User-agent: GPTBot
 Disallow: /
