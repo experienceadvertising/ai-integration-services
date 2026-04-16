@@ -76,7 +76,7 @@ export default function IndustryPage() {
               <p className="text-lg text-muted-foreground leading-relaxed">{industry.intro}</p>
               <div className="mt-6 pt-6 border-t border-border">
                 <p className="text-sm font-semibold text-foreground mb-1">Trained by Evan Weber</p>
-                <p className="text-sm text-muted-foreground">25-year digital marketing veteran, founder of Experience Advertising, and daily Claude Cowork power user. Evan trains your team live on screen share using your actual workflows — not slides and theory.</p>
+                <p className="text-sm text-muted-foreground">25-year digital marketing veteran, founder of Experience Advertising, and daily Claude Cowork power user. Evan trains your team live on screen share using your actual workflows, not slides or theory.</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function IndustryPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
             What your team will be able to do
           </h2>
-          <p className="text-muted-foreground mb-10">Real workflows built in real sessions — not theory, not slides.</p>
+          <p className="text-muted-foreground mb-10">Real workflows built in real sessions, not theory, not slides.</p>
           <div className="grid md:grid-cols-2 gap-5">
             {industry.useCases.map((uc, i) => (
               <motion.div
@@ -186,7 +186,7 @@ export default function IndustryPage() {
             Ready to get your {industry.badge.split(" ")[0].toLowerCase()} team started?
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
-            Two session formats — both built around your real workflows, run on screen share with Evan.
+            Two session formats, both built around your real workflows, run on screen share with Evan.
           </p>
           <div className="grid sm:grid-cols-2 gap-5 mb-10">
             <div className="bg-card border border-border rounded-2xl p-7 text-left">
@@ -215,7 +215,7 @@ export default function IndustryPage() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Not sure which is right? <Link href="/"><span className="text-primary underline cursor-pointer">Get a free AI report first</span></Link> — Evan's AI will analyze your specific situation and recommend the best fit.
+            Not sure which is right? <Link href="/"><span className="text-primary underline cursor-pointer">Get a free AI report first</span></Link>. Evan's AI will analyze your specific situation and recommend the best fit.
           </p>
         </div>
       </section>
