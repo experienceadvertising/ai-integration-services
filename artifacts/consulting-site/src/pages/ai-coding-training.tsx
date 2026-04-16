@@ -13,6 +13,19 @@ export default function AiCodingTraining() {
         title="Vibe Coding Training: Claude Code, Replit & Codex | Evan Weber"
         description="Live vibe coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from someone who has shipped 20+ real projects with these tools. Teams and individuals."
         canonical="https://learncowork.net/ai-coding-training"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Vibe Coding Training",
+          provider: { "@type": "Person", name: "Evan Weber" },
+          description: "Live 1-on-1 and team vibe coding training sessions covering Claude Code, Replit, GitHub Copilot, and Codex. Build real projects with AI-assisted development tools.",
+          url: "https://learncowork.net/ai-coding-training",
+          areaServed: "US",
+          offers: [
+            { "@type": "Offer", name: "1-Hour Vibe Coding Training Session", price: "300", priceCurrency: "USD" },
+            { "@type": "Offer", name: "4-Hour Vibe Coding Deep Dive", price: "1000", priceCurrency: "USD" },
+          ],
+        }}
       />
       <SiteNav />
 
