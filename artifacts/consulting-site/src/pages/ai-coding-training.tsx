@@ -9,8 +9,8 @@ export default function AiCodingTraining() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="AI Coding Training: Claude Code, Replit & Codex"
-        description="Live AI coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from a developer who has built 20+ projects with these tools. Teams and individuals."
+        title="Vibe Coding Training: Claude Code, Replit & Codex | Evan Weber"
+        description="Live vibe coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from someone who has shipped 20+ real projects with these tools. Teams and individuals."
         canonical="https://learncowork.net/ai-coding-training"
       />
       <SiteNav />
@@ -24,7 +24,7 @@ export default function AiCodingTraining() {
               Specialized Track
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-              AI Coding Training<br />
+              Vibe Coding Training<br />
               <span className="text-primary">Claude Code, Replit & Codex</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
