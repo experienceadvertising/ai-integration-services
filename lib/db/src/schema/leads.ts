@@ -13,6 +13,8 @@ export const leadsTable = pgTable("leads", {
   reportHtml: text("report_html"),
   notificationSent: boolean("notification_sent").notNull().default(false),
   welcomeSent: boolean("welcome_sent").notNull().default(false),
+  drip3SentAt: timestamp("drip3_sent_at"),
+  drip7SentAt: timestamp("drip7_sent_at"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
