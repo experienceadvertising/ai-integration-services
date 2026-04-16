@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ScrollToTop from "@/components/scroll-to-top";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Success from "@/pages/success";
@@ -16,16 +17,19 @@ const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/claude-cowork-training" component={ClaudeCoworkTraining} />
-      <Route path="/ai-coding-training" component={AiCodingTraining} />
-      <Route path="/about" component={About} />
-      <Route path="/industries/:slug" component={IndustryPage} />
-      <Route path="/success" component={Success} />
-      <Route path="/cancel" component={Cancel} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/claude-cowork-training" component={ClaudeCoworkTraining} />
+        <Route path="/ai-coding-training" component={AiCodingTraining} />
+        <Route path="/about" component={About} />
+        <Route path="/industries/:slug" component={IndustryPage} />
+        <Route path="/success" component={Success} />
+        <Route path="/cancel" component={Cancel} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
