@@ -44,9 +44,9 @@ export const industries: IndustryData[] = [
       "Strategists can run deep competitor analysis across multiple channels without spending half a day on research",
     ],
     useCases: [
-      { title: "Client Reporting Automation", body: "Connect Claude Cowork to Google Analytics, Meta Ads Manager, or your reporting tools and generate formatted client reports with insights, not just numbers - in minutes, not hours." },
+      { title: "Client Reporting Automation", body: "Pull data from your analytics and ad platforms into Claude Cowork — via exports, APIs, or MCP integrations — and generate formatted client reports with insights, not just numbers, in minutes instead of hours." },
       { title: "Ad Copy at Scale", body: "Give Claude your brand brief, audience profile, and product details. Get 10–20 copy variations across formats - headlines, body copy, CTAs - ready to test immediately." },
-      { title: "Competitor Research Briefs", body: "Claude Cowork can browse competitor sites, review their ad libraries, read their G2 reviews, and compile a structured competitive brief your team can use in pitches." },
+      { title: "Competitor Research Briefs", body: "Using the Claude in Chrome extension, Claude Cowork can browse competitor sites, review their ad libraries, read their G2 reviews, and compile a structured competitive brief your team can use in pitches." },
       { title: "Campaign Strategy Drafts", body: "Feed Claude a client brief and target KPIs. It will draft a full campaign strategy outline - channels, messaging angles, budget allocation rationale - for your team to refine." },
       { title: "New Business Pitch Acceleration", body: "Research a prospective client's digital presence, identify their biggest gaps, and draft a tailored pitch outline - all in one Claude Cowork session before a sales call." },
       { title: "Content Brief Generation", body: "Turn a single keyword or campaign theme into detailed content briefs - with audience insights, recommended structure, tone guidance, and competitor angle analysis." },
@@ -63,7 +63,7 @@ export const industries: IndustryData[] = [
     headline: "Less Drafting. More Practicing. Claude Cowork for Legal Teams.",
     subheadline: "Train your attorneys, paralegals, and legal assistants to delegate first-draft work, research summaries, and client communications to Claude - and get hours back every week.",
     stat: "40–60%",
-    statLabel: "of legal time spent on tasks Claude can handle",
+    statLabel: "of legal time is spent on administrative tasks — many of which Claude can help streamline",
     intro: "Legal work is high-stakes and document-heavy. Claude Cowork can draft first versions of contracts, summarize case law, prepare client communications, and organize matter intake - all from natural language instructions. Evan trains your legal team on exactly how to delegate with enough precision that Claude's output is actually useful, not generic.",
     leadershipPoints: [
       "Increase billable-hour efficiency by moving first-draft and research work off your attorneys' plates without sacrificing quality",
@@ -160,7 +160,7 @@ export const industries: IndustryData[] = [
     subheadline: "Train your front office, clinical coordinators, and practice managers to automate the paperwork, communications, and documentation that eat your team's day.",
     stat: "2–3 hrs",
     statLabel: "of daily admin time per staff member that Claude can reclaim",
-    intro: "Healthcare practices are drowning in administrative work - patient communications, referral letters, prior authorization drafts, intake processing, and scheduling coordination. None of it requires a clinician's judgment, but all of it consumes clinical staff time. Claude Cowork gives your non-clinical team the ability to handle this volume efficiently and consistently.",
+    intro: "Healthcare practices are drowning in administrative work - patient communications, referral letters, prior authorization drafts, intake processing, and scheduling coordination. None of it requires a clinician's judgment, but all of it consumes clinical staff time. Claude Cowork gives your non-clinical team the ability to handle this volume efficiently and consistently. During your session, Evan covers how to configure Cowork's privacy settings and establish workflows that align with your practice's HIPAA and data handling requirements.",
     leadershipPoints: [
       "Reduce administrative burden on your clinical staff so they can focus on patient care rather than paperwork",
       "Improve patient communication quality and response times without adding headcount",
