@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { CheckCircle2, ArrowLeft, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -43,6 +44,11 @@ export default function Success() {
 
   return (
     <div className="min-h-[100dvh] bg-background">
+      <SEO
+        title="Booking Confirmed"
+        description="Your Claude Cowork training session with Evan Weber is confirmed. Schedule your time and complete your pre-session intake below."
+        noindex={true}
+      />
       <SiteNav />
 
       {/* Hero */}
