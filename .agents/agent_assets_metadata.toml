@@ -1,8 +1,19 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "p21TxLQB2ZSI3JbGDiBhP"
 uri = "file://artifacts/consulting-site/src/assets/hero-bg.png"
 type = "image"
 title = "Abstract 3D tech architectural shapes"
+
+[[generated]]
+id = "Bjk7qzUAeA7s2_ORMy0cB"
+uri = "file://artifacts/consulting-site/public/og-image.png"
+type = "image"
+title = "generated_image"
+
+[[outputs]]
+id = "5RNiu6hePoOvcbdMdxazh"
+uri = "file://artifacts/consulting-site/public/og-image.png"
+type = "image"
+title = "OG Sharing Image — Claude Cowork Training"

@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = "AI Training by Evan Weber";
-const DEFAULT_OG_IMAGE = "https://learncowork.net/og-evan.jpg";
+const DEFAULT_OG_IMAGE = "https://learncowork.net/og-image.png";
 
 export default function SEO({
   title,
