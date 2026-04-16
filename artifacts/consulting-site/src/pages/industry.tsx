@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import { getIndustry, industries } from "@/data/industries";
+import SiteFooter from "@/components/site-footer";
 
 export default function IndustryPage() {
   const [, params] = useRoute("/industries/:slug");
@@ -238,11 +239,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-border text-center text-muted-foreground px-5">
-        <p className="text-sm">AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
-        <p className="text-xs mt-1">© {new Date().getFullYear()} All rights reserved · <Link href="/"><span className="hover:text-foreground cursor-pointer">learncowork.net</span></Link></p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

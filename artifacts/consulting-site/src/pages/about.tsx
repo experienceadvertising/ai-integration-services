@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
+import SiteFooter from "@/components/site-footer";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
 
@@ -239,9 +240,7 @@ export default function About() {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border text-center text-muted-foreground text-sm">
-        <p>© {new Date().getFullYear()} AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
