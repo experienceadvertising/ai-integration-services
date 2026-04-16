@@ -9,7 +9,7 @@ export default function AiCodingTraining() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="AI Coding Training — Claude Code, Replit & Codex"
+        title="AI Coding Training: Claude Code, Replit & Codex"
         description="Live AI coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from a developer who has built 20+ projects with these tools. Teams and individuals."
         canonical="https://learncowork.net/ai-coding-training"
       />
@@ -28,7 +28,7 @@ export default function AiCodingTraining() {
               <span className="text-primary">Claude Code, Replit & Codex</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-              Evan Weber has built 20+ real projects using Claude Code, Replit, and Codex. This is hands-on AI coding training from someone who does it daily — not a theorist reading documentation.
+              Evan Weber has built 20+ real projects using Claude Code, Replit, and Codex. This is hands-on AI coding training from someone who does it daily, not a theorist reading documentation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#pricing">
@@ -77,7 +77,7 @@ export default function AiCodingTraining() {
               {
                 icon: <GitBranch className="w-6 h-6" />,
                 tool: "GitHub + AI Workflows",
-                desc: "How to integrate AI into your GitHub workflows — PR reviews, code summaries, issue triage, and automated documentation — so AI makes your entire development process faster.",
+                desc: "How to integrate AI into your GitHub workflows: PR reviews, code summaries, issue triage, and automated documentation, so AI makes your entire development process faster.",
                 uses: ["Automated PR descriptions and reviews", "AI-powered issue triage", "Documentation generation from code", "Release notes and changelog automation"]
               }
             ].map((item, i) => (
@@ -140,13 +140,12 @@ export default function AiCodingTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">20+ Projects Built with AI Coding Tools</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-12">
-            Evan doesn't just teach these tools — he builds with them every day. Here are examples of what he's built using Claude Code, Replit, and Codex:
+            Evan doesn't just teach these tools. He builds with them every day. Here are examples of what he's built using Claude Code, Replit, and Codex:
           </p>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { title: "AffiliateFinders.com", desc: "AI-powered affiliate marketplace with 10,000+ pre-vetted affiliates, AI scoring, and advanced search — built with AI coding tools." },
+              { title: "AffiliateFinders.com", desc: "AI-powered affiliate marketplace with 10,000+ pre-vetted affiliates, AI scoring, and advanced search, built with AI coding tools." },
               { title: "Publisher Finders", desc: "Publisher discovery platform connecting brands with content publishers using AI-powered matching and profile generation." },
-              { title: "Digital Marketing U", desc: "Online education platform for digital marketing training, built and iterated on using AI-assisted development." },
               { title: "Internal Automation Tools", desc: "Dozens of internal business automations for Experience Advertising built with Replit and Claude Code." },
               { title: "API Integrations", desc: "Multiple API integrations connecting third-party platforms to client marketing stacks, developed with AI assistance." },
               { title: "Client Web Apps", desc: "Custom web applications for agency clients delivered faster using AI-pair programming workflows." }
@@ -187,7 +186,7 @@ export default function AiCodingTraining() {
               },
               {
                 q: "Can my whole dev team attend together?",
-                a: "Yes. The 4-hour Deep Dive is ideal for development teams — there's enough time to cover all tools and build something real together during the session."
+                a: "Yes. The 4-hour Deep Dive is ideal for development teams. There's enough time to cover all tools and build something real together during the session."
               }
             ].map((faq, i) => (
               <div key={i} className="border-b border-border pb-8">

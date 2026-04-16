@@ -10,7 +10,7 @@ export default function ClaudeCoworkTraining() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Claude Cowork Training for Teams"
-        description="Live Claude Cowork training by Evan Weber — 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
+        description="Live Claude Cowork training by Evan Weber - 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
         canonical="https://learncowork.net/claude-cowork-training"
       />
       <SiteNav />
@@ -28,7 +28,7 @@ export default function ClaudeCoworkTraining() {
               <span className="text-primary">Claude Cowork</span> Fluently
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-              Claude Cowork is Anthropic's most powerful productivity tool — and most teams haven't even opened it. Evan Weber trains your team live, on screen share, using your actual workflows. Results on day one.
+              Claude Cowork is Anthropic's most powerful productivity tool - and most teams haven't even opened it. Evan Weber trains your team live, on screen share, using your actual workflows. Results on day one.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#pricing">
@@ -51,7 +51,7 @@ export default function ClaudeCoworkTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What is Claude Cowork?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
-            Claude Cowork (formerly Claude Computer Use) is Anthropic's agentic AI mode that lets Claude operate directly on your computer — reading files, managing your desktop, running multi-step automations, and integrating with your existing tools. It's the difference between a chatbot and an actual AI coworker.
+            Claude Cowork (formerly Claude Computer Use) is Anthropic's agentic AI mode that lets Claude operate directly on your computer - reading files, managing your desktop, running multi-step automations, and integrating with your existing tools. It's the difference between a chatbot and an actual AI coworker.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -59,7 +59,7 @@ export default function ClaudeCoworkTraining() {
               {
                 icon: <Monitor className="w-6 h-6" />,
                 title: "Works on your actual computer",
-                desc: "Claude Cowork sees your screen, reads your files, and operates your apps — not in a sandbox, in your real workflow."
+                desc: "Claude Cowork sees your screen, reads your files, and operates your apps - not in a sandbox, in your real workflow."
               },
               {
                 icon: <Zap className="w-6 h-6" />,
@@ -69,7 +69,7 @@ export default function ClaudeCoworkTraining() {
               {
                 icon: <Users className="w-6 h-6" />,
                 title: "Built for non-technical users",
-                desc: "Unlike AI coding tools, Cowork is designed for everyone — marketing, sales, ops, support, and leadership."
+                desc: "Unlike AI coding tools, Cowork is designed for everyone - marketing, sales, ops, support, and leadership."
               },
               {
                 icon: <Clock className="w-6 h-6" />,
@@ -107,11 +107,11 @@ export default function ClaudeCoworkTraining() {
           <div className="grid md:grid-cols-3 gap-5">
             {[
               { num: "01", title: "Setup & Configuration", desc: "Get Cowork properly configured for your environment, connected to your tools and file systems." },
-              { num: "02", title: "Your First Real Workflow", desc: "We start with a task your team actually does — and automate it live, on screen share, together." },
-              { num: "03", title: "MCP Server Integration", desc: "Connect Claude to your apps — Google Drive, Notion, Slack, CRM — using MCP plugins for deeper automation." },
+              { num: "02", title: "Your First Real Workflow", desc: "We start with a task your team actually does - and automate it live, on screen share, together." },
+              { num: "03", title: "MCP Server Integration", desc: "Connect Claude to your apps - Google Drive, Notion, Slack, CRM - using MCP plugins for deeper automation." },
               { num: "04", title: "Department-Specific Use Cases", desc: "Marketing, sales, ops, support, dev, and leadership each get specific workflows and examples." },
               { num: "05", title: "Prompt Engineering for Cowork", desc: "How to give Cowork the right instructions so it executes correctly every time, not just sometimes." },
-              { num: "06", title: "Building a Team Playbook", desc: "You leave with a repeatable playbook your whole team can reference — not just what we covered on the call." }
+              { num: "06", title: "Building a Team Playbook", desc: "You leave with a repeatable playbook your whole team can reference - not just what we covered on the call." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -134,7 +134,7 @@ export default function ClaudeCoworkTraining() {
       <section className="py-20 px-6 lg:px-12 border-b border-border">
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Who This Training Is For</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mb-10">Claude Cowork is for every team member — not just your technical ones.</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mb-10">Claude Cowork is for every team member - not just your technical ones.</p>
 
           <ul className="grid md:grid-cols-2 gap-4 max-w-3xl">
             {[
@@ -162,11 +162,11 @@ export default function ClaudeCoworkTraining() {
             {[
               {
                 q: "Do my team members need to be technical to use Claude Cowork?",
-                a: "No. That's one of Cowork's biggest advantages — it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly."
+                a: "No. That's one of Cowork's biggest advantages - it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly."
               },
               {
                 q: "Does my team need a Claude subscription?",
-                a: "Yes — each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session."
+                a: "Yes - each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session."
               },
               {
                 q: "How many people can attend a session?",
@@ -174,7 +174,7 @@ export default function ClaudeCoworkTraining() {
               },
               {
                 q: "Will the session be recorded?",
-                a: "That's up to you — Evan is happy for you to record the session for team members who can't attend live. You own the recording."
+                a: "That's up to you - Evan is happy for you to record the session for team members who can't attend live. You own the recording."
               },
               {
                 q: "What if my industry has specific compliance or data requirements?",

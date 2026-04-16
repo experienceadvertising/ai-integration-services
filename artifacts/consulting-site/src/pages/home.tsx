@@ -66,13 +66,13 @@ export default function Home() {
     },
     {
       tag: "Meets You Where You Are",
-      quote: "He meets you and your business where you are at. His personal approach — learning as much as possible about you so he can take you higher. His expertise is second to none, and there is not a better mentor out there.",
+      quote: "He meets you and your business where you are at. His personal approach, learning as much as possible about you so he can take you higher. His expertise is second to none, and there is not a better mentor out there.",
       name: "Krissy Hitz",
       role: "National Fundraising Leader"
     },
     {
       tag: "Patience & Generosity",
-      quote: "He's willing to help people that need to get a clue, which no one else even tries to do — Evan does it with grace and patience. His content is truly practical and insightful, he holds nothing back.",
+      quote: "He's willing to help people that need to get a clue, which no one else even tries to do. Evan does it with grace and patience. His content is truly practical and insightful, he holds nothing back.",
       name: "Rodney Granderson",
       role: "Paid Media Strategist | Google Ads & PPC Specialist"
     },
@@ -112,7 +112,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
         title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
-        description="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
+        description="Live Claude Cowork training for business teams by Evan Weber, 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
         canonical="https://learncowork.net/"
       />
       <SiteNav />
@@ -143,7 +143,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              Claude Cowork is the most powerful AI productivity tool available — and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
+              Claude Cowork is the most powerful AI productivity tool available, and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -199,13 +199,13 @@ export default function Home() {
               <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Your Trainer</p>
               <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">Meet Evan Weber</h2>
               <p className="text-base md:text-lg text-muted-foreground mb-4">
-                I've spent 25 years in the trenches of digital marketing — building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
+                I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
               </p>
               <p className="text-base md:text-lg text-muted-foreground mb-4">
-                When AI tools emerged, I didn't watch from the sidelines — I dove in. I've built 20+ projects using Claude Code, and I use Claude Cowork and AI agents every single day to run my businesses. I built AffiliateFinders.com, Publisher Finders, and Digital Marketing U, all leveraging AI-powered workflows.
+                When AI tools emerged, I didn't watch from the sidelines. I dove in. I've built 20+ projects using Claude Code, and I use Claude Cowork and AI agents every single day to run my businesses. I built AffiliateFinders.com and Publisher Finders, both leveraging AI-powered workflows.
               </p>
               <p className="text-base md:text-lg text-muted-foreground">
-                But here's what makes me different as a trainer: I don't just know the tools — I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
+                But here's what makes me different as a trainer: I don't just know the tools. I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
               </p>
             </motion.div>
 
@@ -232,7 +232,6 @@ export default function Home() {
                 {[
                   { title: "Founder & CEO, Experience Advertising", desc: "19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical." },
                   { title: "Founder, AffiliateFinders.com", desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search." },
-                  { title: "Founder, Digital Marketing U", desc: "11+ years creating courses and education. Teaching is in my DNA — not an afterthought." },
                   { title: "Daily AI Builder", desc: "20+ projects built with Claude Code and Cowork. I live in these tools so you don't have to figure them out alone." }
                 ].map((card, i) => (
                   <div key={i} className="bg-card border border-border rounded-xl p-3.5 md:p-4">
@@ -252,7 +251,7 @@ export default function Home() {
           <div className="mb-8 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Claude Cowork works for every department</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl">
-              That's the whole point — it's not just for devs. Real use cases, real hours saved, across every role on your team.
+              That's the whole point: it's not just for devs. Real use cases, real hours saved, across every role on your team.
             </p>
           </div>
 
@@ -283,7 +282,7 @@ export default function Home() {
               {
                 title: "Operations",
                 icon: <Zap className="w-5 h-5 md:w-6 md:h-6" />,
-                tagline: "Turn chaos into clean process — automatically.",
+                tagline: "Turn chaos into clean process, automatically.",
                 uses: [
                   "Convert meeting notes and recordings into clean SOPs and action items",
                   "Build and maintain internal knowledge bases without a dedicated writer",
@@ -308,7 +307,7 @@ export default function Home() {
                 tagline: "Ship faster. Stop waiting on backlogs.",
                 badge: "Specialized track",
                 uses: [
-                  "Code reviews, refactoring, and debugging with Claude Code — live",
+                  "Code reviews, refactoring, and debugging with Claude Code, live",
                   "Build internal tools and automations in Replit without a full dev cycle",
                   "Write, document, and test functions faster with Codex and GitHub Copilot",
                   "Use AI agents to handle routine dev tasks end-to-end"
@@ -369,7 +368,7 @@ export default function Home() {
             <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">What People Say</p>
             <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Proof I Can Teach Anyone</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl">
-              Curated from 100+ LinkedIn recommendations — these are the ones that show why Evan is the right trainer for AI.
+              Curated from 100+ LinkedIn recommendations. These are the ones that show why Evan is the right trainer for AI.
             </p>
           </div>
 
