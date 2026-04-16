@@ -8,6 +8,7 @@ import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
 import { industries } from "@/data/industries";
+import SiteFooter from "@/components/site-footer";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
@@ -519,15 +520,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 md:py-12 border-t border-border text-center text-muted-foreground px-5">
-        <div className="flex items-center justify-center gap-3 mb-3">
-          <img src={evanProfile} alt="Evan Weber" className="w-7 h-7 md:w-8 md:h-8 rounded-full object-cover" />
-          <span className="font-semibold text-foreground text-sm md:text-base">Evan Weber</span>
-        </div>
-        <p className="text-xs md:text-sm">AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
-        <p className="text-xs md:text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

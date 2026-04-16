@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { CheckCircle2, ArrowRight, Code2, GitBranch, Terminal, Cpu } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, GitBranch, Terminal, Cpu, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
+import SiteFooter from "@/components/site-footer";
 
 export default function AiCodingTraining() {
   return (
@@ -138,30 +139,52 @@ export default function AiCodingTraining() {
       {/* What Evan Has Built */}
       <section className="py-20 px-6 lg:px-12 border-b border-border">
         <div className="container max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">20+ Projects Built with AI Coding Tools</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">14 Live Sites and Apps Built with Vibe Coding</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mb-12">
-            Evan doesn't just teach these tools. He builds with them every day. Here are examples of what he's built using Claude Code, Replit, and Codex:
+            Evan doesn't just teach these tools. He ships with them. Every project below is a real, live site built using Claude Code, Replit, and agentic coding workflows.
           </p>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { title: "AffiliateFinders.com", desc: "AI-powered affiliate marketplace with 10,000+ pre-vetted affiliates, AI scoring, and advanced search, built with AI coding tools." },
-              { title: "Publisher Finders", desc: "Publisher discovery platform connecting brands with content publishers using AI-powered matching and profile generation." },
-              { title: "Internal Automation Tools", desc: "Dozens of internal business automations for Experience Advertising built with Replit and Claude Code." },
-              { title: "API Integrations", desc: "Multiple API integrations connecting third-party platforms to client marketing stacks, developed with AI assistance." },
-              { title: "Client Web Apps", desc: "Custom web applications for agency clients delivered faster using AI-pair programming workflows." }
+              { title: "MonetizeHub", url: "https://monetizehub.net", category: "SaaS Tools", desc: "All-in-one dashboard for managing and tracking multiple income streams across platforms." },
+              { title: "DailySignal", url: "https://dailysignal.app", category: "SaaS Tools", desc: "Real-time signal tracking and news aggregation delivering curated market and media insights daily." },
+              { title: "AffiliateFinders", url: "https://www.affiliatefinders.com", category: "Marketing", desc: "AI-powered affiliate recruitment platform with 10,000+ verified profiles across Google, YouTube, Instagram, and TikTok." },
+              { title: "Experience Advertising", url: "https://experienceadvertising.com", category: "Agency", desc: "Full-service digital marketing agency site built with AI, specializing in Meta, Google, TikTok, and affiliate networks." },
+              { title: "Insurazon", url: "https://insurazon.com", category: "Finance", desc: "Insurance comparison platform comparing quotes across auto, home, life, health, and Medicare." },
+              { title: "Smart Site Audit", url: "https://smartsiteaudit.com", category: "SaaS Tools", desc: "Comprehensive website audit tool evaluating SEO health, performance, accessibility, and security." },
+              { title: "GTM Champion", url: "https://gtmchampion.com", category: "Marketing", desc: "Go-to-market strategy platform with tools and frameworks to plan, execute, and optimize market entry." },
+              { title: "SuperFundraiser", url: "https://superfundraiser.com", category: "Nonprofit", desc: "Free matching service connecting schools, teams, and nonprofits with vetted fundraising companies." },
+              { title: "MyDetailerPro", url: "https://mydetailerpro.com", category: "SaaS Tools", desc: "CRM and booking platform built specifically for auto detailing businesses." },
+              { title: "BeSure Assessment", url: "https://besureassessment.com", category: "SaaS Tools", desc: "Professional assessment and evaluation platform for structured testing and analysis." },
+              { title: "BoostQ4", url: "https://boostq4.com", category: "Marketing", desc: "Q4 revenue optimization toolkit to help businesses maximize fourth-quarter performance." },
+              { title: "Local Contractor Bids", url: "https://localcontractorbids.com", category: "Lead Gen", desc: "Contractor bidding marketplace connecting homeowners with local vetted professionals." },
+              { title: "Hurricane Shutters Florida", url: "https://hurricaneshuttersflorida.com", category: "Lead Gen", desc: "Lead generation platform connecting Florida homeowners with hurricane shutter installers." },
+              { title: "Offers for Homeowners", url: "https://offersforhomeowners.com", category: "Home Services", desc: "Resource platform featuring exclusive deals on home improvement with market insights." },
             ].map((project, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="p-6 bg-card border border-border rounded-xl"
+                transition={{ duration: 0.4, delay: (i % 3) * 0.07 }}
+                className="p-6 bg-card border border-border rounded-xl group hover:border-primary/40 transition-colors"
               >
-                <h3 className="font-bold mb-2">{project.title}</h3>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-bold leading-snug">{project.title}</h3>
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors shrink-0 mt-0.5">
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+                <div className="text-xs text-primary font-semibold mb-2">{project.category}</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">{project.desc}</p>
               </motion.div>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a href="https://replit-showcase-evan185.replit.app/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg">
+                View Full Project Showcase <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -211,9 +234,7 @@ export default function AiCodingTraining() {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border text-center text-muted-foreground text-sm">
-        <p>© {new Date().getFullYear()} AI Training by Evan Weber · Experience Advertising, Inc. · Fort Lauderdale, FL</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
