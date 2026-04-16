@@ -52,7 +52,7 @@ export default function ClaudeCoworkTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What is Claude Cowork?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
-            Claude Cowork (formerly Claude Computer Use) is Anthropic's agentic AI mode that lets Claude operate directly on your computer - reading files, managing your desktop, running multi-step automations, and integrating with your existing tools. It's the difference between a chatbot and an actual AI coworker.
+            Claude Cowork is Anthropic's agentic desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and MCP tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools. It's the difference between a chatbot and an actual AI coworker.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -75,7 +75,7 @@ export default function ClaudeCoworkTraining() {
               {
                 icon: <Clock className="w-6 h-6" />,
                 title: "Immediate time savings",
-                desc: "Teams typically recover 1–3 hours per person per day within the first week of using Cowork correctly."
+                desc: "Early adopters report recovering 1–3 hours per person per day once their team is using Cowork fluently in their actual workflows."
               }
             ].map((item, i) => (
               <motion.div
