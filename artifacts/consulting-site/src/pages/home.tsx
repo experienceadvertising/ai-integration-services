@@ -20,12 +20,12 @@ export default function Home() {
   const createCheckout = useCreateCheckoutSession();
   const { toast } = useToast();
 
-  const handleCheckout = (priceId: string) => {
+  const handleCheckout = (priceId: string, hours: number) => {
     createCheckout.mutate(
       {
         data: {
           priceId,
-          successUrl: window.location.origin + `/success?pkg=${pkg.hours}`,
+          successUrl: window.location.origin + `/success?pkg=${hours}`,
           cancelUrl: window.location.origin + "/cancel"
         }
       },
@@ -222,6 +222,9 @@ export default function Home() {
                   src={evanProfile}
                   alt="Evan Weber"
                   className="w-20 h-20 md:w-24 md:h-24 rounded-2xl object-cover shadow-md shrink-0"
+                  loading="lazy"
+                  width={96}
+                  height={96}
                 />
                 <div>
                   <div className="text-xl md:text-2xl font-bold">Evan Weber</div>
@@ -507,7 +510,7 @@ export default function Home() {
                     size="lg"
                     className="w-full h-12 md:h-14 text-base md:text-lg"
                     variant={pkg.hours > 1 ? "default" : "outline"}
-                    onClick={() => handleCheckout(pkg.priceId)}
+                    onClick={() => handleCheckout(pkg.priceId, pkg.hours)}
                     disabled={createCheckout.isPending}
                   >
                     {createCheckout.isPending ? "Starting checkout..." : "Book Now"}
