@@ -1,0 +1,100 @@
+# Evan Weber — AI Productivity Trainer | learncowork.net
+
+> Live Claude Cowork and Vibe Coding training for business teams. Book a 1-hour ($300) or 4-hour ($1,000) session with Evan Weber — 25-year digital marketing veteran and daily Claude Cowork power user.
+
+## What This Site Is
+
+learncowork.net is the training and booking platform for Evan Weber. Evan trains business teams and individuals to use Claude Cowork (Anthropic's agentic desktop AI mode) and AI coding tools (Claude Code, Replit, GitHub Copilot, Codex) fluently in their actual workflows.
+
+Sessions are live, on screen share, tailored to each team's role and tools. Payment is via Stripe. Scheduling is via Calendly after booking.
+
+---
+
+## Services
+
+### Claude Cowork Training
+Live 1-on-1 or team training on Claude Cowork — setup, MCP integrations, multi-step workflow automation, and department-specific use cases.
+
+- 1-Hour Session: $300
+- 4-Hour Deep Dive: $1,000
+- Book: https://learncowork.net/#pricing
+- Details: https://learncowork.net/claude-cowork-training
+
+### Vibe Coding Training
+Live training for individuals and teams on AI-assisted coding: Claude Code, Replit, GitHub Copilot, and OpenAI Codex. Evan has shipped 20+ real live projects using these tools.
+
+- 1-Hour Session: $300
+- 4-Hour Deep Dive: $1,000
+- Details: https://learncowork.net/ai-coding-training
+
+---
+
+## About Evan Weber
+
+- 25+ years in digital marketing
+- Founder & CEO, Experience Advertising (2007–present) — full-service digital agency, 400+ clients
+- Founder, AffiliateFinders.com — AI-powered affiliate marketplace with 10,000+ pre-vetted partners
+- Founder, Publisher Finders — publisher discovery platform
+- 20+ AI projects built with Claude Code and Replit
+- 100+ public LinkedIn recommendations
+- 40,000+ LinkedIn followers
+- Location: Fort Lauderdale / Miami, FL
+- LinkedIn: https://www.linkedin.com/in/worldsgreatestmarketer/
+- Agency: https://experienceadvertising.com
+
+---
+
+## What Claude Cowork Is
+
+Claude Cowork is Anthropic's agentic desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and MCP tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools via MCP plugins (Google Drive, Notion, Slack, CRMs, and more).
+
+It is different from Claude Computer Use and from the Claude.ai web chat interface.
+
+---
+
+## Industries Served
+
+Claude Cowork training is available with industry-specific workflows for:
+
+- Marketing & Advertising Agencies: https://learncowork.net/industries/marketing-agencies
+- Law Firms & Legal Services: https://learncowork.net/industries/law-firms
+- Real Estate Teams & Brokerages: https://learncowork.net/industries/real-estate
+- Financial Services & Accounting Firms: https://learncowork.net/industries/financial-services
+- Healthcare Practices & Medical Offices: https://learncowork.net/industries/healthcare
+- E-Commerce & Retail Brands: https://learncowork.net/industries/ecommerce
+- Management & Strategy Consulting Firms: https://learncowork.net/industries/consulting
+- HR Teams & Recruiting Agencies: https://learncowork.net/industries/hr-recruiting
+- Insurance Agencies & Brokerages: https://learncowork.net/industries/insurance
+- Nonprofits & Social Impact Organizations: https://learncowork.net/industries/nonprofits
+
+---
+
+## Site Pages
+
+- Home: https://learncowork.net/
+- Claude Cowork Training: https://learncowork.net/claude-cowork-training
+- Vibe Coding Training: https://learncowork.net/ai-coding-training
+- About Evan Weber: https://learncowork.net/about
+- Sitemap: https://learncowork.net/sitemap.xml
+- Robots: https://learncowork.net/robots.txt
+
+---
+
+## Pricing
+
+| Session | Duration | Price |
+|---------|----------|-------|
+| 1-Hour Training Session | 1 hour, live screen share | $300 |
+| 4-Hour Deep Dive | 4 hours, full team | $1,000 |
+
+Payment is processed securely via Stripe. No subscription required from buyer.
+
+---
+
+## Contact & Links
+
+- Book a session: https://learncowork.net/#pricing
+- Evan's business email: evan@experienceadvertising.com
+- LinkedIn: https://www.linkedin.com/in/worldsgreatestmarketer/
+- Experience Advertising: https://experienceadvertising.com
+- AffiliateFinders: https://www.affiliatefinders.com

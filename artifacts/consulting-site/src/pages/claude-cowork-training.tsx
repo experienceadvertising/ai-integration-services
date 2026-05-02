@@ -13,6 +13,37 @@ export default function ClaudeCoworkTraining() {
         title="Claude Cowork Training for Teams"
         description="Live Claude Cowork training by Evan Weber - 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
         canonical="https://learncowork.net/claude-cowork-training"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Do my team members need to be technical to use Claude Cowork?",
+              acceptedAnswer: { "@type": "Answer", text: "No. Claude Cowork was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly." },
+            },
+            {
+              "@type": "Question",
+              name: "How much does a Claude Cowork training session cost?",
+              acceptedAnswer: { "@type": "Answer", text: "A 1-hour live session costs $300. A 4-hour Deep Dive is $1,000. Both are booked and paid securely via Stripe at learncowork.net." },
+            },
+            {
+              "@type": "Question",
+              name: "Does my team need a Claude subscription?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes — each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session." },
+            },
+            {
+              "@type": "Question",
+              name: "How many people can attend a session?",
+              acceptedAnswer: { "@type": "Answer", text: "Sessions work best with up to 6–8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department." },
+            },
+            {
+              "@type": "Question",
+              name: "What if my industry has specific compliance or data requirements?",
+              acceptedAnswer: { "@type": "Answer", text: "Evan covers Claude's privacy settings and data handling policies as part of every session setup, so you can use Cowork confidently within your compliance requirements." },
+            },
+          ],
+        }}
       />
       <SiteNav />
 

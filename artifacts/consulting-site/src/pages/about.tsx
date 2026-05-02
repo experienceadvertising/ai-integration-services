@@ -31,7 +31,10 @@ export default function About() {
               <img
                 src={evanProfile}
                 alt="Evan Weber, AI Trainer and Digital Marketing Expert"
-                className="w-48 h-48 rounded-2xl object-cover shadow-lg"
+                className="w-36 h-36 md:w-48 md:h-48 rounded-2xl object-cover shadow-lg"
+                width={192}
+                height={192}
+                fetchPriority="high"
               />
             </motion.div>
 
@@ -68,7 +71,7 @@ export default function About() {
       {/* Stats */}
       <section className="py-12 px-6 border-b border-border bg-card">
         <div className="container max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
             {[
               { number: "25+", label: "Years in Digital Marketing" },
               { number: "400+", label: "Companies Helped" },
@@ -76,8 +79,8 @@ export default function About() {
               { number: "100+", label: "LinkedIn Recommendations" }
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-4xl font-black text-primary mb-1">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-black text-primary mb-1">{stat.number}</div>
+                <div className="text-xs md:text-sm text-muted-foreground leading-snug">{stat.label}</div>
               </div>
             ))}
           </div>

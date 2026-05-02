@@ -30,6 +30,15 @@ export default function IndustryPage() {
         title={industry.metaTitle}
         description={industry.metaDescription}
         canonical={canonical}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://learncowork.net" },
+            { "@type": "ListItem", position: 2, name: "Claude Cowork Training", item: "https://learncowork.net/claude-cowork-training" },
+            { "@type": "ListItem", position: 3, name: industry.name, item: `https://learncowork.net/industries/${industry.slug}` },
+          ],
+        }}
       />
       <SiteNav />
 
@@ -37,9 +46,9 @@ export default function IndustryPage() {
       <section className="pt-32 pb-20 px-6 lg:px-12 border-b border-border bg-secondary/30">
         <div className="container max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Claude Cowork Training · {industry.badge}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-6 border border-primary/20 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
+              <span className="truncate">Claude Cowork Training · {industry.badge}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 max-w-4xl">
               {industry.headline}
