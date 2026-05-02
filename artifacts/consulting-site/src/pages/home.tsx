@@ -13,12 +13,25 @@ import SiteFooter from "@/components/site-footer";
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck } from "lucide-react";
+import ComparisonTable from "@/components/comparison-table";
+import BookingTrustRow from "@/components/booking-trust-row";
+import HomeFaq from "@/components/home-faq";
+import RecentBookingsBadge from "@/components/recent-bookings-badge";
+
+function getInitialIndustry(): { name: string; slug: string } | null {
+  if (typeof window === "undefined") return null;
+  const slug = new URLSearchParams(window.location.search).get("industry");
+  if (!slug) return null;
+  const found = industries.find((i) => i.slug === slug);
+  return found ? { name: found.name, slug: found.slug } : null;
+}
 
 export default function Home() {
   const { data: packagesData, isLoading, error } = useListPackages();
   const createCheckout = useCreateCheckoutSession();
   const { toast } = useToast();
+  const initialIndustry = getInitialIndustry();
 
   const handleCheckout = (priceId: string, hours: number) => {
     createCheckout.mutate(
@@ -185,7 +198,17 @@ export default function Home() {
       </section>
 
       {/* AI Report Analyzer */}
-      <CoworkAnalyzer />
+      {initialIndustry && (
+        <div className="px-5 md:px-12 pt-6 md:pt-10 bg-secondary/20 border-b border-transparent -mb-px">
+          <div className="container max-w-4xl mx-auto">
+            <div className="rounded-2xl border border-primary/30 bg-primary/5 px-5 py-3 text-sm md:text-base flex items-start sm:items-center gap-3">
+              <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
+              <span><strong>Welcome from {initialIndustry.name}.</strong> The report below is pre-tuned for your industry.</span>
+            </div>
+          </div>
+        </div>
+      )}
+      <CoworkAnalyzer defaultIndustry={initialIndustry?.name ?? ""} />
 
       {/* Meet Evan Section */}
       <section id="about" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/30">
@@ -461,6 +484,10 @@ export default function Home() {
               <p>Failed to load packages. Please try refreshing.</p>
             </div>
           ) : packagesData?.data ? (
+            <>
+            <div className="flex justify-center mb-6 md:mb-8">
+              <RecentBookingsBadge />
+            </div>
             <div className="grid md:grid-cols-2 gap-5 md:gap-8 max-w-4xl mx-auto items-start">
               {packagesData.data.map((pkg, i) => (
                 <motion.div
@@ -519,9 +546,18 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+            <div className="text-center mt-5 text-xs md:text-sm text-muted-foreground">
+              <ShieldCheck className="inline w-4 h-4 text-primary mr-1.5 -mt-0.5" />
+              <strong className="text-foreground">100% satisfaction guarantee.</strong> Not worth it? Full refund, no questions.
+            </div>
+            <BookingTrustRow />
+            <ComparisonTable />
+            </>
           ) : null}
         </div>
       </section>
+
+      <HomeFaq />
 
       <SiteFooter />
     </div>

@@ -4,6 +4,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/scroll-to-top";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
+import ExitIntentPopup from "@/components/exit-intent-popup";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Success from "@/pages/success";
@@ -29,6 +31,8 @@ function Router() {
         <Route path="/cancel" component={Cancel} />
         <Route component={NotFound} />
       </Switch>
+      <StickyMobileCta />
+      <ExitIntentPopup />
     </>
   );
 }

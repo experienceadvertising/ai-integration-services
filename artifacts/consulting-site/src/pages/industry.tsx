@@ -6,6 +6,8 @@ import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import { getIndustry, industries } from "@/data/industries";
 import SiteFooter from "@/components/site-footer";
+import CoworkAnalyzer from "@/components/cowork-analyzer";
+import BookingTrustRow from "@/components/booking-trust-row";
 
 export default function IndustryPage() {
   const [, params] = useRoute("/industries/:slug");
@@ -173,6 +175,17 @@ export default function IndustryPage() {
         </div>
       </section>
 
+      {/* Inline Analyzer — pre-tuned for this industry */}
+      <section className="py-14 md:py-20 border-b border-border bg-secondary/20">
+        <CoworkAnalyzer
+          variant="embedded"
+          defaultUserType="business"
+          defaultIndustry={industry.name}
+          headline={<>Get a free Claude Cowork report for your {industry.badge.toLowerCase()} team</>}
+          subheadline={`Tell our AI a bit about your team and get a tailored list of ${industry.badge.toLowerCase()} use cases in 30 seconds. Free, no commitment, instant.`}
+        />
+      </section>
+
       {/* Quick Win */}
       <section className="py-16 px-6 lg:px-12 border-b border-border bg-primary/5">
         <div className="container max-w-5xl mx-auto">
@@ -227,6 +240,7 @@ export default function IndustryPage() {
           <p className="text-sm text-muted-foreground">
             Not sure which is right? <Link href="/"><span className="text-primary underline cursor-pointer">Get a free AI report first</span></Link>. Evan's AI will analyze your specific situation and recommend the best fit.
           </p>
+          <BookingTrustRow />
         </div>
       </section>
 

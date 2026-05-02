@@ -8,8 +8,22 @@ type Phase = "form" | "streaming" | "done" | "error";
 
 const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-export default function CoworkAnalyzer() {
-  const [userType, setUserType] = useState<UserType>("business");
+interface Props {
+  defaultUserType?: UserType;
+  defaultIndustry?: string;
+  headline?: React.ReactNode;
+  subheadline?: React.ReactNode;
+  variant?: "section" | "embedded";
+}
+
+export default function CoworkAnalyzer({
+  defaultUserType = "business",
+  defaultIndustry = "",
+  headline,
+  subheadline,
+  variant = "section",
+}: Props = {}) {
+  const [userType, setUserType] = useState<UserType>(defaultUserType);
   const [phase, setPhase] = useState<Phase>("form");
   const [reportHtml, setReportHtml] = useState("");
   const [streamBuffer, setStreamBuffer] = useState("");
@@ -19,7 +33,7 @@ export default function CoworkAnalyzer() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
-  const [industry, setIndustry] = useState("");
+  const [industry, setIndustry] = useState(defaultIndustry);
   const [description, setDescription] = useState("");
 
   const reportRef = useRef<HTMLDivElement>(null);
@@ -111,9 +125,15 @@ export default function CoworkAnalyzer() {
     setError("");
   };
 
+  const isEmbedded = variant === "embedded";
+  const Wrapper: any = isEmbedded ? "div" : "section";
+  const wrapperProps = isEmbedded
+    ? { id: "analyzer", className: "px-5 md:px-12" }
+    : { id: "analyzer", className: "py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/20" };
+
   return (
-    <section id="analyzer" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/20">
-      <div className="container max-w-4xl mx-auto">
+    <Wrapper {...wrapperProps}>
+      <div className={`container ${isEmbedded ? "max-w-3xl" : "max-w-4xl"} mx-auto`}>
         {/* Header */}
         <div className="mb-8 md:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-semibold mb-4 border border-primary/20">
@@ -121,10 +141,10 @@ export default function CoworkAnalyzer() {
             Free Personalized Report
           </div>
           <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">
-            What could Claude Cowork do for <em>you</em>?
+            {headline ?? <>What could Claude Cowork do for <em>you</em>?</>}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-xl">
-            Enter your website or describe what you do. Get a tailored AI-generated report with specific use cases in under 30 seconds, free, no commitment. Then book a session and I'll help you implement every item in it.
+            {subheadline ?? "Enter your website or describe what you do. Get a tailored AI-generated report with specific use cases in under 30 seconds, free, no commitment. Then book a session and I'll help you implement every item in it."}
           </p>
         </div>
 
@@ -334,6 +354,6 @@ export default function CoworkAnalyzer() {
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </Wrapper>
   );
 }
