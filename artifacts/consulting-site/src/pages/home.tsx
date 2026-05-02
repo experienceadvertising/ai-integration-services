@@ -13,7 +13,8 @@ import SiteFooter from "@/components/site-footer";
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar } from "lucide-react";
+import { CALENDLY_INTRO } from "@/lib/booking-links";
 import ComparisonTable from "@/components/comparison-table";
 import BookingTrustRow from "@/components/booking-trust-row";
 import HomeFaq from "@/components/home-faq";
@@ -168,6 +169,17 @@ export default function Home() {
                 Who it's for
               </Button>
             </div>
+
+            <a
+              href={CALENDLY_INTRO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-5 md:mt-6 text-sm md:text-base text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <Calendar className="w-4 h-4 text-primary" />
+              <span>Not sure yet? <strong className="text-foreground group-hover:text-primary">Book a free 15-min intro call with Evan</strong></span>
+              <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+            </a>
           </motion.div>
         </div>
       </section>
