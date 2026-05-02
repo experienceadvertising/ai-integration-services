@@ -130,6 +130,34 @@ export async function sendIntakeEmail(intake: {
   await sendEmail(EVAN_EMAIL, subject, html);
 }
 
+export async function sendSessionPrepReminder(opts: {
+  email: string;
+  name?: string | null;
+}) {
+  const firstName = opts.name?.split(" ")[0] || "there";
+  const subject = "Your training session prep guide";
+  const html = `
+    <div style="font-family: system-ui, sans-serif; max-width: 600px; padding: 24px; color: #1a1a1a;">
+      <p style="font-size: 14px; color: #D4703A; margin-top: 0; font-weight: 600;">Claude Cowork Training · Evan Weber</p>
+      <h1 style="font-size: 24px; margin: 0 0 16px;">Hey ${firstName} — quick prep for our upcoming session</h1>
+      <p>Thanks for booking. Whether your session is tomorrow or next week, a few minutes of prep now will make it dramatically more valuable. Here's exactly what to have ready:</p>
+      <h3 style="margin: 20px 0 8px; font-size: 16px;">Before we hop on the call:</h3>
+      <ul style="line-height: 1.8;">
+        <li><strong>Have Claude Pro or Teams installed</strong> on the computer you'll be using. The desktop app, not just the browser.</li>
+        <li><strong>Know your top 2–3 workflows</strong> we'll be tackling. Even better — have an example file or task open and ready.</li>
+        <li><strong>Have your daily tools logged in</strong> in your browser (analytics, CRM, ad platforms, docs — whatever you use).</li>
+        <li><strong>Be on a stable internet connection.</strong> We'll be screen-sharing both ways.</li>
+        <li><strong>Bring 1 specific question</strong> you've always wanted to automate but never figured out how.</li>
+      </ul>
+      <p style="margin-top: 20px;">If anything came up since you booked — context, tools you forgot to mention, a new priority — just reply to this email so I can adjust the agenda.</p>
+      <p>See you soon!</p>
+      <p style="margin-bottom: 4px;">— Evan</p>
+      <p style="color: #666; font-size: 13px; margin-top: 4px;">Evan Weber · <a href="${SITE_URL}" style="color: #D4703A;">learncowork.net</a></p>
+    </div>
+  `;
+  await sendEmail(opts.email, subject, html, EVAN_EMAIL);
+}
+
 export async function sendDripEmail(lead: {
   name?: string | null;
   email: string;
