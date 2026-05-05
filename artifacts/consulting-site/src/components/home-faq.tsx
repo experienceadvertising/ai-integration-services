@@ -1,11 +1,50 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
-const faqs = [
+interface Faq {
+  q: string;
+  a: ReactNode;
+}
+
+const faqs: Faq[] = [
   {
     q: "Do my team members need to be technical?",
     a: "No. Claude Cowork is built for non-technical users. If your team can use a browser, they can use Cowork. The training is designed to onboard non-technical people quickly using their actual day-to-day workflows.",
+  },
+  {
+    q: "Is my company's data safe? Will Anthropic train on what we share with Claude?",
+    a: (
+      <div className="space-y-4">
+        <p>
+          Short answer: <strong className="text-foreground">no — as long as you do one of two things below.</strong> This matters
+          if you're running client data through Cowork (Google Ads accounts, CRM exports, P&amp;Ls, affiliate lists, etc.). We'll cover this on the call too, but here's the playbook:
+        </p>
+        <div>
+          <p className="font-semibold text-foreground mb-1">Option 1 — Turn off the training toggle in Privacy Settings</p>
+          <p>
+            On Free, Pro, and Max accounts, your chats and coding sessions (including Cowork) are used to train future models <em>only if</em> the
+            "Help improve Claude" toggle is on. Flip it off at{" "}
+            <a
+              href="https://claude.ai/settings/data-privacy-controls"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-2 hover:no-underline"
+            >
+              claude.ai/settings/data-privacy-controls
+            </a>{" "}
+            and new or resumed sessions stop being used for training. Retention also drops from 5 years back to 30 days.
+          </p>
+        </div>
+        <div>
+          <p className="font-semibold text-foreground mb-1">Option 2 — Use a Team or Enterprise plan</p>
+          <p>
+            Claude for Work (Team / Enterprise) falls under Anthropic's Commercial Terms — those accounts are <strong className="text-foreground">not used for model training by default</strong>, period. No toggle to manage.
+            Given the kind of client data most teams run through Cowork, this is the cleanest setup if you're bringing on team members or want bulletproof client confidentiality language in your contracts.
+          </p>
+        </div>
+      </div>
+    ),
   },
   {
     q: "What does each person on my team need before the session?",
@@ -29,7 +68,7 @@ const faqs = [
   },
   {
     q: "What happens after I book?",
-    a: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and Evan will email you 24 hours before with what to have ready.",
+    a: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and a session prep email shortly after with what to have ready.",
   },
 ];
 
