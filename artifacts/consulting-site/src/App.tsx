@@ -14,6 +14,7 @@ import ClaudeCoworkTraining from "@/pages/claude-cowork-training";
 import AiCodingTraining from "@/pages/ai-coding-training";
 import About from "@/pages/about";
 import IndustryPage from "@/pages/industry";
+import AiReport from "@/pages/ai-report";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/claude-cowork-training" component={ClaudeCoworkTraining} />
         <Route path="/ai-coding-training" component={AiCodingTraining} />
         <Route path="/about" component={About} />
+        <Route path="/ai-report" component={AiReport} />
         <Route path="/industries/:slug" component={IndustryPage} />
         <Route path="/success" component={Success} />
         <Route path="/cancel" component={Cancel} />
