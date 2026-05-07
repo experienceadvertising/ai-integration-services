@@ -16,6 +16,7 @@ const industryLinks = [
 const trainingLinks = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
+  { href: "/ai-report", label: "Free AI Report" },
   { href: "/about", label: "About Evan" },
 ];
 
