@@ -6,25 +6,35 @@ import { sendLeadNotification, sendWelcomeEmail } from "../lib/postmark";
 
 const router: IRouter = Router();
 
-// Fetch a URL's homepage and extract readable text. Returns null on any failure.
-async function fetchSiteText(rawUrl: string, log: { warn: (...args: any[]) => void }): Promise<string | null> {
+type Logger = { warn: (...args: any[]) => void; info?: (...args: any[]) => void };
+
+function isPrivateHost(host: string): boolean {
+  const h = host.toLowerCase();
+  return (
+    h === "localhost" ||
+    h.endsWith(".local") ||
+    /^(127\.|10\.|192\.168\.|169\.254\.|0\.)/.test(h) ||
+    /^172\.(1[6-9]|2\d|3[0-1])\./.test(h)
+  );
+}
+
+interface FetchedPage {
+  url: string;
+  title: string | null;
+  metaDescription: string | null;
+  body: string;
+}
+
+// Fetch one URL and return parsed page content, or null on failure
+async function fetchPage(rawUrl: string, log: Logger, timeoutMs = 7000): Promise<FetchedPage | null> {
   try {
     let url = rawUrl.trim();
     if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
     const parsed = new URL(url);
-    // Block private / loopback hosts to avoid SSRF
-    const host = parsed.hostname.toLowerCase();
-    if (
-      host === "localhost" ||
-      host.endsWith(".local") ||
-      /^(127\.|10\.|192\.168\.|169\.254\.|0\.)/.test(host) ||
-      /^172\.(1[6-9]|2\d|3[0-1])\./.test(host)
-    ) {
-      return null;
-    }
+    if (isPrivateHost(parsed.hostname)) return null;
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const resp = await fetch(parsed.toString(), {
       signal: controller.signal,
       redirect: "follow",
@@ -38,16 +48,13 @@ async function fetchSiteText(rawUrl: string, log: { warn: (...args: any[]) => vo
     const ctype = resp.headers.get("content-type") || "";
     if (!ctype.includes("text/html") && !ctype.includes("xml")) return null;
 
-    const html = (await resp.text()).slice(0, 250_000);
+    const html = (await resp.text()).slice(0, 300_000);
 
-    // Pull title + meta description first (usually the most signal-dense bits)
     const titleMatch = html.match(/<title[^>]*>([^<]*)<\/title>/i);
     const metaDescMatch = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
       || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
     const ogDescMatch = html.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i);
-    const ogTitleMatch = html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i);
 
-    // Strip scripts/styles/nav junk, then tags
     const stripped = html
       .replace(/<script[\s\S]*?<\/script>/gi, " ")
       .replace(/<style[\s\S]*?<\/style>/gi, " ")
@@ -65,20 +72,130 @@ async function fetchSiteText(rawUrl: string, log: { warn: (...args: any[]) => vo
       .replace(/\s+/g, " ")
       .trim();
 
-    const meta = [
-      titleMatch ? `Title: ${titleMatch[1].trim()}` : null,
-      (ogTitleMatch && (!titleMatch || ogTitleMatch[1].trim() !== titleMatch[1].trim())) ? `OG Title: ${ogTitleMatch[1].trim()}` : null,
-      metaDescMatch ? `Meta description: ${metaDescMatch[1].trim()}` : null,
-      ogDescMatch ? `OG description: ${ogDescMatch[1].trim()}` : null,
-    ].filter(Boolean).join("\n");
-
-    const body = stripped.slice(0, 4000);
-    const combined = [meta, body].filter(Boolean).join("\n\n").trim();
-    return combined.length > 40 ? combined : null;
+    return {
+      url: parsed.toString(),
+      title: titleMatch?.[1]?.trim() || null,
+      metaDescription: (metaDescMatch?.[1] || ogDescMatch?.[1])?.trim() || null,
+      body: stripped,
+    };
   } catch (err) {
-    log.warn({ err, url: rawUrl }, "fetchSiteText failed");
+    log.warn({ err, url: rawUrl }, "fetchPage failed");
     return null;
   }
+}
+
+// Discover candidate internal links from homepage HTML for "about / services / what we do" type pages
+function findInsightLinks(homepageUrl: string, homepageBody: string, rawHtml: string): string[] {
+  try {
+    const base = new URL(homepageUrl);
+    const seen = new Set<string>();
+    const candidates: string[] = [];
+    // Patterns that typically describe what a company does
+    const patterns = /href=["']([^"']+)["'][^>]*>\s*(?:[^<]*?(about(?:\s*us)?|what we do|services|solutions|practice|expertise|capabilities|approach|industries|who we serve)[^<]*?)\s*</gi;
+    let m: RegExpExecArray | null;
+    while ((m = patterns.exec(rawHtml)) !== null && candidates.length < 8) {
+      try {
+        const absolute = new URL(m[1], base).toString();
+        const abs = new URL(absolute);
+        // Same host only
+        if (abs.hostname.replace(/^www\./, "") !== base.hostname.replace(/^www\./, "")) continue;
+        // Skip files & fragments
+        if (/\.(pdf|jpg|jpeg|png|gif|svg|zip|mp4|css|js)(\?|$)/i.test(abs.pathname)) continue;
+        abs.hash = "";
+        const key = abs.toString();
+        if (seen.has(key) || key === homepageUrl) continue;
+        seen.add(key);
+        candidates.push(key);
+      } catch {}
+    }
+    return candidates.slice(0, 3);
+  } catch {
+    return [];
+  }
+}
+
+// Fetch homepage + up to 3 insight pages, returning a single rich excerpt for the model
+async function fetchSiteContext(rawUrl: string, log: Logger): Promise<string | null> {
+  // First fetch homepage with raw HTML kept for link discovery
+  let url = rawUrl.trim();
+  if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
+  let parsed: URL;
+  try { parsed = new URL(url); } catch { return null; }
+  if (isPrivateHost(parsed.hostname)) return null;
+
+  // Fetch homepage with raw HTML preserved
+  let homepageRawHtml = "";
+  let homepage: FetchedPage | null = null;
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 7000);
+    const resp = await fetch(parsed.toString(), {
+      signal: controller.signal,
+      redirect: "follow",
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; LearnCoworkBot/1.0; +https://learncowork.net)",
+        Accept: "text/html,application/xhtml+xml",
+      },
+    }).finally(() => clearTimeout(timeout));
+    if (!resp.ok) return null;
+    const ctype = resp.headers.get("content-type") || "";
+    if (!ctype.includes("text/html") && !ctype.includes("xml")) return null;
+    homepageRawHtml = (await resp.text()).slice(0, 300_000);
+    // Reuse fetchPage logic by reparsing
+    const titleMatch = homepageRawHtml.match(/<title[^>]*>([^<]*)<\/title>/i);
+    const metaDescMatch = homepageRawHtml.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
+      || homepageRawHtml.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
+    const ogDescMatch = homepageRawHtml.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i);
+    const stripped = homepageRawHtml
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
+      .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
+      .replace(/<header[\s\S]*?<\/header>/gi, " ")
+      .replace(/<footer[\s\S]*?<\/footer>/gi, " ")
+      .replace(/<nav[\s\S]*?<\/nav>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&[a-z]+;/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    homepage = {
+      url: parsed.toString(),
+      title: titleMatch?.[1]?.trim() || null,
+      metaDescription: (metaDescMatch?.[1] || ogDescMatch?.[1])?.trim() || null,
+      body: stripped,
+    };
+  } catch (err) {
+    log.warn({ err, url: rawUrl }, "homepage fetch failed");
+    return null;
+  }
+
+  if (!homepage) return null;
+
+  // Discover and fetch up to 3 insight pages in parallel
+  const insightUrls = findInsightLinks(homepage.url, homepage.body, homepageRawHtml);
+  const insightResults = await Promise.all(insightUrls.map((u) => fetchPage(u, log, 5000)));
+  const insightPages = insightResults.filter((p): p is FetchedPage => p !== null);
+
+  // Build a structured excerpt
+  const sections: string[] = [];
+  sections.push(`### Homepage (${homepage.url})`);
+  if (homepage.title) sections.push(`Title: ${homepage.title}`);
+  if (homepage.metaDescription) sections.push(`Meta description: ${homepage.metaDescription}`);
+  if (homepage.body) sections.push(`Body excerpt:\n${homepage.body.slice(0, 4500)}`);
+
+  for (const page of insightPages) {
+    sections.push(`\n### Page: ${page.url}`);
+    if (page.title) sections.push(`Title: ${page.title}`);
+    if (page.metaDescription) sections.push(`Meta description: ${page.metaDescription}`);
+    if (page.body) sections.push(`Body excerpt:\n${page.body.slice(0, 2500)}`);
+  }
+
+  const combined = sections.join("\n").trim();
+  return combined.length > 40 ? combined : null;
 }
 
 // POST /api/analyze — streaming AI report generation
@@ -96,7 +213,7 @@ router.post("/analyze", async (req, res) => {
   if (type === "business") {
     if (website) {
       contextLines.push(`Website: ${website}`);
-      siteExcerpt = await fetchSiteText(website, req.log);
+      siteExcerpt = await fetchSiteContext(website, req.log);
     }
     if (industry) contextLines.push(`Industry: ${industry}`);
     if (description) contextLines.push(`Additional context: ${description}`);
@@ -106,7 +223,7 @@ router.post("/analyze", async (req, res) => {
   }
 
   if (siteExcerpt) {
-    contextLines.push(`\n--- Live excerpt fetched from the website (use this as the primary source of truth for what the business actually does; do NOT guess from the URL/name alone) ---\n${siteExcerpt}\n--- end excerpt ---`);
+    contextLines.push(`\n--- Live content fetched from the website (homepage + key internal pages). Use this as the PRIMARY source of truth for what the business does, who they serve, and how they describe themselves. Do NOT guess from the URL or brand name. ---\n${siteExcerpt}\n--- end fetched content ---`);
   }
 
   const contextStr = contextLines.length > 0
@@ -115,39 +232,108 @@ router.post("/analyze", async (req, res) => {
       ? "A general business (no specific URL provided)"
       : "A professional individual";
 
-  const systemPrompt = `You are Evan Weber's AI productivity assistant. Evan is a 25-year digital marketing veteran who trains business teams and individuals on Claude Cowork — Anthropic's agentic AI tool that can operate a computer, automate multi-step workflows, and connect to apps via MCP.
+  const systemPrompt = `You are Evan Weber's senior AI productivity strategist. Evan is a 25-year digital marketing veteran who trains business teams and individuals on Claude Cowork — Anthropic's agentic AI tool that can operate a computer (clicks, types, reads screens), run multi-step workflows end-to-end, and connect to live apps via MCP (Gmail, Slack, Drive, GitHub, Salesforce, HubSpot, Notion, Linear, databases, browsers, internal tools, etc.).
 
-Your job is to generate a personalized, specific, enthusiastic report showing someone exactly how Claude Cowork could help them. The report should feel tailored, not generic. Use specific job functions and realistic tasks.
+Your job is to write a *strikingly specific*, *credible*, and *useful* free report — the kind that makes the reader say "this person actually understood my business." It should feel like a 30-minute consulting call, not a generic AI brochure.
 
-CRITICAL — how to identify what the business does:
-- If a "Live excerpt fetched from the website" block is provided, that is the SOLE source of truth for what the business does. Read it carefully (title, meta description, body) and base every assumption on it.
-- NEVER guess the industry from a domain name, brand name, or word association (e.g. don't assume "chartis" = finance, "apex" = fitness, "summit" = consulting). Names are misleading.
-- If no excerpt is provided AND no industry/description is given, do NOT invent a specific industry. Open with a neutral framing like "Based on the limited info shared..." and write generically applicable use cases.
-- If the excerpt and a user-provided industry/description conflict, trust the user-provided industry/description (they know their business).
+# How to ground your understanding
+- If a "Live content fetched from the website" block is provided, that is the SOLE source of truth for what the business does. Read every section (homepage + insight pages) carefully. Cite specifics: services they list, industries they serve, geographic markets, team size if mentioned, named methodologies, marquee clients.
+- NEVER guess industry from a domain name, brand name, or word association. Names are misleading ("chartis" is healthcare, not finance; "apex" could be anything). If you don't have data, say so.
+- If no fetched content AND no industry/description, open with "Based on the limited info shared..." and keep use cases broadly applicable. Do not invent specifics.
+- If the user-provided industry/description conflicts with the fetched content, trust the user.
+- Be conservative with claims. Don't invent statistics or quote made-up numbers. Time-saved estimates should be realistic ranges based on common workflows in their industry.
 
-Output ONLY raw HTML — do not wrap it in a code block, do not use backticks, do not add \`\`\`html or any other markdown syntax. Use only these tags: <h3>, <p>, <ul>, <li>, <strong>, <em>. No commentary before or after — just the HTML.`;
+# What Claude Cowork is actually good at (so use cases stay realistic)
+- Operating a browser end-to-end: pulling data from web apps, filling forms, downloading reports
+- Reading + drafting in spreadsheets, docs, slide decks
+- Synthesizing across many documents (PDFs, emails, transcripts, CRM notes)
+- Connecting to apps via MCP for real reads/writes (Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, internal SQL, etc.)
+- Producing structured outputs: comparison tables, briefs, scorecards, summaries, drafts
+- Bad at: anything requiring physical-world action, anything truly creative, anything with strict legal/compliance review without a human
+Anchor every workflow you suggest in one of those capabilities.
 
-  const userPrompt = type === "business"
-    ? `Generate a Claude Cowork opportunity report for this business:
+# Tone
+Direct, confident, generous, never salesy. Sound like a strategist who's already inside the business. Use specific job titles, real tools, realistic numbers. Avoid "leverage," "synergy," "unlock," "transform," "revolutionize." Avoid filler adjectives.
+
+# Output format
+Output ONLY raw HTML — no code fences, no \`\`\`html, no markdown. Use ONLY these tags:
+- <h3> for section headers
+- <h4> for sub-headers (e.g. workflow titles inside lists)
+- <p> for paragraphs
+- <ul> + <li> for lists
+- <strong> for bold (use sparingly for emphasis)
+- <em> for italic (use for inline callouts like time estimates)
+- <blockquote> for the "First-Hour Build" callout and the "Total time recovered" stat — these are highlighted boxes
+No other tags. No commentary before/after — just the HTML.`;
+
+  const businessPrompt = `Write a Claude Cowork opportunity report for this business:
 ${contextStr}
 
-Structure the report as follows:
-1. A short opening paragraph (2-3 sentences) naming the business/website and framing the opportunity.
-2. A section titled "5 Ways Claude Cowork Can Transform Your Business" with exactly 5 items. Each item should have a bold title and 2 sentences explaining the specific use case and the time/output impact.
-3. A "Biggest Quick Win" section — one specific workflow they could automate in their first session.
-4. A closing paragraph recommending either the 1-Hour Session ($300) or the 4-Hour Deep Dive ($1,000) based on complexity, and why.
+Use this exact structure:
 
-Be specific to their business type. Avoid generic AI platitudes.`
-    : `Generate a Claude Cowork opportunity report for this individual:
+1. <h3>What we see</h3>
+   <p>2–3 sentences. Confidently and specifically describe what the business does, who it serves, and the operational reality of running this kind of business. Use specifics from the fetched content (services, industries served, geography, scale signals). This paragraph proves you understand them.</p>
+
+2. <h3>Where time is leaking right now</h3>
+   <ul> with 3 <li> items. Each item is a realistic, specific operational bottleneck typical of this kind of business — the kind of thing a senior person at the firm would nod at. No fluff. One sentence per item.
+
+3. <h3>5 high-leverage Cowork workflows for your team</h3>
+   <ul> with exactly 5 <li> items. Each item must contain:
+   - <h4>Workflow name</h4> — concrete and specific (not "automate reports", but "Weekly client KPI deck assembly across HubSpot + GA4 + Looker exports")
+   - <p>2–3 sentences: what Claude Cowork actually does step-by-step, which apps/data sources it touches, and what the human now does instead.</p>
+   - <p><em>Estimated time saved: ~X hours/week per [role]</em></p> — pick a realistic range, not a wild claim.
+
+4. <blockquote>
+   <h3>Your first-hour build</h3>
+   <p>1 specific workflow from the 5 above that's the highest ROI to ship live in Evan's session. Name it, explain why it's first, and describe the deliverable they'd walk away with by the end of the hour.</p>
+   </blockquote>
+
+5. <blockquote>
+   <p><strong>Estimated weekly time recovered across the 5 workflows: ~X–Y hours per affected team member.</strong> <em>Conservative estimate based on typical workflows in your industry — actual savings vary.</em></p>
+   </blockquote>
+
+6. <h3>What Evan recommends</h3>
+   <p>2–3 sentences. Recommend either the <strong>1-Hour Session ($300)</strong> or the <strong>4-Hour Deep Dive ($1,000)</strong>. Choose based on workflow complexity and number of integrations needed. Explain WHY in concrete terms tied to their business — what they get done in that time. Don't hedge.</p>
+
+Hard rules:
+- Every workflow must be specific to THIS business — if you could swap the company name and the report still works, rewrite.
+- Never invent stats, awards, client names, or facts not in the fetched content.
+- No emojis, no horizontal rules, no preamble before the first <h3>.`;
+
+  const individualPrompt = `Write a Claude Cowork opportunity report for this individual:
 ${contextStr}
 
-Structure the report as follows:
-1. A short opening paragraph (2-3 sentences) acknowledging their role/situation and the specific opportunity Claude Cowork creates for them.
-2. A section titled "5 Ways Claude Cowork Can Change Your Day" with exactly 5 items. Each item should have a bold title and 2 sentences explaining the specific use case and real impact on their work.
-3. A "Start Here" section — one specific workflow they should automate first in their session.
-4. A closing paragraph recommending either the 1-Hour Session ($300) or the 4-Hour Deep Dive ($1,000) based on their needs, and why.
+Use this exact structure:
 
-Be specific to their role. Avoid generic AI platitudes.`;
+1. <h3>What we see</h3>
+   <p>2–3 sentences acknowledging their role and the operational reality of their day. Specific, not generic.</p>
+
+2. <h3>Where your time is going right now</h3>
+   <ul> with 3 <li> items — realistic time sinks for someone in their role. One sentence each.
+
+3. <h3>5 Cowork workflows that change your week</h3>
+   <ul> with exactly 5 <li> items. Each must contain:
+   - <h4>Workflow name</h4> — concrete and specific
+   - <p>2–3 sentences: exactly what Claude Cowork does, which tools it touches, what they do instead.</p>
+   - <p><em>Estimated time saved: ~X hours/week</em></p>
+
+4. <blockquote>
+   <h3>Start here</h3>
+   <p>1 workflow from the 5 above, the one to build first in Evan's session, and what they'd walk out with by the end of the hour.</p>
+   </blockquote>
+
+5. <blockquote>
+   <p><strong>Estimated weekly time recovered: ~X–Y hours.</strong> <em>Conservative estimate — actual savings vary with how integrated their tools are.</em></p>
+   </blockquote>
+
+6. <h3>What Evan recommends</h3>
+   <p>2–3 sentences. Recommend the <strong>1-Hour Session ($300)</strong> or <strong>4-Hour Deep Dive ($1,000)</strong> with concrete reasoning tied to their situation.</p>
+
+Hard rules:
+- Every workflow must be specific to THIS person's role/work — generic advice fails.
+- Never invent facts. No emojis, no horizontal rules, no preamble before the first <h3>.`;
+
+  const userPrompt = type === "business" ? businessPrompt : individualPrompt;
 
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
@@ -156,7 +342,7 @@ Be specific to their role. Avoid generic AI platitudes.`;
 
   try {
     const stream = anthropic.messages.stream({
-      model: "claude-haiku-4-5",
+      model: "claude-sonnet-4-5",
       max_tokens: 8192,
       system: systemPrompt,
       messages: [{ role: "user", content: userPrompt }],
