@@ -12,6 +12,12 @@ uri = "file://artifacts/consulting-site/public/og-image.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "j2tRjtmjOCDoY2OdPUSyi"
+uri = "file://artifacts/consulting-site/public/og-ai-report.png"
+type = "image"
+title = "AI report OG image v2"
+
 [[outputs]]
 id = "5RNiu6hePoOvcbdMdxazh"
 uri = "file://artifacts/consulting-site/public/og-image.png"

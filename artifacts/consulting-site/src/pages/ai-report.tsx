@@ -7,7 +7,7 @@ import SiteFooter from "@/components/site-footer";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
 
 const PAGE_URL = "https://learncowork.net/ai-report";
-const OG_IMAGE = "https://learncowork.net/og-evan.jpg";
+const OG_IMAGE = "https://learncowork.net/og-ai-report.png";
 
 const faqSchema = {
   "@context": "https://schema.org",
