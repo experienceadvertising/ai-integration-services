@@ -295,13 +295,21 @@ export default function CoworkAnalyzer({
                 className="bg-card border border-border rounded-2xl p-6 md:p-8"
               >
                 <div
-                  className="prose prose-sm md:prose max-w-none text-foreground
-                    [&>h3]:font-bold [&>h3]:text-lg [&>h3]:mt-6 [&>h3]:mb-2 [&>h3]:text-foreground
-                    [&>p]:text-muted-foreground [&>p]:leading-relaxed [&>p]:mb-3
-                    [&>ul]:space-y-2 [&>ul]:mb-4 [&>ul]:pl-0 [&>ul]:list-none
-                    [&_li]:text-muted-foreground [&_li]:leading-relaxed [&_li]:flex [&_li]:gap-2 [&_li]:items-start
+                  className="max-w-none text-foreground
+                    [&>h3]:font-bold [&>h3]:text-xl md:[&>h3]:text-2xl [&>h3]:mt-8 [&>h3]:mb-3 [&>h3]:text-foreground [&>h3]:tracking-tight [&>h3:first-child]:mt-0
+                    [&_h4]:font-semibold [&_h4]:text-base md:[&_h4]:text-lg [&_h4]:text-foreground [&_h4]:mt-1 [&_h4]:mb-1.5 [&_h4]:leading-snug
+                    [&>p]:text-muted-foreground [&>p]:leading-relaxed [&>p]:mb-3 [&>p]:text-[15px] md:[&>p]:text-base
+                    [&_li>p]:text-muted-foreground [&_li>p]:leading-relaxed [&_li>p]:mb-1 [&_li>p]:text-[15px] md:[&_li>p]:text-base
+                    [&>ul]:space-y-3 [&>ul]:mb-5 [&>ul]:pl-0 [&>ul]:list-none
+                    [&>ul>li]:relative [&>ul>li]:pl-7 [&>ul>li]:text-muted-foreground [&>ul>li]:leading-relaxed [&>ul>li]:text-[15px] md:[&>ul>li]:text-base
+                    [&>ul>li]:before:content-['▸'] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:top-0 [&>ul>li]:before:text-primary [&>ul>li]:before:font-bold
+                    [&>h3+ul>li]:bg-secondary/30 [&>h3+ul>li]:rounded-xl [&>h3+ul>li]:px-4 [&>h3+ul>li]:py-3 [&>h3+ul>li]:pl-10 [&>h3+ul>li]:border [&>h3+ul>li]:border-border/60
+                    [&>h3+ul>li]:before:left-4 [&>h3+ul>li]:before:top-3
                     [&_strong]:font-semibold [&_strong]:text-foreground
-                    [&_em]:italic"
+                    [&_em]:italic [&_em]:text-primary [&_em]:not-italic [&_em]:text-sm [&_em]:font-medium
+                    [&>blockquote]:my-6 [&>blockquote]:bg-primary/5 [&>blockquote]:border [&>blockquote]:border-primary/20 [&>blockquote]:rounded-2xl [&>blockquote]:p-5 md:[&>blockquote]:p-6
+                    [&>blockquote>h3]:text-primary [&>blockquote>h3]:mt-0 [&>blockquote>h3]:mb-2 [&>blockquote>h3]:text-lg md:[&>blockquote>h3]:text-xl
+                    [&>blockquote>p]:text-foreground [&>blockquote>p]:mb-0 [&>blockquote>p+p]:mt-2"
                   dangerouslySetInnerHTML={{ __html: phase === "streaming" ? streamBuffer : reportHtml }}
                 />
                 {phase === "streaming" && (
