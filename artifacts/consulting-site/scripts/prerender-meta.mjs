@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -131,12 +131,10 @@ function patch(html, route) {
 async function main() {
   const html = await readFile(SRC_INDEX, "utf8");
   for (const route of routes) {
-    const outDir = resolve(DIST, route.path);
-    await mkdir(outDir, { recursive: true });
-    const outFile = resolve(outDir, "index.html");
+    const outFile = resolve(DIST, `${route.path}.html`);
     const patched = patch(html, route);
     await writeFile(outFile, patched, "utf8");
-    console.log(`prerender-meta: wrote ${route.path}/index.html`);
+    console.log(`prerender-meta: wrote ${route.path}.html`);
   }
 }
 
