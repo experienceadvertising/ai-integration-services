@@ -23,6 +23,38 @@ publicDir = "artifacts/consulting-site/dist/public"
 serve = "static"
 
 [[services.production.rewrites]]
+from = "/ai-report"
+to = "/ai-report.html"
+
+[[services.production.rewrites]]
+from = "/ai-report/"
+to = "/ai-report.html"
+
+[[services.production.rewrites]]
+from = "/claude-cowork-training"
+to = "/claude-cowork-training.html"
+
+[[services.production.rewrites]]
+from = "/claude-cowork-training/"
+to = "/claude-cowork-training.html"
+
+[[services.production.rewrites]]
+from = "/ai-coding-training"
+to = "/ai-coding-training.html"
+
+[[services.production.rewrites]]
+from = "/ai-coding-training/"
+to = "/ai-coding-training.html"
+
+[[services.production.rewrites]]
+from = "/about"
+to = "/about.html"
+
+[[services.production.rewrites]]
+from = "/about/"
+to = "/about.html"
+
+[[services.production.rewrites]]
 from = "/*"
 to = "/index.html"
 
