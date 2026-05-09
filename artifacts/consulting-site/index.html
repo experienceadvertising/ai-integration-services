@@ -4,23 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#D4703A" />
 
-    <!-- Primary SEO -->
+    <!-- Per-route SEO (Helmet) is injected here at build time / on hydration.
+         Crawlers that take the first occurrence of a tag will pick the
+         route-specific Helmet output above the static fallback below. -->
+    <!--ssr-helmet-->
+
+    <!-- Static fallback SEO — used only when Helmet doesn't render
+         (e.g. unknown routes served via SPA fallback). -->
     <title>Claude Cowork Training for Teams | Evan Weber AI Trainer</title>
     <meta name="description" content="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session. Stripe checkout." />
     <meta name="author" content="Evan Weber" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#D4703A" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://learncowork.net/" />
 
-    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AI Training by Evan Weber" />
     <meta property="og:locale" content="en_US" />
@@ -33,7 +36,6 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="Claude Cowork Training by Evan Weber — learncowork.net" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@evanweber" />
     <meta name="twitter:title" content="Claude Cowork Training for Teams | Evan Weber" />
@@ -117,7 +119,7 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--ssr-outlet--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
