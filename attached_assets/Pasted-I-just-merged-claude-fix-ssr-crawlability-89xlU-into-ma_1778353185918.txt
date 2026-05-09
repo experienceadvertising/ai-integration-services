@@ -1,0 +1,53 @@
+I just merged claude/fix-ssr-crawlability-89xlU into main. Please deploy
+and verify. Specifics:
+
+1. Pull main and run a clean build:
+     pnpm install --frozen-lockfile
+     pnpm --filter @workspace/consulting-site run build
+     pnpm --filter @workspace/api-server run build
+   Expected: 15 prerendered HTML files in
+   artifacts/consulting-site/dist/public (5 top-level + industries/*.html).
+   Sanity-check that body content is actually rendered, not the empty SPA
+   shell:
+     grep -c '<div id="root"></div>' artifacts/consulting-site/dist/public/about.html
+   That must print 0.
+
+2. Smoke-test locally before deploying. From repo root:
+     PORT=8080 SERVE_SITE=true pnpm --filter @workspace/api-server run start
+   In another shell:
+     curl -sS -o /dev/null -w '%{http_code}\n' <http://localhost:8080/industries/law-firms>   # 200
+     curl -sS <http://localhost:8080/api/healthz>                                              # {"status":"ok"}
+     curl -sS <http://localhost:8080/about> | grep -ci 'evan weber'                            # >1
+   All three must pass before deploying. (You'll need the same secrets that
+   were already required: STRIPE_API_KEY, STRIPE_PUBLISHABLE_KEY,
+   DATABASE_URL, AI_INTEGRATIONS_ANTHROPIC_BASE_URL,
+   AI_INTEGRATIONS_ANTHROPIC_API_KEY, plus the Postmark token if used.)
+
+3. .replit now has [deployment].build and [deployment].run that build both
+   packages and start api-server. Leave deploymentTarget = "autoscale".
+   In the Replit deploy UI, set autoscale min=max=1 instance — the
+   drip-scheduler cron and recent-bookings cache use in-memory state and
+   will misbehave on multi-instance.
+
+4. Deploy.
+
+5. Post-deploy verification against <https://learncowork.net:>
+     curl -A 'GPTBot/1.0' <https://learncowork.net/claude-cowork-training> | grep -ci 'training'   # >1
+     curl -A 'GPTBot/1.0' <https://learncowork.net/industries/law-firms>   | grep -ci 'law'        # >1
+     curl -A 'Googlebot/2.1' <https://learncowork.net/about>               | grep -ci 'evan weber' # >1
+     curl -sS <https://learncowork.net/robots.txt>    | grep -A1 'GPTBot'                          # "Allow: /"
+     curl -sS <https://learncowork.net/sitemap.xml>   | grep -c '<loc>'                            # 15
+     curl -sS <https://learncowork.net/api/healthz>                                                # {"status":"ok"}
+   If /api/healthz fails, DO NOT consider the deploy successful — Stripe
+   checkout depends on the same routing.
+
+6. Rollback path if anything breaks: set SERVE_SITE=false in deployment
+   secrets to instantly disable site-serving and fall back to api-only
+   mode (no redeploy needed), then revert the merge commit on main.
+
+Do NOT:
+  - Use npm or yarn (pnpm workspace)
+  - Change React from 19.1.0 (Expo pin)
+  - Disable minimumReleaseAge in pnpm-workspace.yaml
+  - Switch deploymentTarget to "static"
+  - Skip the min=max=1 autoscale setting
