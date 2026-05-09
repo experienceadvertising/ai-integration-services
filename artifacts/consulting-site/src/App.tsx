@@ -1,6 +1,6 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/scroll-to-top";
@@ -18,7 +18,7 @@ import AiReport from "@/pages/ai-report";
 
 const queryClient = new QueryClient();
 
-function Router() {
+function Routes() {
   return (
     <>
       <ScrollToTop />
@@ -39,13 +39,23 @@ function Router() {
   );
 }
 
-function App() {
+export interface AppProps {
+  ssrPath?: string;
+  helmetContext?: { helmet?: HelmetServerState };
+}
+
+export default function App({ ssrPath, helmetContext }: AppProps = {}) {
+  const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+  // wouter v3 supports `ssrPath` on Router; the public type doesn't include
+  // it yet, so we widen via spread.
+  const routerProps = { base: baseUrl, ...(ssrPath ? { ssrPath } : {}) };
+
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
+          <WouterRouter {...routerProps}>
+            <Routes />
           </WouterRouter>
           <Toaster />
         </TooltipProvider>
@@ -53,5 +63,3 @@ function App() {
     </HelmetProvider>
   );
 }
-
-export default App;
