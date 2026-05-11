@@ -55,6 +55,86 @@ from = "/about/"
 to = "/about.html"
 
 [[services.production.rewrites]]
+from = "/industries/marketing-agencies"
+to = "/industries/marketing-agencies.html"
+
+[[services.production.rewrites]]
+from = "/industries/marketing-agencies/"
+to = "/industries/marketing-agencies.html"
+
+[[services.production.rewrites]]
+from = "/industries/law-firms"
+to = "/industries/law-firms.html"
+
+[[services.production.rewrites]]
+from = "/industries/law-firms/"
+to = "/industries/law-firms.html"
+
+[[services.production.rewrites]]
+from = "/industries/real-estate"
+to = "/industries/real-estate.html"
+
+[[services.production.rewrites]]
+from = "/industries/real-estate/"
+to = "/industries/real-estate.html"
+
+[[services.production.rewrites]]
+from = "/industries/financial-services"
+to = "/industries/financial-services.html"
+
+[[services.production.rewrites]]
+from = "/industries/financial-services/"
+to = "/industries/financial-services.html"
+
+[[services.production.rewrites]]
+from = "/industries/healthcare"
+to = "/industries/healthcare.html"
+
+[[services.production.rewrites]]
+from = "/industries/healthcare/"
+to = "/industries/healthcare.html"
+
+[[services.production.rewrites]]
+from = "/industries/ecommerce"
+to = "/industries/ecommerce.html"
+
+[[services.production.rewrites]]
+from = "/industries/ecommerce/"
+to = "/industries/ecommerce.html"
+
+[[services.production.rewrites]]
+from = "/industries/consulting"
+to = "/industries/consulting.html"
+
+[[services.production.rewrites]]
+from = "/industries/consulting/"
+to = "/industries/consulting.html"
+
+[[services.production.rewrites]]
+from = "/industries/hr-recruiting"
+to = "/industries/hr-recruiting.html"
+
+[[services.production.rewrites]]
+from = "/industries/hr-recruiting/"
+to = "/industries/hr-recruiting.html"
+
+[[services.production.rewrites]]
+from = "/industries/insurance"
+to = "/industries/insurance.html"
+
+[[services.production.rewrites]]
+from = "/industries/insurance/"
+to = "/industries/insurance.html"
+
+[[services.production.rewrites]]
+from = "/industries/nonprofits"
+to = "/industries/nonprofits.html"
+
+[[services.production.rewrites]]
+from = "/industries/nonprofits/"
+to = "/industries/nonprofits.html"
+
+[[services.production.rewrites]]
 from = "/*"
 to = "/index.html"
 
