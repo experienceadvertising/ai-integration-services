@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useListPackages, useCreateCheckoutSession } from "@workspace/api-client-react";
@@ -20,19 +21,18 @@ import BookingTrustRow from "@/components/booking-trust-row";
 import HomeFaq from "@/components/home-faq";
 import RecentBookingsBadge from "@/components/recent-bookings-badge";
 
-function getInitialIndustry(): { name: string; slug: string } | null {
-  if (typeof window === "undefined") return null;
-  const slug = new URLSearchParams(window.location.search).get("industry");
-  if (!slug) return null;
-  const found = industries.find((i) => i.slug === slug);
-  return found ? { name: found.name, slug: found.slug } : null;
-}
-
 export default function Home() {
   const { data: packagesData, isLoading, error } = useListPackages();
   const createCheckout = useCreateCheckoutSession();
   const { toast } = useToast();
-  const initialIndustry = getInitialIndustry();
+  const [initialIndustry, setInitialIndustry] = useState<{ name: string; slug: string } | null>(null);
+
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get("industry");
+    if (!slug) return;
+    const found = industries.find((i) => i.slug === slug);
+    if (found) setInitialIndustry({ name: found.name, slug: found.slug });
+  }, []);
 
   const handleCheckout = (priceId: string, hours: number) => {
     createCheckout.mutate(
