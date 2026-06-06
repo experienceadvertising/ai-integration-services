@@ -13,7 +13,7 @@ export default function About() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="About Evan Weber, AI Trainer and Digital Marketing Veteran"
-        description="25 years in digital marketing. Founder of Experience Advertising. Daily Claude Cowork and Claude Code user. 400+ companies helped. 100+ LinkedIn recommendations. Meet your AI trainer."
+        description="25 years in digital marketing, founder of Experience Advertising, and daily Claude Cowork user. 400+ companies helped. Meet your AI productivity trainer."
         canonical="https://learncowork.net/about"
       />
       <SiteNav />

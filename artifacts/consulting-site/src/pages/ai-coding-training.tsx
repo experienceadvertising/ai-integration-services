@@ -11,7 +11,7 @@ export default function AiCodingTraining() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Vibe Coding Training: Claude Code, Replit & Codex | Evan Weber"
-        description="Live vibe coding training with Evan Weber. Learn Claude Code, Replit, Codex, and GitHub Copilot from someone who has shipped 20+ real projects with these tools. Teams and individuals."
+        description="Live vibe coding training with Evan Weber — Claude Code, Replit, Codex, and GitHub Copilot. Learn from someone who has shipped 20+ real AI-assisted projects. Teams and individuals."
         canonical="https://learncowork.net/ai-coding-training"
         schema={{
           "@context": "https://schema.org",

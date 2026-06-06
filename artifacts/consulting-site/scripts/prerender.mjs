@@ -102,13 +102,22 @@ for (const url of routes) {
   }
 
   const { head: headInjection, body } = hoistHeadTags(rendered.html);
-  const out = shell
+  let out = shell
     .replace("<!--ssr-helmet-->", headInjection)
     .replace("<!--ssr-outlet-->", body);
 
   if (out === shell) {
     throw new Error(
       `prerender: shell placeholders missing — check index.html for <!--ssr-helmet--> and <!--ssr-outlet--> (route=${url})`,
+    );
+  }
+
+  // Remove the fallback SEO block when route-specific tags were injected,
+  // preventing duplicate title/description/OG/Twitter tags in prerendered HTML.
+  if (headInjection) {
+    out = out.replace(
+      /\s*<!--fallback-seo-start-->[\s\S]*?<!--fallback-seo-end-->/,
+      "",
     );
   }
 
