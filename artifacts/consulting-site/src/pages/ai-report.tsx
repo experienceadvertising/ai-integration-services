@@ -60,8 +60,8 @@ export default function AiReport() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Free AI Opportunity Report — See exactly how Claude Cowork could save your team 10+ hours a week"
-        description="Get a personalized, AI-generated report in 30 seconds. We analyze your actual website and show you 5 high-leverage Claude Cowork workflows specific to your business — with realistic time-saved estimates. Free, no credit card."
+        title="Free Claude Cowork Opportunity Report for Your Business"
+        description="Enter your website and get 5 personalized Claude Cowork workflows in 30 seconds — with realistic time-saved estimates based on your actual business. Free, no credit card required."
         canonical={PAGE_URL}
         ogImage={OG_IMAGE}
         keywords="free AI report, AI productivity audit, Claude Cowork report, AI workflow analysis, AI opportunity report, business AI assessment, Claude AI audit, AI use case report, Evan Weber"
