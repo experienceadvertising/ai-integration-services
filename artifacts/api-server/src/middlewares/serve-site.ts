@@ -53,12 +53,21 @@ export function mountSite(app: Express): void {
     }),
   );
 
+  // Routes that intentionally require SPA shell delivery (not prerendered).
+  // /success and /cancel are post-Stripe redirect targets blocked in robots.txt;
+  // success.tsx reads window.location at render time so they cannot be prerendered.
+  const CLIENT_ONLY_PATHS = new Set(["/success", "/cancel"]);
+
   const spaFallback: RequestHandler = (req, res, next) => {
     if (req.method !== "GET" && req.method !== "HEAD") return next();
     if (req.path.startsWith("/api/")) return next();
     const indexHtml = path.join(siteDir, "index.html");
+    const isClientOnly = CLIENT_ONLY_PATHS.has(req.path);
+    // Serve the SPA shell with a real 404 status for unknown paths so that
+    // crawlers and bots receive the correct HTTP response code. Client-only
+    // routes that intentionally skip prerendering still get a 200.
     res
-      .status(200)
+      .status(isClientOnly ? 200 : 404)
       .type("html")
       .setHeader("Cache-Control", "public, max-age=0, must-revalidate");
     res.sendFile(indexHtml);
