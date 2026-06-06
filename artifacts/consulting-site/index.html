@@ -6,20 +6,15 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="theme-color" content="#D4703A" />
 
-    <!-- Per-route SEO (Helmet) is injected here at build time / on hydration.
-         Crawlers that take the first occurrence of a tag will pick the
-         route-specific Helmet output above the static fallback below. -->
+    <!-- Per-route SEO tags are injected here during prerender and on client hydration. -->
     <!--ssr-helmet-->
 
-    <!-- Static fallback SEO — used only when Helmet doesn't render
-         (e.g. unknown routes served via SPA fallback). -->
+    <!--fallback-seo-start-->
+    <!-- Static fallback SEO — stripped from prerendered pages; only active for
+         unknown routes served via SPA fallback (e.g. /success, /cancel). -->
     <title>Claude Cowork Training for Teams | Evan Weber AI Trainer</title>
-    <meta name="description" content="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session. Stripe checkout." />
+    <meta name="description" content="Live Claude Cowork training for business teams by Evan Weber — 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session." />
     <meta name="author" content="Evan Weber" />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AI Training by Evan Weber" />
@@ -34,10 +29,15 @@
     <meta property="og:image:alt" content="Claude Cowork Training by Evan Weber — learncowork.net" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@evanweber" />
+    <meta name="twitter:site" content="@learncowork" />
     <meta name="twitter:title" content="Claude Cowork Training for Teams | Evan Weber" />
     <meta name="twitter:description" content="Live Claude Cowork training for business teams. 25-year digital marketing veteran. Book a session today." />
     <meta name="twitter:image" content="https://learncowork.net/og-image.png" />
+    <!--fallback-seo-end-->
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
 
     <!-- Async font loading (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
