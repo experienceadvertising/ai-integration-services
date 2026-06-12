@@ -190,6 +190,7 @@ export default function JobDescriptionAnalyzer() {
         title="Job Description Analyzer — What Can Claude Cowork Take Off This Role's Plate?"
         description="Paste any job description and get a free AI breakdown: which tasks Claude Cowork can run end-to-end, which it accelerates, and which stay human. Instant, no credit card."
         canonical={PAGE_URL}
+        ogImage="https://learncowork.net/og-jd-analyzer.png"
         keywords="job description analyzer, AI job analysis, can AI do my job, Claude Cowork job tasks, AI task automation by role, which tasks can AI automate, Claude AI for my job"
         schema={faqSchema}
       />

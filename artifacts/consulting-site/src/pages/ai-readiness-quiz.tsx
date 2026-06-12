@@ -229,6 +229,7 @@ export default function AiReadinessQuiz() {
         title="AI Readiness Quiz — Is Your Team Ready for Claude Cowork?"
         description="Free 2-minute quiz: score your team's AI readiness across 8 dimensions — repetitive work, data access, leadership support, and more. Instant grade with specific next steps."
         canonical={PAGE_URL}
+        ogImage="https://learncowork.net/og-quiz.png"
         keywords="AI readiness quiz, AI readiness assessment, is my team ready for AI, AI adoption assessment, Claude Cowork readiness, business AI quiz, AI maturity assessment"
         schema={faqSchema}
       />

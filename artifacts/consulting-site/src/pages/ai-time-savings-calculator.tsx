@@ -108,6 +108,7 @@ export default function AiTimeSavingsCalculator() {
         title="AI Time-Savings Calculator — How Many Hours Could Claude Cowork Save You?"
         description="Free calculator: estimate how many hours and dollars Claude Cowork could reclaim from your week across writing, research, email, admin, and meeting prep. Conservative, role-based estimates."
         canonical={PAGE_URL}
+        ogImage="https://learncowork.net/og-calculator.png"
         keywords="AI time savings calculator, AI ROI calculator, Claude Cowork ROI, AI productivity calculator, hours saved with AI, AI automation savings, business AI calculator"
         schema={faqSchema}
       />
