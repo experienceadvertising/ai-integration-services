@@ -9,12 +9,13 @@ import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
 import { industries } from "@/data/industries";
+import { roles } from "@/data/roles";
 import SiteFooter from "@/components/site-footer";
 // @ts-ignore
 import heroBg from "../assets/hero-bg.png";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck } from "lucide-react";
 import { CALENDLY_INTRO } from "@/lib/booking-links";
 import ComparisonTable from "@/components/comparison-table";
 import BookingTrustRow from "@/components/booking-trust-row";
@@ -468,6 +469,49 @@ export default function Home() {
               <Link key={ind.slug} href={`/industries/${ind.slug}`}>
                 <div className="group border border-border rounded-xl px-4 py-4 text-center hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer">
                   <div className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">{ind.name}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10 mb-5">
+            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">Or browse by role</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {roles.map((r) => (
+              <Link key={r.slug} href={`/roles/${r.slug}`}>
+                <span className="inline-block px-4 py-2 rounded-full border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-primary/5 transition-colors cursor-pointer">
+                  {r.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Tools Section */}
+      <section id="tools" className="py-14 md:py-20 px-5 md:px-12 border-b border-border bg-secondary/30">
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Free tools to see what Claude can do for you</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">No credit card, no sales call. Each one takes a couple of minutes and gives you something concrete.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { href: "/ai-report", icon: Sparkles, title: "Free AI Report", body: "Enter your website, get 5 personalized Claude Cowork workflows in 30 seconds." },
+              { href: "/job-description-analyzer", icon: FileSearch, title: "Job Description Analyzer", body: "Paste any JD and see which tasks Claude runs end-to-end, accelerates, or leaves human." },
+              { href: "/ai-time-savings-calculator", icon: Calculator, title: "Time-Savings Calculator", body: "Slide in your real hours and see what Claude could reclaim per week and per year." },
+              { href: "/ai-readiness-quiz", icon: ClipboardCheck, title: "AI Readiness Quiz", body: "Eight questions, instant grade — find out if your team is set up for AI to actually stick." },
+            ].map((tool) => (
+              <Link key={tool.href} href={tool.href}>
+                <div className="group h-full bg-background border border-border rounded-2xl p-6 hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer flex flex-col">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <tool.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-base mb-2 group-hover:text-primary transition-colors">{tool.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{tool.body}</p>
+                  <div className="flex items-center gap-1.5 text-sm font-medium text-primary mt-4">
+                    Try it free <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
               </Link>
             ))}

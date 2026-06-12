@@ -13,11 +13,30 @@ const industryLinks = [
   { slug: "nonprofits", label: "Nonprofits" },
 ];
 
+const roleLinks = [
+  { slug: "marketing-managers", label: "Marketing Managers" },
+  { slug: "sales-teams", label: "Sales Reps & AEs" },
+  { slug: "recruiters", label: "Recruiters" },
+  { slug: "paralegals", label: "Paralegals" },
+  { slug: "financial-analysts", label: "Financial Analysts" },
+  { slug: "executive-assistants", label: "Executive Assistants" },
+  { slug: "project-managers", label: "Project Managers" },
+  { slug: "customer-support-teams", label: "Customer Support" },
+  { slug: "accountants", label: "Accountants" },
+  { slug: "operations-managers", label: "Operations Managers" },
+];
+
 const trainingLinks = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
-  { href: "/ai-report", label: "Free AI Report" },
   { href: "/about", label: "About Evan" },
+];
+
+const toolLinks = [
+  { href: "/ai-report", label: "Free AI Report" },
+  { href: "/job-description-analyzer", label: "Job Description Analyzer" },
+  { href: "/ai-time-savings-calculator", label: "Time-Savings Calculator" },
+  { href: "/ai-readiness-quiz", label: "AI Readiness Quiz" },
 ];
 
 export default function SiteFooter() {
@@ -40,7 +59,7 @@ export default function SiteFooter() {
             </p>
           </div>
 
-          {/* Training */}
+          {/* Training + Free Tools */}
           <div>
             <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-4">Training</div>
             <ul className="space-y-2.5">
@@ -61,13 +80,25 @@ export default function SiteFooter() {
                 </Link>
               </li>
             </ul>
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-4 mt-8">Free Tools</div>
+            <ul className="space-y-2.5">
+              {toolLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href}>
+                    <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                      {l.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Industries col 1 */}
+          {/* Industries */}
           <div>
             <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-4">Industries</div>
             <ul className="space-y-2.5">
-              {industryLinks.slice(0, 5).map((l) => (
+              {industryLinks.map((l) => (
                 <li key={l.slug}>
                   <Link href={`/industries/${l.slug}`}>
                     <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
@@ -79,15 +110,13 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Industries col 2 */}
+          {/* Roles */}
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-4 opacity-0 select-none">
-              Industries
-            </div>
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-4">For Your Role</div>
             <ul className="space-y-2.5">
-              {industryLinks.slice(5).map((l) => (
+              {roleLinks.map((l) => (
                 <li key={l.slug}>
-                  <Link href={`/industries/${l.slug}`}>
+                  <Link href={`/roles/${l.slug}`}>
                     <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                       {l.label}
                     </span>
