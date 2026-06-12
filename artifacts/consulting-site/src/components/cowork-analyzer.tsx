@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Sparkles, ArrowRight, Building2, User, Loader2, RotateCcw } from "lucide-react";
+import { Sparkles, ArrowRight, Building2, User, Loader2, RotateCcw, Link2, Check } from "lucide-react";
 
 type UserType = "business" | "individual";
 type Phase = "form" | "streaming" | "done" | "error";
@@ -11,6 +11,7 @@ const BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, "");
 interface Props {
   defaultUserType?: UserType;
   defaultIndustry?: string;
+  defaultDescription?: string;
   headline?: React.ReactNode;
   subheadline?: React.ReactNode;
   variant?: "section" | "embedded";
@@ -19,6 +20,7 @@ interface Props {
 export default function CoworkAnalyzer({
   defaultUserType = "business",
   defaultIndustry = "",
+  defaultDescription = "",
   headline,
   subheadline,
   variant = "section",
@@ -28,13 +30,15 @@ export default function CoworkAnalyzer({
   const [reportHtml, setReportHtml] = useState("");
   const [streamBuffer, setStreamBuffer] = useState("");
   const [error, setError] = useState("");
+  const [shareId, setShareId] = useState("");
+  const [copied, setCopied] = useState(false);
 
   // Form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [industry, setIndustry] = useState(defaultIndustry);
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState(defaultDescription);
 
   const reportRef = useRef<HTMLDivElement>(null);
 
@@ -103,6 +107,24 @@ export default function CoworkAnalyzer({
                   reportHtml: fullReport,
                 }),
               }).catch(() => {});
+
+              // Persist the report so the user gets a shareable /report/:id link
+              fetch(`${BASE_URL}/api/reports`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  type: userType,
+                  website: website || undefined,
+                  industry: industry || undefined,
+                  description: description || undefined,
+                  reportHtml: cleaned,
+                }),
+              })
+                .then((r) => (r.ok ? r.json() : null))
+                .then((data) => {
+                  if (data?.id) setShareId(data.id);
+                })
+                .catch(() => {});
             }
           } catch (err: any) {
             if (err?.message) {
@@ -123,6 +145,16 @@ export default function CoworkAnalyzer({
     setStreamBuffer("");
     setReportHtml("");
     setError("");
+    setShareId("");
+    setCopied(false);
+  };
+
+  const copyShareLink = () => {
+    const url = `${window.location.origin}/report/${shareId}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }).catch(() => {});
   };
 
   const isEmbedded = variant === "embedded";
@@ -341,6 +373,15 @@ export default function CoworkAnalyzer({
                   >
                     <RotateCcw className="w-4 h-4" /> Run another report
                   </button>
+                  {shareId && (
+                    <button
+                      onClick={copyShareLink}
+                      className="sm:col-span-2 flex items-center justify-center gap-2 border border-primary/30 bg-primary/5 rounded-xl py-3 px-6 text-sm text-primary font-medium hover:bg-primary/10 transition-colors"
+                    >
+                      {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
+                      {copied ? "Link copied — share it with your team" : "Copy a shareable link to this report"}
+                    </button>
+                  )}
                 </motion.div>
               )}
             </motion.div>
