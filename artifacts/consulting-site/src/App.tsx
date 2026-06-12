@@ -15,6 +15,11 @@ import AiCodingTraining from "@/pages/ai-coding-training";
 import About from "@/pages/about";
 import IndustryPage from "@/pages/industry";
 import AiReport from "@/pages/ai-report";
+import RolePage from "@/pages/role";
+import JobDescriptionAnalyzer from "@/pages/job-description-analyzer";
+import AiTimeSavingsCalculator from "@/pages/ai-time-savings-calculator";
+import AiReadinessQuiz from "@/pages/ai-readiness-quiz";
+import ReportPage from "@/pages/report";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +33,12 @@ function Routes() {
         <Route path="/ai-coding-training" component={AiCodingTraining} />
         <Route path="/about" component={About} />
         <Route path="/ai-report" component={AiReport} />
+        <Route path="/job-description-analyzer" component={JobDescriptionAnalyzer} />
+        <Route path="/ai-time-savings-calculator" component={AiTimeSavingsCalculator} />
+        <Route path="/ai-readiness-quiz" component={AiReadinessQuiz} />
         <Route path="/industries/:slug" component={IndustryPage} />
+        <Route path="/roles/:slug" component={RolePage} />
+        <Route path="/report/:id" component={ReportPage} />
         <Route path="/success" component={Success} />
         <Route path="/cancel" component={Cancel} />
         <Route component={NotFound} />

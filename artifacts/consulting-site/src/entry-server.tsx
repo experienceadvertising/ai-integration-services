@@ -2,6 +2,7 @@ import { renderToString } from "react-dom/server";
 import type { HelmetServerState } from "react-helmet-async";
 import App from "./App";
 import { industries } from "./data/industries";
+import { roles } from "./data/roles";
 
 export interface RenderResult {
   html: string;
@@ -14,4 +15,4 @@ export function render(url: string): RenderResult {
   return { html, helmet: helmetContext.helmet };
 }
 
-export { industries };
+export { industries, roles };

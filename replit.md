@@ -23,7 +23,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - Preview path: `/`
 - Landing page for AI consulting and training services by Evan Weber
 - Uses `useListPackages` and `useCreateCheckoutSession` hooks from `@workspace/api-client-react`
-- Routes: `/`, `/claude-cowork-training`, `/ai-coding-training`, `/about`, `/success`, `/cancel`, `/industries/:slug`
+- Routes: `/`, `/claude-cowork-training`, `/ai-coding-training`, `/about`, `/success`, `/cancel`, `/industries/:slug`, `/roles/:slug`, `/job-description-analyzer`, `/ai-time-savings-calculator`, `/ai-readiness-quiz`, `/report/:id`
 - SEO: react-helmet-async with HelmetProvider wrapping App; reusable `SEO` component in `src/components/seo.tsx`
 - Nav: sticky `SiteNav` component in `src/components/site-nav.tsx` with active route highlighting
 - Static SEO files in `public/`: `robots.txt` (blocks GPTBot + Google-Extended), `sitemap.xml`, `og-evan.jpg`, `favicon.svg`
@@ -46,14 +46,25 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pages/industry.tsx` rendered at `/industries/:slug`; data in `src/data/industries.ts`
 - Inline `CoworkAnalyzer` between use cases and quick win section, pre-filled with industry name
 
+#### Role Pages & Free Tools (traffic/SEO)
+- `pages/role.tsx` at `/roles/:slug`; data in `src/data/roles.ts` (10 job functions, each with use cases + 5 gated playbook prompts)
+- `role-playbook.tsx` — email-gated prompt playbook on each role page; captures lead with `type: "playbook"`
+- `pages/job-description-analyzer.tsx` — paste a JD, streams a task breakdown via `/api/analyze` with `type: "job-description"`
+- `pages/ai-time-savings-calculator.tsx` — client-side sliders; optional "email me this" lead capture (`type: "calculator"`)
+- `pages/ai-readiness-quiz.tsx` — 8-question scored quiz with grade bands; optional lead capture (`type: "quiz"`)
+- `pages/report.tsx` at `/report/:id` — shareable saved reports (noindex; `/report/` disallowed in robots.txt)
+- `CoworkAnalyzer` accepts `defaultDescription` and shows a "copy shareable link" button after generation (saves via `POST /api/reports`)
+- Tool/role leads skip the "your report is ready" welcome email (only sent when `reportHtml` present)
+
 ### api-server
 - Preview path: `/api`
 - `GET /api/packages` — fetches packages directly from Stripe API
 - `POST /api/checkout` — creates a Stripe checkout session
 - `GET /api/stats/recent-bookings` — count of paid Stripe sessions in the last 30 days; in-memory 5-min cache; paginates Stripe `has_more` (50-page safety cap)
 - `POST /api/intake` — receives 3-step intake form from `/success` page and emails Evan
-- `POST /api/analyze` — streams the AI cowork analyzer report
-- `POST /api/leads` — captures email leads (used by analyzer + lead magnets)
+- `POST /api/analyze` — streams the AI cowork analyzer report (`type: business | individual | job-description`)
+- `POST /api/leads` — captures email leads (used by analyzer + lead magnets; tool types: `playbook`, `calculator`, `quiz`, `job-description`)
+- `POST /api/reports` / `GET /api/reports/:id` — persist + fetch shareable reports (UUID slug, `reports` table)
 - Uses `getUncachableStripeClient()` from `stripeClient.ts`
 
 #### Email Drip / Reminders (`lib/drip-scheduler.ts`)

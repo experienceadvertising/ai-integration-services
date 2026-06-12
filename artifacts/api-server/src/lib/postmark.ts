@@ -49,7 +49,15 @@ export async function sendLeadNotification(lead: {
       <table style="width: 100%; border-collapse: collapse;">
         <tr><td style="padding: 8px 0; color: #666; width: 130px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${lead.name || "Not provided"}</td></tr>
         <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
-        <tr><td style="padding: 8px 0; color: #666;">Type</td><td style="padding: 8px 0;">${lead.type === "business" ? "Business" : "Individual"}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">Type</td><td style="padding: 8px 0;">${
+          lead.type === "business" ? "Business"
+          : lead.type === "individual" ? "Individual"
+          : lead.type === "job-description" ? "Job Description Analyzer"
+          : lead.type === "playbook" ? "Role Playbook Download"
+          : lead.type === "calculator" ? "Time-Savings Calculator"
+          : lead.type === "quiz" ? "AI Readiness Quiz"
+          : lead.type
+        }</td></tr>
         ${lead.website ? `<tr><td style="padding: 8px 0; color: #666;">Website</td><td style="padding: 8px 0;"><a href="${lead.website}">${lead.website}</a></td></tr>` : ""}
         ${lead.industry ? `<tr><td style="padding: 8px 0; color: #666;">Industry</td><td style="padding: 8px 0;">${lead.industry}</td></tr>` : ""}
         ${lead.description ? `<tr><td style="padding: 8px 0; color: #666;">Description</td><td style="padding: 8px 0;">${lead.description}</td></tr>` : ""}
