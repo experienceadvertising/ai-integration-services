@@ -202,8 +202,13 @@ async function fetchSiteContext(rawUrl: string, log: Logger): Promise<string | n
 router.post("/analyze", async (req, res) => {
   const { type, website, description, industry } = req.body;
 
-  if (!type || (type !== "business" && type !== "individual")) {
-    res.status(400).json({ error: "type must be 'business' or 'individual'" });
+  if (!type || (type !== "business" && type !== "individual" && type !== "job-description")) {
+    res.status(400).json({ error: "type must be 'business', 'individual', or 'job-description'" });
+    return;
+  }
+
+  if (type === "job-description" && (!description || typeof description !== "string" || description.trim().length < 40)) {
+    res.status(400).json({ error: "Paste a job description (at least a few sentences) to analyze." });
     return;
   }
 
@@ -217,6 +222,9 @@ router.post("/analyze", async (req, res) => {
     }
     if (industry) contextLines.push(`Industry: ${industry}`);
     if (description) contextLines.push(`Additional context: ${description}`);
+  } else if (type === "job-description") {
+    if (industry) contextLines.push(`Industry / field: ${industry}`);
+    contextLines.push(`--- Job description (verbatim, pasted by the user) ---\n${description.slice(0, 20_000)}\n--- end job description ---`);
   } else {
     if (description) contextLines.push(`Role / what they do: ${description}`);
     if (industry) contextLines.push(`Industry / field: ${industry}`);
@@ -333,7 +341,43 @@ Hard rules:
 - Every workflow must be specific to THIS person's role/work — generic advice fails.
 - Never invent facts. No emojis, no horizontal rules, no preamble before the first <h3>.`;
 
-  const userPrompt = type === "business" ? businessPrompt : individualPrompt;
+  const jobDescriptionPrompt = `A user pasted a job description. Analyze it and write a "Claude Cowork task breakdown" report that splits the role's responsibilities into what Claude Cowork can take over, what it can assist with, and what stays human.
+
+${contextStr}
+
+Use this exact structure:
+
+1. <h3>The role at a glance</h3>
+   <p>2–3 sentences. Name the role and summarize what this job actually consists of operationally, based ONLY on the pasted description — the recurring outputs, the tools mentioned, who the role serves. Prove you read it.</p>
+
+2. <h3>Tasks Claude Cowork can run end-to-end</h3>
+   <ul> with 3–5 <li> items. Each item must contain:
+   - <h4>Task name</h4> — pulled or paraphrased from an actual responsibility in the job description
+   - <p>1–2 sentences: how Claude Cowork executes it (which capability: browser operation, document synthesis, MCP app connections, structured outputs) and what the human does instead — review, approve, send.</p>
+
+3. <h3>Tasks Claude Cowork accelerates (human still drives)</h3>
+   <ul> with 2–4 <li> items, same <h4> + <p> format. Responsibilities where Claude does the heavy lifting — first drafts, research, organization — but judgment, relationships, or sign-off stay with the person.
+
+4. <h3>What stays fully human</h3>
+   <ul> with 2–3 <li> items, one sentence each. Responsibilities from the description that genuinely require human presence, judgment, accountability, or relationships. Be honest here — it builds credibility.
+
+5. <blockquote>
+   <h3>The bottom line for this role</h3>
+   <p>2–3 sentences: roughly what share of this role's recurring work Claude Cowork can absorb or accelerate (a realistic range, not hype), and what the person in this seat should do with the reclaimed time.</p>
+   </blockquote>
+
+6. <h3>What Evan recommends</h3>
+   <p>2–3 sentences. Recommend the <strong>1-Hour Session ($300)</strong> or <strong>4-Hour Deep Dive ($1,000)</strong> based on how many tools and integrations the role touches. Tie the reasoning to specific responsibilities in the description.</p>
+
+Hard rules:
+- Every task must trace back to a responsibility actually present in the pasted description — do not import generic duties the description doesn't mention.
+- If the pasted text is not actually a job description, say so politely in one <p> and give a brief general overview of how Claude Cowork helps knowledge workers instead.
+- Never invent facts. No emojis, no horizontal rules, no preamble before the first <h3>.`;
+
+  const userPrompt =
+    type === "business" ? businessPrompt :
+    type === "job-description" ? jobDescriptionPrompt :
+    individualPrompt;
 
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
@@ -383,16 +427,20 @@ router.post("/leads", async (req, res) => {
       .values({ email, name, type, website, industry, description, reportHtml })
       .returning();
 
-    // Send emails in background — don't block the response
+    // Send emails in background — don't block the response.
+    // Welcome email references "your report", so only send it when a report
+    // was actually generated (tool leads like playbook/quiz/calculator skip it).
     Promise.allSettled([
       sendLeadNotification(lead).then(async () => {
         await db.update(leadsTable)
           .set({ notificationSent: true });
       }),
-      sendWelcomeEmail(lead).then(async () => {
-        await db.update(leadsTable)
-          .set({ welcomeSent: true });
-      }),
+      ...(reportHtml
+        ? [sendWelcomeEmail(lead).then(async () => {
+            await db.update(leadsTable)
+              .set({ welcomeSent: true });
+          })]
+        : []),
     ]).catch((err) => {
       console.error("Email send error:", err);
     });

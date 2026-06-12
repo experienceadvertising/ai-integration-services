@@ -29,13 +29,16 @@ await viteBuild({
 const ssrModuleUrl = pathToFileURL(
   resolve(SSR_DIST, "entry-server.mjs"),
 ).href;
-const { render, industries } = await import(ssrModuleUrl);
+const { render, industries, roles } = await import(ssrModuleUrl);
 
 if (typeof render !== "function") {
   throw new Error("entry-server.mjs did not export a render() function");
 }
 if (!Array.isArray(industries)) {
   throw new Error("entry-server.mjs did not export an industries[] array");
+}
+if (!Array.isArray(roles)) {
+  throw new Error("entry-server.mjs did not export a roles[] array");
 }
 
 // 3. Routes to prerender. Skip /success and /cancel — both are post-Stripe
@@ -48,7 +51,11 @@ const routes = [
   "/ai-coding-training",
   "/about",
   "/ai-report",
+  "/job-description-analyzer",
+  "/ai-time-savings-calculator",
+  "/ai-readiness-quiz",
   ...industries.map((i) => `/industries/${i.slug}`),
+  ...roles.map((r) => `/roles/${r.slug}`),
 ];
 
 // 4. Read the built shell once.
