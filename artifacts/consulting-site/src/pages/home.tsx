@@ -127,7 +127,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
+        title="AI Productivity Training for Teams — Claude Cowork & Vibe Coding | Evan Weber"
         description="Live Claude Cowork training for business teams by Evan Weber, 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
         canonical="https://learncowork.net/"
       />

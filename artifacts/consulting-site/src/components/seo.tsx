@@ -29,6 +29,8 @@ export default function SEO({
     ? title
     : `${title} | Evan Weber`;
 
+  const ogImageType = /\.jpe?g$/i.test(ogImage) ? "image/jpeg" : "image/png";
+
   const schemas = schema ? [schema] : [];
 
   return (
@@ -47,6 +49,7 @@ export default function SEO({
       <meta property="og:locale" content="en_US" />
       {canonical && <meta property="og:url" content={canonical} />}
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:type" content={ogImageType} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={fullTitle} />

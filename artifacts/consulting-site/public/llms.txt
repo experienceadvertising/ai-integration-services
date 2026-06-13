@@ -69,6 +69,34 @@ Claude Cowork training is available with industry-specific workflows for:
 
 ---
 
+## Roles Served
+
+Claude Cowork training with role-specific workflows, each page mapping exactly which tasks Claude can run end-to-end, accelerate, or leave human:
+
+- Marketing Managers: https://learncowork.net/roles/marketing-managers
+- Sales Reps & Account Executives: https://learncowork.net/roles/sales-teams
+- Recruiters & Talent Teams: https://learncowork.net/roles/recruiters
+- Paralegals & Legal Assistants: https://learncowork.net/roles/paralegals
+- Financial Analysts: https://learncowork.net/roles/financial-analysts
+- Executive Assistants: https://learncowork.net/roles/executive-assistants
+- Project Managers: https://learncowork.net/roles/project-managers
+- Customer Support Teams: https://learncowork.net/roles/customer-support-teams
+- Accountants & Bookkeepers: https://learncowork.net/roles/accountants
+- Operations Managers: https://learncowork.net/roles/operations-managers
+
+---
+
+## Free Tools
+
+No-cost, no-signup tools that demonstrate what Claude Cowork can do:
+
+- Free AI Opportunity Report (enter a website, get 5 personalized Claude Cowork workflows): https://learncowork.net/ai-report
+- Job Description Analyzer (paste a JD, see which tasks Claude can take over): https://learncowork.net/job-description-analyzer
+- AI Time-Savings Calculator (estimate hours and dollars Claude could reclaim): https://learncowork.net/ai-time-savings-calculator
+- AI Readiness Quiz (8-question scored assessment of AI adoption readiness): https://learncowork.net/ai-readiness-quiz
+
+---
+
 ## Site Pages
 
 - Home: https://learncowork.net/

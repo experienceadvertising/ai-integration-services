@@ -15,6 +15,8 @@ export default function About() {
         title="About Evan Weber, AI Trainer and Digital Marketing Veteran"
         description="25 years in digital marketing, founder of Experience Advertising, and daily Claude Cowork user. 400+ companies helped. Meet your AI productivity trainer."
         canonical="https://learncowork.net/about"
+        ogImage="https://learncowork.net/og-about.png"
+        ogType="profile"
       />
       <SiteNav />
 
