@@ -32,6 +32,7 @@ export default function IndustryPage() {
         title={industry.metaTitle}
         description={industry.metaDescription}
         canonical={canonical}
+        ogImage={`https://learncowork.net/og-industry-${industry.slug}.png`}
         schema={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
