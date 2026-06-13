@@ -33,6 +33,7 @@ export default function RolePage() {
         title={role.metaTitle}
         description={role.metaDescription}
         canonical={canonical}
+        ogImage={`https://learncowork.net/og-role-${role.slug}.png`}
         keywords={`Claude Cowork for ${role.name.toLowerCase()}, AI for ${role.name.toLowerCase()}, Claude AI ${role.title.toLowerCase()}, AI productivity ${role.badge.toLowerCase()}, Claude Cowork training`}
         schema={{
           "@context": "https://schema.org",

@@ -10,9 +10,10 @@ export default function ClaudeCoworkTraining() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Claude Cowork Training for Teams"
+        title="Claude Cowork Training for Teams — Live 1-on-1 Sessions"
         description="Live Claude Cowork training by Evan Weber - 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
         canonical="https://learncowork.net/claude-cowork-training"
+        ogImage="https://learncowork.net/og-cowork-training.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",

@@ -13,6 +13,7 @@ export default function AiCodingTraining() {
         title="Vibe Coding Training: Claude Code, Replit & Codex | Evan Weber"
         description="Live vibe coding training with Evan Weber — Claude Code, Replit, Codex, and GitHub Copilot. Learn from someone who has shipped 20+ real AI-assisted projects. Teams and individuals."
         canonical="https://learncowork.net/ai-coding-training"
+        ogImage="https://learncowork.net/og-vibe-coding.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
