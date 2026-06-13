@@ -13,6 +13,7 @@ export default function ClaudeCoworkTraining() {
         title="Claude Cowork Training for Teams"
         description="Live Claude Cowork training by Evan Weber - 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
         canonical="https://learncowork.net/claude-cowork-training"
+        ogImage="https://learncowork.net/og-claude-cowork-training.png"
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
