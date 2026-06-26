@@ -22,6 +22,8 @@ import AiReadinessQuiz from "@/pages/ai-readiness-quiz";
 import ReportPage from "@/pages/report";
 import Blog from "@/pages/blog";
 import ArticlePage from "@/pages/article";
+import Glossary from "@/pages/glossary";
+import GlossaryTermPage from "@/pages/glossary-term";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ function Routes() {
         <Route path="/ai-readiness-quiz" component={AiReadinessQuiz} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={ArticlePage} />
+        <Route path="/glossary" component={Glossary} />
+        <Route path="/glossary/:slug" component={GlossaryTermPage} />
         <Route path="/industries/:slug" component={IndustryPage} />
         <Route path="/roles/:slug" component={RolePage} />
         <Route path="/report/:id" component={ReportPage} />
