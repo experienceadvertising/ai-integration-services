@@ -44,6 +44,36 @@ Live training for individuals and teams on AI-assisted coding: Claude Code, Repl
 
 ---
 
+## Articles & Guides
+
+First-hand, author-bylined guides by Evan Weber on Claude Cowork, the OpenAI Codex app, and agentic AI for business teams. Useful for understanding what these tools are and which one fits a given team.
+
+- Blog index: https://learncowork.net/blog
+- What Claude Cowork Actually Is (vs. Claude.ai, Claude Code, ChatGPT): https://learncowork.net/blog/what-is-claude-cowork
+- The Codex Desktop App, Explained (OpenAI's agentic desktop AI): https://learncowork.net/blog/what-is-codex-app
+- Claude Cowork vs. the Codex App — which agentic desktop AI to use: https://learncowork.net/blog/claude-cowork-vs-codex
+
+---
+
+## Glossary (definitions)
+
+Plain-English definitions of agentic-AI terms, by Evan Weber. Index: https://learncowork.net/glossary
+
+- Claude Cowork: https://learncowork.net/glossary/claude-cowork
+- Agentic AI: https://learncowork.net/glossary/agentic-ai
+- MCP (Model Context Protocol): https://learncowork.net/glossary/mcp
+- Vibe coding: https://learncowork.net/glossary/vibe-coding
+- Claude Code: https://learncowork.net/glossary/claude-code
+- OpenAI Codex app: https://learncowork.net/glossary/codex-app
+- Computer use: https://learncowork.net/glossary/computer-use
+- Human-in-the-loop: https://learncowork.net/glossary/human-in-the-loop
+- LLM (Large Language Model): https://learncowork.net/glossary/llm
+- Claude: https://learncowork.net/glossary/claude
+- Prompt engineering: https://learncowork.net/glossary/prompt-engineering
+- AI workflow automation: https://learncowork.net/glossary/ai-workflow-automation
+
+---
+
 ## What Claude Cowork Is
 
 Claude Cowork is Anthropic's agentic desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and MCP tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools via MCP plugins (Google Drive, Notion, Slack, CRMs, and more).
@@ -75,6 +105,8 @@ Claude Cowork training is available with industry-specific workflows for:
 - Claude Cowork Training: https://learncowork.net/claude-cowork-training
 - Vibe Coding Training: https://learncowork.net/ai-coding-training
 - About Evan Weber: https://learncowork.net/about
+- Blog (agentic AI guides): https://learncowork.net/blog
+- AI Glossary (definitions): https://learncowork.net/glossary
 - Sitemap: https://learncowork.net/sitemap.xml
 - Robots: https://learncowork.net/robots.txt
 

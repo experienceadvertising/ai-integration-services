@@ -7,6 +7,7 @@ const links = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
   { href: "/#tools", label: "Free Tools" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About Evan" },
 ];
 
