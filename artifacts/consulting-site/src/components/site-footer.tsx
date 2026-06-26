@@ -29,6 +29,7 @@ const roleLinks = [
 const trainingLinks = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About Evan" },
 ];
 
@@ -37,6 +38,7 @@ const toolLinks = [
   { href: "/job-description-analyzer", label: "Job Description Analyzer" },
   { href: "/ai-time-savings-calculator", label: "Time-Savings Calculator" },
   { href: "/ai-readiness-quiz", label: "AI Readiness Quiz" },
+  { href: "/glossary", label: "AI Glossary" },
 ];
 
 export default function SiteFooter() {
