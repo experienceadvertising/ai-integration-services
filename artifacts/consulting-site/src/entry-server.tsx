@@ -3,6 +3,8 @@ import type { HelmetServerState } from "react-helmet-async";
 import App from "./App";
 import { industries } from "./data/industries";
 import { roles } from "./data/roles";
+import { articles } from "./data/articles";
+import { glossaryTerms } from "./data/glossary";
 
 export interface RenderResult {
   html: string;
@@ -15,4 +17,4 @@ export function render(url: string): RenderResult {
   return { html, helmet: helmetContext.helmet };
 }
 
-export { industries, roles };
+export { industries, roles, articles, glossaryTerms };
