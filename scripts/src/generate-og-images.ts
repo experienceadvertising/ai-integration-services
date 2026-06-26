@@ -215,6 +215,19 @@ const pages: OGPage[] = [
     category: "Comparison",
     title: "Claude Cowork vs. the Codex App",
   },
+  // Glossary terms
+  { filename: "og-glossary-claude-cowork.png", category: "AI Glossary", title: "Claude Cowork" },
+  { filename: "og-glossary-agentic-ai.png", category: "AI Glossary", title: "Agentic AI" },
+  { filename: "og-glossary-mcp.png", category: "AI Glossary", title: "MCP (Model Context Protocol)" },
+  { filename: "og-glossary-vibe-coding.png", category: "AI Glossary", title: "Vibe Coding" },
+  { filename: "og-glossary-claude-code.png", category: "AI Glossary", title: "Claude Code" },
+  { filename: "og-glossary-codex-app.png", category: "AI Glossary", title: "OpenAI Codex App" },
+  { filename: "og-glossary-computer-use.png", category: "AI Glossary", title: "Computer Use" },
+  { filename: "og-glossary-human-in-the-loop.png", category: "AI Glossary", title: "Human-in-the-Loop" },
+  { filename: "og-glossary-llm.png", category: "AI Glossary", title: "LLM (Large Language Model)" },
+  { filename: "og-glossary-claude.png", category: "AI Glossary", title: "Claude" },
+  { filename: "og-glossary-prompt-engineering.png", category: "AI Glossary", title: "Prompt Engineering" },
+  { filename: "og-glossary-ai-workflow-automation.png", category: "AI Glossary", title: "AI Workflow Automation" },
 ];
 
 for (const page of pages) {

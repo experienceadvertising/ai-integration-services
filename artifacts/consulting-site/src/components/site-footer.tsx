@@ -38,6 +38,7 @@ const toolLinks = [
   { href: "/job-description-analyzer", label: "Job Description Analyzer" },
   { href: "/ai-time-savings-calculator", label: "Time-Savings Calculator" },
   { href: "/ai-readiness-quiz", label: "AI Readiness Quiz" },
+  { href: "/glossary", label: "AI Glossary" },
 ];
 
 export default function SiteFooter() {

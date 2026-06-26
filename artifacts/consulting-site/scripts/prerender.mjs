@@ -29,7 +29,7 @@ await viteBuild({
 const ssrModuleUrl = pathToFileURL(
   resolve(SSR_DIST, "entry-server.mjs"),
 ).href;
-const { render, industries, roles, articles } = await import(ssrModuleUrl);
+const { render, industries, roles, articles, glossaryTerms } = await import(ssrModuleUrl);
 
 if (typeof render !== "function") {
   throw new Error("entry-server.mjs did not export a render() function");
@@ -42,6 +42,9 @@ if (!Array.isArray(roles)) {
 }
 if (!Array.isArray(articles)) {
   throw new Error("entry-server.mjs did not export an articles[] array");
+}
+if (!Array.isArray(glossaryTerms)) {
+  throw new Error("entry-server.mjs did not export a glossaryTerms[] array");
 }
 
 // 3. Routes to prerender. Skip /success and /cancel — both are post-Stripe
@@ -59,6 +62,8 @@ const routes = [
   "/ai-readiness-quiz",
   "/blog",
   ...articles.map((a) => `/blog/${a.slug}`),
+  "/glossary",
+  ...glossaryTerms.map((t) => `/glossary/${t.slug}`),
   ...industries.map((i) => `/industries/${i.slug}`),
   ...roles.map((r) => `/roles/${r.slug}`),
 ];
