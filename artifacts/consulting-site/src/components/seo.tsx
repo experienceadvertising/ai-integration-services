@@ -31,6 +31,10 @@ export default function SEO({
 
   const schemas = schema ? [schema] : [];
 
+  const ogImageType = ogImage.endsWith(".jpg") || ogImage.endsWith(".jpeg")
+    ? "image/jpeg"
+    : "image/png";
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
@@ -47,15 +51,19 @@ export default function SEO({
       <meta property="og:locale" content="en_US" />
       {canonical && <meta property="og:url" content={canonical} />}
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:secure_url" content={ogImage} />
+      <meta property="og:image:type" content={ogImageType} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={fullTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@learncowork" />
+      <meta name="twitter:creator" content="@learncowork" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={fullTitle} />
 
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json">
