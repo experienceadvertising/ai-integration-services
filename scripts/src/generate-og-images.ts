@@ -199,6 +199,22 @@ const pages: OGPage[] = [
     category: "AI for Operations",
     title: "Claude Cowork for Ops Managers",
   },
+  // Blog articles
+  {
+    filename: "og-blog-what-is-claude-cowork.png",
+    category: "Guide · Claude Cowork",
+    title: "What Claude Cowork Actually Is",
+  },
+  {
+    filename: "og-blog-what-is-codex-app.png",
+    category: "Guide · Codex",
+    title: "The Codex Desktop App, Explained",
+  },
+  {
+    filename: "og-blog-claude-cowork-vs-codex.png",
+    category: "Comparison",
+    title: "Claude Cowork vs. the Codex App",
+  },
 ];
 
 for (const page of pages) {

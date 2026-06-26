@@ -91,6 +91,30 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://learncowork.net/blog</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/what-is-claude-cowork</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/what-is-codex-app</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/claude-cowork-vs-codex</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://learncowork.net/job-description-analyzer</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>

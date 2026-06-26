@@ -20,6 +20,8 @@ import JobDescriptionAnalyzer from "@/pages/job-description-analyzer";
 import AiTimeSavingsCalculator from "@/pages/ai-time-savings-calculator";
 import AiReadinessQuiz from "@/pages/ai-readiness-quiz";
 import ReportPage from "@/pages/report";
+import Blog from "@/pages/blog";
+import ArticlePage from "@/pages/article";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ function Routes() {
         <Route path="/job-description-analyzer" component={JobDescriptionAnalyzer} />
         <Route path="/ai-time-savings-calculator" component={AiTimeSavingsCalculator} />
         <Route path="/ai-readiness-quiz" component={AiReadinessQuiz} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={ArticlePage} />
         <Route path="/industries/:slug" component={IndustryPage} />
         <Route path="/roles/:slug" component={RolePage} />
         <Route path="/report/:id" component={ReportPage} />
