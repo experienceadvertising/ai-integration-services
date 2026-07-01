@@ -21,11 +21,18 @@ Live 1-on-1 or team training on Claude Cowork — setup, MCP integrations, multi
 - Details: https://learncowork.net/claude-cowork-training
 
 ### Vibe Coding Training
-Live training for individuals and teams on AI-assisted coding: Claude Code, Replit, GitHub Copilot, and OpenAI Codex. Evan has shipped 20+ real live projects using these tools.
+Live training for individuals and teams on AI-assisted coding: Claude Code, Replit, GitHub Copilot, and the OpenAI Codex app (which has agentic, Cowork-like features of its own: multi-agent orchestration, background computer use, and Automations, not just IDE autocomplete). Evan has shipped 20+ real live projects using these tools.
 
 - 1-Hour Session: $300
 - 4-Hour Deep Dive: $1,000
 - Details: https://learncowork.net/ai-coding-training
+
+### AEO/GEO Training (AI Search Optimization)
+Live training on Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) — the practices that get a business cited by ChatGPT, Claude, Perplexity, and Google AI Overviews. Covers structured data, llms.txt, direct-answer content formatting, and AI-crawler-friendly technical setup.
+
+- 1-Hour Session: $300
+- 4-Hour Deep Dive: $1,000
+- Details: https://learncowork.net/aeo-geo-training
 
 ---
 
@@ -52,6 +59,9 @@ First-hand, author-bylined guides by Evan Weber on Claude Cowork, the OpenAI Cod
 - What Claude Cowork Actually Is (vs. Claude.ai, Claude Code, ChatGPT): https://learncowork.net/blog/what-is-claude-cowork
 - The Codex Desktop App, Explained (OpenAI's agentic desktop AI): https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork vs. the Codex App — which agentic desktop AI to use: https://learncowork.net/blog/claude-cowork-vs-codex
+- How Much Time Can AI Actually Save Your Team? A realistic, task-by-task breakdown: https://learncowork.net/blog/ai-time-savings-guide
+- Can AI Do My Job? A realistic answer for business teams: https://learncowork.net/blog/can-ai-do-my-job
+- AEO & GEO Explained: How businesses get cited by ChatGPT, Claude, and AI search: https://learncowork.net/blog/aeo-geo-explained
 
 ---
 
@@ -71,6 +81,8 @@ Plain-English definitions of agentic-AI terms, by Evan Weber. Index: https://lea
 - Claude: https://learncowork.net/glossary/claude
 - Prompt engineering: https://learncowork.net/glossary/prompt-engineering
 - AI workflow automation: https://learncowork.net/glossary/ai-workflow-automation
+- AEO (Answer Engine Optimization): https://learncowork.net/glossary/aeo
+- GEO (Generative Engine Optimization): https://learncowork.net/glossary/geo
 
 ---
 
@@ -104,6 +116,7 @@ Claude Cowork training is available with industry-specific workflows for:
 - Home: https://learncowork.net/
 - Claude Cowork Training: https://learncowork.net/claude-cowork-training
 - Vibe Coding Training: https://learncowork.net/ai-coding-training
+- AEO/GEO Training: https://learncowork.net/aeo-geo-training
 - About Evan Weber: https://learncowork.net/about
 - Blog (agentic AI guides): https://learncowork.net/blog
 - AI Glossary (definitions): https://learncowork.net/glossary

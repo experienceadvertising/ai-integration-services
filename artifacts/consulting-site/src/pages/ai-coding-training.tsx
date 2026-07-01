@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
+import RelatedResources from "@/components/related-resources";
 
 export default function AiCodingTraining() {
   return (
@@ -16,15 +17,45 @@ export default function AiCodingTraining() {
         ogImage="https://learncowork.net/og-ai-coding-training.png"
         schema={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Vibe Coding Training",
-          provider: { "@type": "Person", name: "Evan Weber" },
-          description: "Live 1-on-1 and team vibe coding training sessions covering Claude Code, Replit, GitHub Copilot, and Codex. Build real projects with AI-assisted development tools.",
-          url: "https://learncowork.net/ai-coding-training",
-          areaServed: "US",
-          offers: [
-            { "@type": "Offer", name: "1-Hour Vibe Coding Training Session", price: "300", priceCurrency: "USD" },
-            { "@type": "Offer", name: "4-Hour Vibe Coding Deep Dive", price: "1000", priceCurrency: "USD" },
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": "https://learncowork.net/ai-coding-training#service",
+              name: "Vibe Coding Training",
+              provider: { "@type": "Person", name: "Evan Weber" },
+              description: "Live 1-on-1 and team vibe coding training sessions covering Claude Code, Replit, GitHub Copilot, and the OpenAI Codex app — including Codex's agentic desktop features (multi-agent orchestration, computer use, automations). Build real projects with AI-assisted development tools.",
+              url: "https://learncowork.net/ai-coding-training",
+              areaServed: "US",
+              offers: [
+                { "@type": "Offer", name: "1-Hour Vibe Coding Training Session", price: "300", priceCurrency: "USD" },
+                { "@type": "Offer", name: "4-Hour Vibe Coding Deep Dive", price: "1000", priceCurrency: "USD" },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Do I need to know how to code before this training?",
+                  acceptedAnswer: { "@type": "Answer", text: "It depends on the tool. Claude Code works best if you have some coding experience. Replit is genuinely accessible to non-coders. Evan will assess your level in the first few minutes and adapt the training accordingly." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What language or tech stack do you cover?",
+                  acceptedAnswer: { "@type": "Answer", text: "Evan covers JavaScript/TypeScript, Python, and React as primary examples, but AI coding tools are language-agnostic. Whatever you're building in, the principles apply." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How is this different from reading the Claude Code docs?",
+                  acceptedAnswer: { "@type": "Answer", text: "Documentation tells you what's possible. Evan shows you what actually works in production, what doesn't, and the specific workflows and prompt patterns he's validated across 20+ projects." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can my whole dev team attend together?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. The 4-hour Deep Dive is ideal for development teams. There's enough time to cover all tools and build something real together during the session." },
+                },
+              ],
+            },
           ],
         }}
       />
@@ -85,9 +116,9 @@ export default function AiCodingTraining() {
               },
               {
                 icon: <Cpu className="w-6 h-6" />,
-                tool: "OpenAI Codex & GitHub Copilot",
-                desc: "AI code completion and generation integrated directly into your IDE. Evan covers setup, prompt strategies, and how to pair Copilot with Claude Code for a complete AI coding workflow.",
-                uses: ["IDE integration and workflow setup", "Autocomplete that actually helps", "Generating boilerplate and tests", "Working with legacy codebases"]
+                tool: "OpenAI Codex App & GitHub Copilot",
+                desc: "Codex isn't just IDE autocomplete anymore — the Codex desktop app has real Cowork-like features: multi-agent orchestration, background computer use, and Automations that run unprompted on recurring engineering work. Evan covers the full Codex app alongside GitHub Copilot's inline completion, and how to pair both with Claude Code for a complete AI coding workflow.",
+                uses: ["Multi-agent orchestration across projects", "Background computer use for hands-off tasks", "Automations for triage, alerts, and CI/CD", "Pairing Copilot's inline completion with Codex and Claude Code"]
               },
               {
                 icon: <GitBranch className="w-6 h-6" />,
@@ -234,6 +265,12 @@ export default function AiCodingTraining() {
           </div>
         </div>
       </section>
+
+      <RelatedResources
+        heading="Codex, Claude Code & vibe coding, explained"
+        articleSlugs={["what-is-codex-app", "claude-cowork-vs-codex"]}
+        glossarySlug="vibe-coding"
+      />
 
       {/* CTA */}
       <section className="py-24 px-6 text-center bg-card">

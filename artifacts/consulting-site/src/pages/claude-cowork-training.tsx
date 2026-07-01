@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
+import RelatedResources from "@/components/related-resources";
 
 export default function ClaudeCoworkTraining() {
   return (
@@ -21,7 +22,7 @@ export default function ClaudeCoworkTraining() {
             {
               "@type": "Question",
               name: "Do my team members need to be technical to use Claude Cowork?",
-              acceptedAnswer: { "@type": "Answer", text: "No. Claude Cowork was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly." },
+              acceptedAnswer: { "@type": "Answer", text: "No. That's one of Cowork's biggest advantages — it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly." },
             },
             {
               "@type": "Question",
@@ -40,8 +41,13 @@ export default function ClaudeCoworkTraining() {
             },
             {
               "@type": "Question",
+              name: "Will the session be recorded?",
+              acceptedAnswer: { "@type": "Answer", text: "That's up to you — Evan is happy for you to record the session for team members who can't attend live. You own the recording." },
+            },
+            {
+              "@type": "Question",
               name: "What if my industry has specific compliance or data requirements?",
-              acceptedAnswer: { "@type": "Answer", text: "Evan covers Claude's privacy settings and data handling policies as part of every session setup, so you can use Cowork confidently within your compliance requirements." },
+              acceptedAnswer: { "@type": "Answer", text: "Covered. Evan will walk you through Claude's privacy settings and data handling policies as part of the setup section, so you can use Cowork confidently within your compliance requirements." },
             },
           ],
         }}
@@ -84,7 +90,10 @@ export default function ClaudeCoworkTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What is Claude Cowork?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
-            Claude Cowork is Anthropic's agentic desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and MCP tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools. It's the difference between a chatbot and an actual AI coworker.
+            Claude Cowork is Anthropic's <Link href="/glossary/agentic-ai" className="text-primary underline underline-offset-2 hover:no-underline">agentic</Link> desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and{" "}
+            <Link href="/glossary/mcp" className="text-primary underline underline-offset-2 hover:no-underline">MCP</Link> tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools. It's the difference between a chatbot and an actual AI coworker — read the{" "}
+            <Link href="/blog/what-is-claude-cowork" className="text-primary underline underline-offset-2 hover:no-underline">full explainer</Link>, or see how it stacks up against{" "}
+            <Link href="/blog/claude-cowork-vs-codex" className="text-primary underline underline-offset-2 hover:no-underline">OpenAI's Codex app</Link>.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -198,6 +207,10 @@ export default function ClaudeCoworkTraining() {
                 a: "No. That's one of Cowork's biggest advantages - it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly."
               },
               {
+                q: "How much does a Claude Cowork training session cost?",
+                a: "A 1-hour live session costs $300. A 4-hour Deep Dive is $1,000. Both are booked and paid securely via Stripe at learncowork.net."
+              },
+              {
                 q: "Does my team need a Claude subscription?",
                 a: "Yes - each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session."
               },
@@ -222,6 +235,12 @@ export default function ClaudeCoworkTraining() {
           </div>
         </div>
       </section>
+
+      <RelatedResources
+        heading="Learn more about Claude Cowork"
+        articleSlugs={["what-is-claude-cowork", "claude-cowork-vs-codex"]}
+        glossarySlug="claude-cowork"
+      />
 
       {/* CTA */}
       <section className="py-24 px-6 text-center bg-card">

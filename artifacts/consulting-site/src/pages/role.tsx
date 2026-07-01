@@ -9,6 +9,7 @@ import SiteFooter from "@/components/site-footer";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
 import RolePlaybook from "@/components/role-playbook";
 import BookingTrustRow from "@/components/booking-trust-row";
+import RelatedResources from "@/components/related-resources";
 
 export default function RolePage() {
   const [, params] = useRoute("/roles/:slug");
@@ -248,6 +249,12 @@ export default function RolePage() {
           <BookingTrustRow />
         </div>
       </section>
+
+      <RelatedResources
+        heading={`Free resources for ${role.title.toLowerCase()}s`}
+        articleSlugs={["can-ai-do-my-job", "ai-time-savings-guide"]}
+        glossarySlug="claude-cowork"
+      />
 
       {/* Other roles */}
       <section className="py-14 px-6 lg:px-12 border-b border-border bg-secondary/20">

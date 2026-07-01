@@ -10,6 +10,7 @@ export interface GlossaryTerm {
   short: string; // 1–2 sentence standalone definition
   body: string[]; // longer explanation
   related: string[]; // related term slugs
+  relatedArticles?: string[]; // related blog article slugs (/blog/:slug)
 }
 
 export const glossaryTerms: GlossaryTerm[] = [
@@ -25,6 +26,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Cowork is distinct from Claude.ai (the browser chat), Claude Code (the developer-focused coding agent), and Claude Computer Use (the API capability). It is the general-purpose, do-the-work member of the family.",
     ],
     related: ["agentic-ai", "claude-code", "mcp", "computer-use", "human-in-the-loop"],
+    relatedArticles: ["what-is-claude-cowork", "claude-cowork-vs-codex"],
   },
   {
     slug: "agentic-ai",
@@ -38,6 +40,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "In practice, agentic AI is what lets a tool open your files, pull data from several sources, write a report, and flag what matters — all from one instruction. Claude Cowork and the OpenAI Codex app are both examples of agentic AI applied to the desktop.",
     ],
     related: ["claude-cowork", "codex-app", "computer-use", "llm"],
+    relatedArticles: ["can-ai-do-my-job", "ai-time-savings-guide"],
   },
   {
     slug: "mcp",
@@ -88,6 +91,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Its standout features are multi-agent orchestration, background computer use (the agent sees, clicks, and types with its own cursor), Automations for recurring work, and Skills that align the agent to a team's standards. Much of its execution runs in OpenAI's cloud and it is deeply GitHub-native, which makes it especially strong for software engineering.",
     ],
     related: ["agentic-ai", "claude-cowork", "vibe-coding", "computer-use"],
+    relatedArticles: ["what-is-codex-app", "claude-cowork-vs-codex"],
   },
   {
     slug: "computer-use",
@@ -112,6 +116,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Claude Cowork uses this model prominently, which is part of why it's a comfortable fit for non-technical teams handling real business data. It lets you capture the speed of automation without giving up oversight.",
     ],
     related: ["claude-cowork", "computer-use", "agentic-ai"],
+    relatedArticles: ["can-ai-do-my-job"],
   },
   {
     slug: "llm",
@@ -124,7 +129,8 @@ export const glossaryTerms: GlossaryTerm[] = [
       "LLMs are the engines behind modern AI assistants. Anthropic's Claude and OpenAI's GPT models are LLMs. On their own they generate text; paired with tools, memory, and the ability to act, they become the reasoning core of agentic systems like Claude Cowork and the Codex app.",
       "Understanding that an LLM is a prediction system — powerful but not infallible — is why review and human-in-the-loop checks remain part of any serious workflow.",
     ],
-    related: ["claude", "agentic-ai", "prompt-engineering"],
+    related: ["claude", "agentic-ai", "prompt-engineering", "geo", "aeo"],
+    relatedArticles: ["aeo-geo-explained"],
   },
   {
     slug: "claude",
@@ -162,6 +168,35 @@ export const glossaryTerms: GlossaryTerm[] = [
       "The highest-value automations are usually the repetitive, multi-step tasks that quietly consume hours each week. Identifying and building those is the core of what AI productivity training focuses on.",
     ],
     related: ["agentic-ai", "claude-cowork", "mcp"],
+    relatedArticles: ["ai-time-savings-guide"],
+  },
+  {
+    slug: "aeo",
+    term: "AEO (Answer Engine Optimization)",
+    aliases: ["Answer Engine Optimization"],
+    category: "AI Search",
+    short:
+      "Answer Engine Optimization (AEO) is the practice of structuring content so search engines and AI assistants can lift a direct, self-contained answer out of it — for featured snippets, voice assistants, and AI Overviews — rather than just ranking a blue link.",
+    body: [
+      "Traditional SEO optimizes to rank a page; AEO optimizes to be the answer. That means writing content in clearly bounded, quotable units — a one- or two-sentence direct definition up top, explicit question-and-answer pairs, and FAQPage/HowTo structured data — so an answer engine can extract a correct, standalone answer without needing to interpret the whole page.",
+      "AEO predates the current wave of generative AI (it grew out of optimizing for Google's featured snippets and voice search), but it's the direct foundation for GEO. A page that's well-structured for a one-sentence extracted answer is also well-structured for an LLM to summarize and cite correctly.",
+    ],
+    related: ["geo", "llm", "agentic-ai"],
+    relatedArticles: ["aeo-geo-explained"],
+  },
+  {
+    slug: "geo",
+    term: "GEO (Generative Engine Optimization)",
+    aliases: ["Generative Engine Optimization", "AI search optimization"],
+    category: "AI Search",
+    short:
+      "Generative Engine Optimization (GEO) is the practice of optimizing content so it gets cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — instead of only ranking in a traditional list of blue links.",
+    body: [
+      "When someone asks ChatGPT or Perplexity a question, the model doesn't show ten ranked links — it synthesizes an answer, often citing two or three sources. GEO is the set of practices that make a page more likely to be one of those sources: clear, factual, well-structured content; explicit author expertise (E-E-A-T signals); FAQ and structured data (schema.org) that machines can parse cleanly; and technical crawlability for AI bots like GPTBot, ClaudeBot, and PerplexityBot.",
+      "GEO also includes a newer, more direct channel: publishing an `llms.txt` file — a plain-language summary of a site's content and purpose that AI systems can read directly, the same way `robots.txt` talks to search crawlers. Sites doing GEO well treat AI answer engines as a first-class audience, not an afterthought of traditional SEO.",
+    ],
+    related: ["aeo", "llm", "agentic-ai"],
+    relatedArticles: ["aeo-geo-explained"],
   },
 ];
 
