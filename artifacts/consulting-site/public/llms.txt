@@ -52,6 +52,8 @@ First-hand, author-bylined guides by Evan Weber on Claude Cowork, the OpenAI Cod
 - What Claude Cowork Actually Is (vs. Claude.ai, Claude Code, ChatGPT): https://learncowork.net/blog/what-is-claude-cowork
 - The Codex Desktop App, Explained (OpenAI's agentic desktop AI): https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork vs. the Codex App — which agentic desktop AI to use: https://learncowork.net/blog/claude-cowork-vs-codex
+- How Much Time Can AI Actually Save Your Team? A realistic, task-by-task breakdown: https://learncowork.net/blog/ai-time-savings-guide
+- Can AI Do My Job? A realistic answer for business teams: https://learncowork.net/blog/can-ai-do-my-job
 
 ---
 
