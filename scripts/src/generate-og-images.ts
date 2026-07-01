@@ -215,6 +215,16 @@ const pages: OGPage[] = [
     category: "Comparison",
     title: "Claude Cowork vs. the Codex App",
   },
+  {
+    filename: "og-blog-ai-time-savings-guide.png",
+    category: "Guide · Productivity",
+    title: "How Much Time Can AI Save Your Team?",
+  },
+  {
+    filename: "og-blog-can-ai-do-my-job.png",
+    category: "Guide · Career",
+    title: "Can AI Do My Job?",
+  },
   // Glossary terms
   { filename: "og-glossary-claude-cowork.png", category: "AI Glossary", title: "Claude Cowork" },
   { filename: "og-glossary-agentic-ai.png", category: "AI Glossary", title: "Agentic AI" },

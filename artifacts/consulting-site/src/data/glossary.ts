@@ -10,6 +10,7 @@ export interface GlossaryTerm {
   short: string; // 1–2 sentence standalone definition
   body: string[]; // longer explanation
   related: string[]; // related term slugs
+  relatedArticles?: string[]; // related blog article slugs (/blog/:slug)
 }
 
 export const glossaryTerms: GlossaryTerm[] = [
@@ -25,6 +26,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Cowork is distinct from Claude.ai (the browser chat), Claude Code (the developer-focused coding agent), and Claude Computer Use (the API capability). It is the general-purpose, do-the-work member of the family.",
     ],
     related: ["agentic-ai", "claude-code", "mcp", "computer-use", "human-in-the-loop"],
+    relatedArticles: ["what-is-claude-cowork", "claude-cowork-vs-codex"],
   },
   {
     slug: "agentic-ai",
@@ -38,6 +40,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "In practice, agentic AI is what lets a tool open your files, pull data from several sources, write a report, and flag what matters — all from one instruction. Claude Cowork and the OpenAI Codex app are both examples of agentic AI applied to the desktop.",
     ],
     related: ["claude-cowork", "codex-app", "computer-use", "llm"],
+    relatedArticles: ["can-ai-do-my-job", "ai-time-savings-guide"],
   },
   {
     slug: "mcp",
@@ -88,6 +91,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Its standout features are multi-agent orchestration, background computer use (the agent sees, clicks, and types with its own cursor), Automations for recurring work, and Skills that align the agent to a team's standards. Much of its execution runs in OpenAI's cloud and it is deeply GitHub-native, which makes it especially strong for software engineering.",
     ],
     related: ["agentic-ai", "claude-cowork", "vibe-coding", "computer-use"],
+    relatedArticles: ["what-is-codex-app", "claude-cowork-vs-codex"],
   },
   {
     slug: "computer-use",
@@ -112,6 +116,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Claude Cowork uses this model prominently, which is part of why it's a comfortable fit for non-technical teams handling real business data. It lets you capture the speed of automation without giving up oversight.",
     ],
     related: ["claude-cowork", "computer-use", "agentic-ai"],
+    relatedArticles: ["can-ai-do-my-job"],
   },
   {
     slug: "llm",
@@ -162,6 +167,7 @@ export const glossaryTerms: GlossaryTerm[] = [
       "The highest-value automations are usually the repetitive, multi-step tasks that quietly consume hours each week. Identifying and building those is the core of what AI productivity training focuses on.",
     ],
     related: ["agentic-ai", "claude-cowork", "mcp"],
+    relatedArticles: ["ai-time-savings-guide"],
   },
 ];
 

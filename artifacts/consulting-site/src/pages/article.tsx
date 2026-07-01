@@ -6,6 +6,7 @@ import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
 import { getArticle, articles, ARTICLE_AUTHOR } from "@/data/articles";
+import { renderLinkedText } from "@/lib/inline-links";
 
 function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-").map(Number);
@@ -154,7 +155,7 @@ export default function ArticlePage() {
             <div className="space-y-5 text-[1.0625rem] md:text-lg leading-relaxed text-foreground/90">
               {article.intro.map((p, i) => (
                 <p key={i} className={i === 0 ? "text-xl md:text-2xl leading-relaxed text-foreground font-medium" : undefined}>
-                  {p}
+                  {renderLinkedText(p)}
                 </p>
               ))}
 
@@ -164,14 +165,14 @@ export default function ArticlePage() {
                     {section.heading}
                   </h2>
                   {section.paragraphs.map((p, pi) => (
-                    <p key={pi} className="mb-4">{p}</p>
+                    <p key={pi} className="mb-4">{renderLinkedText(p)}</p>
                   ))}
                   {section.bullets && (
                     <ul className="space-y-2.5 my-5">
                       {section.bullets.map((b, bi) => (
                         <li key={bi} className="flex gap-3">
                           <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                          <span>{b}</span>
+                          <span>{renderLinkedText(b)}</span>
                         </li>
                       ))}
                     </ul>
@@ -202,7 +203,7 @@ export default function ArticlePage() {
                 {article.faqs.map((f, i) => (
                   <div key={i} className="border-b border-border pb-5">
                     <h3 className="font-semibold mb-2">{f.q}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+                    <p className="text-muted-foreground leading-relaxed">{renderLinkedText(f.a)}</p>
                   </div>
                 ))}
               </div>

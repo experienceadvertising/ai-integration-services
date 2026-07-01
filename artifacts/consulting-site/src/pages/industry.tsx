@@ -8,6 +8,7 @@ import { getIndustry, industries } from "@/data/industries";
 import SiteFooter from "@/components/site-footer";
 import CoworkAnalyzer from "@/components/cowork-analyzer";
 import BookingTrustRow from "@/components/booking-trust-row";
+import RelatedResources from "@/components/related-resources";
 
 export default function IndustryPage() {
   const [, params] = useRoute("/industries/:slug");
@@ -244,6 +245,12 @@ export default function IndustryPage() {
           <BookingTrustRow />
         </div>
       </section>
+
+      <RelatedResources
+        heading={`Free resources for ${industry.badge.toLowerCase()} teams`}
+        articleSlugs={["ai-time-savings-guide", "can-ai-do-my-job"]}
+        glossarySlug="agentic-ai"
+      />
 
       {/* Other industries */}
       <section className="py-14 px-6 lg:px-12 border-b border-border bg-secondary/20">
