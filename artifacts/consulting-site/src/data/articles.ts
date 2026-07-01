@@ -73,7 +73,7 @@ export const articles: Article[] = [
       {
         heading: "Why \"agentic\" is the word that matters",
         paragraphs: [
-          "People throw around \"agentic AI\" like it's a buzzword, but it points at a real, specific difference. A chatbot is reactive — you ask, it answers, the loop ends. An agent is goal-directed — you give it an outcome, and it plans, takes multiple steps, uses tools, checks its own work, and keeps going until the job is done.",
+          "People throw around \"[agentic AI](/glossary/agentic-ai)\" like it's a buzzword, but it points at a real, specific difference. A chatbot is reactive — you ask, it answers, the loop ends. An agent is goal-directed — you give it an outcome, and it plans, takes multiple steps, uses tools, checks its own work, and keeps going until the job is done.",
           "In practice, that means I can tell Cowork \"pull this month's numbers from these three exports, build the board summary in our usual format, and flag anything that moved more than 10%,\" and it will open the files, do the analysis, write the document, and hand it back — instead of giving me instructions for how I could do that myself.",
         ],
       },
@@ -91,8 +91,8 @@ export const articles: Article[] = [
       {
         heading: "Claude Cowork vs. Claude Code",
         paragraphs: [
-          "This is the distinction that trips up technical teams. Claude Code is Anthropic's agent built specifically for software development — it lives in the terminal and IDE, and it's optimized for reading codebases, writing and refactoring code, and running tests.",
-          "Cowork is the generalist. It's built for everyone — marketers, recruiters, paralegals, finance teams, operations — to automate knowledge work, not just code. There's overlap (both can run a shell), but think of Claude Code as the tool for engineers shipping software, and Cowork as the digital colleague for the other 90% of your company.",
+          "This is the distinction that trips up technical teams. [Claude Code](/glossary/claude-code) is Anthropic's agent built specifically for software development — it lives in the terminal and IDE, and it's optimized for reading codebases, writing and refactoring code, and running tests.",
+          "Cowork is the generalist. It's built for everyone — marketers, recruiters, paralegals, finance teams, operations — to automate knowledge work, not just code. There's overlap (both can run a shell), but think of Claude Code as the tool for engineers shipping software (covered in our [vibe coding training](/ai-coding-training)), and Cowork as the digital colleague for the other 90% of your company.",
         ],
       },
       {
@@ -105,7 +105,7 @@ export const articles: Article[] = [
       {
         heading: "What this looks like in a real workflow",
         paragraphs: [
-          "Here's a concrete example from how I actually use it. Every week I need a performance digest pulled from a few different platforms. Instead of logging into each one, exporting, and assembling a doc by hand, I hand Cowork the exports, it does the analysis, writes the narrative in our house format, and flags the three things worth my attention. A task that used to eat an hour now takes about ten minutes of review.",
+          "Here's a concrete example from how I actually use it. Every week I need a performance digest pulled from a few different platforms. Instead of logging into each one, exporting, and assembling a doc by hand, I hand Cowork the exports, it does the analysis, writes the narrative in our house format, and flags the three things worth my attention. A task that used to eat an hour now takes about ten minutes of review — see the [full time-savings breakdown](/blog/ai-time-savings-guide) for how this plays out across different roles.",
           "Multiply that across every repetitive, multi-step task in a business — intake processing, report assembly, research digests, first-draft documents — and you start to see why I think this is the most important productivity shift since the spreadsheet.",
         ],
       },
@@ -164,7 +164,7 @@ export const articles: Article[] = [
         ],
         bullets: [
           "Multi-agent orchestration — run many agents in parallel across projects, using built-in worktrees and cloud environments, so long-running work compresses from weeks into days.",
-          "Computer use — with background computer use, Codex can operate the apps on your machine by seeing, clicking, and typing with its own cursor, including multiple agents working at once without interrupting you.",
+          "Computer use — with background [computer use](/glossary/computer-use), Codex can operate the apps on your machine by seeing, clicking, and typing with its own cursor, including multiple agents working at once without interrupting you.",
           "Automations — Codex can work unprompted on routine but important jobs like issue triage, alert monitoring, and CI/CD, picking up recurring work on its own.",
           "Skills — reusable, team-aligned capabilities (code understanding, prototyping, documentation) that let Codex follow your standards instead of generic defaults.",
         ],
@@ -186,8 +186,8 @@ export const articles: Article[] = [
       {
         heading: "Who I'd point toward Codex",
         paragraphs: [
-          "If you're a software team, or a technical founder who lives in GitHub and wants to parallelize real development work, the Codex app deserves a serious look — and in my coding-focused trainings I cover it alongside Claude Code, Replit, and GitHub Copilot.",
-          "If you're a non-technical business team trying to automate knowledge work — reports, research, intake, correspondence — the comparison gets more nuanced, which is exactly why I wrote the dedicated Cowork-vs-Codex piece.",
+          "If you're a software team, or a technical founder who lives in GitHub and wants to parallelize real development work, the Codex app deserves a serious look — and in my [vibe coding training](/ai-coding-training) I cover it alongside [Claude Code](/glossary/claude-code), Replit, and GitHub Copilot.",
+          "If you're a non-technical business team trying to automate knowledge work — reports, research, intake, correspondence — the comparison gets more nuanced, which is exactly why I wrote the dedicated [Cowork-vs-Codex piece](/blog/claude-cowork-vs-codex).",
         ],
       },
     ],
@@ -258,8 +258,8 @@ export const articles: Article[] = [
           "Here's how I actually route teams when they ask me which to start with:",
         ],
         bullets: [
-          "Choose Claude Cowork if you're a non-technical business team automating knowledge work — reports, research, intake, correspondence, CRM hygiene — and you want a tool the whole department can adopt quickly.",
-          "Choose the Codex app if you're a software team or technical founder who wants to parallelize real development work and automate the busywork around shipping code.",
+          "Choose [Claude Cowork](/claude-cowork-training) if you're a non-technical business team automating knowledge work — reports, research, intake, correspondence, CRM hygiene — and you want a tool the whole department can adopt quickly.",
+          "Choose the [Codex app](/ai-coding-training) if you're a software team or technical founder who wants to parallelize real development work and automate the busywork around shipping code.",
           "Honestly? Many teams benefit from both — Cowork for the business side, Codex (and Claude Code) for engineering. They aren't mutually exclusive, and I cover them together in my trainings.",
         ],
       },
@@ -296,6 +296,271 @@ export const articles: Article[] = [
       {
         q: "Which should a non-technical team start with?",
         a: "Claude Cowork. It's designed for non-technical users, runs locally with human-in-the-loop approvals, and adapts to the reports, research, and correspondence that make up most business work.",
+      },
+    ],
+  },
+
+  {
+    slug: "ai-time-savings-guide",
+    title: "How Much Time Can AI Actually Save Your Team? A Realistic, Task-by-Task Breakdown",
+    metaTitle: "AI Time Savings: A Realistic Breakdown by Task (2026) | Evan Weber",
+    metaDescription:
+      "How many hours can Claude Cowork and agentic AI actually save your team? A realistic, task-by-task breakdown from someone who trains business teams on this every week — plus how to calculate your own number.",
+    excerpt:
+      "\"AI will save you 40% of your time\" is a marketing number, not a real one. Here's the honest, task-by-task breakdown of where the time actually comes from — and how to calculate your own team's real savings.",
+    category: "Productivity",
+    tags: ["AI ROI", "Time savings", "Claude Cowork", "Productivity"],
+    readingTime: "8 min read",
+    datePublished: "2026-07-01",
+    dateModified: "2026-07-01",
+    intro: [
+      "Every team I sit down with asks some version of the same question before we even open a laptop: \"okay, but how much time is this actually going to save us?\" It's the right question, and it deserves a better answer than the vague percentages most AI vendors throw around.",
+      "So here's the honest version, built from actually watching teams adopt Claude Cowork — broken down by the kind of task, not a single made-up blended number. Some tasks compress by 90%. Others barely move. Knowing which is which is what makes an AI rollout pay off instead of fizzle.",
+    ],
+    sections: [
+      {
+        heading: "Why the \"AI saves you 40% of your time\" stat is basically meaningless",
+        paragraphs: [
+          "Any number that isn't tied to a specific task is a marketing number. A [recruiter's](/roles/recruiters) week and a [financial analyst's](/roles/financial-analysts) week don't have the same mix of high-leverage AI tasks, so a single blended percentage hides more than it reveals.",
+          "The useful version of this question isn't \"how much time will AI save me\" — it's \"which specific tasks in my week are the kind AI is actually good at, and how much of each one goes away.\" That's the breakdown that follows.",
+        ],
+      },
+      {
+        heading: "The tasks where AI genuinely erases most of the time",
+        paragraphs: [
+          "These are the tasks I see compress the most dramatically, usually 70–90%, because they're fundamentally about assembling and formatting information the AI can gather and structure itself:",
+        ],
+        bullets: [
+          "Recurring reports and digests — pulling numbers from a few sources, writing the narrative, and formatting it in your house style. A task that took an hour typically drops to 5–10 minutes of review.",
+          "First-draft writing — emails, proposals, job descriptions, social posts, meeting summaries. The blank page disappears; you're editing instead of originating.",
+          "Research synthesis — reading through a pile of documents, articles, or data exports and pulling out what matters. AI reads fast and doesn't skim.",
+          "Data reconciliation and cleanup — matching records across spreadsheets, standardizing formats, flagging discrepancies.",
+        ],
+      },
+      {
+        heading: "The tasks where AI saves real time, but not all of it",
+        paragraphs: [
+          "This is the biggest category, and it's where most of the realistic gains live — usually 30–50% time savings, because a human still needs to make judgment calls in the middle of the work:",
+        ],
+        bullets: [
+          "Client or candidate correspondence — AI drafts strong replies in your voice, but you're still reviewing tone and specifics before anything goes out.",
+          "Intake and triage — sorting incoming requests, assigning priority, routing to the right person. AI speeds the sorting; a person still owns the judgment calls.",
+          "Presentation and document assembly — AI builds the first structure and pulls in the content, but design polish and final narrative framing still take a human pass.",
+        ],
+      },
+      {
+        heading: "The tasks where AI barely moves the needle (and that's fine)",
+        paragraphs: [
+          "Relationship-building conversations, final decisions with real consequences, and anything requiring in-person presence don't compress much, and I don't pretend otherwise in training. The honest pitch for agentic AI has always been about freeing up time for exactly this kind of work — not replacing it.",
+        ],
+      },
+      {
+        heading: "How to calculate your own number instead of trusting mine",
+        paragraphs: [
+          "The only estimate worth trusting is one built from your own week. Here's the method I actually use in sessions: list your recurring weekly tasks, tag each one against the three buckets above, estimate current hours per task, and apply a realistic range (80% for erase-tier tasks, 40% for partial-tier tasks, 0% for the rest).",
+          "That gives you a number tied to your actual work instead of a vendor's slide. I built a free version of this exercise into the [AI time-savings calculator](/ai-time-savings-calculator) on this site — it walks through the same buckets and gives you an estimate in about a minute, with an option to email yourself the breakdown.",
+        ],
+      },
+      {
+        heading: "Why the number is usually bigger a month in than week one",
+        paragraphs: [
+          "The first week of using Claude Cowork, savings are modest — you're still learning what to hand off and how to phrase it. The real compounding happens once you've built a few reusable [AI workflow automations](/glossary/ai-workflow-automation) for your recurring tasks; at that point the AI isn't starting from scratch each time, it's running a process you've already refined together.",
+          "That's the gap most self-serve AI adoption falls into: people try it once on a hard task, get a mediocre result, and conclude the tool doesn't work. A trained team skips that entire dead zone because the workflows are built correctly the first time.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Blended \"AI saves X% of time\" stats are marketing numbers — the real answer depends entirely on the task mix in your specific week.",
+      "Assembly and formatting tasks (reports, first drafts, research synthesis) compress 70–90%; judgment-heavy tasks (correspondence, triage) compress 30–50%; relationship and decision work barely moves.",
+      "Build your own estimate by tagging your recurring weekly tasks into those three buckets — don't trust a single blended percentage.",
+      "Time savings compound after the first few weeks, once reusable workflows replace one-off, from-scratch prompting.",
+    ],
+    faqs: [
+      {
+        q: "What's a realistic time-savings estimate for a typical knowledge worker?",
+        a: "In my experience it usually lands between 20% and 35% of total weekly hours once a team has a handful of trained workflows in place — higher for roles heavy in reporting, research, and correspondence, lower for roles centered on meetings and relationship work.",
+      },
+      {
+        q: "Is there a free way to estimate my own team's AI time savings?",
+        a: "Yes — the AI time-savings calculator on this site walks through the same task buckets covered in this article and gives you a personalized estimate in under a minute.",
+      },
+      {
+        q: "Does the time savings show up immediately?",
+        a: "Partially. You'll see some savings in week one, but the bigger gains show up after you've built a few reusable workflows for your recurring tasks — which is exactly what a training session is built to shortcut.",
+      },
+    ],
+  },
+
+  {
+    slug: "can-ai-do-my-job",
+    title: "Can AI Do My Job? A Realistic Answer for Business Teams (Not a Doom Headline)",
+    metaTitle: "Can AI Do My Job? A Realistic 2026 Answer | Evan Weber",
+    metaDescription:
+      "Worried agentic AI will replace your job? Here's the honest answer from an AI trainer who works with real teams every week — which tasks AI actually takes over, which don't, and how to come out ahead of it instead of behind it.",
+    excerpt:
+      "I get asked some version of \"is AI going to take my job?\" in almost every training session. Here's the honest answer — no headline, no hype — from someone who watches this play out with real teams every week.",
+    category: "Career",
+    tags: ["Job security", "AI and jobs", "Career advice", "Agentic AI"],
+    readingTime: "9 min read",
+    datePublished: "2026-07-01",
+    dateModified: "2026-07-01",
+    intro: [
+      "Somewhere in the first ten minutes of almost every training session, someone asks the question they actually came in worried about: \"be honest — is this going to take my job?\"",
+      "It's a fair question and it deserves a real answer, not a reassurance speech and not a doom headline. So here's the version I actually give: the difference between a job and a task, which of your tasks are genuinely on the table, and what to do about it either way.",
+    ],
+    sections: [
+      {
+        heading: "Your job is not one thing — that's the whole answer",
+        paragraphs: [
+          "\"My job\" is really a bundle of dozens of distinct tasks, and [agentic AI](/glossary/agentic-ai) doesn't evaluate a job title, it evaluates a task. Some of the tasks in your bundle are the kind AI is already good at. Others aren't, and won't be for a long time, if ever.",
+          "That reframe matters because it turns an unanswerable, existential question (\"will AI replace me\") into a concrete, useful one (\"which of my specific tasks is AI actually good at, and what does that free me up to do instead\").",
+        ],
+      },
+      {
+        heading: "The tasks that are genuinely on the table",
+        paragraphs: [
+          "Be honest with yourself about this category, because pretending otherwise doesn't protect you — getting ahead of it does:",
+        ],
+        bullets: [
+          "Pure information assembly — pulling data from known sources and formatting it into a standard output. If a task is \"gather X, format as Y,\" AI does this well today.",
+          "First-draft generation — routine emails, standard documents, boilerplate reports. The first 80% of the work compresses hard.",
+          "Repetitive research and summarization — reading a volume of material to extract known-shape answers.",
+        ],
+      },
+      {
+        heading: "The tasks that are not — and this is most of what makes a role valuable",
+        paragraphs: [
+          "This is the part the doom headlines skip, and it's the majority of what actually makes a role worth paying for:",
+        ],
+        bullets: [
+          "Judgment under ambiguity — deciding what matters when the inputs are incomplete or conflicting. AI can surface options within a [human-in-the-loop](/glossary/human-in-the-loop) process; it can't own the accountability for the call.",
+          "Relationship and trust — a client, patient, or candidate choosing to work with a specific person because of the relationship, not the deliverable.",
+          "Context only a human has — organizational history, unwritten politics, who's actually going to push back on a decision and why.",
+          "Final accountability — someone has to be answerable when it matters. That's a human role by definition, not a technical limitation that goes away with a better model.",
+        ],
+      },
+      {
+        heading: "The people who lose out aren't the ones AI replaces — they're the ones who ignore it",
+        paragraphs: [
+          "In every industry I've watched go through a real technology shift — and after 25 years in digital marketing, I've watched a few — the risk was never \"the tool takes your job.\" It was \"the person using the tool takes the job of the person who didn't learn it.\"",
+          "The practical move isn't to hope AI stays away from your role. It's to be the person on the team who's already fluent in it, handing off the assembly work and spending the reclaimed time on the judgment, relationship, and accountability work that actually makes you valuable — and that's genuinely hard to automate.",
+        ],
+      },
+      {
+        heading: "A simple way to audit your own role",
+        paragraphs: [
+          "List the recurring tasks in your week. For each one, ask two questions: is the input well-defined, and is the output judged mostly on accuracy and formatting rather than relationship or accountability? Tasks that answer yes to both are the ones to hand to AI first — not because you have to, but because doing so is how you get faster and more valuable, not less.",
+          "If you want a faster version of this audit specific to your actual job description, I built a free [job description analyzer](/job-description-analyzer) for exactly this — paste in your job description and it breaks the tasks down the same way, tuned to your role.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "AI doesn't replace \"a job\" — it automates specific tasks. The real question is which of your tasks are that kind of task, not whether your job title survives.",
+      "Information assembly, first drafts, and repetitive research/summarization are genuinely on the table today.",
+      "Judgment under ambiguity, relationship and trust, organizational context, and final accountability are not — and they're most of what makes a role valuable.",
+      "The competitive risk isn't the tool — it's being the person on the team who didn't learn to use it while others did.",
+    ],
+    faqs: [
+      {
+        q: "Which jobs are most at risk from AI?",
+        a: "It's more accurate to talk about tasks than whole jobs. Roles with a high share of pure information-assembly and first-draft work (parts of admin, data entry, basic reporting) see the most task-level automation. Roles centered on judgment, relationships, and accountability change less, even when AI tools are heavily adopted.",
+      },
+      {
+        q: "Should I be worried about AI taking my job?",
+        a: "The realistic risk isn't the AI itself — it's falling behind colleagues who learn to use it well. Getting fluent with tools like Claude Cowork early is the practical way to come out ahead of that shift instead of behind it.",
+      },
+      {
+        q: "Is there a free tool to check which of my specific tasks AI could handle?",
+        a: "Yes — the job description analyzer on this site takes a real job description and breaks down which tasks are well-suited to AI assistance and which aren't, tuned to the actual role rather than a generic list.",
+      },
+    ],
+  },
+
+  {
+    slug: "aeo-geo-explained",
+    title: "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
+    metaTitle: "AEO & GEO Explained: An AI Search Playbook (2026) | Evan Weber",
+    metaDescription:
+      "What Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) actually mean, why they matter now, and the concrete playbook — schema, llms.txt, FAQ structure, crawlable content — using this site as the worked example.",
+    excerpt:
+      "AEO and GEO aren't buzzwords for a keynote — they're the specific, mechanical reasons some businesses get cited by ChatGPT and Claude and most don't. Here's the real playbook, using this exact site as the case study.",
+    category: "AI Search",
+    tags: ["AEO", "GEO", "AI search", "SEO", "Answer engine optimization"],
+    readingTime: "10 min read",
+    datePublished: "2026-07-01",
+    dateModified: "2026-07-01",
+    intro: [
+      "I've spent 25 years watching search evolve — keyword stuffing, then content quality, then featured snippets, then voice search. Every shift had the same shape: the tactics that worked yesterday quietly stopped working, and the businesses that noticed first won for years. We're in the middle of one of those shifts right now, and it's the biggest one yet.",
+      "When someone asks ChatGPT, Claude, or Perplexity a question today, they usually don't get ten blue links back — they get a synthesized answer with two or three sources cited, or none at all. [AEO](/glossary/aeo) and [GEO](/glossary/geo) are the practices for making sure your business is one of those sources instead of invisible to the whole conversation. This isn't theory — it's the exact set of things I did to this site, and I'll show you all of it.",
+    ],
+    sections: [
+      {
+        heading: "AEO vs. GEO — they're related, not the same thing",
+        paragraphs: [
+          "[Answer Engine Optimization (AEO)](/glossary/aeo) is the older discipline: structuring content so a system can lift out a direct, self-contained answer — for Google's featured snippets, voice assistants like Siri and Alexa, and \"People Also Ask\" boxes. It's about being extractable.",
+          "[Generative Engine Optimization (GEO)](/glossary/geo) is the newer, adjacent discipline: getting your content cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — that synthesize an answer instead of extracting one verbatim. It's about being trustworthy enough, and clear enough, for an [LLM](/glossary/llm) to choose you as a source.",
+          "In practice they overlap heavily and the same underlying work supports both, which is why I treat them as one playbook, not two separate projects.",
+        ],
+      },
+      {
+        heading: "Why this matters now, not eventually",
+        paragraphs: [
+          "The traditional SEO model was: rank a page, earn a click, the visitor lands on your site. AI answer engines break that model — the model answers the question directly, on its own surface, often without a click at all. If you're only optimized for the old model, you're optimizing for a shrinking share of how people actually find answers now.",
+          "The businesses winning this shift aren't doing anything mysterious. They're doing disciplined, structural work that most sites still skip: clear direct answers, correct structured data, and genuine crawlable access for AI bots. That's a gap you can close.",
+        ],
+      },
+      {
+        heading: "The playbook — what actually moves the needle",
+        paragraphs: [
+          "This is the concrete list, not the vague one:",
+        ],
+        bullets: [
+          "Lead with the direct answer. Put a plain, one-to-two sentence answer to the obvious question at the top of the page or section — before the nuance, not after it. Answer engines quote the sentence that already reads like an answer.",
+          "Structured data, done correctly. FAQPage, Article, Service, and DefinedTerm schema (schema.org / JSON-LD) tell machines exactly what a page contains instead of making them infer it. Critically, the schema has to match the visible content — mismatched structured data gets ignored or penalized.",
+          "Explicit Q&A formatting. Real, visible question headings with direct answers underneath outperform the same information buried in narrative paragraphs, for both featured snippets and LLM citation.",
+          "Author expertise signals (E-E-A-T). A named, credentialed author with a real bio and a consistent publishing history is a trust signal both Google and LLMs weigh — anonymous or unattributed content is easy to skip when a model is choosing what to cite.",
+          "Crawlable by AI bots, on purpose. Your robots.txt needs to explicitly allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and the other AI crawlers — many sites block these by default and never notice.",
+          "An llms.txt file. A plain-language summary of what your site is, who runs it, and what's on it, written for an AI system to read directly — the same idea as robots.txt, but aimed at comprehension instead of access control.",
+          "Topical depth through internal linking. A glossary, a blog, and genuine cross-links between them build the kind of topical authority that makes a domain look like a real source on a subject, not a single lucky page.",
+        ],
+      },
+      {
+        heading: "This site is the worked example",
+        paragraphs: [
+          "I didn't write this article as theory — I built every item on that list into learncowork.net before writing it. The [/llms.txt file](/llms.txt) at the root of this site is a direct-read summary for AI systems. The robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, and every major AI crawler. Every training page, tool, and blog post carries FAQPage or Service schema that matches its visible content exactly — not close, exactly, because mismatches undermine the whole point.",
+          "This glossary you're reading terms from is itself an AEO/GEO tactic: short, quotable, standalone definitions that are easy for a model to lift and cite correctly, cross-linked into the blog posts and training pages that go deeper. That's not an accident — it's the structure this whole article is describing, applied to itself.",
+        ],
+      },
+      {
+        heading: "Where this fits for your business",
+        paragraphs: [
+          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. None of that requires new headcount — it requires someone who knows what to build and where.",
+          "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "AEO is about being extractable (featured snippets, voice search); GEO is about being citable by generative AI (ChatGPT, Claude, Perplexity, AI Overviews) — the same underlying work supports both.",
+      "AI answer engines synthesize an answer instead of showing ranked links, which shrinks the value of old-model SEO tactics and rewards clear, structured, verifiably authored content.",
+      "The concrete playbook: direct-answer content, correct and matching structured data, explicit Q&A formatting, author expertise signals, AI-bot-friendly robots.txt, an llms.txt file, and real topical depth via internal linking.",
+      "This exact site — its llms.txt, robots.txt, schema, and glossary/blog cross-linking — is a working example of every tactic in this article, not just a description of them.",
+    ],
+    faqs: [
+      {
+        q: "What's the difference between AEO and GEO?",
+        a: "AEO (Answer Engine Optimization) is about structuring content to be extracted as a direct answer, for featured snippets and voice search. GEO (Generative Engine Optimization) is about being cited or summarized by generative AI systems like ChatGPT and Claude. They overlap heavily and are usually pursued together.",
+      },
+      {
+        q: "Does GEO replace traditional SEO?",
+        a: "No — it extends it. Technical fundamentals like site speed, crawlability, and quality content still matter. GEO adds a specific layer on top: structured data, direct-answer formatting, and explicit AI-crawler access that traditional SEO doesn't require.",
+      },
+      {
+        q: "What is an llms.txt file?",
+        a: "It's a plain-language summary of a site's purpose and content, placed at the root of the domain, written for AI systems to read directly — conceptually similar to robots.txt, but aimed at giving models an accurate, direct understanding of the site rather than controlling crawler access.",
+      },
+      {
+        q: "How do I know if AI crawlers can access my site?",
+        a: "Check your robots.txt for explicit rules covering GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and similar AI user-agents. If they're not mentioned at all, some crawlers may still access the site by default, but an explicit allow rule removes any ambiguity.",
       },
     ],
   },
