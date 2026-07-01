@@ -29,6 +29,7 @@ const roleLinks = [
 const trainingLinks = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
+  { href: "/aeo-geo-training", label: "AEO/GEO Training" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About Evan" },
 ];

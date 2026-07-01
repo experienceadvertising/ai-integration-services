@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
+import RelatedResources from "@/components/related-resources";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
 
@@ -223,6 +224,11 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <RelatedResources
+        heading="Recent writing"
+        articleSlugs={["what-is-claude-cowork", "what-is-codex-app", "can-ai-do-my-job"]}
+      />
 
       {/* CTA */}
       <section className="py-24 px-6 text-center bg-card">

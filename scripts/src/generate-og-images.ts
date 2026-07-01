@@ -97,6 +97,11 @@ const pages: OGPage[] = [
     category: "Vibe Coding Training",
     title: "Build Real Software with Claude Code",
   },
+  {
+    filename: "og-aeo-geo-training.png",
+    category: "AEO/GEO Training",
+    title: "Get Cited by ChatGPT & Claude",
+  },
   // Industry pages
   {
     filename: "og-industry-marketing-agencies.png",
@@ -215,6 +220,21 @@ const pages: OGPage[] = [
     category: "Comparison",
     title: "Claude Cowork vs. the Codex App",
   },
+  {
+    filename: "og-blog-ai-time-savings-guide.png",
+    category: "Guide · Productivity",
+    title: "How Much Time Can AI Save Your Team?",
+  },
+  {
+    filename: "og-blog-can-ai-do-my-job.png",
+    category: "Guide · Career",
+    title: "Can AI Do My Job?",
+  },
+  {
+    filename: "og-blog-aeo-geo-explained.png",
+    category: "Guide · AI Search",
+    title: "AEO & GEO Explained",
+  },
   // Glossary terms
   { filename: "og-glossary-claude-cowork.png", category: "AI Glossary", title: "Claude Cowork" },
   { filename: "og-glossary-agentic-ai.png", category: "AI Glossary", title: "Agentic AI" },
@@ -228,6 +248,8 @@ const pages: OGPage[] = [
   { filename: "og-glossary-claude.png", category: "AI Glossary", title: "Claude" },
   { filename: "og-glossary-prompt-engineering.png", category: "AI Glossary", title: "Prompt Engineering" },
   { filename: "og-glossary-ai-workflow-automation.png", category: "AI Glossary", title: "AI Workflow Automation" },
+  { filename: "og-glossary-aeo.png", category: "AI Glossary", title: "AEO (Answer Engine Optimization)" },
+  { filename: "og-glossary-geo.png", category: "AI Glossary", title: "GEO (Generative Engine Optimization)" },
 ];
 
 for (const page of pages) {

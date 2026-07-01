@@ -12,6 +12,7 @@ import Success from "@/pages/success";
 import Cancel from "@/pages/cancel";
 import ClaudeCoworkTraining from "@/pages/claude-cowork-training";
 import AiCodingTraining from "@/pages/ai-coding-training";
+import AeoGeoTraining from "@/pages/aeo-geo-training";
 import About from "@/pages/about";
 import IndustryPage from "@/pages/industry";
 import AiReport from "@/pages/ai-report";
@@ -35,6 +36,7 @@ function Routes() {
         <Route path="/" component={Home} />
         <Route path="/claude-cowork-training" component={ClaudeCoworkTraining} />
         <Route path="/ai-coding-training" component={AiCodingTraining} />
+        <Route path="/aeo-geo-training" component={AeoGeoTraining} />
         <Route path="/about" component={About} />
         <Route path="/ai-report" component={AiReport} />
         <Route path="/job-description-analyzer" component={JobDescriptionAnalyzer} />

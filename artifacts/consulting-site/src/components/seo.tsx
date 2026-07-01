@@ -13,7 +13,7 @@ interface SEOProps {
 
 const SITE_NAME = "AI Training by Evan Weber | learncowork.net";
 const DEFAULT_OG_IMAGE = "https://learncowork.net/og-image.png";
-const DEFAULT_KEYWORDS = "Claude Cowork training, AI productivity training, Claude AI training, AI team training, vibe coding training, Evan Weber, learncowork, Claude for business";
+const DEFAULT_KEYWORDS = "Claude Cowork training, AI productivity training, Claude AI training, AI team training, vibe coding training, AEO training, GEO training, AI search optimization, Evan Weber, learncowork, Claude for business";
 
 export default function SEO({
   title,
