@@ -12,7 +12,7 @@ import { industries } from "@/data/industries";
 import { roles } from "@/data/roles";
 import SiteFooter from "@/components/site-footer";
 // @ts-ignore
-import heroBg from "../assets/hero-bg.png";
+import heroBg from "../assets/hero-bg.webp";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
 import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck } from "lucide-react";
@@ -136,7 +136,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative flex items-center pt-20 pb-10 md:pt-24 md:pb-12 px-5 md:px-12 border-b border-border">
         <div className="absolute inset-0 z-0 opacity-20">
-          {heroBg && <img src={heroBg} alt="" className="w-full h-full object-cover grayscale" />}
+          {heroBg && (
+            <img
+              src={heroBg}
+              alt=""
+              width={1408}
+              height={768}
+              fetchPriority="low"
+              decoding="async"
+              className="w-full h-full object-cover grayscale"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/40" />
         </div>
 
