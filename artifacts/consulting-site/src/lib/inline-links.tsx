@@ -18,11 +18,21 @@ export function renderLinkedText(text: string): ReactNode {
     if (match.index > lastIndex) {
       nodes.push(<Fragment key={key++}>{text.slice(lastIndex, match.index)}</Fragment>);
     }
-    if (href.startsWith("/")) {
+    // Static assets (llms.txt, sitemap.xml, robots.txt, ...) are real files,
+    // not SPA routes — a wouter Link would try to client-route them and hit
+    // the 404 page instead of navigating to the file.
+    const isStaticAsset = /\.[a-z0-9]{2,4}$/i.test(href);
+    if (href.startsWith("/") && !isStaticAsset) {
       nodes.push(
         <Link key={key++} href={href} className="text-primary underline underline-offset-2 hover:no-underline">
           {label}
         </Link>,
+      );
+    } else if (href.startsWith("/")) {
+      nodes.push(
+        <a key={key++} href={href} className="text-primary underline underline-offset-2 hover:no-underline">
+          {label}
+        </a>,
       );
     } else {
       nodes.push(

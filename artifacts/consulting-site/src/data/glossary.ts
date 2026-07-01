@@ -129,7 +129,8 @@ export const glossaryTerms: GlossaryTerm[] = [
       "LLMs are the engines behind modern AI assistants. Anthropic's Claude and OpenAI's GPT models are LLMs. On their own they generate text; paired with tools, memory, and the ability to act, they become the reasoning core of agentic systems like Claude Cowork and the Codex app.",
       "Understanding that an LLM is a prediction system — powerful but not infallible — is why review and human-in-the-loop checks remain part of any serious workflow.",
     ],
-    related: ["claude", "agentic-ai", "prompt-engineering"],
+    related: ["claude", "agentic-ai", "prompt-engineering", "geo", "aeo"],
+    relatedArticles: ["aeo-geo-explained"],
   },
   {
     slug: "claude",
@@ -168,6 +169,34 @@ export const glossaryTerms: GlossaryTerm[] = [
     ],
     related: ["agentic-ai", "claude-cowork", "mcp"],
     relatedArticles: ["ai-time-savings-guide"],
+  },
+  {
+    slug: "aeo",
+    term: "AEO (Answer Engine Optimization)",
+    aliases: ["Answer Engine Optimization"],
+    category: "AI Search",
+    short:
+      "Answer Engine Optimization (AEO) is the practice of structuring content so search engines and AI assistants can lift a direct, self-contained answer out of it — for featured snippets, voice assistants, and AI Overviews — rather than just ranking a blue link.",
+    body: [
+      "Traditional SEO optimizes to rank a page; AEO optimizes to be the answer. That means writing content in clearly bounded, quotable units — a one- or two-sentence direct definition up top, explicit question-and-answer pairs, and FAQPage/HowTo structured data — so an answer engine can extract a correct, standalone answer without needing to interpret the whole page.",
+      "AEO predates the current wave of generative AI (it grew out of optimizing for Google's featured snippets and voice search), but it's the direct foundation for GEO. A page that's well-structured for a one-sentence extracted answer is also well-structured for an LLM to summarize and cite correctly.",
+    ],
+    related: ["geo", "llm", "agentic-ai"],
+    relatedArticles: ["aeo-geo-explained"],
+  },
+  {
+    slug: "geo",
+    term: "GEO (Generative Engine Optimization)",
+    aliases: ["Generative Engine Optimization", "AI search optimization"],
+    category: "AI Search",
+    short:
+      "Generative Engine Optimization (GEO) is the practice of optimizing content so it gets cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — instead of only ranking in a traditional list of blue links.",
+    body: [
+      "When someone asks ChatGPT or Perplexity a question, the model doesn't show ten ranked links — it synthesizes an answer, often citing two or three sources. GEO is the set of practices that make a page more likely to be one of those sources: clear, factual, well-structured content; explicit author expertise (E-E-A-T signals); FAQ and structured data (schema.org) that machines can parse cleanly; and technical crawlability for AI bots like GPTBot, ClaudeBot, and PerplexityBot.",
+      "GEO also includes a newer, more direct channel: publishing an `llms.txt` file — a plain-language summary of a site's content and purpose that AI systems can read directly, the same way `robots.txt` talks to search crawlers. Sites doing GEO well treat AI answer engines as a first-class audience, not an afterthought of traditional SEO.",
+    ],
+    related: ["aeo", "llm", "agentic-ai"],
+    relatedArticles: ["aeo-geo-explained"],
   },
 ];
 
