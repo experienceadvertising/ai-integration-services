@@ -475,6 +475,95 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "aeo-geo-explained",
+    title: "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
+    metaTitle: "AEO & GEO Explained: An AI Search Playbook (2026) | Evan Weber",
+    metaDescription:
+      "What Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) actually mean, why they matter now, and the concrete playbook — schema, llms.txt, FAQ structure, crawlable content — using this site as the worked example.",
+    excerpt:
+      "AEO and GEO aren't buzzwords for a keynote — they're the specific, mechanical reasons some businesses get cited by ChatGPT and Claude and most don't. Here's the real playbook, using this exact site as the case study.",
+    category: "AI Search",
+    tags: ["AEO", "GEO", "AI search", "SEO", "Answer engine optimization"],
+    readingTime: "10 min read",
+    datePublished: "2026-07-01",
+    dateModified: "2026-07-01",
+    intro: [
+      "I've spent 25 years watching search evolve — keyword stuffing, then content quality, then featured snippets, then voice search. Every shift had the same shape: the tactics that worked yesterday quietly stopped working, and the businesses that noticed first won for years. We're in the middle of one of those shifts right now, and it's the biggest one yet.",
+      "When someone asks ChatGPT, Claude, or Perplexity a question today, they usually don't get ten blue links back — they get a synthesized answer with two or three sources cited, or none at all. [AEO](/glossary/aeo) and [GEO](/glossary/geo) are the practices for making sure your business is one of those sources instead of invisible to the whole conversation. This isn't theory — it's the exact set of things I did to this site, and I'll show you all of it.",
+    ],
+    sections: [
+      {
+        heading: "AEO vs. GEO — they're related, not the same thing",
+        paragraphs: [
+          "[Answer Engine Optimization (AEO)](/glossary/aeo) is the older discipline: structuring content so a system can lift out a direct, self-contained answer — for Google's featured snippets, voice assistants like Siri and Alexa, and \"People Also Ask\" boxes. It's about being extractable.",
+          "[Generative Engine Optimization (GEO)](/glossary/geo) is the newer, adjacent discipline: getting your content cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — that synthesize an answer instead of extracting one verbatim. It's about being trustworthy enough, and clear enough, for an [LLM](/glossary/llm) to choose you as a source.",
+          "In practice they overlap heavily and the same underlying work supports both, which is why I treat them as one playbook, not two separate projects.",
+        ],
+      },
+      {
+        heading: "Why this matters now, not eventually",
+        paragraphs: [
+          "The traditional SEO model was: rank a page, earn a click, the visitor lands on your site. AI answer engines break that model — the model answers the question directly, on its own surface, often without a click at all. If you're only optimized for the old model, you're optimizing for a shrinking share of how people actually find answers now.",
+          "The businesses winning this shift aren't doing anything mysterious. They're doing disciplined, structural work that most sites still skip: clear direct answers, correct structured data, and genuine crawlable access for AI bots. That's a gap you can close.",
+        ],
+      },
+      {
+        heading: "The playbook — what actually moves the needle",
+        paragraphs: [
+          "This is the concrete list, not the vague one:",
+        ],
+        bullets: [
+          "Lead with the direct answer. Put a plain, one-to-two sentence answer to the obvious question at the top of the page or section — before the nuance, not after it. Answer engines quote the sentence that already reads like an answer.",
+          "Structured data, done correctly. FAQPage, Article, Service, and DefinedTerm schema (schema.org / JSON-LD) tell machines exactly what a page contains instead of making them infer it. Critically, the schema has to match the visible content — mismatched structured data gets ignored or penalized.",
+          "Explicit Q&A formatting. Real, visible question headings with direct answers underneath outperform the same information buried in narrative paragraphs, for both featured snippets and LLM citation.",
+          "Author expertise signals (E-E-A-T). A named, credentialed author with a real bio and a consistent publishing history is a trust signal both Google and LLMs weigh — anonymous or unattributed content is easy to skip when a model is choosing what to cite.",
+          "Crawlable by AI bots, on purpose. Your robots.txt needs to explicitly allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and the other AI crawlers — many sites block these by default and never notice.",
+          "An llms.txt file. A plain-language summary of what your site is, who runs it, and what's on it, written for an AI system to read directly — the same idea as robots.txt, but aimed at comprehension instead of access control.",
+          "Topical depth through internal linking. A glossary, a blog, and genuine cross-links between them build the kind of topical authority that makes a domain look like a real source on a subject, not a single lucky page.",
+        ],
+      },
+      {
+        heading: "This site is the worked example",
+        paragraphs: [
+          "I didn't write this article as theory — I built every item on that list into learncowork.net before writing it. The [/llms.txt file](/llms.txt) at the root of this site is a direct-read summary for AI systems. The robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, and every major AI crawler. Every training page, tool, and blog post carries FAQPage or Service schema that matches its visible content exactly — not close, exactly, because mismatches undermine the whole point.",
+          "This glossary you're reading terms from is itself an AEO/GEO tactic: short, quotable, standalone definitions that are easy for a model to lift and cite correctly, cross-linked into the blog posts and training pages that go deeper. That's not an accident — it's the structure this whole article is describing, applied to itself.",
+        ],
+      },
+      {
+        heading: "Where this fits for your business",
+        paragraphs: [
+          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. None of that requires new headcount — it requires someone who knows what to build and where.",
+          "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "AEO is about being extractable (featured snippets, voice search); GEO is about being citable by generative AI (ChatGPT, Claude, Perplexity, AI Overviews) — the same underlying work supports both.",
+      "AI answer engines synthesize an answer instead of showing ranked links, which shrinks the value of old-model SEO tactics and rewards clear, structured, verifiably authored content.",
+      "The concrete playbook: direct-answer content, correct and matching structured data, explicit Q&A formatting, author expertise signals, AI-bot-friendly robots.txt, an llms.txt file, and real topical depth via internal linking.",
+      "This exact site — its llms.txt, robots.txt, schema, and glossary/blog cross-linking — is a working example of every tactic in this article, not just a description of them.",
+    ],
+    faqs: [
+      {
+        q: "What's the difference between AEO and GEO?",
+        a: "AEO (Answer Engine Optimization) is about structuring content to be extracted as a direct answer, for featured snippets and voice search. GEO (Generative Engine Optimization) is about being cited or summarized by generative AI systems like ChatGPT and Claude. They overlap heavily and are usually pursued together.",
+      },
+      {
+        q: "Does GEO replace traditional SEO?",
+        a: "No — it extends it. Technical fundamentals like site speed, crawlability, and quality content still matter. GEO adds a specific layer on top: structured data, direct-answer formatting, and explicit AI-crawler access that traditional SEO doesn't require.",
+      },
+      {
+        q: "What is an llms.txt file?",
+        a: "It's a plain-language summary of a site's purpose and content, placed at the root of the domain, written for AI systems to read directly — conceptually similar to robots.txt, but aimed at giving models an accurate, direct understanding of the site rather than controlling crawler access.",
+      },
+      {
+        q: "How do I know if AI crawlers can access my site?",
+        a: "Check your robots.txt for explicit rules covering GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and similar AI user-agents. If they're not mentioned at all, some crawlers may still access the site by default, but an explicit allow rule removes any ambiguity.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

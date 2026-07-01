@@ -21,6 +21,7 @@ import ComparisonTable from "@/components/comparison-table";
 import BookingTrustRow from "@/components/booking-trust-row";
 import HomeFaq from "@/components/home-faq";
 import RecentBookingsBadge from "@/components/recent-bookings-badge";
+import RelatedResources from "@/components/related-resources";
 
 export default function Home() {
   const { data: packagesData, isLoading, error } = useListPackages();
@@ -130,6 +131,52 @@ export default function Home() {
         title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
         description="Live Claude Cowork training for business teams by Evan Weber, 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
         canonical="https://learncowork.net/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Do my team members need to be technical?",
+              acceptedAnswer: { "@type": "Answer", text: "No. Claude Cowork is built for non-technical users. If your team can use a browser, they can use Cowork. The training is designed to onboard non-technical people quickly using their actual day-to-day workflows." },
+            },
+            {
+              "@type": "Question",
+              name: "Is my company's data safe? Will Anthropic train on what we share with Claude?",
+              acceptedAnswer: { "@type": "Answer", text: "No, as long as you do one of two things: turn off the \"Help improve Claude\" training toggle in Privacy Settings on a Free, Pro, or Max account (which also drops retention to 30 days), or use a Claude for Work Team/Enterprise plan, which falls under Anthropic's Commercial Terms and is not used for model training by default." },
+            },
+            {
+              "@type": "Question",
+              name: "What does each person on my team need before the session?",
+              acceptedAnswer: { "@type": "Answer", text: "Each participant needs a Claude Pro or Claude for Teams subscription (about $20/month) and the Claude desktop app installed. Evan will help you pick the right plan for your team size during the call." },
+            },
+            {
+              "@type": "Question",
+              name: "How is this different from a YouTube tutorial or course?",
+              acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show you Cowork in someone else's workflow. Evan trains your specific team in your specific tools, building real automations during the call that you keep and use immediately. Most teams ship 2–3 working workflows in their first hour." },
+            },
+            {
+              "@type": "Question",
+              name: "What if I'm a solo professional, not a team?",
+              acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works great for individuals. Many solo consultants, lawyers, agents, and operators book it to build personal automations around their own daily work — proposals, research, client comms, reporting." },
+            },
+            {
+              "@type": "Question",
+              name: "What if the session isn't what I expected?",
+              acceptedAnswer: { "@type": "Answer", text: "100% satisfaction guarantee. If your first hour with Evan isn't worth the price, you get a full refund — no forms, no friction. Just email Evan and he'll process it." },
+            },
+            {
+              "@type": "Question",
+              name: "Can I expense this through my company?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes. You'll receive a Stripe receipt immediately after checkout that's expensable as professional development or training. If you need an itemized invoice, just reply to your receipt and Evan will send one." },
+            },
+            {
+              "@type": "Question",
+              name: "What happens after I book?",
+              acceptedAnswer: { "@type": "Answer", text: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and a session prep email shortly after with what to have ready." },
+            },
+          ],
+        }}
       />
       <SiteNav />
 
@@ -624,6 +671,12 @@ export default function Home() {
       </section>
 
       <HomeFaq />
+
+      <RelatedResources
+        heading="New to agentic AI? Start here"
+        articleSlugs={["what-is-claude-cowork", "can-ai-do-my-job"]}
+        glossarySlug="agentic-ai"
+      />
 
       <SiteFooter />
     </div>
