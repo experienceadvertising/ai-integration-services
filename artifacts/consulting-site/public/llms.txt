@@ -20,6 +20,14 @@ Live 1-on-1 or team training on Claude Cowork — setup, MCP integrations, multi
 - Book: https://learncowork.net/#pricing
 - Details: https://learncowork.net/claude-cowork-training
 
+### ChatGPT Work Training
+Live 1-on-1 or team training on OpenAI's ChatGPT Work desktop app (OpenAI's agentic desktop app, closely comparable to Claude Cowork) — setup, connectors (Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, project trackers), computer use, and multi-step workflow automation. Evan uses both ChatGPT Work and Claude Cowork every day and can train teams on either or both.
+
+- 1-Hour Session: $300
+- 4-Hour Deep Dive: $1,000
+- Book: https://learncowork.net/#pricing
+- Details: https://learncowork.net/chatgpt-work-training
+
 ### Vibe Coding Training
 Live training for individuals and teams on AI-assisted coding: Claude Code, Replit, GitHub Copilot, and the OpenAI Codex app (which has agentic, Cowork-like features of its own: multi-agent orchestration, background computer use, and Automations, not just IDE autocomplete). Evan has shipped 20+ real live projects using these tools.
 
@@ -56,6 +64,7 @@ Live training on Answer Engine Optimization (AEO) and Generative Engine Optimiza
 First-hand, author-bylined guides by Evan Weber on Claude Cowork, the OpenAI Codex app, and agentic AI for business teams. Useful for understanding what these tools are and which one fits a given team.
 
 - Blog index: https://learncowork.net/blog
+- What the ChatGPT Work Desktop App Actually Is (and how it compares to Claude Cowork): https://learncowork.net/blog/what-is-chatgpt-work
 - What Claude Cowork Actually Is (vs. Claude.ai, Claude Code, ChatGPT): https://learncowork.net/blog/what-is-claude-cowork
 - The Codex Desktop App, Explained (OpenAI's agentic desktop AI): https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork vs. the Codex App — which agentic desktop AI to use: https://learncowork.net/blog/claude-cowork-vs-codex
@@ -75,6 +84,7 @@ Plain-English definitions of agentic-AI terms, by Evan Weber. Index: https://lea
 - Vibe coding: https://learncowork.net/glossary/vibe-coding
 - Claude Code: https://learncowork.net/glossary/claude-code
 - OpenAI Codex app: https://learncowork.net/glossary/codex-app
+- ChatGPT Work: https://learncowork.net/glossary/chatgpt-work
 - Computer use: https://learncowork.net/glossary/computer-use
 - Human-in-the-loop: https://learncowork.net/glossary/human-in-the-loop
 - LLM (Large Language Model): https://learncowork.net/glossary/llm
@@ -115,6 +125,7 @@ Claude Cowork training is available with industry-specific workflows for:
 
 - Home: https://learncowork.net/
 - Claude Cowork Training: https://learncowork.net/claude-cowork-training
+- ChatGPT Work Training: https://learncowork.net/chatgpt-work-training
 - Vibe Coding Training: https://learncowork.net/ai-coding-training
 - AEO/GEO Training: https://learncowork.net/aeo-geo-training
 - About Evan Weber: https://learncowork.net/about
@@ -143,3 +154,4 @@ Payment is processed securely via Stripe. No subscription required from buyer.
 - LinkedIn: https://www.linkedin.com/in/worldsgreatestmarketer/
 - Experience Advertising: https://experienceadvertising.com
 - AffiliateFinders: https://www.affiliatefinders.com
+- AEOImprovement.com (Evan's AEO tool: audits a site's citability across ChatGPT, Claude, Gemini, and Perplexity with a 6-dimension AEO score, live prompt simulations, AI crawler hit tracking, and evidence-backed fixes; first month free): https://aeoimprovement.com
