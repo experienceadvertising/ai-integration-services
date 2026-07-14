@@ -129,10 +129,24 @@ export default function About() {
                     title: "Publisher Finders",
                     meta: "Founder · AI-Powered Discovery",
                     desc: "Publisher discovery platform connecting brands with content publishers at scale, built with AI-assisted development."
+                  },
+                  {
+                    title: "AEOImprovement.com",
+                    meta: "Founder · AI Search Tool",
+                    desc: "A tool I built to check how well AI answer engines like ChatGPT, Claude, and Perplexity can find, parse, and cite your site.",
+                    href: "https://aeoimprovement.com"
                   }
                 ].map((project, i) => (
                   <div key={i} className="bg-card border border-border rounded-xl p-5">
-                    <h3 className="font-bold mb-0.5">{project.title}</h3>
+                    <h3 className="font-bold mb-0.5">
+                      {"href" in project && project.href ? (
+                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
                     <p className="text-xs text-primary font-medium mb-2">{project.meta}</p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.desc}</p>
                   </div>
