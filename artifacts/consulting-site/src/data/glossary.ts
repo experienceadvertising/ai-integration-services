@@ -94,6 +94,21 @@ export const glossaryTerms: GlossaryTerm[] = [
     relatedArticles: ["what-is-codex-app", "claude-cowork-vs-codex"],
   },
   {
+    slug: "chatgpt-work",
+    term: "ChatGPT Work",
+    aliases: ["ChatGPT Work app", "ChatGPT desktop agent"],
+    category: "OpenAI",
+    short:
+      "ChatGPT Work is OpenAI's agentic desktop experience, built into a unified ChatGPT app for Mac and Windows, that can operate your computer, a built-in browser, and connected work apps to deliver finished work like spreadsheets, slide decks, and documents, rather than only chatting.",
+    body: [
+      "ChatGPT Work turns ChatGPT from a chat assistant into a digital colleague that acts on real work. Powered by OpenAI's GPT-5.6 model, it reasons through multi-step tasks, works across your local files and live websites, and produces actual artifacts. It ships inside a rebuilt ChatGPT desktop app that also folds in Codex, OpenAI's coding agent, so business and engineering work share one tool.",
+      "It connects to the tools teams already use, including Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. That connector layer is what moves it from a clever demo to something that touches a real workflow, the same role MCP plays for Claude Cowork.",
+      "ChatGPT Work is OpenAI's direct answer to agentic desktop AI and is closely comparable to Anthropic's Claude Cowork. Both operate your computer with a human in the loop for sensitive actions. The right choice usually comes down to your existing ecosystem rather than a large capability gap.",
+    ],
+    related: ["agentic-ai", "claude-cowork", "codex-app", "computer-use", "mcp"],
+    relatedArticles: ["what-is-chatgpt-work", "claude-cowork-vs-codex"],
+  },
+  {
     slug: "computer-use",
     term: "Computer use",
     category: "Concept",

@@ -102,6 +102,11 @@ const pages: OGPage[] = [
     category: "AEO/GEO Training",
     title: "Get Cited by ChatGPT & Claude",
   },
+  {
+    filename: "og-chatgpt-work-training.png",
+    category: "ChatGPT Work Training",
+    title: "Train Your Team on ChatGPT Work",
+  },
   // Industry pages
   {
     filename: "og-industry-marketing-agencies.png",
@@ -206,6 +211,11 @@ const pages: OGPage[] = [
   },
   // Blog articles
   {
+    filename: "og-blog-what-is-chatgpt-work.png",
+    category: "Guide · ChatGPT",
+    title: "What Is ChatGPT Work?",
+  },
+  {
     filename: "og-blog-what-is-claude-cowork.png",
     category: "Guide · Claude Cowork",
     title: "What Claude Cowork Actually Is",
@@ -242,6 +252,7 @@ const pages: OGPage[] = [
   { filename: "og-glossary-vibe-coding.png", category: "AI Glossary", title: "Vibe Coding" },
   { filename: "og-glossary-claude-code.png", category: "AI Glossary", title: "Claude Code" },
   { filename: "og-glossary-codex-app.png", category: "AI Glossary", title: "OpenAI Codex App" },
+  { filename: "og-glossary-chatgpt-work.png", category: "AI Glossary", title: "ChatGPT Work" },
   { filename: "og-glossary-computer-use.png", category: "AI Glossary", title: "Computer Use" },
   { filename: "og-glossary-human-in-the-loop.png", category: "AI Glossary", title: "Human-in-the-Loop" },
   { filename: "og-glossary-llm.png", category: "AI Glossary", title: "LLM (Large Language Model)" },
