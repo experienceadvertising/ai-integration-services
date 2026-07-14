@@ -46,6 +46,117 @@ export const ARTICLE_AUTHOR = {
 
 export const articles: Article[] = [
   {
+    slug: "what-is-chatgpt-work",
+    title: "What the ChatGPT Work Desktop App Actually Is, and How It Compares to Claude Cowork",
+    metaTitle: "What Is ChatGPT Work? A Plain-English 2026 Guide | Evan Weber",
+    metaDescription:
+      "ChatGPT Work is OpenAI's new agentic desktop app that operates your computer, a built-in browser, and your connected work apps to deliver finished work. Here is what it actually is, and an honest comparison with Claude Cowork, from someone who trains teams on both.",
+    excerpt:
+      "OpenAI just shipped ChatGPT Work, a desktop agent that does the work instead of just chatting about it. Here is the plain-English rundown, and an honest side-by-side with Claude Cowork, from someone who runs both every day.",
+    category: "ChatGPT",
+    tags: ["ChatGPT Work", "OpenAI", "Agentic AI", "Claude Cowork"],
+    readingTime: "9 min read",
+    datePublished: "2026-07-14",
+    dateModified: "2026-07-14",
+    intro: [
+      "A new name landed on every team's radar in July 2026: ChatGPT Work. OpenAI shipped it as part of a rebuilt ChatGPT desktop app, and within a day I had clients messaging me to ask whether it replaces the Claude Cowork setups we had just finished building together.",
+      "I train business teams on agentic desktop AI for a living, and I run the major tools every single day. So here is the straight version, no hype: what ChatGPT Work actually is, what it does on your machine, and how honestly it stacks up against Claude Cowork.",
+    ],
+    sections: [
+      {
+        heading: "The one-sentence definition",
+        paragraphs: [
+          "ChatGPT Work is OpenAI's agentic desktop experience: a rebuilt ChatGPT app for Mac and Windows that can operate your computer, a built-in browser, and your connected work apps to produce finished deliverables, instead of only answering questions in a chat box.",
+          "That is the whole leap, and it is the same leap Claude Cowork made. A normal chatbot hands you words. ChatGPT Work hands you completed work: it gathers information from your files and apps, does the task across multiple steps, and returns an actual artifact like a spreadsheet, a slide deck, a document, or a working web app. It runs on OpenAI's GPT-5.6 model, which is built to reason through multi-step jobs and follow your templates and reference files.",
+        ],
+      },
+      {
+        heading: "What actually ships in the new desktop app",
+        paragraphs: [
+          "The launch was not just a new feature toggle. OpenAI folded several products into one unified desktop app, and that is worth understanding before you decide anything:",
+        ],
+        bullets: [
+          "One unified desktop app for Mac and Windows, available to all ChatGPT users, with the agentic Work experience built in.",
+          "A built-in browser plus [computer use](/glossary/computer-use), so ChatGPT can see the screen, click, type, and drive websites and desktop apps on its own.",
+          "Codex, OpenAI's coding agent, merged into the same app, so engineering work and business work now live under one roof.",
+          "The ability to work across your local files, your installed apps, and live websites in a single task, rather than staying trapped in a chat window.",
+        ],
+      },
+      {
+        heading: "Why this counts as agentic, not just chat",
+        paragraphs: [
+          "People overuse the word \"[agentic](/glossary/agentic-ai),\" but it points at a real difference. A chatbot is reactive: you ask, it answers, the loop ends. An agent is goal-directed: you hand it an outcome, and it plans the steps, uses tools, checks its own work, and keeps going until the job is done.",
+          "In practice that means you can tell ChatGPT Work something like \"pull last month's numbers from these exports, build the board summary in our usual format, and flag anything that moved more than ten percent,\" and it will open the files, run the analysis, assemble the deck or document, and hand it back. That is the same shape of work I build with teams in Claude Cowork, now coming from OpenAI's side of the fence.",
+        ],
+      },
+      {
+        heading: "The connectors are where the real work happens",
+        paragraphs: [
+          "The headline capability is not the browser. It is the connectors. ChatGPT Work plugs into the tools your team already lives in, which is what turns it from a clever demo into something that touches your actual workflow.",
+          "As of launch it connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. If you have used Claude Cowork, this will feel familiar: it is the same idea as connecting Claude to your stack through [MCP](/glossary/mcp), just OpenAI's own version of the plumbing. And as with any tool that can reach into your real accounts, the connectors you set up are exactly where you want to be deliberate about permissions and data handling.",
+        ],
+      },
+      {
+        heading: "ChatGPT Work vs. Claude Cowork: the honest comparison",
+        paragraphs: [
+          "This is the question I get most, so here is my real answer after using both. They are more alike than either company's marketing admits. Both are agentic desktop apps that operate your computer and connected tools to deliver finished work. The differences are about ecosystem and philosophy, not some giant capability gap.",
+        ],
+        bullets: [
+          "Ecosystem fit: ChatGPT Work leans naturally into the Microsoft and OpenAI world (Teams, SharePoint), while [Claude Cowork](/claude-cowork-training) is a strong general-purpose fit and is often the more comfortable starting point for non-technical teams.",
+          "Coding under one roof: ChatGPT Work bundles Codex into the same app, so engineering and business work share one tool. On the Anthropic side, that split lives across Cowork and Claude Code (I break this down in the [Cowork vs. Codex piece](/blog/claude-cowork-vs-codex)).",
+          "Approach to control: both keep a human in the loop for sensitive actions, and with both I always walk teams through the privacy and data settings before we automate anything real.",
+          "The honest bottom line: the tool matters less than whether your team actually knows how to hand off the right work to it. That skill transfers between both.",
+        ],
+      },
+      {
+        heading: "Who I would point toward ChatGPT Work",
+        paragraphs: [
+          "If your company already runs on Microsoft 365 and Teams, or your team is deep in the ChatGPT habit and standardized on OpenAI, ChatGPT Work is an easy and natural fit. Having Codex in the same app is also a genuine plus for companies where the same people do both operational work and light building.",
+          "If you are a non-technical business team and you want the shortest path to a digital colleague that automates reports, research, intake, and correspondence, I still often start teams on Claude Cowork, and I explain exactly why in my [full Cowork explainer](/blog/what-is-claude-cowork). The good news is you are not locked in. Many teams I work with end up using both, and the workflow-building skills carry across cleanly.",
+        ],
+      },
+      {
+        heading: "A note for anyone in marketing or SEO",
+        paragraphs: [
+          "There is a second story inside this launch that most people miss. Now that millions of people ask ChatGPT Work to research vendors, compile options, and recommend a choice, being the answer it surfaces is its own discipline. That is answer engine optimization, and it is quickly becoming as important as ranking on Google used to be.",
+          "This is close to home for me. Getting a business cited by ChatGPT, Claude, Gemini, and Perplexity is exactly what my tool [AEOImprovement.com](https://aeoimprovement.com) is built for. It audits your site's citability across those engines and gives you a 6-dimension score plus evidence-backed fixes, and it is the same playbook I cover in my [AEO and GEO training](/aeo-geo-training). If ChatGPT Work is going to be the front door to how people find services, you want your business to be what it recommends, not invisible to it.",
+        ],
+      },
+      {
+        heading: "How to roll it out without losing a month to it",
+        paragraphs: [
+          "The mistake I watch teams make with every new agentic tool is the same one: they install it, try it once on a hard task, get a mediocre result, and quietly go back to doing everything by hand. The tool was never the problem. Nobody showed them how to scope a task, connect the right apps, and build a workflow that runs reliably the second and hundredth time.",
+          "Whether you land on ChatGPT Work, Claude Cowork, or both, the fastest path is to pick one real, painful, recurring task and build it end to end with someone who has done it before. That is the entire reason my training exists, and the skills apply no matter which app your team standardizes on.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "ChatGPT Work is OpenAI's agentic desktop app: it operates your computer, a built-in browser, and connected work apps to deliver finished work, powered by GPT-5.6.",
+      "It ships inside a unified ChatGPT desktop app for Mac and Windows, with Codex merged in and computer use built into the same tool.",
+      "Its connectors (Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, project trackers) are what make it useful, the same role MCP plays for Claude Cowork.",
+      "ChatGPT Work and Claude Cowork are more alike than different. The right choice depends on your ecosystem, and the workflow-building skills transfer between both.",
+    ],
+    faqs: [
+      {
+        q: "Is ChatGPT Work free?",
+        a: "The unified ChatGPT desktop app that hosts the Work experience launched as available to all ChatGPT users on Mac and Windows, with heavier usage tied to paid ChatGPT plans. My training is separate from any subscription: a 1-hour session is $300 and a 4-hour deep dive is $1,000.",
+      },
+      {
+        q: "Is ChatGPT Work the same as Claude Cowork?",
+        a: "No, they are competing products from different companies, but they are very similar in concept. Both are agentic desktop apps that can operate your computer and connected tools to produce finished work. ChatGPT Work is OpenAI's version and Claude Cowork is Anthropic's. I train teams on both.",
+      },
+      {
+        q: "Do I need to be technical to use ChatGPT Work?",
+        a: "No. Like Claude Cowork, ChatGPT Work is designed for regular business users, not just developers. If your team can use a browser and approve an action, they can use it. The value comes from knowing how to hand off the right tasks, which is exactly what training covers.",
+      },
+      {
+        q: "Can ChatGPT Work connect to my company's tools?",
+        a: "Yes. At launch it connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. As with any tool that reaches into your real accounts, I walk teams through permissions and data handling before automating sensitive work.",
+      },
+    ],
+  },
+
+  {
     slug: "what-is-claude-cowork",
     title: "What Claude Cowork Actually Is — and How It's Different from Claude.ai, Claude Code, and ChatGPT",
     metaTitle: "What Is Claude Cowork? A Plain-English Guide (2026) | Evan Weber",
@@ -534,7 +645,7 @@ export const articles: Article[] = [
       {
         heading: "Where this fits for your business",
         paragraphs: [
-          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. None of that requires new headcount — it requires someone who knows what to build and where.",
+          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. To make that audit faster, I built a tool for exactly this, [AEOImprovement.com](https://aeoimprovement.com), which audits your site's citability across ChatGPT, Claude, Gemini, and Perplexity and hands you a 6-dimension AEO score with evidence-backed fixes you can ship today. None of that requires new headcount — it requires someone who knows what to build and where.",
           "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
         ],
       },
