@@ -56,6 +56,7 @@ const routes = [
   "/claude-cowork-training",
   "/ai-coding-training",
   "/aeo-geo-training",
+  "/chatgpt-work-training",
   "/about",
   "/ai-report",
   "/job-description-analyzer",

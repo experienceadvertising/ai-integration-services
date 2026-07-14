@@ -102,7 +102,8 @@ export default function AeoGeoTraining() {
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
             <Link href="/glossary/aeo" className="text-primary underline underline-offset-2 hover:no-underline">AEO (Answer Engine Optimization)</Link> structures content to be extracted as a direct answer — featured snippets, voice search.{" "}
             <Link href="/glossary/geo" className="text-primary underline underline-offset-2 hover:no-underline">GEO (Generative Engine Optimization)</Link> goes further: getting cited or summarized by generative AI —{" "}
-            <Link href="/glossary/llm" className="text-primary underline underline-offset-2 hover:no-underline">LLMs</Link> like ChatGPT, Claude, and Perplexity, plus Google AI Overviews. When someone asks an AI a question today, they usually get a synthesized answer with a couple of cited sources instead of ten ranked links. This training is about being one of those sources.
+            <Link href="/glossary/llm" className="text-primary underline underline-offset-2 hover:no-underline">LLMs</Link> like ChatGPT, Claude, and Perplexity, plus Google AI Overviews. When someone asks an AI a question today, they usually get a synthesized answer with a couple of cited sources instead of ten ranked links. This training is about being one of those sources. Want a quick read on where your site stands? My tool,{" "}
+            <a href="https://aeoimprovement.com" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:no-underline">AEOImprovement.com</a>, checks how well AI answer engines can find, parse, and cite your site.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
