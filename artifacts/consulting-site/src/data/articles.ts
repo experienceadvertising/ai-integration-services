@@ -119,7 +119,7 @@ export const articles: Article[] = [
         heading: "A note for anyone in marketing or SEO",
         paragraphs: [
           "There is a second story inside this launch that most people miss. Now that millions of people ask ChatGPT Work to research vendors, compile options, and recommend a choice, being the answer it surfaces is its own discipline. That is answer engine optimization, and it is quickly becoming as important as ranking on Google used to be.",
-          "This is close to home for me. Getting a business cited by ChatGPT, Claude, and AI search is exactly what my tool [AEOImprovement.com](https://aeoimprovement.com) is built to help with, and it is what I cover in my [AEO and GEO training](/aeo-geo-training). If ChatGPT Work is going to be the front door to how people find services, you want your business to be what it recommends, not invisible to it.",
+          "This is close to home for me. Getting a business cited by ChatGPT, Claude, Gemini, and Perplexity is exactly what my tool [AEOImprovement.com](https://aeoimprovement.com) is built for. It audits your site's citability across those engines and gives you a 6-dimension score plus evidence-backed fixes, and it is the same playbook I cover in my [AEO and GEO training](/aeo-geo-training). If ChatGPT Work is going to be the front door to how people find services, you want your business to be what it recommends, not invisible to it.",
         ],
       },
       {
@@ -645,7 +645,7 @@ export const articles: Article[] = [
       {
         heading: "Where this fits for your business",
         paragraphs: [
-          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. To make that audit faster, I built a tool for exactly this, [AEOImprovement.com](https://aeoimprovement.com), which checks how well AI answer engines can find, parse, and cite your site. None of that requires new headcount — it requires someone who knows what to build and where.",
+          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. To make that audit faster, I built a tool for exactly this, [AEOImprovement.com](https://aeoimprovement.com), which audits your site's citability across ChatGPT, Claude, Gemini, and Perplexity and hands you a 6-dimension AEO score with evidence-backed fixes you can ship today. None of that requires new headcount — it requires someone who knows what to build and where.",
           "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
         ],
       },

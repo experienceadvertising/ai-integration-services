@@ -102,8 +102,7 @@ export default function AeoGeoTraining() {
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
             <Link href="/glossary/aeo" className="text-primary underline underline-offset-2 hover:no-underline">AEO (Answer Engine Optimization)</Link> structures content to be extracted as a direct answer — featured snippets, voice search.{" "}
             <Link href="/glossary/geo" className="text-primary underline underline-offset-2 hover:no-underline">GEO (Generative Engine Optimization)</Link> goes further: getting cited or summarized by generative AI —{" "}
-            <Link href="/glossary/llm" className="text-primary underline underline-offset-2 hover:no-underline">LLMs</Link> like ChatGPT, Claude, and Perplexity, plus Google AI Overviews. When someone asks an AI a question today, they usually get a synthesized answer with a couple of cited sources instead of ten ranked links. This training is about being one of those sources. Want a quick read on where your site stands? My tool,{" "}
-            <a href="https://aeoimprovement.com" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:no-underline">AEOImprovement.com</a>, checks how well AI answer engines can find, parse, and cite your site.
+            <Link href="/glossary/llm" className="text-primary underline underline-offset-2 hover:no-underline">LLMs</Link> like ChatGPT, Claude, and Perplexity, plus Google AI Overviews. When someone asks an AI a question today, they usually get a synthesized answer with a couple of cited sources instead of ten ranked links. This training is about being one of those sources.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -201,6 +200,37 @@ export default function AeoGeoTraining() {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AEOImprovement tool callout */}
+      <section className="py-16 px-6 lg:px-12 border-b border-border">
+        <div className="container max-w-4xl mx-auto">
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10">
+            <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">My AEO Tool</div>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">Get cited by the AI engines that matter</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">
+              I built AEOImprovement.com to audit your site's citability across ChatGPT, Claude, Gemini, and Perplexity. You get a 6-dimension AEO score, live prompt simulations, and evidence-backed fixes you can ship today.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-2.5 mb-6 max-w-2xl">
+              {[
+                "Live prompt simulations across 4 AI engines",
+                "Real AI crawler hit tracking",
+                "Continuous site monitoring and alerts",
+                "Fix Generator for llms.txt and JSON-LD",
+                "Google Analytics AI-referral traffic",
+                "First month free, every feature, no card",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="https://aeoimprovement.com" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="gap-2">Try AEOImprovement.com <ArrowRight className="w-4 h-4" /></Button>
+            </a>
           </div>
         </div>
       </section>

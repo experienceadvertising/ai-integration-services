@@ -133,7 +133,7 @@ export default function About() {
                   {
                     title: "AEOImprovement.com",
                     meta: "Founder · AI Search Tool",
-                    desc: "A tool I built to check how well AI answer engines like ChatGPT, Claude, and Perplexity can find, parse, and cite your site.",
+                    desc: "A tool I built to audit your site's citability across ChatGPT, Claude, Gemini, and Perplexity, with a 6-dimension AEO score, live prompt simulations, and evidence-backed fixes you can ship today.",
                     href: "https://aeoimprovement.com"
                   }
                 ].map((project, i) => (
