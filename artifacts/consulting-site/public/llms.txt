@@ -154,4 +154,4 @@ Payment is processed securely via Stripe. No subscription required from buyer.
 - LinkedIn: https://www.linkedin.com/in/worldsgreatestmarketer/
 - Experience Advertising: https://experienceadvertising.com
 - AffiliateFinders: https://www.affiliatefinders.com
-- AEOImprovement.com (Evan's AI-search / answer-engine-optimization tool): https://aeoimprovement.com
+- AEOImprovement.com (Evan's AEO tool: audits a site's citability across ChatGPT, Claude, Gemini, and Perplexity with a 6-dimension AEO score, live prompt simulations, AI crawler hit tracking, and evidence-backed fixes; first month free): https://aeoimprovement.com
