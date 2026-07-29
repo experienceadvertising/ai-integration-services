@@ -128,52 +128,70 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="Claude Cowork Training for Teams | Evan Weber AI Trainer"
-        description="Live Claude Cowork training for business teams by Evan Weber, 25-year digital marketing veteran and daily AI power user. Book a 1-hour or 4-hour session."
+        title="Claude Cowork & ChatGPT Work Training for Teams and Individuals | Evan Weber"
+        description="Live Claude Cowork and ChatGPT Work training by Evan Weber — 25-year digital marketing veteran who runs both agentic desktop AI tools every day. Book a 1-hour or 4-hour session for your team or yourself."
         canonical="https://learncowork.net/"
+        keywords="Claude Cowork training, ChatGPT Work training, agentic AI training for teams, AI productivity training, Evan Weber, live AI training session"
         schema={{
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
+          "@graph": [
             {
-              "@type": "Question",
-              name: "Do my team members need to be technical?",
-              acceptedAnswer: { "@type": "Answer", text: "No. Claude Cowork is built for non-technical users. If your team can use a browser, they can use Cowork. The training is designed to onboard non-technical people quickly using their actual day-to-day workflows." },
+              "@type": "Service",
+              "@id": "https://learncowork.net/#training-services",
+              name: "Agentic AI Training by Evan Weber",
+              provider: { "@type": "Person", name: "Evan Weber", url: "https://learncowork.net/about" },
+              description: "Live 1-on-1 and team training on Claude Cowork and ChatGPT Work — Anthropic's and OpenAI's agentic desktop AI tools. Sessions are on screen share, tailored to each team's real workflows, for both teams and individuals.",
+              url: "https://learncowork.net/",
+              areaServed: "US",
+              offers: [
+                { "@type": "Offer", name: "1-Hour Training Session", price: "300", priceCurrency: "USD" },
+                { "@type": "Offer", name: "4-Hour Deep Dive Workshop", price: "1000", priceCurrency: "USD" },
+              ],
             },
             {
-              "@type": "Question",
-              name: "Is my company's data safe? Will Anthropic train on what we share with Claude?",
-              acceptedAnswer: { "@type": "Answer", text: "No, as long as you do one of two things: turn off the \"Help improve Claude\" training toggle in Privacy Settings on a Free, Pro, or Max account (which also drops retention to 30 days), or use a Claude for Work Team/Enterprise plan, which falls under Anthropic's Commercial Terms and is not used for model training by default." },
-            },
-            {
-              "@type": "Question",
-              name: "What does each person on my team need before the session?",
-              acceptedAnswer: { "@type": "Answer", text: "Each participant needs a Claude Pro or Claude for Teams subscription (about $20/month) and the Claude desktop app installed. Evan will help you pick the right plan for your team size during the call." },
-            },
-            {
-              "@type": "Question",
-              name: "How is this different from a YouTube tutorial or course?",
-              acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show you Cowork in someone else's workflow. Evan trains your specific team in your specific tools, building real automations during the call that you keep and use immediately. Most teams ship 2–3 working workflows in their first hour." },
-            },
-            {
-              "@type": "Question",
-              name: "What if I'm a solo professional, not a team?",
-              acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works great for individuals. Many solo consultants, lawyers, agents, and operators book it to build personal automations around their own daily work — proposals, research, client comms, reporting." },
-            },
-            {
-              "@type": "Question",
-              name: "What if the session isn't what I expected?",
-              acceptedAnswer: { "@type": "Answer", text: "100% satisfaction guarantee. If your first hour with Evan isn't worth the price, you get a full refund — no forms, no friction. Just email Evan and he'll process it." },
-            },
-            {
-              "@type": "Question",
-              name: "Can I expense this through my company?",
-              acceptedAnswer: { "@type": "Answer", text: "Yes. You'll receive a Stripe receipt immediately after checkout that's expensable as professional development or training. If you need an itemized invoice, just reply to your receipt and Evan will send one." },
-            },
-            {
-              "@type": "Question",
-              name: "What happens after I book?",
-              acceptedAnswer: { "@type": "Answer", text: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and a session prep email shortly after with what to have ready." },
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Do my team members need to be technical to use Claude Cowork or ChatGPT Work?",
+                  acceptedAnswer: { "@type": "Answer", text: "No. Both Claude Cowork and ChatGPT Work are built for non-technical users. If your team can use a browser, they can use either tool. The training is designed to onboard non-technical people quickly using their actual day-to-day workflows." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Do you train on Claude Cowork, ChatGPT Work, or both?",
+                  acceptedAnswer: { "@type": "Answer", text: "Both. Evan runs Claude Cowork and ChatGPT Work every day for real business work. A session can focus on either tool, or cover both side by side so you can decide which fits your stack — or use both together." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is my company's data safe? Will Anthropic or OpenAI train on what we share?",
+                  acceptedAnswer: { "@type": "Answer", text: "No, as long as you configure this correctly. For Claude Cowork: turn off the 'Help improve Claude' toggle in Privacy Settings, or use a Claude for Work plan. For ChatGPT Work: turn off training in Settings > Data Controls, or use a ChatGPT Team/Enterprise plan. Evan covers data settings in every session before automating anything real." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What does each person on my team need before the session?",
+                  acceptedAnswer: { "@type": "Answer", text: "For Claude Cowork: a Claude Pro or Claude for Teams subscription and the Claude desktop app. For ChatGPT Work: a ChatGPT Plus or Team plan and the ChatGPT desktop app. Evan will help you pick the right plan for your team size during the call." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How is this different from a YouTube tutorial or course?",
+                  acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show you the tool in someone else's workflow. Evan trains your specific team in your specific tools, building real automations during the call that you keep and use immediately. Most teams ship 2–3 working workflows in their first hour." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What if I'm a solo professional, not a team?",
+                  acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works great for individuals. Many solo consultants, lawyers, agents, and operators book it to build personal automations around their own daily work — proposals, research, client comms, reporting." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What if the session isn't what I expected?",
+                  acceptedAnswer: { "@type": "Answer", text: "100% satisfaction guarantee. If your first hour with Evan isn't worth the price, you get a full refund — no forms, no friction. Just email Evan and he'll process it." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What happens after I book?",
+                  acceptedAnswer: { "@type": "Answer", text: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and a session prep email shortly after with what to have ready." },
+                },
+              ],
             },
           ],
         }}
@@ -211,12 +229,12 @@ export default function Home() {
 
             <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
               Your team needs<br />
-              <span className="text-primary">Claude Cowork.</span><br />
+              <span className="text-primary">agentic AI.</span><br />
               <span className="text-muted-foreground">Let me show them how.</span>
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              Claude Cowork is the most powerful AI productivity tool available, and most teams haven't touched it. I'll get your people using it fluently, in their actual workflow, in a single session.
+              Claude Cowork and ChatGPT Work are the two most powerful AI productivity tools available — and most teams haven't touched either one. I run both every day and I'll get your people using them fluently, in their actual workflow, in a single live session.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -264,6 +282,84 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Training Services */}
+      <section className="py-12 md:py-20 px-5 md:px-12 border-b border-border">
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Live AI training for teams and individuals</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">Pick the tool your team uses — or let Evan run both side by side so you can decide.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+            {[
+              {
+                badge: "Most Popular",
+                icon: "🤖",
+                title: "Claude Cowork Training",
+                tagline: "Anthropic's agentic desktop AI",
+                description: "Set up Cowork, connect it to your real tools via MCP, and build multi-step automations that actually run. Built for non-technical teams across every department.",
+                href: "/claude-cowork-training",
+                highlight: true,
+              },
+              {
+                badge: "New",
+                icon: "💬",
+                title: "ChatGPT Work Training",
+                tagline: "OpenAI's agentic desktop AI",
+                description: "Get your team or yourself running ChatGPT Work — setup, connectors (Slack, Teams, Google Drive, SharePoint, CRMs), computer use, and real workflows, live and on screen share.",
+                href: "/chatgpt-work-training",
+                highlight: false,
+              },
+              {
+                icon: "⚡",
+                title: "Vibe Coding Training",
+                tagline: "Build software with AI, no CS degree required",
+                description: "Claude Code, Replit, GitHub Copilot, and the Codex app — Evan has shipped 20+ real projects. Get past the tutorial phase and build something that actually works.",
+                href: "/ai-coding-training",
+                highlight: false,
+              },
+              {
+                icon: "🔍",
+                title: "AEO / GEO Training",
+                tagline: "Get cited by ChatGPT, Claude, and AI search",
+                description: "Answer Engine Optimization and Generative Engine Optimization — the structured-data, llms.txt, and content playbook that makes AI systems cite your business instead of your competitor.",
+                href: "/aeo-geo-training",
+                highlight: false,
+              },
+            ].map((svc, i) => (
+              <motion.a
+                key={i}
+                href={svc.href}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={`relative block p-6 rounded-xl border transition-all group cursor-pointer ${
+                  svc.highlight
+                    ? "border-primary/50 bg-primary/5 hover:border-primary hover:bg-primary/10"
+                    : "border-border bg-card hover:border-primary/40 hover:bg-secondary/40"
+                }`}
+              >
+                {svc.badge && (
+                  <span className="absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                    {svc.badge}
+                  </span>
+                )}
+                <div className="text-2xl mb-3">{svc.icon}</div>
+                <h3 className="font-bold text-lg mb-0.5 group-hover:text-primary transition-colors">{svc.title}</h3>
+                <p className="text-xs font-semibold text-primary/80 uppercase tracking-wide mb-3">{svc.tagline}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{svc.description}</p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-8">
+            All sessions: <strong className="text-foreground">$300 / 1 hour</strong> or <strong className="text-foreground">$1,000 / 4-hour deep dive</strong> — live, on screen share, tailored to your actual workflow.
+          </p>
         </div>
       </section>
 
@@ -642,7 +738,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3 text-sm md:text-base">
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      <span>Actionable Claude Cowork setup</span>
+                      <span>Claude Cowork or ChatGPT Work — your choice</span>
                     </li>
                   </ul>
 
@@ -674,7 +770,7 @@ export default function Home() {
 
       <RelatedResources
         heading="New to agentic AI? Start here"
-        articleSlugs={["what-is-claude-cowork", "can-ai-do-my-job"]}
+        articleSlugs={["what-is-chatgpt-work", "what-is-claude-cowork", "can-ai-do-my-job"]}
         glossarySlug="agentic-ai"
       />
 

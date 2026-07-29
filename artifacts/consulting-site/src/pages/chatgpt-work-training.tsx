@@ -14,6 +14,10 @@ export default function ChatGptWorkTraining() {
       a: "ChatGPT Work is OpenAI's agentic desktop app. It operates your computer, a built-in browser, and your connected work apps to deliver finished work like spreadsheets, slide decks, and documents, instead of only answering questions. It is OpenAI's direct counterpart to Claude Cowork, and it is powered by the GPT-5.6 model.",
     },
     {
+      q: "Is this training for teams, individuals, or both?",
+      a: "Both. The 1-hour session is the right format for solo professionals and individuals who want to automate their personal daily workflow. The 4-hour deep dive is ideal for teams who want to roll out ChatGPT Work across a department. Evan tailors every session to who is in the room and what they actually do.",
+    },
+    {
       q: "Do my team members need to be technical to use ChatGPT Work?",
       a: "No. ChatGPT Work is built for regular business users, not just developers. If your team can use a browser and approve an action, they can use it. Evan's training is designed to get non-technical people productive quickly using their actual day-to-day workflows.",
     },
@@ -28,6 +32,14 @@ export default function ChatGptWorkTraining() {
     {
       q: "Can ChatGPT Work connect to our existing tools?",
       a: "Yes. At launch it connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. Evan will help you connect the right ones and will walk through permissions and data handling so you can automate real work confidently.",
+    },
+    {
+      q: "Is my data safe with ChatGPT Work?",
+      a: "Yes, if you configure it correctly. Turn off 'Improve the model for everyone' in Settings > Data Controls on a personal plan, or use a ChatGPT Team or Enterprise plan which excludes your data from training by default. Evan walks through these settings in every session before automating anything real.",
+    },
+    {
+      q: "What do I need before the session?",
+      a: "A ChatGPT Plus, Pro, or Team plan and the ChatGPT desktop app installed on Mac or Windows. If you're unsure which plan fits your team size, Evan will help you decide on the call.",
     },
     {
       q: "Will the session be recorded?",
@@ -218,6 +230,61 @@ export default function ChatGptWorkTraining() {
         </div>
       </section>
 
+      {/* For Individuals */}
+      <section className="py-20 px-6 lg:px-12 border-b border-border bg-secondary/20">
+        <div className="container max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
+                Solo Professional Track
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Training built for individuals, not just teams</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                You don't need a team to get real value from ChatGPT Work. Solo consultants, executives, agents, lawyers, and operators are some of the most motivated people Evan trains — because when they reclaim two hours a day, that goes directly to revenue or to time they get back.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                The 1-hour session is sized exactly for one person. You bring one or two painful recurring tasks. Evan helps you build the workflow live, and you leave with something that runs.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Proposals and client deliverables",
+                  desc: "Build a reusable workflow that pulls your notes, previous work, and client context into a ready-to-review first draft in minutes.",
+                },
+                {
+                  title: "Research and competitive intelligence",
+                  desc: "Let ChatGPT Work pull from live sources, synthesize, and format — so you stop spending half a day on what used to be a 15-minute task.",
+                },
+                {
+                  title: "Email and correspondence",
+                  desc: "Draft, organize, and respond to high-volume inboxes in your own voice — without reading every thread from scratch.",
+                },
+                {
+                  title: "Reports and summaries you make every week",
+                  desc: "The task you dread most, done in a fraction of the time. ChatGPT Work connects to your files and sources and assembles the report itself.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="flex items-start gap-4 p-4 bg-card border border-border rounded-xl"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold mb-1">{item.title}</div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">{item.desc}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-6 lg:px-12 border-b border-border bg-secondary/20">
         <div className="container max-w-4xl mx-auto">
@@ -235,7 +302,7 @@ export default function ChatGptWorkTraining() {
 
       <RelatedResources
         heading="Learn more about ChatGPT Work"
-        articleSlugs={["what-is-chatgpt-work", "claude-cowork-vs-codex"]}
+        articleSlugs={["what-is-chatgpt-work", "chatgpt-work-for-teams", "chatgpt-work-for-individuals"]}
         glossarySlug="chatgpt-work"
       />
 

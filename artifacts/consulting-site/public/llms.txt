@@ -65,6 +65,8 @@ First-hand, author-bylined guides by Evan Weber on Claude Cowork, the OpenAI Cod
 
 - Blog index: https://learncowork.net/blog
 - What the ChatGPT Work Desktop App Actually Is (and how it compares to Claude Cowork): https://learncowork.net/blog/what-is-chatgpt-work
+- How to Roll Out ChatGPT Work Across Your Team (practical rollout guide): https://learncowork.net/blog/chatgpt-work-for-teams
+- ChatGPT Work for Solo Professionals (automating your daily work as an individual): https://learncowork.net/blog/chatgpt-work-for-individuals
 - What Claude Cowork Actually Is (vs. Claude.ai, Claude Code, ChatGPT): https://learncowork.net/blog/what-is-claude-cowork
 - The Codex Desktop App, Explained (OpenAI's agentic desktop AI): https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork vs. the Codex App — which agentic desktop AI to use: https://learncowork.net/blog/claude-cowork-vs-codex

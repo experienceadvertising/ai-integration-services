@@ -675,6 +675,198 @@ export const articles: Article[] = [
       },
     ],
   },
+  {
+    slug: "chatgpt-work-for-teams",
+    title: "How to Roll Out ChatGPT Work Across Your Team: A Practical Guide",
+    metaTitle: "ChatGPT Work for Teams: A Practical Rollout Guide (2026) | Evan Weber",
+    metaDescription:
+      "A practical, step-by-step guide to rolling out ChatGPT Work across a business team — from setup and connector configuration to building your first real workflow and getting the whole department productive. Written by a trainer who does this every week.",
+    excerpt:
+      "Most ChatGPT Work rollouts fail the same way: someone installs it, tries it on a hard task, gets a mediocre result, and quietly goes back to doing everything by hand. Here is the rollout sequence that actually works.",
+    category: "ChatGPT",
+    tags: ["ChatGPT Work", "Team training", "AI rollout", "Agentic AI", "OpenAI"],
+    readingTime: "9 min read",
+    datePublished: "2026-07-29",
+    dateModified: "2026-07-29",
+    intro: [
+      "I have watched dozens of AI tool rollouts go sideways in exactly the same way. A team leader installs ChatGPT Work, sends a Slack message telling everyone it's available, and waits. Three weeks later, two people are using it inconsistently and the rest never opened it. The tool isn't the problem. The rollout is.",
+      "ChatGPT Work is OpenAI's agentic desktop app — it can operate your computer, a built-in browser, and connected work apps to produce finished deliverables instead of just answering questions. That power is also what makes an unguided rollout hard. Here is the sequence I use with teams that actually sticks.",
+    ],
+    sections: [
+      {
+        heading: "Step 1: Pick one department and one real task before you touch the app",
+        paragraphs: [
+          "The instinct is to install it, open it up, and start exploring. That instinct produces curiosity, not adoption. Instead, before anyone opens the app, sit down with the team lead and identify a single recurring task that meets three criteria: it happens at least weekly, it currently takes more than an hour, and the output is consistently shaped (a report, a summary, a first-draft email, a set of notes formatted a specific way).",
+          "That task is your proof of concept. Everything else can wait. The goal of week one is to have one workflow that the team sees running reliably — not ten workflows nobody has touched twice.",
+        ],
+      },
+      {
+        heading: "Step 2: Set up the app and configure data settings before any real work",
+        paragraphs: [
+          "Before your team runs anything against real business data, configure data and privacy settings. This is non-negotiable, and it is the first thing I cover in every session.",
+        ],
+        bullets: [
+          "Personal plan users: go to Settings → Data Controls and turn off 'Improve the model for everyone.' This stops your prompts and outputs from being used in OpenAI's training data.",
+          "ChatGPT Team or Enterprise plans: training data exclusion is the default under these commercial terms. Verify your organization's plan before assuming.",
+          "Computer use permissions: review which apps and files you are granting access to before enabling computer use. Scoped permissions are safer than broad ones.",
+        ],
+      },
+      {
+        heading: "Step 3: Connect the right tools — and only the right tools",
+        paragraphs: [
+          "ChatGPT Work connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. The temptation is to connect everything. The right move is to connect only the tools involved in the proof-of-concept task you identified in step one.",
+          "Two reasons: first, over-permissioning is a real risk when a tool can act on connected accounts. Second, a smaller initial scope means faster first results, and first results are what create team buy-in. You can add connectors once the workflow is proven.",
+        ],
+      },
+      {
+        heading: "Step 4: Build the proof-of-concept workflow on a live screen share",
+        paragraphs: [
+          "This is the step most teams skip, and it is the most important one. The first real workflow should be built with the whole team watching — ideally with the person who does the task most often driving, with a trainer or lead guiding them through the task structure, scope, and prompting approach.",
+          "Why a screen share? Because building it live answers every question the team has, they see the tool handle an actual task from their day, and they leave with a workflow they built themselves instead of one someone handed them. Ownership matters for adoption.",
+        ],
+      },
+      {
+        heading: "Step 5: Scope the task correctly — this is where most prompts fail",
+        paragraphs: [
+          "The single biggest reason teams get mediocre results from ChatGPT Work is a prompting problem, not a capability problem. ChatGPT Work is goal-directed, which means it needs a well-scoped outcome, not an open-ended instruction. The difference looks like this:",
+        ],
+        bullets: [
+          "Too vague: 'Help me with the weekly report.' ChatGPT Work will produce something, but it won't match your format or know what to emphasize.",
+          "Well-scoped: 'Using the attached exports from [source A] and [source B], build the weekly performance summary in our standard format. Highlight any metric that moved more than 10% week over week, and flag the three items I should discuss in the team meeting.' That gives it a goal, inputs, format, and a decision rule.",
+          "Reference files matter: if your team has a template they use for the output, attach it. ChatGPT Work will follow the structure instead of inventing one.",
+        ],
+      },
+      {
+        heading: "Step 6: Document the workflow and make it repeatable",
+        paragraphs: [
+          "Once the proof-of-concept works once, write it down. A simple doc with the task description, the reference files needed, and the prompt structure is all it takes. This sounds obvious; teams almost never do it without prompting, and when they skip it, the workflow lives in one person's memory and dies when they're out sick or leave the team.",
+          "The goal of a rollout is not one person who is good at ChatGPT Work. It is a team that has documented, repeatable workflows they can improve over time. That is the version of AI adoption that compounds.",
+        ],
+      },
+      {
+        heading: "Step 7: Expand gradually — don't launch everything at once",
+        paragraphs: [
+          "Once the first workflow is running reliably, add a second. Then a third. The pace matters: teams that try to automate everything in week one typically adopt nothing, because nothing is tuned well enough to trust. Teams that automate one thing well, then two, then three, build real fluency over time.",
+          "The comparison to [Claude Cowork](/claude-cowork-training) is useful here: both tools reward this gradual-but-deliberate approach, and the skill of scoping work correctly for one transfers cleanly to the other. If your team is on the Microsoft and ChatGPT ecosystem, ChatGPT Work is the natural fit. If you're evaluating both, I cover them honestly side by side in every session that asks.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Pick one recurring task with a consistent output format as your proof of concept before anyone opens the app.",
+      "Configure data and privacy settings before running any real business data through the tool — non-negotiable.",
+      "Connect only the tools involved in your proof-of-concept task; over-permissioning and over-scoping both kill early adoption.",
+      "Build the first workflow on a live screen share with the whole team — ownership and visibility are what drive adoption, not documentation.",
+      "Document every workflow that works; repeatable prompts with reference files are the difference between one person who uses ChatGPT Work and a team that does.",
+    ],
+    faqs: [
+      {
+        q: "How long does a ChatGPT Work team rollout take?",
+        a: "A well-structured rollout can get a team from zero to one reliable, working workflow in a single 1-hour training session. Expanding to a full departmental playbook typically takes 2–4 weeks if the team commits to one new workflow per week. The 4-hour deep dive compresses the whole process into one day.",
+      },
+      {
+        q: "How many people should be in a ChatGPT Work training session?",
+        a: "Up to 6–8 people works well in a 1-hour session. For larger departments, Evan recommends the 4-hour format or splitting into multiple sessions so each person can participate actively.",
+      },
+      {
+        q: "What if our team is already using Claude Cowork?",
+        a: "The rollout principles are very similar, and the workflow-building skills transfer. If your team already has Cowork workflows running, a ChatGPT Work session can focus on the differences — connectors, interface, and prompting nuances — rather than starting from scratch.",
+      },
+      {
+        q: "Does ChatGPT Work work on both Mac and Windows?",
+        a: "Yes. The unified ChatGPT desktop app that includes the Work experience is available for both macOS and Windows.",
+      },
+    ],
+  },
+
+  {
+    slug: "chatgpt-work-for-individuals",
+    title: "ChatGPT Work for Solo Professionals: How to Automate Your Daily Work",
+    metaTitle: "ChatGPT Work for Individuals: A Solo Professional's Guide (2026) | Evan Weber",
+    metaDescription:
+      "A practical guide for solo professionals, consultants, and individual contributors on using ChatGPT Work to automate the recurring, time-intensive tasks that fill their week — from proposals to research to inbox management.",
+    excerpt:
+      "You don't need a team to get serious value from ChatGPT Work. Here's how solo consultants, executives, agents, and operators are using it to reclaim hours every week — and how to set it up for your actual workflow.",
+    category: "ChatGPT",
+    tags: ["ChatGPT Work", "Solo professional", "Individuals", "AI productivity", "OpenAI"],
+    readingTime: "8 min read",
+    datePublished: "2026-07-29",
+    dateModified: "2026-07-29",
+    intro: [
+      "Most of the conversation about ChatGPT Work is framed around teams and enterprise rollouts. That framing misses something: some of the fastest, most dramatic results I see are with solo professionals — consultants, real estate agents, financial advisors, attorneys, executives — who run their own day and don't need to wait for a team decision to try something new.",
+      "When you are your own bottleneck, reclaiming two hours a day is not a nice-to-have. It is a direct multiplier on your income and on the quality of work you can deliver. Here is how to actually do it with ChatGPT Work.",
+    ],
+    sections: [
+      {
+        heading: "What ChatGPT Work actually does for a solo operator",
+        paragraphs: [
+          "ChatGPT Work is OpenAI's [agentic](/glossary/agentic-ai) desktop app — it can operate your computer, a built-in browser, and your connected work apps to deliver finished work. For a solo professional, that distinction matters more than it sounds: this is not a tool you ask questions to, it is a tool you hand tasks to.",
+          "The most useful framing for an individual is this: think of ChatGPT Work as a capable junior assistant who never sleeps, never forgets your format preferences, and gets better the more clearly you scope the work. You are still the one making the calls and reviewing the output. But the assembly, research, drafting, and formatting — most of the mechanical time-consumption — shifts to it.",
+        ],
+      },
+      {
+        heading: "The highest-leverage tasks for solo professionals",
+        paragraphs: [
+          "Not every task compresses equally. These are the ones where I consistently see individual users recover the most time:",
+        ],
+        bullets: [
+          "Proposals and client-facing documents: give ChatGPT Work your notes, a previous proposal you like, and the client context, and it assembles the first draft in your format. You refine and send. A task that used to take 2–3 hours becomes 20 minutes of review.",
+          "Research and competitive intelligence: point it at a list of sources or companies and have it synthesize findings into a structured summary. It reads fast and doesn't skim. An hour of reading becomes 10 minutes of reviewing a brief.",
+          "Recurring reports and performance summaries: if you produce a consistent report weekly or monthly, ChatGPT Work can pull the source data, run the calculations, and write the narrative in your house format. This is one of the cleanest use cases — consistent input, consistent output.",
+          "Inbox management and correspondence drafting: ChatGPT Work can read your inbox, identify threads that need a response, draft replies in your voice, and queue them for your approval. You review and send — you don't originate from scratch.",
+          "Meeting prep: before any important call, give it the account history, relevant emails, and your goals, and have it produce a prep brief with context, open items, and suggested questions.",
+        ],
+      },
+      {
+        heading: "Setting it up for your specific workflow",
+        paragraphs: [
+          "The setup that matters most for individuals is different from the team setup. You are not managing permissions for 15 people — you are connecting the specific accounts that hold your actual work.",
+        ],
+        bullets: [
+          "Connect the accounts you live in: your email, calendar, Google Drive or OneDrive, and any CRM or project tool you use daily. These are the sources ChatGPT Work needs to reach your real work.",
+          "Build a 'voice' reference: create a short document with your typical email tone, common phrases you use, and formats you prefer for deliverables. Attach it to tasks that produce client-facing output. ChatGPT Work will stay in your register instead of defaulting to generic AI prose.",
+          "Start with one task and tune it: pick the most painful recurring task in your week, build the prompt structure for it, and run it three times until it produces something you would send without significant editing. Then add the next task.",
+        ],
+      },
+      {
+        heading: "The comparison with Claude Cowork",
+        paragraphs: [
+          "If you're evaluating both tools, the honest individual-user comparison is this: [Claude Cowork](/claude-cowork-training) is a strong general fit for knowledge workers across every sector, and its MCP integration model gives you deep, reliable connections to tools like Google Drive, Notion, and custom databases. ChatGPT Work leans naturally into the Microsoft ecosystem — Teams, SharePoint, Outlook — and bundles Codex into the same app, which matters if you do any light building.",
+          "For a solo professional who is not heavily embedded in Microsoft's stack, Cowork is often the faster starting point. For someone who runs on Teams and Microsoft 365, or who is already a ChatGPT power user, ChatGPT Work is the more natural fit. Many solo operators end up using both — different tasks, different tools — and the core skill of scoping work correctly transfers between them cleanly.",
+        ],
+      },
+      {
+        heading: "What a 1-hour solo training session looks like",
+        paragraphs: [
+          "My 1-hour sessions for individuals are not overviews. We skip the introduction-to-agentic-AI framing and go straight to your actual work. You bring one or two recurring tasks you want to automate. We build the workflow live, together, on screen share — connecting the right apps, getting the prompt structure right, and running it against real data.",
+          "You leave with something that runs. Not a list of ideas for what ChatGPT Work could do in theory, but a working workflow you used in the session and can run again tomorrow. That is the entire point of live training versus a tutorial.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "ChatGPT Work is as useful for solo professionals as it is for teams — sometimes more so, because every hour recovered goes directly to you.",
+      "The highest-leverage individual use cases are proposals, research synthesis, recurring reports, inbox drafting, and meeting prep.",
+      "The setup that matters for individuals: connect your actual accounts, build a voice reference document, and tune one workflow before adding the next.",
+      "If you're on Microsoft 365 and Teams, ChatGPT Work is the natural fit. If not, Claude Cowork is often the faster start — and the skills transfer between both.",
+    ],
+    faqs: [
+      {
+        q: "Is ChatGPT Work worth it for a solo professional, not a team?",
+        a: "Yes — often more immediately than for teams, because an individual sees the time savings directly in their own day. Solo consultants, agents, and operators frequently recover 1–2 hours per day once they have 3–4 workflows tuned to their actual recurring tasks.",
+      },
+      {
+        q: "What plan do I need to use ChatGPT Work as an individual?",
+        a: "A ChatGPT Plus or Pro plan gives you access to the full ChatGPT desktop app that includes the Work experience. The Plus plan is around $20/month. For heavier usage, the Pro plan at $200/month removes most token limits and gives access to the most capable models.",
+      },
+      {
+        q: "How is live training better than just watching tutorials?",
+        a: "Tutorials show you the tool in someone else's workflow with demo tasks. Live training builds a workflow for your actual work in the session — so you leave with something that runs, not a list of ideas to try someday.",
+      },
+      {
+        q: "Can I use ChatGPT Work and Claude Cowork together?",
+        a: "Yes, and many solo operators do. ChatGPT Work works naturally in the Microsoft ecosystem; Claude Cowork connects deeply to Google Drive, Notion, and MCP-compatible tools. The prompting and workflow-building skills carry across both cleanly.",
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
