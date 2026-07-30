@@ -105,7 +105,7 @@ const pages: OGPage[] = [
   {
     filename: "og-chatgpt-work-training.png",
     category: "ChatGPT Work Training",
-    title: "ChatGPT Work for Teams & Individuals",
+    title: "ChatGPT Work Training: Teams & Individuals",
   },
   // Industry pages
   {
