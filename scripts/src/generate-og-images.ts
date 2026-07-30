@@ -245,6 +245,16 @@ const pages: OGPage[] = [
     category: "Guide · AI Search",
     title: "AEO & GEO Explained",
   },
+  {
+    filename: "og-blog-chatgpt-work-for-teams.png",
+    category: "Guide · ChatGPT Work",
+    title: "Rolling Out ChatGPT Work Across Your Team",
+  },
+  {
+    filename: "og-blog-chatgpt-work-for-individuals.png",
+    category: "Guide · ChatGPT Work",
+    title: "ChatGPT Work for Solo Professionals",
+  },
   // Glossary terms
   { filename: "og-glossary-claude-cowork.png", category: "AI Glossary", title: "Claude Cowork" },
   { filename: "og-glossary-agentic-ai.png", category: "AI Glossary", title: "Agentic AI" },
