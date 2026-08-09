@@ -13,8 +13,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="About Evan Weber, AI Trainer and Digital Marketing Veteran"
-        description="25 years in digital marketing, founder of Experience Advertising, and daily Claude Cowork user. 400+ companies helped. Meet your AI productivity trainer."
+        title="About Evan Weber, AI Trainer and Workflow Consultant"
+        description="Meet Evan Weber, trainer for ChatGPT Work, Codex, Claude Cowork and AI coding. 25+ years in digital marketing and 20+ AI projects built."
         canonical="https://learncowork.net/about"
         ogImage="https://learncowork.net/og-evan.jpg"
       />
@@ -43,8 +43,8 @@ export default function About() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Your Trainer</p>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Evan Weber</h1>
-              <p className="text-xl text-muted-foreground mb-2">AI Coding Enthusiast · Digital Marketing Expert · Agency Founder</p>
-              <p className="text-muted-foreground mb-6">Miami-Fort Lauderdale, FL · 40,000+ LinkedIn Followers</p>
+              <p className="text-xl text-muted-foreground mb-2">AI Trainer | Workflow Consultant | Digital Marketing Expert | Agency Founder</p>
+              <p className="text-muted-foreground mb-6">Miami-Fort Lauderdale, FL | 40,000+ LinkedIn Followers</p>
 
               <div className="flex flex-wrap gap-3">
                 <a
@@ -100,10 +100,10 @@ export default function About() {
                   I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy, paid media, and affiliate marketing.
                 </p>
                 <p>
-                  When AI coding tools emerged, I didn't watch from the sidelines. I dove in. I've now built 20+ projects using Claude Code, Replit, and related AI tools, and I use Claude Cowork and AI agents every single day to run my businesses.
+                  When AI coding and agentic work tools emerged, I dove in. I've now built 20+ projects using Claude Code, Codex, Replit, and related tools. I use ChatGPT Work, Claude Cowork, Codex, and AI agents on real business work every day.
                 </p>
                 <p>
-                  I built AffiliateFinders.com (an AI-powered affiliate marketplace with 10,000+ pre-vetted partners), Publisher Finders, and leveraging AI-powered development workflows. These aren't demo projects. They're live businesses I run.
+                  I built AffiliateFinders.com, an AI-powered affiliate marketplace with 10,000+ pre-vetted partners, along with Publisher Finders and other live products. These are not demo projects. They are businesses and software I actually run.
                 </p>
                 <p>
                   But here's what makes me different as a trainer: I know how to teach. Over 100 colleagues, clients, and partners have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast. That's exactly what I'll do for you with AI.

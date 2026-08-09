@@ -23,7 +23,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - Preview path: `/`
 - Landing page for AI consulting and training services by Evan Weber
 - Uses `useListPackages` and `useCreateCheckoutSession` hooks from `@workspace/api-client-react`
-- Routes: `/`, `/claude-cowork-training`, `/ai-coding-training`, `/about`, `/success`, `/cancel`, `/industries/:slug`, `/roles/:slug`, `/job-description-analyzer`, `/ai-time-savings-calculator`, `/ai-readiness-quiz`, `/report/:id`
+- Routes: `/`, `/claude-cowork-training`, `/chatgpt-work-training`, `/codex-training`, `/ai-coding-training`, `/aeo-geo-training`, `/ai-workflow-consulting`, `/about`, `/privacy`, `/terms`, `/success`, `/cancel`, `/industries/:slug`, `/roles/:slug`, `/job-description-analyzer`, `/ai-time-savings-calculator`, `/ai-readiness-quiz`, `/report/:id`
 - SEO: react-helmet-async with HelmetProvider wrapping App; reusable `SEO` component in `src/components/seo.tsx`
 - Nav: sticky `SiteNav` component in `src/components/site-nav.tsx` with active route highlighting
 - Static SEO files in `public/`: `robots.txt` (blocks GPTBot + Google-Extended), `sitemap.xml`, `og-evan.jpg`, `favicon.svg`
@@ -38,7 +38,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `home-faq.tsx` — 7-Q&A accordion below home pricing
 - `recent-bookings-badge.tsx` — fetches `/api/stats/recent-bookings`, only renders when count >= 3
 - `cowork-analyzer.tsx` — accepts `defaultUserType`, `defaultIndustry`, `headline`, `subheadline`, `variant: "section"|"embedded"` props
-- `lib/booking-links.ts` — `CALENDLY_INTRO` is a placeholder URL — set to a real 15-min Calendly event before launch
+- `lib/booking-links.ts` centralizes the 1-hour, 4-hour, and 15-minute Calendly event URLs
 - Home page reads `?industry=<slug>` URL param to pre-fill the analyzer + show a welcome banner
 - `/success` page uses a 3-step progressive intake form (about → work → goals) with progress bar
 
@@ -54,6 +54,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pages/ai-readiness-quiz.tsx` — 8-question scored quiz with grade bands; optional lead capture (`type: "quiz"`)
 - `pages/report.tsx` at `/report/:id` — shareable saved reports (noindex; `/report/` disallowed in robots.txt)
 - `CoworkAnalyzer` accepts `defaultDescription` and shows a "copy shareable link" button after generation (saves via `POST /api/reports`)
+- Optional analytics: set `VITE_GA_MEASUREMENT_ID` at build time to load Google Analytics. Core funnel events include `generate_lead`, `begin_checkout`, and `select_intro_call`.
 - Tool/role leads skip the "your report is ready" welcome email (only sent when `reportHtml` present)
 
 ### api-server

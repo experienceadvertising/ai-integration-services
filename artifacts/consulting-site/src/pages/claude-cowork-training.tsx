@@ -12,7 +12,7 @@ export default function ClaudeCoworkTraining() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Claude Cowork Training for Teams"
-        description="Live Claude Cowork training by Evan Weber - 25-year digital marketing expert and daily Cowork power user. Get your entire team productive in a single session."
+        description="Live Claude Cowork training for teams and individuals. Build useful workflows, configure permissions, connect tools, and create a practical operating playbook."
         canonical="https://learncowork.net/claude-cowork-training"
         ogImage="https://learncowork.net/og-claude-cowork-training.png"
         schema={{
@@ -22,7 +22,7 @@ export default function ClaudeCoworkTraining() {
             {
               "@type": "Question",
               name: "Do my team members need to be technical to use Claude Cowork?",
-              acceptedAnswer: { "@type": "Answer", text: "No. That's one of Cowork's biggest advantages — it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly." },
+              acceptedAnswer: { "@type": "Answer", text: "No. The training is designed for non-technical professionals as well as technical teams. Participants learn the controls, review steps, and workflows relevant to their roles." },
             },
             {
               "@type": "Question",
@@ -32,22 +32,22 @@ export default function ClaudeCoworkTraining() {
             {
               "@type": "Question",
               name: "Does my team need a Claude subscription?",
-              acceptedAnswer: { "@type": "Answer", text: "Yes — each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session." },
+              acceptedAnswer: { "@type": "Answer", text: "Cowork is available on paid Claude plans, including Pro, Max, Team, and Enterprise. Availability of specific capabilities can vary by surface, plan, rollout status, and administrator settings." },
             },
             {
               "@type": "Question",
               name: "How many people can attend a session?",
-              acceptedAnswer: { "@type": "Answer", text: "Sessions work best with up to 6–8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department." },
+              acceptedAnswer: { "@type": "Answer", text: "Sessions work best with up to 6 to 8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department." },
             },
             {
               "@type": "Question",
               name: "Will the session be recorded?",
-              acceptedAnswer: { "@type": "Answer", text: "That's up to you — Evan is happy for you to record the session for team members who can't attend live. You own the recording." },
+              acceptedAnswer: { "@type": "Answer", text: "That's up to you. Evan is happy for you to record the session for team members who cannot attend live. You own the recording." },
             },
             {
               "@type": "Question",
               name: "What if my industry has specific compliance or data requirements?",
-              acceptedAnswer: { "@type": "Answer", text: "Covered. Evan will walk you through Claude's privacy settings and data handling policies as part of the setup section, so you can use Cowork confidently within your compliance requirements." },
+              acceptedAnswer: { "@type": "Answer", text: "Evan can review product privacy settings, permissions, and human approval practices during the session. Your company remains responsible for legal, security, compliance, and vendor review requirements." },
             },
           ],
         }}
@@ -67,7 +67,7 @@ export default function ClaudeCoworkTraining() {
               <span className="text-primary">Claude Cowork</span> Fluently
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-              Claude Cowork is Anthropic's most powerful productivity tool - and most teams haven't even opened it. Evan Weber trains your team live, on screen share, using your actual workflows. Results on day one.
+              Learn Claude Cowork through your actual workflows, not a generic feature tour. Evan Weber trains your team live, helps configure the right access, and builds a repeatable starting workflow with clear human review steps.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#pricing">
@@ -90,8 +90,7 @@ export default function ClaudeCoworkTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What is Claude Cowork?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
-            Claude Cowork is Anthropic's <Link href="/glossary/agentic-ai" className="text-primary underline underline-offset-2 hover:no-underline">agentic</Link> desktop mode — available in the Claude desktop app — that combines AI chat with direct computer control, file access, a sandboxed shell, and{" "}
-            <Link href="/glossary/mcp" className="text-primary underline underline-offset-2 hover:no-underline">MCP</Link> tool integrations. It lets Claude work alongside you on your actual machine: reading files, operating apps, running multi-step automations, and connecting to your existing tools. It's the difference between a chatbot and an actual AI coworker — read the{" "}
+            Claude Cowork brings <Link href="/glossary/agentic-ai" className="text-primary underline underline-offset-2 hover:no-underline">agentic AI</Link> to knowledge work. It is available to paid Claude users on desktop, web, and mobile, although local file access, browser use, computer use, and some other capabilities depend on the desktop app, plan, rollout status, and administrator settings. Cowork can work across files, connected tools, and multi-step tasks while the user steers and reviews the result. Read the{" "}
             <Link href="/blog/what-is-claude-cowork" className="text-primary underline underline-offset-2 hover:no-underline">full explainer</Link>, or see how it stacks up against{" "}
             <Link href="/blog/claude-cowork-vs-codex" className="text-primary underline underline-offset-2 hover:no-underline">OpenAI's Codex app</Link>.
           </p>
@@ -100,23 +99,23 @@ export default function ClaudeCoworkTraining() {
             {[
               {
                 icon: <Monitor className="w-6 h-6" />,
-                title: "Works on your actual computer",
-                desc: "Claude Cowork sees your screen, reads your files, and operates your apps - not in a sandbox, in your real workflow."
+                title: "Works across your real tools",
+                desc: "With the right permissions and supported setup, Cowork can use connected apps, local files, a browser, or computer controls. Access varies by plan and surface."
               },
               {
                 icon: <Zap className="w-6 h-6" />,
                 title: "Automates multi-step tasks",
-                desc: "Give it a goal and watch it research, write, organize, and execute across multiple apps without you touching anything."
+                desc: "Give it a defined goal and let it research, draft, organize, and work across supported tools while a person reviews the plan, permissions, and result."
               },
               {
                 icon: <Users className="w-6 h-6" />,
                 title: "Built for non-technical users",
-                desc: "Unlike AI coding tools, Cowork is designed for everyone - marketing, sales, ops, support, and leadership."
+                desc: "Cowork supports knowledge work for marketing, sales, operations, support, leadership, and other non-coding roles."
               },
               {
                 icon: <Clock className="w-6 h-6" />,
-                title: "Immediate time savings",
-                desc: "Early adopters report recovering 1–3 hours per person per day once their team is using Cowork fluently in their actual workflows."
+                title: "Measurable workflow improvement",
+                desc: "Start with a baseline for time, quality, and errors, then compare the same workflow after training instead of relying on a generic productivity claim."
               }
             ].map((item, i) => (
               <motion.div
@@ -204,7 +203,7 @@ export default function ClaudeCoworkTraining() {
             {[
               {
                 q: "Do my team members need to be technical to use Claude Cowork?",
-                a: "No. That's one of Cowork's biggest advantages - it was designed for non-technical users. If your team can use a browser, they can use Cowork. Evan's training is specifically designed to onboard non-technical people quickly."
+                a: "No. The training is designed for non-technical professionals as well as technical teams. Participants learn the controls, review steps, and workflows relevant to their roles."
               },
               {
                 q: "How much does a Claude Cowork training session cost?",
@@ -212,11 +211,11 @@ export default function ClaudeCoworkTraining() {
               },
               {
                 q: "Does my team need a Claude subscription?",
-                a: "Yes - each user needs a Claude Pro or Claude for Teams subscription to access Cowork features. Evan will walk you through the right plan for your team size during the session."
+                a: "Cowork is available on paid Claude plans, including Pro, Max, Team, and Enterprise. Specific capabilities can vary by surface, plan, rollout status, and administrator settings."
               },
               {
                 q: "How many people can attend a session?",
-                a: "Sessions work best with up to 6–8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department."
+                a: "Sessions work best with up to 6 to 8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department."
               },
               {
                 q: "Will the session be recorded?",
@@ -224,7 +223,7 @@ export default function ClaudeCoworkTraining() {
               },
               {
                 q: "What if my industry has specific compliance or data requirements?",
-                a: "Covered. Evan will walk you through Claude's privacy settings and data handling policies as part of the setup section, so you can use Cowork confidently within your compliance requirements."
+                a: "Evan can review product privacy settings, permissions, and human approval practices during the session. Your company remains responsible for legal, security, compliance, and vendor review requirements."
               }
             ].map((faq, i) => (
               <div key={i} className="border-b border-border pb-8">

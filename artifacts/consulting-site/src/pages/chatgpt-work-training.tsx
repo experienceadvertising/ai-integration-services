@@ -11,7 +11,7 @@ export default function ChatGptWorkTraining() {
   const faqs = [
     {
       q: "What is ChatGPT Work, in plain terms?",
-      a: "ChatGPT Work is OpenAI's agentic desktop app. It operates your computer, a built-in browser, and your connected work apps to deliver finished work like spreadsheets, slide decks, and documents, instead of only answering questions. It is OpenAI's direct counterpart to Claude Cowork, and it is powered by the GPT-5.6 model.",
+      a: "Work is an agent in ChatGPT for longer, multi-step tasks and finished deliverables. It can research, analyze information, and create documents, spreadsheets, presentations, reports, and Sites. On desktop, it can also work with approved local files and the built-in browser.",
     },
     {
       q: "Do my team members need to be technical to use ChatGPT Work?",
@@ -27,7 +27,7 @@ export default function ChatGptWorkTraining() {
     },
     {
       q: "Can ChatGPT Work connect to our existing tools?",
-      a: "Yes. At launch it connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. Evan will help you connect the right ones and will walk through permissions and data handling so you can automate real work confidently.",
+      a: "ChatGPT can connect to approved apps and company knowledge, depending on your plan and workspace settings. Evan will help you choose the useful connections, review permissions, and keep access limited to what the workflow needs.",
     },
     {
       q: "Will the session be recorded?",
@@ -39,7 +39,7 @@ export default function ChatGptWorkTraining() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="ChatGPT Work Training for Teams and Individuals"
-        description="Live ChatGPT Work training by Evan Weber, a 25-year digital marketing veteran and daily agentic-AI power user. Get your team setting up and using OpenAI's ChatGPT Work desktop app in a single session."
+        description="Live ChatGPT Work training for individuals and teams. Learn setup, files, apps, browser use, finished deliverables, workflows and safe human review."
         canonical="https://learncowork.net/chatgpt-work-training"
         ogImage="https://learncowork.net/og-chatgpt-work-training.png"
         keywords="ChatGPT Work training, ChatGPT Work desktop app, OpenAI agentic AI training, ChatGPT for teams, ChatGPT Work setup, ChatGPT Work vs Claude Cowork, AI productivity training, Evan Weber"
@@ -52,7 +52,7 @@ export default function ChatGptWorkTraining() {
               name: "ChatGPT Work Training",
               provider: { "@type": "Person", name: "Evan Weber" },
               description:
-                "Live 1-on-1 and team training on OpenAI's ChatGPT Work desktop app: setup, connectors, computer use, and multi-step workflow automation, so business teams and individuals can put agentic AI to work in their real workflows.",
+                "Live training on ChatGPT Work for individuals and teams, including setup, files, apps, browser use, multi-step deliverables, workflow design, and safe human review.",
               url: "https://learncowork.net/chatgpt-work-training",
               areaServed: "US",
               offers: [
@@ -86,7 +86,7 @@ export default function ChatGptWorkTraining() {
               <span className="text-primary">ChatGPT Work</span> the Right Way
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-              ChatGPT Work is OpenAI's new agentic desktop app, and like Claude Cowork it does the work instead of just talking about it. I run both every day. I will get your team setting it up, connecting the right tools, and building real automations live, in a single session.
+              Work is ChatGPT's agent for longer tasks and finished deliverables. I will help your team set it up, work with the right files and apps, and complete a real workflow live in a single session.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#pricing">
@@ -109,10 +109,10 @@ export default function ChatGptWorkTraining() {
         <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What is ChatGPT Work?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mb-12">
-            ChatGPT Work is OpenAI's{" "}
+            Work is OpenAI's{" "}
             <Link href="/glossary/agentic-ai" className="text-primary underline underline-offset-2 hover:no-underline">agentic</Link>{" "}
-            desktop experience, built into a unified ChatGPT app for Mac and Windows. It combines chat with a built-in browser,{" "}
-            <Link href="/glossary/computer-use" className="text-primary underline underline-offset-2 hover:no-underline">computer use</Link>, connectors to your work apps, and Codex under one roof, so it can operate your machine and deliver finished work. It is OpenAI's direct answer to{" "}
+            agent for longer, multi-step work and finished deliverables. It can research, analyze information, and create documents, spreadsheets, presentations, reports, and Sites. In the desktop app, Work can use approved local folders and a built-in browser. Work is designed for business and knowledge work, while Codex remains focused on software development. Read the{" "}
+            <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:no-underline">official OpenAI overview</a>, compare it with{" "}
             <Link href="/glossary/claude-cowork" className="text-primary underline underline-offset-2 hover:no-underline">Claude Cowork</Link>. Read the{" "}
             <Link href="/blog/what-is-chatgpt-work" className="text-primary underline underline-offset-2 hover:no-underline">full explainer</Link>, or see how the two{" "}
             <Link href="/blog/claude-cowork-vs-codex" className="text-primary underline underline-offset-2 hover:no-underline">agentic desktop tools compare</Link>.
@@ -123,7 +123,7 @@ export default function ChatGptWorkTraining() {
               {
                 icon: <Monitor className="w-6 h-6" />,
                 title: "Operates your actual computer",
-                desc: "With a built-in browser and computer use, ChatGPT Work sees the screen, clicks, types, and drives your apps and websites, not just a sandbox.",
+                desc: "In the desktop app, the built-in browser can work across tabs, downloads, and signed-in sites while you review access and important actions.",
               },
               {
                 icon: <Zap className="w-6 h-6" />,
@@ -133,7 +133,7 @@ export default function ChatGptWorkTraining() {
               {
                 icon: <Plug className="w-6 h-6" />,
                 title: "Connects to your stack",
-                desc: "Plugs into Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers, so it works where your team already works.",
+                desc: "ChatGPT apps can bring approved tools and company knowledge into a workflow. Availability depends on your plan, admin settings, and the app's capabilities.",
               },
               {
                 icon: <Users className="w-6 h-6" />,
