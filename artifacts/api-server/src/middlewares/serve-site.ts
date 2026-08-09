@@ -44,6 +44,28 @@ export function mountSite(app: Express): void {
     }
   };
 
+  // Resolve clean URLs to their prerendered HTML files explicitly. Replit's
+  // production router can otherwise fall through to the SPA shell even when
+  // express.static is configured with the html extension fallback.
+  const servePrerenderedRoute: RequestHandler = (req, res, next) => {
+    if (req.method !== "GET" && req.method !== "HEAD") return next();
+    if (req.path === "/" || path.extname(req.path)) return next();
+
+    const relativePath = req.path.replace(/^\/+/, "");
+    const htmlFile = path.resolve(siteDir, `${relativePath}.html`);
+    const siteRoot = `${path.resolve(siteDir)}${path.sep}`;
+
+    if (!htmlFile.startsWith(siteRoot) || !fs.existsSync(htmlFile)) return next();
+
+    res
+      .status(200)
+      .type("html")
+      .setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+    res.sendFile(htmlFile);
+  };
+
+  app.use(servePrerenderedRoute);
+
   app.use(
     express.static(siteDir, {
       extensions: ["html"],
