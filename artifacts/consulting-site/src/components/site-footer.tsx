@@ -29,7 +29,9 @@ const roleLinks = [
 const trainingLinks = [
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/chatgpt-work-training", label: "ChatGPT Work Training" },
+  { href: "/codex-training", label: "OpenAI Codex Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
+  { href: "/ai-workflow-consulting", label: "AI Workflow Consulting" },
   { href: "/aeo-geo-training", label: "AEO/GEO Training" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About Evan" },
@@ -56,7 +58,7 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xs">
-              Live Claude Cowork and Vibe Coding training for business teams. Built around your actual workflows.
+              Practical AI training and workflow implementation for individuals and business teams.
             </p>
             <p className="text-xs text-muted-foreground mt-4">
               Experience Advertising, Inc.<br />Fort Lauderdale, FL
@@ -135,9 +137,11 @@ export default function SiteFooter() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Experience Advertising, Inc. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <Link href="/privacy"><span className="hover:text-foreground transition-colors cursor-pointer">Privacy</span></Link>
+            <Link href="/terms"><span className="hover:text-foreground transition-colors cursor-pointer">Terms</span></Link>
             <a href="https://learncowork.net" className="hover:text-foreground transition-colors">learncowork.net</a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

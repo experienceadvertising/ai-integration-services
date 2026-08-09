@@ -15,8 +15,9 @@ import SiteFooter from "@/components/site-footer";
 import heroBg from "../assets/hero-bg.webp";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck, MessageSquare, Settings2, SearchCheck } from "lucide-react";
 import { CALENDLY_INTRO } from "@/lib/booking-links";
+import { trackEvent } from "@/lib/analytics";
 import ComparisonTable from "@/components/comparison-table";
 import BookingTrustRow from "@/components/booking-trust-row";
 import HomeFaq from "@/components/home-faq";
@@ -37,6 +38,7 @@ export default function Home() {
   }, []);
 
   const handleCheckout = (priceId: string, hours: number) => {
+    trackEvent("begin_checkout", { price_id: priceId, session_hours: hours });
     createCheckout.mutate(
       {
         data: {
@@ -128,8 +130,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="Claude Cowork & ChatGPT Work Training for Teams and Individuals | Evan Weber"
-        description="Live Claude Cowork and ChatGPT Work training by Evan Weber — 25-year digital marketing veteran who runs both agentic desktop AI tools every day. Book a 1-hour or 4-hour session for your team or yourself."
+        title="AI Training for Teams and Individuals | Evan Weber"
+        description="Live AI training for ChatGPT Work, Codex, Claude Cowork, Claude Code and Replit. Build practical workflows with Evan Weber in one focused session."
         canonical="https://learncowork.net/"
         keywords="Claude Cowork training, ChatGPT Work training, agentic AI training for teams, AI productivity training, Evan Weber, live AI training session"
         schema={{
@@ -138,9 +140,9 @@ export default function Home() {
             {
               "@type": "Service",
               "@id": "https://learncowork.net/#training-services",
-              name: "Agentic AI Training by Evan Weber",
+              name: "AI Training by Evan Weber",
               provider: { "@type": "Person", name: "Evan Weber", url: "https://learncowork.net/about" },
-              description: "Live 1-on-1 and team training on Claude Cowork and ChatGPT Work — Anthropic's and OpenAI's agentic desktop AI tools. Sessions are on screen share, tailored to each team's real workflows, for both teams and individuals.",
+              description: "Live 1-on-1 and team training on ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, and Replit. Sessions are on screen share, tailored to each team's real workflows, for both teams and individuals.",
               url: "https://learncowork.net/",
               areaServed: "US",
               offers: [
@@ -153,13 +155,18 @@ export default function Home() {
               mainEntity: [
                 {
                   "@type": "Question",
-                  name: "Do my team members need to be technical to use Claude Cowork or ChatGPT Work?",
-                  acceptedAnswer: { "@type": "Answer", text: "No. Both Claude Cowork and ChatGPT Work are built for non-technical users. If your team can use a browser, they can use either tool. The training is designed to onboard non-technical people quickly using their actual day-to-day workflows." },
+                  name: "Do my team members need to be technical?",
+                  acceptedAnswer: { "@type": "Answer", text: "No. Business training is designed for regular users in marketing, sales, operations, support, leadership, and other roles. Technical sessions are available separately for Codex, Claude Code, Replit, and development teams." },
                 },
                 {
                   "@type": "Question",
-                  name: "Do you train on Claude Cowork, ChatGPT Work, or both?",
-                  acceptedAnswer: { "@type": "Answer", text: "Both. Evan runs Claude Cowork and ChatGPT Work every day for real business work. A session can focus on either tool, or cover both side by side so you can decide which fits your stack — or use both together." },
+                  name: "Which AI tools can Evan train us on?",
+                  acceptedAnswer: { "@type": "Answer", text: "Training can cover ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, ChatGPT apps and connectors, workspace agents, and practical multi-tool workflows for individuals or companies." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can you help us choose between ChatGPT Work, Codex, and Claude Cowork?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. Tool selection can be part of the session. The right choice depends on the work, team, existing software, security requirements, and whether the primary need is business productivity, software development, or both." },
                 },
                 {
                   "@type": "Question",
@@ -168,18 +175,18 @@ export default function Home() {
                 },
                 {
                   "@type": "Question",
-                  name: "What does each person on my team need before the session?",
-                  acceptedAnswer: { "@type": "Answer", text: "For Claude Cowork: a Claude Pro or Claude for Teams subscription and the Claude desktop app. For ChatGPT Work: a ChatGPT Plus or Team plan and the ChatGPT desktop app. Evan will help you pick the right plan for your team size during the call." },
-                },
-                {
-                  "@type": "Question",
                   name: "How is this different from a YouTube tutorial or course?",
-                  acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show you the tool in someone else's workflow. Evan trains your specific team in your specific tools, building real automations during the call that you keep and use immediately. Most teams ship 2–3 working workflows in their first hour." },
+                  acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show someone else's workflow. Evan trains your team using your actual work, tools, files, and goals, then helps you build a workflow you can keep improving after the session." },
                 },
                 {
                   "@type": "Question",
                   name: "What if I'm a solo professional, not a team?",
                   acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works great for individuals. Many solo consultants, lawyers, agents, and operators book it to build personal automations around their own daily work — proposals, research, client comms, reporting." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I expense this through my company?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. You'll receive a Stripe receipt immediately after checkout that's expensable as professional development or training. If you need an itemized invoice, just reply to your receipt and Evan will send one." },
                 },
                 {
                   "@type": "Question",
@@ -224,36 +231,35 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs md:text-sm font-medium mb-4 md:mb-8 border border-border">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
-              Live 1-on-1 training · Limited spots available
+              Live AI training and workflow implementation
             </div>
 
             <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
-              Your team needs<br />
-              <span className="text-primary">agentic AI.</span><br />
-              <span className="text-muted-foreground">Let me show them how.</span>
+              Practical AI training<br />
+              <span className="text-primary">built around your work.</span><br />
+              <span className="text-muted-foreground">Not generic demos.</span>
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              Claude Cowork and ChatGPT Work are the two most powerful AI productivity tools available — and most teams haven't touched either one. I run both every day and I'll get your people using them fluently, in their actual workflow, in a single live session.
+              I train individuals and companies on ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, and the AI workflows that connect them to real business results.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button size="lg" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
-                Book a Session
+              <Button size="lg" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14" onClick={() => document.getElementById('training-tracks')?.scrollIntoView({ behavior: 'smooth' })}>
+                Explore Training
               </Button>
-              <Button size="lg" variant="outline" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14" onClick={() => document.getElementById('departments')?.scrollIntoView({ behavior: 'smooth' })}>
-                Who it's for
-              </Button>
+              <Link href="/ai-workflow-consulting"><Button size="lg" variant="outline" className="text-base md:text-lg px-6 md:px-8 h-12 md:h-14">Plan a Team Rollout</Button></Link>
             </div>
 
             <a
               href={CALENDLY_INTRO}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("select_intro_call", { placement: "homepage_hero" })}
               className="inline-flex items-center gap-2 mt-5 md:mt-6 text-sm md:text-base text-muted-foreground hover:text-primary transition-colors group"
             >
               <Calendar className="w-4 h-4 text-primary" />
-              <span>Not sure yet? <strong className="text-foreground group-hover:text-primary">Book a free 15-min intro call with Evan</strong></span>
+              <span>Not sure where to start? <strong className="text-foreground group-hover:text-primary">Book a free 15-minute intro call</strong></span>
               <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
             </a>
           </motion.div>
@@ -285,81 +291,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Training Services */}
-      <section className="py-12 md:py-20 px-5 md:px-12 border-b border-border">
-        <div className="container max-w-5xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Live AI training for teams and individuals</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">Pick the tool your team uses — or let Evan run both side by side so you can decide.</p>
+      <section id="training-tracks" className="py-14 md:py-20 px-5 md:px-12 border-b border-border">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Choose Your Training Path</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">The right AI tool depends on the work</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">Start with one platform, compare two side by side, or build a practical workflow across your existing stack.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              {
-                badge: "Most Popular",
-                icon: "🤖",
-                title: "Claude Cowork Training",
-                tagline: "Anthropic's agentic desktop AI",
-                description: "Set up Cowork, connect it to your real tools via MCP, and build multi-step automations that actually run. Built for non-technical teams across every department.",
-                href: "/claude-cowork-training",
-                highlight: true,
-              },
-              {
-                badge: "New",
-                icon: "💬",
-                title: "ChatGPT Work Training",
-                tagline: "OpenAI's agentic desktop AI",
-                description: "Get your team or yourself running ChatGPT Work — setup, connectors (Slack, Teams, Google Drive, SharePoint, CRMs), computer use, and real workflows, live and on screen share.",
-                href: "/chatgpt-work-training",
-                highlight: false,
-              },
-              {
-                icon: "⚡",
-                title: "Vibe Coding Training",
-                tagline: "Build software with AI, no CS degree required",
-                description: "Claude Code, Replit, GitHub Copilot, and the Codex app — Evan has shipped 20+ real projects. Get past the tutorial phase and build something that actually works.",
-                href: "/ai-coding-training",
-                highlight: false,
-              },
-              {
-                icon: "🔍",
-                title: "AEO / GEO Training",
-                tagline: "Get cited by ChatGPT, Claude, and AI search",
-                description: "Answer Engine Optimization and Generative Engine Optimization — the structured-data, llms.txt, and content playbook that makes AI systems cite your business instead of your competitor.",
-                href: "/aeo-geo-training",
-                highlight: false,
-              },
-            ].map((svc, i) => (
-              <motion.a
-                key={i}
-                href={svc.href}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`relative block p-6 rounded-xl border transition-all group cursor-pointer ${
-                  svc.highlight
-                    ? "border-primary/50 bg-primary/5 hover:border-primary hover:bg-primary/10"
-                    : "border-border bg-card hover:border-primary/40 hover:bg-secondary/40"
-                }`}
-              >
-                {svc.badge && (
-                  <span className="absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                    {svc.badge}
-                  </span>
-                )}
-                <div className="text-2xl mb-3">{svc.icon}</div>
-                <h3 className="font-bold text-lg mb-0.5 group-hover:text-primary transition-colors">{svc.title}</h3>
-                <p className="text-xs font-semibold text-primary/80 uppercase tracking-wide mb-3">{svc.tagline}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{svc.description}</p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </motion.a>
+              { href: "/chatgpt-work-training", icon: MessageSquare, title: "ChatGPT Work Training", label: "Business productivity", text: "Create documents, spreadsheets, presentations, research, and multi-step deliverables with OpenAI's Work agent." },
+              { href: "/codex-training", icon: Bot, title: "OpenAI Codex Training", label: "Agents and technical work", text: "Use the Codex app, projects, agents, worktrees, skills, automations, testing, and GitHub workflows." },
+              { href: "/claude-cowork-training", icon: Sparkles, title: "Claude Cowork Training", label: "Agentic desktop work", text: "Set up Cowork, connect tools, work with files, build role-specific workflows, and create a team playbook." },
+              { href: "/ai-coding-training", icon: Code2, title: "AI Coding and Vibe Coding", label: "Build and ship", text: "Learn Claude Code, Replit, Codex, GitHub Copilot, and safer AI-assisted development practices." },
+              { href: "/ai-workflow-consulting", icon: Settings2, title: "AI Workflow Implementation", label: "Done with you", text: "Audit workflows, choose the stack, build pilots, document guardrails, train the team, and measure adoption." },
+              { href: "/aeo-geo-training", icon: SearchCheck, title: "SEO, AEO and GEO Training", label: "Search and LLM visibility", text: "Improve the content, entities, evidence, technical access, and authority signals that search engines and LLMs rely on." },
+            ].map((track, index) => (
+              <Link key={track.href} href={track.href}>
+                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: (index % 3) * 0.06 }} className="group h-full p-6 md:p-7 bg-card border border-border rounded-xl hover:border-primary/50 hover:bg-primary/5 transition-all cursor-pointer">
+                  <track.icon className="w-6 h-6 text-primary mb-4" />
+                  <div className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{track.label}</div>
+                  <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">{track.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{track.text}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">See training details <ArrowRight className="w-4 h-4" /></span>
+                </motion.div>
+              </Link>
             ))}
           </div>
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            All sessions: <strong className="text-foreground">$300 / 1 hour</strong> or <strong className="text-foreground">$1,000 / 4-hour deep dive</strong> — live, on screen share, tailored to your actual workflow.
-          </p>
+          <p className="text-center text-sm text-muted-foreground mt-8">Sessions can also cover ChatGPT apps and connectors, workspace agents, Microsoft Copilot, Gemini, Perplexity, and mixed-tool workflows when those platforms fit your team.</p>
         </div>
       </section>
 
@@ -374,7 +333,11 @@ export default function Home() {
           </div>
         </div>
       )}
-      <CoworkAnalyzer defaultIndustry={initialIndustry?.name ?? ""} />
+      <CoworkAnalyzer
+        defaultIndustry={initialIndustry?.name ?? ""}
+        headline="Where could AI save time or improve output in your work?"
+        subheadline="Share your website, role, or industry. Get a free report with practical workflow ideas you can evaluate before booking anything."
+      />
 
       {/* Meet Evan Section */}
       <section id="about" className="py-12 md:py-24 px-5 md:px-12 border-b border-border bg-secondary/30">
@@ -392,7 +355,7 @@ export default function Home() {
                 I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
               </p>
               <p className="text-base md:text-lg text-muted-foreground mb-4">
-                When AI tools emerged, I didn't watch from the sidelines. I dove in. I've built 20+ projects using Claude Code, and I use Claude Cowork and AI agents every single day to run my businesses. I built AffiliateFinders.com and Publisher Finders, both leveraging AI-powered workflows.
+                When AI tools emerged, I dove in. I've built 20+ projects using Claude Code, Codex, Replit, and related tools. I use ChatGPT Work, Claude Cowork, Codex, and AI agents to run real parts of my businesses every day.
               </p>
               <p className="text-base md:text-lg text-muted-foreground">
                 But here's what makes me different as a trainer: I don't just know the tools. I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
@@ -425,7 +388,7 @@ export default function Home() {
                 {[
                   { title: "Founder & CEO, Experience Advertising", desc: "19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical." },
                   { title: "Founder, AffiliateFinders.com", desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search." },
-                  { title: "Daily AI Builder", desc: "20+ projects built with Claude Code and Cowork. I live in these tools so you don't have to figure them out alone." }
+                  { title: "Daily AI Builder", desc: "20+ projects built with Claude Code, Codex, Replit, and agentic workflows. I use these tools on real business work every day." }
                 ].map((card, i) => (
                   <div key={i} className="bg-card border border-border rounded-xl p-3.5 md:p-4">
                     <div className="font-semibold text-sm mb-1">{card.title}</div>
@@ -442,9 +405,9 @@ export default function Home() {
       <section id="departments" className="py-12 md:py-24 px-5 md:px-12 border-b border-border">
         <div className="container max-w-6xl mx-auto">
           <div className="mb-8 md:mb-16">
-            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Claude Cowork works for every department</h2>
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">Practical AI workflows for every department</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl">
-              That's the whole point: it's not just for devs. Real use cases, real hours saved, across every role on your team.
+              The platform may change by team. The goal stays the same: improve real work with clear human review and a workflow people will actually use.
             </p>
           </div>
 
@@ -615,7 +578,7 @@ export default function Home() {
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Training for every industry</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Claude Cowork works across every department and sector. Click your industry for a tailored overview.</p>
+            <p className="text-muted-foreground max-w-xl mx-auto">AI training works best when the examples match your business. Choose an industry for a more relevant starting point.</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             {industries.map((ind) => (
@@ -645,15 +608,15 @@ export default function Home() {
       <section id="tools" className="py-14 md:py-20 px-5 md:px-12 border-b border-border bg-secondary/30">
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Free tools to see what Claude can do for you</h2>
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-3">Free tools to find your best AI starting point</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">No credit card, no sales call. Each one takes a couple of minutes and gives you something concrete.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { href: "/ai-report", icon: Sparkles, title: "Free AI Report", body: "Enter your website, get 5 personalized Claude Cowork workflows in 30 seconds." },
-              { href: "/job-description-analyzer", icon: FileSearch, title: "Job Description Analyzer", body: "Paste any JD and see which tasks Claude runs end-to-end, accelerates, or leaves human." },
-              { href: "/ai-time-savings-calculator", icon: Calculator, title: "Time-Savings Calculator", body: "Slide in your real hours and see what Claude could reclaim per week and per year." },
-              { href: "/ai-readiness-quiz", icon: ClipboardCheck, title: "AI Readiness Quiz", body: "Eight questions, instant grade — find out if your team is set up for AI to actually stick." },
+              { href: "/ai-report", icon: Sparkles, title: "Free AI Report", body: "Enter your website and get five practical workflow ideas matched to your business." },
+              { href: "/job-description-analyzer", icon: FileSearch, title: "Job Description Analyzer", body: "Paste a job description and sort tasks into AI-led, AI-assisted, and human-led work." },
+              { href: "/ai-time-savings-calculator", icon: Calculator, title: "Time-Savings Calculator", body: "Estimate the weekly time tied up in repeated research, documents, reporting, and admin work." },
+              { href: "/ai-readiness-quiz", icon: ClipboardCheck, title: "AI Readiness Quiz", body: "Answer eight questions and see whether your team is ready for a useful AI rollout." },
             ].map((tool) => (
               <Link key={tool.href} href={tool.href}>
                 <div className="group h-full bg-background border border-border rounded-2xl p-6 hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer flex flex-col">
@@ -679,7 +642,7 @@ export default function Home() {
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-3 md:mb-6">Ready to move faster?</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Book a live session with Evan directly below. Payment is secure via Stripe.
+              Individuals and small teams can book directly. Companies planning a broader rollout can start with an implementation call.
             </p>
           </div>
 
@@ -761,6 +724,11 @@ export default function Home() {
             </div>
             <BookingTrustRow />
             <ComparisonTable />
+            <div className="mt-10 p-6 md:p-8 border border-primary/30 bg-primary/5 rounded-2xl text-center">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Need implementation across a department or company?</h3>
+              <p className="text-muted-foreground mb-5 max-w-2xl mx-auto">Start with a workflow audit and rollout plan instead of buying a general training session.</p>
+              <Link href="/ai-workflow-consulting"><Button variant="outline" size="lg">Explore AI Workflow Consulting <ArrowRight className="w-4 h-4 ml-2" /></Button></Link>
+            </div>
             </>
           ) : null}
         </div>
