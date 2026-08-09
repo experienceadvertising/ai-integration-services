@@ -55,6 +55,54 @@ from = "/about/"
 to = "/about.html"
 
 [[services.production.rewrites]]
+from = "/codex-training"
+to = "/codex-training.html"
+
+[[services.production.rewrites]]
+from = "/codex-training/"
+to = "/codex-training.html"
+
+[[services.production.rewrites]]
+from = "/ai-workflow-consulting"
+to = "/ai-workflow-consulting.html"
+
+[[services.production.rewrites]]
+from = "/ai-workflow-consulting/"
+to = "/ai-workflow-consulting.html"
+
+[[services.production.rewrites]]
+from = "/privacy"
+to = "/privacy.html"
+
+[[services.production.rewrites]]
+from = "/privacy/"
+to = "/privacy.html"
+
+[[services.production.rewrites]]
+from = "/terms"
+to = "/terms.html"
+
+[[services.production.rewrites]]
+from = "/terms/"
+to = "/terms.html"
+
+[[services.production.rewrites]]
+from = "/chatgpt-work-training"
+to = "/chatgpt-work-training.html"
+
+[[services.production.rewrites]]
+from = "/chatgpt-work-training/"
+to = "/chatgpt-work-training.html"
+
+[[services.production.rewrites]]
+from = "/aeo-geo-training"
+to = "/aeo-geo-training.html"
+
+[[services.production.rewrites]]
+from = "/aeo-geo-training/"
+to = "/aeo-geo-training.html"
+
+[[services.production.rewrites]]
 from = "/industries/marketing-agencies"
 to = "/industries/marketing-agencies.html"
 
