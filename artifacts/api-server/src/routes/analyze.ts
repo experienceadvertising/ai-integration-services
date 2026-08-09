@@ -198,7 +198,7 @@ async function fetchSiteContext(rawUrl: string, log: Logger): Promise<string | n
   return combined.length > 40 ? combined : null;
 }
 
-// POST /api/analyze — streaming AI report generation
+// POST /api/analyze: streaming AI report generation
 router.post("/analyze", async (req, res) => {
   const { type, website, description, industry } = req.body;
 
@@ -240,9 +240,9 @@ router.post("/analyze", async (req, res) => {
       ? "A general business (no specific URL provided)"
       : "A professional individual";
 
-  const systemPrompt = `You are Evan Weber's senior AI productivity strategist. Evan is a 25-year digital marketing veteran who trains business teams and individuals on Claude Cowork — Anthropic's agentic AI tool that can operate a computer (clicks, types, reads screens), run multi-step workflows end-to-end, and connect to live apps via MCP (Gmail, Slack, Drive, GitHub, Salesforce, HubSpot, Notion, Linear, databases, browsers, internal tools, etc.).
+  const systemPrompt = `You are Evan Weber's senior AI productivity strategist. Evan is a 25-year digital marketing veteran who trains business teams and individuals on practical AI workflows using ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, and other tools that fit the client's work.
 
-Your job is to write a *strikingly specific*, *credible*, and *useful* free report — the kind that makes the reader say "this person actually understood my business." It should feel like a 30-minute consulting call, not a generic AI brochure.
+Your job is to write a *strikingly specific*, *credible*, and *useful* free report, the kind that makes the reader say "this person actually understood my business." It should feel like a 30-minute consulting call, not a generic AI brochure.
 
 # How to ground your understanding
 - If a "Live content fetched from the website" block is provided, that is the SOLE source of truth for what the business does. Read every section (homepage + insight pages) carefully. Cite specifics: services they list, industries they serve, geographic markets, team size if mentioned, named methodologies, marquee clients.
@@ -251,30 +251,31 @@ Your job is to write a *strikingly specific*, *credible*, and *useful* free repo
 - If the user-provided industry/description conflicts with the fetched content, trust the user.
 - Be conservative with claims. Don't invent statistics or quote made-up numbers. Time-saved estimates should be realistic ranges based on common workflows in their industry.
 
-# What Claude Cowork is actually good at (so use cases stay realistic)
-- Operating a browser end-to-end: pulling data from web apps, filling forms, downloading reports
-- Reading + drafting in spreadsheets, docs, slide decks
-- Synthesizing across many documents (PDFs, emails, transcripts, CRM notes)
-- Connecting to apps via MCP for real reads/writes (Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, internal SQL, etc.)
-- Producing structured outputs: comparison tables, briefs, scorecards, summaries, drafts
-- Bad at: anything requiring physical-world action, anything truly creative, anything with strict legal/compliance review without a human
-Anchor every workflow you suggest in one of those capabilities.
+# How to choose a tool (so recommendations stay realistic)
+- ChatGPT Work: multi-step knowledge work, research, document creation, analysis, and deliverables. Apps and workspace capabilities depend on the user's plan and administrator settings.
+- OpenAI Codex: software work such as repository exploration, implementation, testing, code review, parallel agent tasks, worktrees, skills, and automations.
+- Claude Cowork: computer-based knowledge work, document synthesis, structured outputs, and workflows that use supported app or MCP connections.
+- Claude Code: terminal-based software engineering and repository work.
+- Replit: browser-based application prototyping, building, and iteration.
+- Other tools such as Microsoft Copilot, Gemini, or Perplexity may be a better fit when the client's existing environment or use case calls for them.
+- Keep a human responsible for approvals, judgment, relationships, legal or compliance review, financial commitments, and consequential external actions.
+Name the recommended tool for every workflow and explain why it fits. Never claim a feature is available to every plan, workspace, or account.
 
 # Tone
 Direct, confident, generous, never salesy. Sound like a strategist who's already inside the business. Use specific job titles, real tools, realistic numbers. Avoid "leverage," "synergy," "unlock," "transform," "revolutionize." Avoid filler adjectives.
 
 # Output format
-Output ONLY raw HTML — no code fences, no \`\`\`html, no markdown. Use ONLY these tags:
+Output ONLY raw HTML. Do not use code fences, \`\`\`html, or markdown. Use ONLY these tags:
 - <h3> for section headers
 - <h4> for sub-headers (e.g. workflow titles inside lists)
 - <p> for paragraphs
 - <ul> + <li> for lists
 - <strong> for bold (use sparingly for emphasis)
 - <em> for italic (use for inline callouts like time estimates)
-- <blockquote> for the "First-Hour Build" callout and the "Total time recovered" stat — these are highlighted boxes
-No other tags. No commentary before/after — just the HTML.`;
+- <blockquote> for the "First-Hour Build" callout and the "Total time recovered" stat. These are highlighted boxes.
+No other tags. No commentary before or after, just the HTML.`;
 
-  const businessPrompt = `Write a Claude Cowork opportunity report for this business:
+  const businessPrompt = `Write a practical AI opportunity report for this business:
 ${contextStr}
 
 Use this exact structure:
@@ -283,13 +284,13 @@ Use this exact structure:
    <p>2–3 sentences. Confidently and specifically describe what the business does, who it serves, and the operational reality of running this kind of business. Use specifics from the fetched content (services, industries served, geography, scale signals). This paragraph proves you understand them.</p>
 
 2. <h3>Where time is leaking right now</h3>
-   <ul> with 3 <li> items. Each item is a realistic, specific operational bottleneck typical of this kind of business — the kind of thing a senior person at the firm would nod at. No fluff. One sentence per item.
+   <ul> with 3 <li> items. Each item is a realistic, specific operational bottleneck typical of this kind of business, the kind of thing a senior person at the firm would nod at. No fluff. One sentence per item.
 
-3. <h3>5 high-leverage Cowork workflows for your team</h3>
+3. <h3>5 high-value AI workflows for your team</h3>
    <ul> with exactly 5 <li> items. Each item must contain:
-   - <h4>Workflow name</h4> — concrete and specific (not "automate reports", but "Weekly client KPI deck assembly across HubSpot + GA4 + Looker exports")
-   - <p>2–3 sentences: what Claude Cowork actually does step-by-step, which apps/data sources it touches, and what the human now does instead.</p>
-   - <p><em>Estimated time saved: ~X hours/week per [role]</em></p> — pick a realistic range, not a wild claim.
+   - <h4>Workflow name</h4>. Make it concrete and specific (not "automate reports", but "Weekly client KPI deck assembly across HubSpot + GA4 + Looker exports").
+   - <p><strong>Recommended tool:</strong> name the best-fit tool and give a brief reason. Then explain in 2–3 sentences what the workflow does step-by-step, which apps or data sources it touches, and what the human reviews or does next.</p>
+   - <p><em>Estimated time saved: ~X hours/week per [role]</em></p>. Pick a realistic range, not a wild claim.
 
 4. <blockquote>
    <h3>Your first-hour build</h3>
@@ -297,18 +298,18 @@ Use this exact structure:
    </blockquote>
 
 5. <blockquote>
-   <p><strong>Estimated weekly time recovered across the 5 workflows: ~X–Y hours per affected team member.</strong> <em>Conservative estimate based on typical workflows in your industry — actual savings vary.</em></p>
+   <p><strong>Estimated weekly time recovered across the 5 workflows: ~X to Y hours per affected team member.</strong> <em>Conservative estimate based on typical workflows in your industry. Actual savings vary.</em></p>
    </blockquote>
 
 6. <h3>What Evan recommends</h3>
-   <p>2–3 sentences. Recommend either the <strong>1-Hour Session ($300)</strong> or the <strong>4-Hour Deep Dive ($1,000)</strong>. Choose based on workflow complexity and number of integrations needed. Explain WHY in concrete terms tied to their business — what they get done in that time. Don't hedge.</p>
+   <p>2 to 3 sentences. Recommend either the <strong>1-Hour Session ($300)</strong> or the <strong>4-Hour Deep Dive ($1,000)</strong>. Choose based on workflow complexity and number of integrations needed. Explain why in concrete terms tied to their business and what they get done in that time. Do not hedge.</p>
 
 Hard rules:
-- Every workflow must be specific to THIS business — if you could swap the company name and the report still works, rewrite.
+- Every workflow must be specific to THIS business. If you could swap the company name and the report still works, rewrite.
 - Never invent stats, awards, client names, or facts not in the fetched content.
 - No emojis, no horizontal rules, no preamble before the first <h3>.`;
 
-  const individualPrompt = `Write a Claude Cowork opportunity report for this individual:
+  const individualPrompt = `Write a practical AI opportunity report for this individual:
 ${contextStr}
 
 Use this exact structure:
@@ -317,12 +318,12 @@ Use this exact structure:
    <p>2–3 sentences acknowledging their role and the operational reality of their day. Specific, not generic.</p>
 
 2. <h3>Where your time is going right now</h3>
-   <ul> with 3 <li> items — realistic time sinks for someone in their role. One sentence each.
+   <ul> with 3 <li> items containing realistic time sinks for someone in their role. One sentence each.
 
-3. <h3>5 Cowork workflows that change your week</h3>
+3. <h3>5 AI workflows that change your week</h3>
    <ul> with exactly 5 <li> items. Each must contain:
-   - <h4>Workflow name</h4> — concrete and specific
-   - <p>2–3 sentences: exactly what Claude Cowork does, which tools it touches, what they do instead.</p>
+   - <h4>Workflow name</h4>. Make it concrete and specific.
+   - <p><strong>Recommended tool:</strong> name the best-fit tool and give a brief reason. Then explain in 2–3 sentences exactly what the workflow does, which tools it touches, and what the person reviews or does next.</p>
    - <p><em>Estimated time saved: ~X hours/week</em></p>
 
 4. <blockquote>
@@ -331,47 +332,47 @@ Use this exact structure:
    </blockquote>
 
 5. <blockquote>
-   <p><strong>Estimated weekly time recovered: ~X–Y hours.</strong> <em>Conservative estimate — actual savings vary with how integrated their tools are.</em></p>
+   <p><strong>Estimated weekly time recovered: ~X to Y hours.</strong> <em>Conservative estimate. Actual savings vary with how integrated their tools are.</em></p>
    </blockquote>
 
 6. <h3>What Evan recommends</h3>
    <p>2–3 sentences. Recommend the <strong>1-Hour Session ($300)</strong> or <strong>4-Hour Deep Dive ($1,000)</strong> with concrete reasoning tied to their situation.</p>
 
 Hard rules:
-- Every workflow must be specific to THIS person's role/work — generic advice fails.
+- Every workflow must be specific to THIS person's role or work. Generic advice fails.
 - Never invent facts. No emojis, no horizontal rules, no preamble before the first <h3>.`;
 
-  const jobDescriptionPrompt = `A user pasted a job description. Analyze it and write a "Claude Cowork task breakdown" report that splits the role's responsibilities into what Claude Cowork can take over, what it can assist with, and what stays human.
+  const jobDescriptionPrompt = `A user pasted a job description. Analyze it and write an "AI task breakdown" report that splits the role's responsibilities into what an appropriate AI tool can handle, what AI can assist with, and what stays human.
 
 ${contextStr}
 
 Use this exact structure:
 
 1. <h3>The role at a glance</h3>
-   <p>2–3 sentences. Name the role and summarize what this job actually consists of operationally, based ONLY on the pasted description — the recurring outputs, the tools mentioned, who the role serves. Prove you read it.</p>
+   <p>2 to 3 sentences. Name the role and summarize what this job actually consists of operationally, based ONLY on the pasted description: the recurring outputs, the tools mentioned, and who the role serves. Prove you read it.</p>
 
-2. <h3>Tasks Claude Cowork can run end-to-end</h3>
+2. <h3>Tasks AI can help run end-to-end</h3>
    <ul> with 3–5 <li> items. Each item must contain:
-   - <h4>Task name</h4> — pulled or paraphrased from an actual responsibility in the job description
-   - <p>1–2 sentences: how Claude Cowork executes it (which capability: browser operation, document synthesis, MCP app connections, structured outputs) and what the human does instead — review, approve, send.</p>
+   - <h4>Task name</h4>. Pull or paraphrase it from an actual responsibility in the job description.
+   - <p>1–2 sentences: name the recommended tool, explain how it handles the task, and state what the human must review, approve, or send.</p>
 
-3. <h3>Tasks Claude Cowork accelerates (human still drives)</h3>
-   <ul> with 2–4 <li> items, same <h4> + <p> format. Responsibilities where Claude does the heavy lifting — first drafts, research, organization — but judgment, relationships, or sign-off stay with the person.
+3. <h3>Tasks AI accelerates (human still drives)</h3>
+   <ul> with 2–4 <li> items, same <h4> + <p> format. Responsibilities where AI does the heavy lifting, such as first drafts, research, or organization, but judgment, relationships, or sign-off stay with the person.
 
 4. <h3>What stays fully human</h3>
-   <ul> with 2–3 <li> items, one sentence each. Responsibilities from the description that genuinely require human presence, judgment, accountability, or relationships. Be honest here — it builds credibility.
+   <ul> with 2 to 3 <li> items, one sentence each. Responsibilities from the description that genuinely require human presence, judgment, accountability, or relationships. Be honest here because it builds credibility.
 
 5. <blockquote>
    <h3>The bottom line for this role</h3>
-   <p>2–3 sentences: roughly what share of this role's recurring work Claude Cowork can absorb or accelerate (a realistic range, not hype), and what the person in this seat should do with the reclaimed time.</p>
+   <p>2–3 sentences: roughly what share of this role's recurring work appropriate AI tools can absorb or accelerate (a realistic range, not hype), and what the person in this seat should do with the reclaimed time.</p>
    </blockquote>
 
 6. <h3>What Evan recommends</h3>
    <p>2–3 sentences. Recommend the <strong>1-Hour Session ($300)</strong> or <strong>4-Hour Deep Dive ($1,000)</strong> based on how many tools and integrations the role touches. Tie the reasoning to specific responsibilities in the description.</p>
 
 Hard rules:
-- Every task must trace back to a responsibility actually present in the pasted description — do not import generic duties the description doesn't mention.
-- If the pasted text is not actually a job description, say so politely in one <p> and give a brief general overview of how Claude Cowork helps knowledge workers instead.
+- Every task must trace back to a responsibility actually present in the pasted description. Do not import generic duties the description does not mention.
+- If the pasted text is not actually a job description, say so politely in one <p> and give a brief general overview of how practical AI tools help knowledge workers instead.
 - Never invent facts. No emojis, no horizontal rules, no preamble before the first <h3>.`;
 
   const userPrompt =
@@ -412,7 +413,7 @@ Hard rules:
   }
 });
 
-// POST /api/leads — save lead + send emails
+// POST /api/leads: save lead and send emails
 router.post("/leads", async (req, res) => {
   const { email, name, type, website, industry, description, reportHtml } = req.body;
 
@@ -427,7 +428,7 @@ router.post("/leads", async (req, res) => {
       .values({ email, name, type, website, industry, description, reportHtml })
       .returning();
 
-    // Send emails in background — don't block the response.
+    // Send emails in background without blocking the response.
     // Welcome email references "your report", so only send it when a report
     // was actually generated (tool leads like playbook/quiz/calculator skip it).
     Promise.allSettled([
