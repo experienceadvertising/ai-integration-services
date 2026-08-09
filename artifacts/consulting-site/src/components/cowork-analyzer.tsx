@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, Building2, User, Loader2, RotateCcw, Link2, Check } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type UserType = "business" | "individual";
 type Phase = "form" | "streaming" | "done" | "error";
@@ -92,6 +93,7 @@ export default function CoworkAnalyzer({
                 .trim();
               setReportHtml(cleaned);
               setPhase("done");
+              trackEvent("generate_lead", { lead_type: userType, source: "ai_report" });
 
               // Fire-and-forget: save lead + send emails
               fetch(`${BASE_URL}/api/leads`, {
@@ -379,7 +381,7 @@ export default function CoworkAnalyzer({
                       className="sm:col-span-2 flex items-center justify-center gap-2 border border-primary/30 bg-primary/5 rounded-xl py-3 px-6 text-sm text-primary font-medium hover:bg-primary/10 transition-colors"
                     >
                       {copied ? <Check className="w-4 h-4" /> : <Link2 className="w-4 h-4" />}
-                      {copied ? "Link copied — share it with your team" : "Copy a shareable link to this report"}
+                      {copied ? "Link copied. Share it with your team" : "Copy a shareable link to this report"}
                     </button>
                   )}
                 </motion.div>

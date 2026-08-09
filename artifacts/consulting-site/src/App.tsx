@@ -14,7 +14,11 @@ import ClaudeCoworkTraining from "@/pages/claude-cowork-training";
 import AiCodingTraining from "@/pages/ai-coding-training";
 import AeoGeoTraining from "@/pages/aeo-geo-training";
 import ChatGptWorkTraining from "@/pages/chatgpt-work-training";
+import CodexTraining from "@/pages/codex-training";
+import AiWorkflowConsulting from "@/pages/ai-workflow-consulting";
 import About from "@/pages/about";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 import IndustryPage from "@/pages/industry";
 import AiReport from "@/pages/ai-report";
 import RolePage from "@/pages/role";
@@ -39,7 +43,11 @@ function Routes() {
         <Route path="/ai-coding-training" component={AiCodingTraining} />
         <Route path="/aeo-geo-training" component={AeoGeoTraining} />
         <Route path="/chatgpt-work-training" component={ChatGptWorkTraining} />
+        <Route path="/codex-training" component={CodexTraining} />
+        <Route path="/ai-workflow-consulting" component={AiWorkflowConsulting} />
         <Route path="/about" component={About} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={Terms} />
         <Route path="/ai-report" component={AiReport} />
         <Route path="/job-description-analyzer" component={JobDescriptionAnalyzer} />
         <Route path="/ai-time-savings-calculator" component={AiTimeSavingsCalculator} />

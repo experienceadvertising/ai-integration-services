@@ -11,8 +11,8 @@ export default function AiCodingTraining() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Vibe Coding Training: Claude Code, Replit & Codex | Evan Weber"
-        description="Live vibe coding training with Evan Weber — Claude Code, Replit, Codex, and GitHub Copilot. Learn from someone who has shipped 20+ real AI-assisted projects. Teams and individuals."
+        title="AI Coding Training: Codex, Claude Code and Replit"
+        description="Live AI coding training for Codex, Claude Code, Replit and GitHub workflows. Build, test and review a real project with Evan Weber."
         canonical="https://learncowork.net/ai-coding-training"
         ogImage="https://learncowork.net/og-ai-coding-training.png"
         schema={{
@@ -23,7 +23,7 @@ export default function AiCodingTraining() {
               "@id": "https://learncowork.net/ai-coding-training#service",
               name: "Vibe Coding Training",
               provider: { "@type": "Person", name: "Evan Weber" },
-              description: "Live 1-on-1 and team vibe coding training sessions covering Claude Code, Replit, GitHub Copilot, and the OpenAI Codex app — including Codex's agentic desktop features (multi-agent orchestration, computer use, automations). Build real projects with AI-assisted development tools.",
+              description: "Live AI coding training covering Claude Code, Replit, GitHub workflows, and the OpenAI Codex app, including agents, worktrees, skills, automations, testing, and review.",
               url: "https://learncowork.net/ai-coding-training",
               areaServed: "US",
               offers: [
@@ -117,8 +117,8 @@ export default function AiCodingTraining() {
               {
                 icon: <Cpu className="w-6 h-6" />,
                 tool: "OpenAI Codex App & GitHub Copilot",
-                desc: "Codex isn't just IDE autocomplete anymore — the Codex desktop app has real Cowork-like features: multi-agent orchestration, background computer use, and Automations that run unprompted on recurring engineering work. Evan covers the full Codex app alongside GitHub Copilot's inline completion, and how to pair both with Claude Code for a complete AI coding workflow.",
-                uses: ["Multi-agent orchestration across projects", "Background computer use for hands-off tasks", "Automations for triage, alerts, and CI/CD", "Pairing Copilot's inline completion with Codex and Claude Code"]
+                desc: "The Codex app is a command center for agents. It supports parallel tasks, worktrees, skills, automations, Git workflows, and review. Evan covers Codex alongside GitHub Copilot and Claude Code so you can choose the right tool for each stage of development.",
+                uses: ["Parallel agents across projects", "Worktrees and isolated changes", "Automations for repeated technical work", "Pairing Codex with Copilot and Claude Code"]
               },
               {
                 icon: <GitBranch className="w-6 h-6" />,
@@ -165,7 +165,7 @@ export default function AiCodingTraining() {
           </p>
           <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
             {[
-              "Software engineers who want to ship 3-5x faster using AI as a coding partner",
+              "Software engineers who want a faster, more consistent AI-assisted development workflow",
               "Junior developers who want to level up their output without years of experience",
               "Non-technical founders who want to build MVPs without hiring a dev team",
               "Product managers who want to prototype ideas without waiting on engineers",
