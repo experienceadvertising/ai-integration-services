@@ -13,7 +13,7 @@ interface SEOProps {
 
 const SITE_NAME = "AI Training by Evan Weber | learncowork.net";
 const DEFAULT_OG_IMAGE = "https://learncowork.net/og-image.png";
-const DEFAULT_KEYWORDS = "Claude Cowork training, AI productivity training, Claude AI training, AI team training, vibe coding training, AEO training, GEO training, AI search optimization, Evan Weber, learncowork, Claude for business";
+const DEFAULT_KEYWORDS = "AI training for teams, AI training for individuals, ChatGPT Work training, OpenAI Codex training, Claude Cowork training, Claude Code training, Replit training, AI workflow consulting, AI implementation services, Evan Weber";
 
 export default function SEO({
   title,
@@ -58,8 +58,6 @@ export default function SEO({
       <meta property="og:image:alt" content={fullTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@learncowork" />
-      <meta name="twitter:creator" content="@learncowork" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
