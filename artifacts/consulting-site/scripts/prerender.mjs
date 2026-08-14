@@ -59,6 +59,7 @@ const routes = [
   "/chatgpt-work-training",
   "/codex-training",
   "/ai-workflow-consulting",
+  "/replit-consulting",
   "/about",
   "/privacy",
   "/terms",

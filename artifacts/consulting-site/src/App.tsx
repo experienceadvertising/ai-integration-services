@@ -16,6 +16,7 @@ import AeoGeoTraining from "@/pages/aeo-geo-training";
 import ChatGptWorkTraining from "@/pages/chatgpt-work-training";
 import CodexTraining from "@/pages/codex-training";
 import AiWorkflowConsulting from "@/pages/ai-workflow-consulting";
+import ReplitConsulting from "@/pages/replit-consulting";
 import About from "@/pages/about";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
@@ -45,6 +46,7 @@ function Routes() {
         <Route path="/chatgpt-work-training" component={ChatGptWorkTraining} />
         <Route path="/codex-training" component={CodexTraining} />
         <Route path="/ai-workflow-consulting" component={AiWorkflowConsulting} />
+        <Route path="/replit-consulting" component={ReplitConsulting} />
         <Route path="/about" component={About} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
