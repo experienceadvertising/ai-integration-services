@@ -31,6 +31,7 @@ const trainingLinks = [
   { href: "/chatgpt-work-training", label: "ChatGPT Work Training" },
   { href: "/codex-training", label: "OpenAI Codex Training" },
   { href: "/ai-coding-training", label: "Vibe Coding Training" },
+  { href: "/replit-consulting", label: "Replit Consulting" },
   { href: "/ai-workflow-consulting", label: "AI Workflow Consulting" },
   { href: "/aeo-geo-training", label: "AEO/GEO Training" },
   { href: "/blog", label: "Blog" },
@@ -58,7 +59,7 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed max-w-xs">
-              Practical AI training and workflow implementation for individuals and business teams.
+              AI training, Replit consulting, and hands-on development for individuals, founders, and business teams.
             </p>
             <p className="text-xs text-muted-foreground mt-4">
               Experience Advertising, Inc.<br />Fort Lauderdale, FL

@@ -12,6 +12,10 @@ const faqs = [
     a: "Training can cover ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, ChatGPT apps and connectors, workspace agents, and practical multi-tool workflows. The session can focus on one tool or compare the options that fit your team.",
   },
   {
+    q: "Can Evan build a website, software product, or mobile app for us?",
+    a: "Yes. Replit consulting can include product planning, hands-on development, troubleshooting, testing, integrations, and publishing for websites, business software, internal tools, prototypes, and mobile apps.",
+  },
+  {
     q: "Can you help us choose between ChatGPT Work, Codex, and Claude Cowork?",
     a: "Yes. The right choice depends on the work, team, existing software, security requirements, and whether the primary need is business productivity, software development, or both.",
   },

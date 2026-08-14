@@ -46,6 +46,12 @@ Training for Claude Code, Replit, Codex, GitHub Copilot, GitHub workflows, proto
 
 Details: https://learncowork.net/ai-coding-training
 
+### Replit Consulting and Training
+
+Hands-on consulting and advanced training for Replit Agent and AI-assisted product development. Evan helps individuals, founders, and companies plan, build, fix, test, and publish websites, landing pages, SaaS products, internal tools, business software, APIs, prototypes, and mobile apps. Team training covers specifications, Agent workflows, checkpoints, GitHub, testing, review, permissions, publishing, and responsible human oversight.
+
+Details: https://learncowork.net/replit-consulting
+
 ### AI Workflow Consulting and Implementation
 
 Done-with-you support for workflow audits, use-case prioritization, tool selection, pilot builds, apps and connectors, guardrails, documentation, role-based training, adoption, and measurement.
@@ -74,6 +80,7 @@ Details: https://learncowork.net/aeo-geo-training
 - Codex training: https://learncowork.net/codex-training
 - Claude Cowork training: https://learncowork.net/claude-cowork-training
 - AI coding training: https://learncowork.net/ai-coding-training
+- Replit consulting and training: https://learncowork.net/replit-consulting
 - AEO and GEO training: https://learncowork.net/aeo-geo-training
 - About Evan: https://learncowork.net/about
 - Blog: https://learncowork.net/blog
