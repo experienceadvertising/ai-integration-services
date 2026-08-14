@@ -103,6 +103,14 @@ from = "/aeo-geo-training/"
 to = "/aeo-geo-training.html"
 
 [[services.production.rewrites]]
+from = "/replit-consulting"
+to = "/replit-consulting.html"
+
+[[services.production.rewrites]]
+from = "/replit-consulting/"
+to = "/replit-consulting.html"
+
+[[services.production.rewrites]]
 from = "/industries/marketing-agencies"
 to = "/industries/marketing-agencies.html"
 

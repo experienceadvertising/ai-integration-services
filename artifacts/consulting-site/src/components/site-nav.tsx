@@ -7,9 +7,9 @@ const links = [
   { href: "/chatgpt-work-training", label: "ChatGPT Work" },
   { href: "/codex-training", label: "Codex" },
   { href: "/claude-cowork-training", label: "Claude Cowork" },
+  { href: "/replit-consulting", label: "Replit" },
   { href: "/ai-coding-training", label: "AI Coding" },
-  { href: "/ai-workflow-consulting", label: "Implementation" },
-  { href: "/blog", label: "Blog" },
+  { href: "/ai-workflow-consulting", label: "Consulting" },
   { href: "/about", label: "About Evan" },
 ];
 

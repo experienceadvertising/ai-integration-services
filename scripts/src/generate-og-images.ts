@@ -98,6 +98,11 @@ const pages: OGPage[] = [
     title: "Build Real Software with Claude Code",
   },
   {
+    filename: "og-replit-consulting.png",
+    category: "Replit Consulting & Training",
+    title: "Build Websites, Software & Mobile Apps with Replit",
+  },
+  {
     filename: "og-aeo-geo-training.png",
     category: "AEO/GEO Training",
     title: "Get Cited by ChatGPT & Claude",
