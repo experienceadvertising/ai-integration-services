@@ -74,7 +74,7 @@ export default function AiCodingTraining() {
               <span className="text-primary">Claude Code, Replit & Codex</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-              Evan Weber has built 20+ real projects using Claude Code, Replit, and Codex. This is hands-on AI coding training from someone who does it daily, not a theorist reading documentation.
+              Evan Weber has built 20+ real projects using Claude Code, Replit, and Codex, including websites, software products, business systems, and mobile experiences. Learn the planning, prompting, testing, review, and publishing practices behind serious AI-assisted development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#pricing">
@@ -85,6 +85,11 @@ export default function AiCodingTraining() {
               <Link href="/about">
                 <Button size="lg" variant="outline" className="text-lg px-8 h-14">
                   Evan's Background
+                </Button>
+              </Link>
+              <Link href="/replit-consulting">
+                <Button size="lg" variant="outline" className="text-lg px-8 h-14">
+                  Replit Consulting
                 </Button>
               </Link>
             </div>
@@ -111,8 +116,8 @@ export default function AiCodingTraining() {
               {
                 icon: <Code2 className="w-6 h-6" />,
                 tool: "Replit",
-                desc: "The fastest way to go from idea to deployed app. Build internal tools, automations, and small products in hours without infrastructure setup. Perfect for non-dev teams who want to build.",
-                uses: ["Internal tools without a full dev cycle", "Rapid prototyping in any language", "Deploying AI-powered automations", "Collaborative development in the browser"]
+                desc: "A browser-based environment for building websites, web apps, business software, prototypes, APIs, and phone-first projects with Agent. Evan covers the full path from a clear plan to testing and publishing.",
+                uses: ["Websites and landing pages", "SaaS and internal business software", "Mobile apps with Expo workflows", "Testing, checkpoints, and publishing"]
               },
               {
                 icon: <Cpu className="w-6 h-6" />,
@@ -168,6 +173,7 @@ export default function AiCodingTraining() {
               "Software engineers who want a faster, more consistent AI-assisted development workflow",
               "Junior developers who want to level up their output without years of experience",
               "Non-technical founders who want to build MVPs without hiring a dev team",
+              "Business operators who want to build websites, workflow software, or mobile tools in Replit",
               "Product managers who want to prototype ideas without waiting on engineers",
               "Dev teams who want to standardize AI coding workflows across the organization",
               "Agencies looking to deliver client projects faster with AI-assisted development"

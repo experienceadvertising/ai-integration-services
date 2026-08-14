@@ -15,7 +15,7 @@ import SiteFooter from "@/components/site-footer";
 import heroBg from "../assets/hero-bg.webp";
 // @ts-ignore
 import evanProfile from "../assets/evan-profile.jpeg";
-import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck, MessageSquare, Settings2, SearchCheck } from "lucide-react";
+import { CheckCircle2, ArrowRight, Code2, LineChart, Briefcase, Users, Bot, Zap, Quote, ShieldCheck, Calendar, Sparkles, FileSearch, Calculator, ClipboardCheck, MessageSquare, Settings2, SearchCheck, Rocket } from "lucide-react";
 import { CALENDLY_INTRO } from "@/lib/booking-links";
 import { trackEvent } from "@/lib/analytics";
 import ComparisonTable from "@/components/comparison-table";
@@ -130,8 +130,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="AI Training for Teams and Individuals | Evan Weber"
-        description="Live AI training for ChatGPT Work, Codex, Claude Cowork, Claude Code and Replit. Build practical workflows with Evan Weber in one focused session."
+        title="AI Training and Replit Consulting | Evan Weber"
+        description="AI training and Replit consulting by Evan Weber. Build websites, software and mobile apps, or train your team on advanced AI coding workflows."
         canonical="https://learncowork.net/"
         schema={{
           "@context": "https://schema.org",
@@ -146,6 +146,11 @@ export default function Home() {
               "@type": "Question",
               name: "Which AI tools can Evan train us on?",
               acceptedAnswer: { "@type": "Answer", text: "Training can cover ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, ChatGPT apps and connectors, workspace agents, and practical multi-tool workflows for individuals or companies." },
+            },
+            {
+              "@type": "Question",
+              name: "Can Evan build a website, software product, or mobile app for us?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes. Replit consulting can include product planning, hands-on development, troubleshooting, testing, integrations, and publishing for websites, business software, internal tools, prototypes, and mobile apps." },
             },
             {
               "@type": "Question",
@@ -212,13 +217,13 @@ export default function Home() {
             </div>
 
             <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
-              Practical AI training<br />
-              <span className="text-primary">built around your work.</span><br />
-              <span className="text-muted-foreground">Not generic demos.</span>
+              Build with AI.<br />
+              <span className="text-primary">Train your team to do it right.</span><br />
+              <span className="text-muted-foreground">From workflow to working product.</span>
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              I train individuals and companies on ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, and the AI workflows that connect them to real business results.
+              I build websites, software products, business systems, and mobile apps with Replit and AI coding tools. I also train individuals and teams on Replit, Codex, Claude Code, ChatGPT Work, Claude Cowork, and the workflows that turn AI into real business results.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -281,6 +286,7 @@ export default function Home() {
               { href: "/codex-training", icon: Bot, title: "OpenAI Codex Training", label: "Agents and technical work", text: "Use the Codex app, projects, agents, worktrees, skills, automations, testing, and GitHub workflows." },
               { href: "/claude-cowork-training", icon: Sparkles, title: "Claude Cowork Training", label: "Agentic desktop work", text: "Set up Cowork, connect tools, work with files, build role-specific workflows, and create a team playbook." },
               { href: "/ai-coding-training", icon: Code2, title: "AI Coding and Vibe Coding", label: "Build and ship", text: "Learn Claude Code, Replit, Codex, GitHub Copilot, and safer AI-assisted development practices." },
+              { href: "/replit-consulting", icon: Rocket, title: "Replit Consulting and Training", label: "Websites, software and apps", text: "Build a real Replit product with Evan or train yourself and your team to direct, test, and publish AI-coded work." },
               { href: "/ai-workflow-consulting", icon: Settings2, title: "AI Workflow Implementation", label: "Done with you", text: "Audit workflows, choose the stack, build pilots, document guardrails, train the team, and measure adoption." },
               { href: "/aeo-geo-training", icon: SearchCheck, title: "SEO, AEO and GEO Training", label: "Search and LLM visibility", text: "Improve the content, entities, evidence, technical access, and authority signals that search engines and LLMs rely on." },
             ].map((track, index) => (
@@ -290,7 +296,7 @@ export default function Home() {
                   <div className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{track.label}</div>
                   <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">{track.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">{track.text}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">See training details <ArrowRight className="w-4 h-4" /></span>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">See details <ArrowRight className="w-4 h-4" /></span>
                 </motion.div>
               </Link>
             ))}
@@ -332,7 +338,7 @@ export default function Home() {
                 I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy.
               </p>
               <p className="text-base md:text-lg text-muted-foreground mb-4">
-                When AI tools emerged, I dove in. I've built 20+ projects using Claude Code, Codex, Replit, and related tools. I use ChatGPT Work, Claude Cowork, Codex, and AI agents to run real parts of my businesses every day.
+                When AI tools emerged, I dove in. I've built 20+ projects using Claude Code, Codex, Replit, and related tools, including websites, software products, business systems, and mobile experiences. I also teach individuals and teams how to direct, test, and publish AI-coded work at an advanced level.
               </p>
               <p className="text-base md:text-lg text-muted-foreground">
                 But here's what makes me different as a trainer: I don't just know the tools. I know how to teach them. Over 100 colleagues and clients have publicly recommended me on LinkedIn, and the #1 thing they say is that I meet people where they are, make complex things simple, and get them to results fast.
@@ -365,7 +371,7 @@ export default function Home() {
                 {[
                   { title: "Founder & CEO, Experience Advertising", desc: "19+ years running a full-service digital agency. Partnered with 400+ companies across every vertical." },
                   { title: "Founder, AffiliateFinders.com", desc: "Built an AI-powered platform with 10,000+ pre-vetted affiliates, AI profile scoring, and advanced search." },
-                  { title: "Daily AI Builder", desc: "20+ projects built with Claude Code, Codex, Replit, and agentic workflows. I use these tools on real business work every day." }
+                  { title: "AI Product Builder and Trainer", desc: "20+ projects built with Claude Code, Codex, Replit, and agentic workflows, plus practical training for individuals and teams." }
                 ].map((card, i) => (
                   <div key={i} className="bg-card border border-border rounded-xl p-3.5 md:p-4">
                     <div className="font-semibold text-sm mb-1">{card.title}</div>
@@ -441,7 +447,7 @@ export default function Home() {
                 badge: "Specialized track",
                 uses: [
                   "Code reviews, refactoring, and debugging with Claude Code, live",
-                  "Build internal tools and automations in Replit without a full dev cycle",
+                  "Build websites, business software, internal tools, and mobile apps with Replit",
                   "Write, document, and test functions faster with Codex and GitHub Copilot",
                   "Use AI agents to handle routine dev tasks end-to-end"
                 ]
