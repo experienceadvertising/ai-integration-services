@@ -100,7 +100,7 @@ export default function About() {
                   I've spent 25 years in the trenches of digital marketing, building companies, scaling revenue, and teaching hundreds of people along the way. I founded Experience Advertising in 2007 and have partnered with over 400 companies to drive growth through digital strategy, paid media, and affiliate marketing.
                 </p>
                 <p>
-                  When AI coding and agentic work tools emerged, I dove in. I've now built 20+ projects using Claude Code, Codex, Replit, and related tools. I use ChatGPT Work, Claude Cowork, Codex, and AI agents on real business work every day.
+                  When AI coding and agentic work tools emerged, I dove in. I've now built 20+ projects using Claude Code, Codex, Replit, and related tools, including websites, software products, business systems, and mobile experiences. I also train individuals and teams to use AI coding with stronger planning, testing, review, and publishing practices.
                 </p>
                 <p>
                   I built AffiliateFinders.com, an AI-powered affiliate marketplace with 10,000+ pre-vetted partners, along with Publisher Finders and other live products. These are not demo projects. They are businesses and software I actually run.
