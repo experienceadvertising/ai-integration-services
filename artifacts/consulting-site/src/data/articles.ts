@@ -130,6 +130,15 @@ export const articles: Article[] = [
         ],
       },
       {
+        heading: "What early users say Astra is capable of",
+        paragraphs: [
+          "The first reports are interesting because people are not only asking Astra questions. They are giving it ambitious assignments and seeing how far it can get.",
+          "[One widely shared example showed Astra creating an Unreal Engine world populated by AI-controlled characters that had to work together to survive](https://www.reddit.com/r/ArtificialInteligence/comments/1w7g2rw/my_first_holy_shit_moment_with_gpt6_astra_i_asked/). [Another user described asking Astra in Codex to repair a broken agent service remotely from a short instruction, with no further intervention](https://app.dealroom.co/news/note/matt-shumer-s-review-of-gpt-6-astra). Developers are also [reporting that it can stay oriented in larger codebases, complete feature audits across multiple repositories, check documents against earlier research, and catch missing or misquoted details](https://www.reddit.com/r/singularity/comments/1w7m0ui/its_been_a_few_hours_since_global_rollout_gpt6/).",
+          "These are early user reports, not controlled guarantees, and the results are mixed. Still, they point to the real attraction of Astra. It can often connect research, files, software, browser work, testing, and revision into one sustained assignment instead of stopping after a single answer.",
+          "[OpenAI describes Astra as its most capable model for difficult end-to-end work](https://developers.openai.com/api/docs/models/gpt-6-astra), including complex reasoning, coding, computer use, research, and document creation. That is where I would test it first. Give it a substantial goal, clear boundaries, the right tools, and a definition of done, then judge the finished result rather than the first response.",
+        ],
+      },
+      {
         heading: "When to use Astra and when a faster model is enough",
         paragraphs: [
           "Astra is intended for hard, multi-step work, and it can burn through tokens or plan usage quickly during long, tool-heavy assignments. I would not make it the default for every short email, simple rewrite, routine question, or everyday marketing task.",
