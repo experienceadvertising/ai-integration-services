@@ -99,6 +99,7 @@ Details: https://learncowork.net/aeo-geo-training
 ## Selected Educational Content
 
 - ChatGPT Work overview: https://learncowork.net/blog/what-is-chatgpt-work
+- GPT-6 Astra business guide: https://learncowork.net/blog/gpt-6-astra-business-guide
 - Codex app overview: https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork overview: https://learncowork.net/blog/what-is-claude-cowork
 - Claude Cowork versus Codex: https://learncowork.net/blog/claude-cowork-vs-codex
