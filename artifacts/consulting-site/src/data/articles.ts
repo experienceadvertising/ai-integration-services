@@ -64,7 +64,7 @@ export const articles: Article[] = [
     ],
     readingTime: "10 min read",
     datePublished: "2026-09-05",
-    dateModified: "2026-09-05",
+    dateModified: "2026-09-06",
     intro: [
       "GPT-6 Astra is OpenAI's most capable model for complex, end-to-end work. It combines advanced reasoning with browsing, computer use, coding, research, and document creation, which means it can help complete a connected business workflow instead of only answering one prompt at a time.",
       "For business teams, the practical question is not whether Astra is smarter on a benchmark. It is whether it can help finish meaningful work more quickly and reliably. The answer is yes, but only when you give it a clear outcome, the right context, appropriate access, and a real review process.",
@@ -132,8 +132,11 @@ export const articles: Article[] = [
       {
         heading: "When to use Astra and when a faster model is enough",
         paragraphs: [
-          "Astra is intended for hard, multi-step work. You do not need the most capable model for every short email, simple rewrite, or routine question. A faster and less expensive model may be the better choice for lightweight work.",
-          "Use Astra when the assignment involves judgment, several tools, a large amount of context, conflicting evidence, coding, or a deliverable that needs careful verification. The unit that matters is not cost per token. It is the cost and quality of the completed task. OpenAI reports that Astra can use fewer output tokens than earlier models on several complex evaluations, even though its individual tokens cost more through the API.",
+          "Astra is intended for hard, multi-step work, and it can burn through tokens or plan usage quickly during long, tool-heavy assignments. I would not make it the default for every short email, simple rewrite, routine question, or everyday marketing task.",
+          "The official API prices help explain the difference. [OpenAI lists Astra at $10 per million input tokens and $50 per million output tokens](https://openai.com/index/gpt-6-astra/), compared with [$4 per million input tokens and $20 per million output tokens for GPT-5.6 Sol](https://developers.openai.com/api/docs/models/gpt-5.6-sol). That makes Astra 2.5 times the API price per token before separate cache, tool, fast-mode, and long-context charges are considered.",
+          "Early user reports suggest subscription usage can disappear much faster too, but the results vary enough that they should be treated as anecdotes, not a guaranteed burn rate. [One Pro user reported using about 30% of a weekly allowance during several hours of Astra High work, compared with an estimated 15% for the same time on Sol](https://www.reddit.com/r/OpenAI/comments/1w7nwts/be_aware_astra_burns_usage/). [A Plus user reported that an agentic coding session on Astra High exhausted a five-hour allowance in roughly 20 minutes](https://www.reddit.com/r/ChatGPT/comments/1w7v30t/chatgpt_6_astra_high_burning_through_usage_really/). At the other end, [another user reported a 53-minute Astra Medium task using about 2% of a weekly limit, versus about 1% for a similar Sol High task](https://www.reddit.com/r/GPT/comments/1w87yn9/gpt6_astra_my_002/). The spread shows how much the result depends on the task, context size, tools, retries, reasoning level, and plan.",
+          "Use a light or low reasoning setting when it is available and the assignment does not require maximum depth. Better yet, save Astra for the strategic, technical, cross-application, and high-stakes work where its added capability can justify the usage.",
+          "GPT-5.6 Sol is still an extremely capable everyday model. It is a strong choice for most research, writing, analysis, marketing production, and routine coding. Move up to Astra when the job involves difficult judgment, several tools, a large amount of context, conflicting evidence, or a deliverable that needs unusually careful verification. The goal is not to use the biggest model all day. It is to use the right model for the job.",
         ],
       },
       {
@@ -149,7 +152,7 @@ export const articles: Article[] = [
       "GPT-6 Astra combines reasoning, research, browsing, computer use, coding, and professional deliverable creation for complex end-to-end work.",
       "Marketing teams can use it to connect research, strategy, production, analysis, landing-page work, and reporting inside one supervised workflow.",
       "A reliable process includes clear goals, relevant context, limited permissions, verification, and human approval before consequential actions.",
-      "Astra is best reserved for demanding multi-step assignments. Faster models can still be the better choice for simple work.",
+      "Astra can consume usage quickly, so use a lighter reasoning setting when appropriate and reserve it for demanding work. GPT-5.6 Sol remains highly capable for most everyday assignments.",
       "The durable skill is learning how to manage AI agents, not memorizing prompts for one specific model.",
     ],
     faqs: [
