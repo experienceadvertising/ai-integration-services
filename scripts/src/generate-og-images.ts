@@ -211,6 +211,11 @@ const pages: OGPage[] = [
   },
   // Blog articles
   {
+    filename: "og-blog-gpt-6-astra-business-guide.png",
+    category: "Guide · ChatGPT",
+    title: "GPT-6 Astra for Business & Marketing",
+  },
+  {
     filename: "og-blog-what-is-chatgpt-work.png",
     category: "Guide · ChatGPT",
     title: "What Is ChatGPT Work?",

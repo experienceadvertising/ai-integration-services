@@ -46,8 +46,139 @@ export const ARTICLE_AUTHOR = {
 
 export const articles: Article[] = [
   {
+    slug: "gpt-6-astra-business-guide",
+    title:
+      "What Is GPT-6 Astra? A Practical Guide for Business and Marketing Teams",
+    metaTitle: "What Is GPT-6 Astra? Practical Business Guide | Evan Weber",
+    metaDescription:
+      "Learn what GPT-6 Astra can do for marketing, research, computer use, coding, documents, and online business workflows, plus how to use it responsibly.",
+    excerpt:
+      "GPT-6 Astra can connect research, computer use, coding, and professional deliverables in one workflow. Here is how business teams can put that capability to work without losing control of the process.",
+    category: "ChatGPT",
+    tags: [
+      "GPT-6 Astra",
+      "ChatGPT",
+      "Agentic AI",
+      "AI for business",
+      "AI marketing",
+    ],
+    readingTime: "10 min read",
+    datePublished: "2026-09-05",
+    dateModified: "2026-09-05",
+    intro: [
+      "GPT-6 Astra is OpenAI's most capable model for complex, end-to-end work. It combines advanced reasoning with browsing, computer use, coding, research, and document creation, which means it can help complete a connected business workflow instead of only answering one prompt at a time.",
+      "For business teams, the practical question is not whether Astra is smarter on a benchmark. It is whether it can help finish meaningful work more quickly and reliably. The answer is yes, but only when you give it a clear outcome, the right context, appropriate access, and a real review process.",
+    ],
+    sections: [
+      {
+        heading: "Astra is built for complete assignments",
+        paragraphs: [
+          "Most people still use AI one prompt at a time. They ask for a summary, then a few ideas, then a draft. They manually carry the output from one application to another. That is useful, but it leaves most of the real workflow on the person's shoulders.",
+          "[OpenAI describes GPT-6 Astra](https://openai.com/index/gpt-6-astra/) as a model for demanding professional work across browsers, code, files, and business software. It can research a topic, use tools, create a deliverable, incorporate a new requirement, and continue working without losing sight of the larger goal. That connected capability is what makes Astra important.",
+        ],
+      },
+      {
+        heading: "What marketing teams can do with GPT-6 Astra",
+        paragraphs: [
+          "Marketing is a strong use case because nearly every serious assignment combines strategy, research, creation, analysis, and execution. Astra can help connect those pieces instead of treating each one as an isolated prompt.",
+          "A team could give Astra a product brief, customer research, previous campaign results, brand guidelines, and access to relevant files. It could analyze the market, identify positioning opportunities, propose campaign angles, draft the creative brief, build a reporting spreadsheet, and help create or improve the landing page. A person still owns the strategy and approves the consequential decisions, but far more of the production work can happen inside one managed process.",
+        ],
+        bullets: [
+          "SEO and content: research a topic, compare authoritative sources, map search intent, build a content brief, draft the page, and review it for clarity and factual support.",
+          "Paid media: analyze campaign exports, find patterns, develop test ideas, improve the message from ad to landing page, and prepare recommendations for human approval.",
+          "Conversion optimization: review a website or funnel, identify friction, prioritize improvements, create revised copy or components, and test the resulting experience.",
+          "Affiliate and influencer marketing: research potential partners, organize qualification data, develop outreach angles, and prepare personalized messages without automating the final relationship decision.",
+          "Reporting: combine exports and source documents into a clear spreadsheet, presentation, or written analysis that follows the team's normal format.",
+        ],
+      },
+      {
+        heading: "Computer use turns advice into action",
+        paragraphs: [
+          "A traditional chatbot can explain how to update a CRM, prepare a report, or review a website. A computer-using agent can perform the steps across the interfaces it is allowed to access. It can open pages, gather information, enter data, organize records, and work inside professional software.",
+          "This is especially valuable for recurring online work that crosses several systems. Instead of writing instructions for a person to follow, you can define the result, provide the rules, and supervise the agent while it completes the workflow. Sensitive steps such as publishing, sending messages, spending money, changing live campaigns, or deleting data should still require explicit approval.",
+        ],
+      },
+      {
+        heading: "Astra can help turn an idea into working software",
+        paragraphs: [
+          "Astra is also a major software engineering model. For non-developers, that does not mean technical knowledge suddenly has no value. It means a knowledgeable business owner or marketer can collaborate much more directly on landing pages, calculators, dashboards, internal tools, websites, and full applications.",
+          "The best process goes beyond asking the model to build something. Have it inspect the existing project, explain its plan, implement the change, run automated checks, use the result like a real visitor, and repair the problems it finds. Then ask it to suggest improvements separately so you can decide which ideas actually support the business goal.",
+          "This combination of building and reviewing can dramatically shorten the distance from idea to usable product. It is also where a tool such as [Codex](/blog/what-is-codex-app) becomes especially valuable, because the model can work directly with the codebase, tests, and browser instead of handing you a code snippet to figure out yourself.",
+        ],
+      },
+      {
+        heading:
+          "Documents, spreadsheets, and presentations are real deliverables",
+        paragraphs: [
+          "Many AI outputs still arrive as a wall of text that someone must reformat. Astra is designed to create professional documents, spreadsheets, and presentations that follow supplied templates and instructions. That matters because formatting is part of whether a deliverable is actually ready to use.",
+          "A good assignment should include a reference file, audience, purpose, required sections, source data, and the standard the finished work must meet. You can then ask Astra to produce the artifact, verify its calculations and citations, and compare the result against your template before returning it.",
+        ],
+      },
+      {
+        heading: "The right way to introduce Astra to a team",
+        paragraphs: [
+          "Do not start with a vague instruction to improve productivity. Pick one recurring or high-value assignment with an observable result. Give Astra the same briefing you would give a capable new team member, including examples, constraints, permissions, and the definition of done.",
+          "I recommend separating preparation, execution, and approval. Let the agent research, analyze, draft, build, and test within a defined workspace. Require a person to approve external messages, publication, live campaign changes, financial decisions, and access to sensitive information. After the task, capture the instructions and checks that worked so the process becomes repeatable.",
+        ],
+        bullets: [
+          "Start with a clear business outcome, not a list of disconnected prompts.",
+          "Provide source material and examples instead of expecting the model to guess your standards.",
+          "Limit access to the files, apps, and accounts the assignment actually requires.",
+          "Ask for evidence, test results, and links so important work can be verified.",
+          "Keep a human approval step before any consequential external action.",
+          "Review the finished workflow and improve the instructions for the next run.",
+        ],
+      },
+      {
+        heading: "When to use Astra and when a faster model is enough",
+        paragraphs: [
+          "Astra is intended for hard, multi-step work. You do not need the most capable model for every short email, simple rewrite, or routine question. A faster and less expensive model may be the better choice for lightweight work.",
+          "Use Astra when the assignment involves judgment, several tools, a large amount of context, conflicting evidence, coding, or a deliverable that needs careful verification. The unit that matters is not cost per token. It is the cost and quality of the completed task. OpenAI reports that Astra can use fewer output tokens than earlier models on several complex evaluations, even though its individual tokens cost more through the API.",
+        ],
+      },
+      {
+        heading: "Capability makes good management more valuable",
+        paragraphs: [
+          "Astra can do more, but it does not remove the need for expertise. Someone still has to choose the goal, judge the evidence, understand the customer, protect the business, and decide whether the final work is good enough.",
+          "The advantage will go to people who learn how to manage AI well. They will know how to frame an assignment, provide context, set boundaries, steer the work, verify the result, and turn a successful run into a reusable workflow. Those are practical skills, and they apply across ChatGPT, [Claude Cowork](/blog/what-is-claude-cowork), Codex, and whatever capable agent comes next.",
+          "If you want to build those skills around the work you actually do, [LearnCowork.net](https://learncowork.net) offers hands-on one-on-one and team training. We work on your real workflows so you leave with something useful running, not just a list of AI tips.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "GPT-6 Astra combines reasoning, research, browsing, computer use, coding, and professional deliverable creation for complex end-to-end work.",
+      "Marketing teams can use it to connect research, strategy, production, analysis, landing-page work, and reporting inside one supervised workflow.",
+      "A reliable process includes clear goals, relevant context, limited permissions, verification, and human approval before consequential actions.",
+      "Astra is best reserved for demanding multi-step assignments. Faster models can still be the better choice for simple work.",
+      "The durable skill is learning how to manage AI agents, not memorizing prompts for one specific model.",
+    ],
+    faqs: [
+      {
+        q: "What is GPT-6 Astra?",
+        a: "GPT-6 Astra is OpenAI's most capable model for difficult end-to-end work. It combines advanced reasoning with research, browsing, computer use, software engineering, and the creation of documents, spreadsheets, and presentations.",
+      },
+      {
+        q: "How can marketing teams use GPT-6 Astra?",
+        a: "Marketing teams can use Astra for connected assignments that include market research, SEO, campaign strategy, content, paid-media analysis, conversion optimization, reporting, landing pages, and browser-based work. Important publishing, spending, and account changes should remain subject to human approval.",
+      },
+      {
+        q: "Can GPT-6 Astra operate a computer?",
+        a: "Yes. With supported tools and appropriate permissions, Astra can work across browsers and professional software, gather information, enter data, create deliverables, and complete multi-step online workflows.",
+      },
+      {
+        q: "Can GPT-6 Astra build websites and applications?",
+        a: "Yes. Astra is designed for advanced software engineering and can help inspect a codebase, build or modify websites and applications, run tests, and check the result in a browser. A person should still review security, tracking, usability, and production changes before release.",
+      },
+      {
+        q: "Is GPT-6 Astra available to everyone?",
+        a: "OpenAI announced a phased rollout beginning September 3, 2026. Access is initially limited and is planned to expand to eligible ChatGPT Plus, Pro, Business, and Enterprise users, as well as the API, Microsoft Azure, and AWS Bedrock.",
+      },
+    ],
+  },
+  {
     slug: "what-is-chatgpt-work",
-    title: "What the ChatGPT Work Desktop App Actually Is, and How It Compares to Claude Cowork",
+    title:
+      "What the ChatGPT Work Desktop App Actually Is, and How It Compares to Claude Cowork",
     metaTitle: "What Is ChatGPT Work? A Plain-English 2026 Guide | Evan Weber",
     metaDescription:
       "ChatGPT Work is OpenAI's new agentic desktop app that operates your computer, a built-in browser, and your connected work apps to deliver finished work. Here is what it actually is, and an honest comparison with Claude Cowork, from someone who trains teams on both.",
@@ -85,7 +216,7 @@ export const articles: Article[] = [
       {
         heading: "Why this counts as agentic, not just chat",
         paragraphs: [
-          "People overuse the word \"[agentic](/glossary/agentic-ai),\" but it points at a real difference. A chatbot is reactive: you ask, it answers, the loop ends. An agent is goal-directed: you hand it an outcome, and it plans the steps, uses tools, checks its own work, and keeps going until the job is done.",
+          'People overuse the word "[agentic](/glossary/agentic-ai)," but it points at a real difference. A chatbot is reactive: you ask, it answers, the loop ends. An agent is goal-directed: you hand it an outcome, and it plans the steps, uses tools, checks its own work, and keeps going until the job is done.',
           "In practice that means you can tell ChatGPT Work something like \"pull last month's numbers from these exports, build the board summary in our usual format, and flag anything that moved more than ten percent,\" and it will open the files, run the analysis, assemble the deck or document, and hand it back. That is the same shape of work I build with teams in Claude Cowork, now coming from OpenAI's side of the fence.",
         ],
       },
@@ -158,19 +289,21 @@ export const articles: Article[] = [
 
   {
     slug: "what-is-claude-cowork",
-    title: "What Claude Cowork Actually Is — and How It's Different from Claude.ai, Claude Code, and ChatGPT",
-    metaTitle: "What Is Claude Cowork? A Plain-English Guide (2026) | Evan Weber",
+    title:
+      "What Claude Cowork Actually Is — and How It's Different from Claude.ai, Claude Code, and ChatGPT",
+    metaTitle:
+      "What Is Claude Cowork? A Plain-English Guide (2026) | Evan Weber",
     metaDescription:
       "Claude Cowork is Anthropic's agentic desktop AI that operates your computer, handles files, and runs multi-step work. Here's what it actually is — and how it differs from Claude.ai, Claude Code, and ChatGPT — from someone who uses it daily.",
     excerpt:
-      "I get asked \"what is Claude Cowork, exactly?\" in almost every session. Here's the plain-English answer, and the clear lines between Cowork, Claude.ai, Claude Code, and ChatGPT.",
+      'I get asked "what is Claude Cowork, exactly?" in almost every session. Here\'s the plain-English answer, and the clear lines between Cowork, Claude.ai, Claude Code, and ChatGPT.',
     category: "Claude Cowork",
     tags: ["Claude Cowork", "Agentic AI", "Anthropic", "AI productivity"],
     readingTime: "9 min read",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     intro: [
-      "I train business teams on Claude Cowork for a living, and the single most common question I get — usually in the first five minutes of a session — is some version of \"wait, how is this different from the Claude I already use in my browser?\"",
+      'I train business teams on Claude Cowork for a living, and the single most common question I get — usually in the first five minutes of a session — is some version of "wait, how is this different from the Claude I already use in my browser?"',
       "It's a fair question. Anthropic now ships several different ways to use Claude, the names sound similar, and the marketing doesn't always make the distinction obvious. So here is the plain-English version I give every team, written from the perspective of someone who uses Cowork every single day to run a real business.",
     ],
     sections: [
@@ -182,10 +315,10 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "Why \"agentic\" is the word that matters",
+        heading: 'Why "agentic" is the word that matters',
         paragraphs: [
-          "People throw around \"[agentic AI](/glossary/agentic-ai)\" like it's a buzzword, but it points at a real, specific difference. A chatbot is reactive — you ask, it answers, the loop ends. An agent is goal-directed — you give it an outcome, and it plans, takes multiple steps, uses tools, checks its own work, and keeps going until the job is done.",
-          "In practice, that means I can tell Cowork \"pull this month's numbers from these three exports, build the board summary in our usual format, and flag anything that moved more than 10%,\" and it will open the files, do the analysis, write the document, and hand it back — instead of giving me instructions for how I could do that myself.",
+          'People throw around "[agentic AI](/glossary/agentic-ai)" like it\'s a buzzword, but it points at a real, specific difference. A chatbot is reactive — you ask, it answers, the loop ends. An agent is goal-directed — you give it an outcome, and it plans, takes multiple steps, uses tools, checks its own work, and keeps going until the job is done.',
+          'In practice, that means I can tell Cowork "pull this month\'s numbers from these three exports, build the board summary in our usual format, and flag anything that moved more than 10%," and it will open the files, do the analysis, write the document, and hand it back — instead of giving me instructions for how I could do that myself.',
         ],
       },
       {
@@ -245,7 +378,8 @@ export const articles: Article[] = [
 
   {
     slug: "what-is-codex-app",
-    title: "The Codex Desktop App, Explained: OpenAI's Answer to Agentic Desktop AI",
+    title:
+      "The Codex Desktop App, Explained: OpenAI's Answer to Agentic Desktop AI",
     metaTitle: "What Is the OpenAI Codex App? A 2026 Guide | Evan Weber",
     metaDescription:
       "OpenAI's Codex app brings agentic AI to your Mac and Windows desktop — multiple agents in parallel, background computer use, automations, and skills. Here's what the Codex app actually is and who it's for, from a daily agentic-AI user.",
@@ -257,7 +391,7 @@ export const articles: Article[] = [
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     intro: [
-      "When teams ask me about Claude Cowork, the next question is almost always \"what about the OpenAI version?\" They mean the Codex app — OpenAI's desktop application that, like Cowork, can actually operate your computer instead of just chatting.",
+      'When teams ask me about Claude Cowork, the next question is almost always "what about the OpenAI version?" They mean the Codex app — OpenAI\'s desktop application that, like Cowork, can actually operate your computer instead of just chatting.',
       "I use both tools, so here's a straight explainer of what the Codex app is, what it's genuinely good at, and who I'd point toward it. (For a head-to-head, I've written a separate Cowork-vs-Codex comparison.)",
     ],
     sections: [
@@ -271,7 +405,7 @@ export const articles: Article[] = [
       {
         heading: "The four capabilities that make it 'agentic desktop AI'",
         paragraphs: [
-          "Four features are what move Codex from \"a coding chatbot\" to a genuine desktop agent:",
+          'Four features are what move Codex from "a coding chatbot" to a genuine desktop agent:',
         ],
         bullets: [
           "Multi-agent orchestration — run many agents in parallel across projects, using built-in worktrees and cloud environments, so long-running work compresses from weeks into days.",
@@ -326,7 +460,8 @@ export const articles: Article[] = [
 
   {
     slug: "claude-cowork-vs-codex",
-    title: "Claude Cowork vs. the Codex App: Which Agentic Desktop AI Should Your Team Use?",
+    title:
+      "Claude Cowork vs. the Codex App: Which Agentic Desktop AI Should Your Team Use?",
     metaTitle: "Claude Cowork vs. Codex App: Which to Use in 2026 | Evan Weber",
     metaDescription:
       "A practical, no-hype comparison of Claude Cowork and OpenAI's Codex app from someone who uses both daily. Architecture, who each is for, pricing, and how to actually decide — for technical and non-technical teams.",
@@ -350,7 +485,8 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "Design philosophy: digital colleague vs. engineering platform",
+        heading:
+          "Design philosophy: digital colleague vs. engineering platform",
         paragraphs: [
           "Cowork is positioned as a colleague that works the way a person does — it shares your screen, operates your real files and apps, and asks for approval before sensitive actions. The human-in-the-loop model is front and center, which is reassuring for non-technical teams handling real business data.",
           "Codex leans the other way: structure and isolation. It spins up its own background processes and isolated environments, orchestrates multiple agents at once, and is happiest running lots of well-scoped tasks in parallel without interrupting you. That's a developer's mental model, and it's a genuine strength for engineering.",
@@ -413,8 +549,10 @@ export const articles: Article[] = [
 
   {
     slug: "ai-time-savings-guide",
-    title: "How Much Time Can AI Actually Save Your Team? A Realistic, Task-by-Task Breakdown",
-    metaTitle: "AI Time Savings: A Realistic Breakdown by Task (2026) | Evan Weber",
+    title:
+      "How Much Time Can AI Actually Save Your Team? A Realistic, Task-by-Task Breakdown",
+    metaTitle:
+      "AI Time Savings: A Realistic Breakdown by Task (2026) | Evan Weber",
     metaDescription:
       "How many hours can Claude Cowork and agentic AI actually save your team? A realistic, task-by-task breakdown from someone who trains business teams on this every week — plus how to calculate your own number.",
     excerpt:
@@ -425,15 +563,16 @@ export const articles: Article[] = [
     datePublished: "2026-07-01",
     dateModified: "2026-07-01",
     intro: [
-      "Every team I sit down with asks some version of the same question before we even open a laptop: \"okay, but how much time is this actually going to save us?\" It's the right question, and it deserves a better answer than the vague percentages most AI vendors throw around.",
+      'Every team I sit down with asks some version of the same question before we even open a laptop: "okay, but how much time is this actually going to save us?" It\'s the right question, and it deserves a better answer than the vague percentages most AI vendors throw around.',
       "So here's the honest version, built from actually watching teams adopt Claude Cowork — broken down by the kind of task, not a single made-up blended number. Some tasks compress by 90%. Others barely move. Knowing which is which is what makes an AI rollout pay off instead of fizzle.",
     ],
     sections: [
       {
-        heading: "Why the \"AI saves you 40% of your time\" stat is basically meaningless",
+        heading:
+          'Why the "AI saves you 40% of your time" stat is basically meaningless',
         paragraphs: [
           "Any number that isn't tied to a specific task is a marketing number. A [recruiter's](/roles/recruiters) week and a [financial analyst's](/roles/financial-analysts) week don't have the same mix of high-leverage AI tasks, so a single blended percentage hides more than it reveals.",
-          "The useful version of this question isn't \"how much time will AI save me\" — it's \"which specific tasks in my week are the kind AI is actually good at, and how much of each one goes away.\" That's the breakdown that follows.",
+          'The useful version of this question isn\'t "how much time will AI save me" — it\'s "which specific tasks in my week are the kind AI is actually good at, and how much of each one goes away." That\'s the breakdown that follows.',
         ],
       },
       {
@@ -481,7 +620,7 @@ export const articles: Article[] = [
       },
     ],
     keyTakeaways: [
-      "Blended \"AI saves X% of time\" stats are marketing numbers — the real answer depends entirely on the task mix in your specific week.",
+      'Blended "AI saves X% of time" stats are marketing numbers — the real answer depends entirely on the task mix in your specific week.',
       "Assembly and formatting tasks (reports, first drafts, research synthesis) compress 70–90%; judgment-heavy tasks (correspondence, triage) compress 30–50%; relationship and decision work barely moves.",
       "Build your own estimate by tagging your recurring weekly tasks into those three buckets — don't trust a single blended percentage.",
       "Time savings compound after the first few weeks, once reusable workflows replace one-off, from-scratch prompting.",
@@ -504,19 +643,20 @@ export const articles: Article[] = [
 
   {
     slug: "can-ai-do-my-job",
-    title: "Can AI Do My Job? A Realistic Answer for Business Teams (Not a Doom Headline)",
+    title:
+      "Can AI Do My Job? A Realistic Answer for Business Teams (Not a Doom Headline)",
     metaTitle: "Can AI Do My Job? A Realistic 2026 Answer | Evan Weber",
     metaDescription:
       "Worried agentic AI will replace your job? Here's the honest answer from an AI trainer who works with real teams every week — which tasks AI actually takes over, which don't, and how to come out ahead of it instead of behind it.",
     excerpt:
-      "I get asked some version of \"is AI going to take my job?\" in almost every training session. Here's the honest answer — no headline, no hype — from someone who watches this play out with real teams every week.",
+      'I get asked some version of "is AI going to take my job?" in almost every training session. Here\'s the honest answer — no headline, no hype — from someone who watches this play out with real teams every week.',
     category: "Career",
     tags: ["Job security", "AI and jobs", "Career advice", "Agentic AI"],
     readingTime: "9 min read",
     datePublished: "2026-07-01",
     dateModified: "2026-07-01",
     intro: [
-      "Somewhere in the first ten minutes of almost every training session, someone asks the question they actually came in worried about: \"be honest — is this going to take my job?\"",
+      'Somewhere in the first ten minutes of almost every training session, someone asks the question they actually came in worried about: "be honest — is this going to take my job?"',
       "It's a fair question and it deserves a real answer, not a reassurance speech and not a doom headline. So here's the version I actually give: the difference between a job and a task, which of your tasks are genuinely on the table, and what to do about it either way.",
     ],
     sections: [
@@ -524,7 +664,7 @@ export const articles: Article[] = [
         heading: "Your job is not one thing — that's the whole answer",
         paragraphs: [
           "\"My job\" is really a bundle of dozens of distinct tasks, and [agentic AI](/glossary/agentic-ai) doesn't evaluate a job title, it evaluates a task. Some of the tasks in your bundle are the kind AI is already good at. Others aren't, and won't be for a long time, if ever.",
-          "That reframe matters because it turns an unanswerable, existential question (\"will AI replace me\") into a concrete, useful one (\"which of my specific tasks is AI actually good at, and what does that free me up to do instead\").",
+          'That reframe matters because it turns an unanswerable, existential question ("will AI replace me") into a concrete, useful one ("which of my specific tasks is AI actually good at, and what does that free me up to do instead").',
         ],
       },
       {
@@ -533,13 +673,14 @@ export const articles: Article[] = [
           "Be honest with yourself about this category, because pretending otherwise doesn't protect you — getting ahead of it does:",
         ],
         bullets: [
-          "Pure information assembly — pulling data from known sources and formatting it into a standard output. If a task is \"gather X, format as Y,\" AI does this well today.",
+          'Pure information assembly — pulling data from known sources and formatting it into a standard output. If a task is "gather X, format as Y," AI does this well today.',
           "First-draft generation — routine emails, standard documents, boilerplate reports. The first 80% of the work compresses hard.",
           "Repetitive research and summarization — reading a volume of material to extract known-shape answers.",
         ],
       },
       {
-        heading: "The tasks that are not — and this is most of what makes a role valuable",
+        heading:
+          "The tasks that are not — and this is most of what makes a role valuable",
         paragraphs: [
           "This is the part the doom headlines skip, and it's the majority of what actually makes a role worth paying for:",
         ],
@@ -551,9 +692,10 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "The people who lose out aren't the ones AI replaces — they're the ones who ignore it",
+        heading:
+          "The people who lose out aren't the ones AI replaces — they're the ones who ignore it",
         paragraphs: [
-          "In every industry I've watched go through a real technology shift — and after 25 years in digital marketing, I've watched a few — the risk was never \"the tool takes your job.\" It was \"the person using the tool takes the job of the person who didn't learn it.\"",
+          'In every industry I\'ve watched go through a real technology shift — and after 25 years in digital marketing, I\'ve watched a few — the risk was never "the tool takes your job." It was "the person using the tool takes the job of the person who didn\'t learn it."',
           "The practical move isn't to hope AI stays away from your role. It's to be the person on the team who's already fluent in it, handing off the assembly work and spending the reclaimed time on the judgment, relationship, and accountability work that actually makes you valuable — and that's genuinely hard to automate.",
         ],
       },
@@ -566,7 +708,7 @@ export const articles: Article[] = [
       },
     ],
     keyTakeaways: [
-      "AI doesn't replace \"a job\" — it automates specific tasks. The real question is which of your tasks are that kind of task, not whether your job title survives.",
+      'AI doesn\'t replace "a job" — it automates specific tasks. The real question is which of your tasks are that kind of task, not whether your job title survives.',
       "Information assembly, first drafts, and repetitive research/summarization are genuinely on the table today.",
       "Judgment under ambiguity, relationship and trust, organizational context, and final accountability are not — and they're most of what makes a role valuable.",
       "The competitive risk isn't the tool — it's being the person on the team who didn't learn to use it while others did.",
@@ -589,7 +731,8 @@ export const articles: Article[] = [
 
   {
     slug: "aeo-geo-explained",
-    title: "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
+    title:
+      "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
     metaTitle: "AEO & GEO Explained: An AI Search Playbook (2026) | Evan Weber",
     metaDescription:
       "What Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) actually mean, why they matter now, and the concrete playbook — schema, llms.txt, FAQ structure, crawlable content — using this site as the worked example.",
@@ -622,9 +765,7 @@ export const articles: Article[] = [
       },
       {
         heading: "The playbook — what actually moves the needle",
-        paragraphs: [
-          "This is the concrete list, not the vague one:",
-        ],
+        paragraphs: ["This is the concrete list, not the vague one:"],
         bullets: [
           "Lead with the direct answer. Put a plain, one-to-two sentence answer to the obvious question at the top of the page or section — before the nuance, not after it. Answer engines quote the sentence that already reads like an answer.",
           "Structured data, done correctly. FAQPage, Article, Service, and DefinedTerm schema (schema.org / JSON-LD) tell machines exactly what a page contains instead of making them infer it. Critically, the schema has to match the visible content — mismatched structured data gets ignored or penalized.",
