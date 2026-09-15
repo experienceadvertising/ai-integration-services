@@ -46,6 +46,155 @@ export const ARTICLE_AUTHOR = {
 
 export const articles: Article[] = [
   {
+    slug: "chatgpt-work-data-agent-marketing-guide",
+    title:
+      "ChatGPT Work's New Data Agent: What Marketing Teams Can Actually Do With It",
+    metaTitle: "ChatGPT Work Data Agent Guide for Marketers | Evan Weber",
+    metaDescription:
+      "See how marketing teams can use ChatGPT Work's Data agent to investigate performance, build dashboards, and turn trusted company data into action.",
+    excerpt:
+      "OpenAI's new Data agent can investigate approved company data, build interactive dashboards, and help teams decide what to do next. Here is how I would put it to work in marketing.",
+    category: "ChatGPT",
+    tags: [
+      "ChatGPT Work",
+      "Data agent",
+      "Marketing analytics",
+      "AI agents",
+      "Business intelligence",
+    ],
+    readingTime: "9 min read",
+    datePublished: "2026-09-14",
+    dateModified: "2026-09-14",
+    intro: [
+      "Marketing teams rarely suffer from a lack of data. The real problem is that useful answers are scattered across analytics platforms, advertising accounts, ecommerce systems, CRM records, spreadsheets, dashboards, and internal documents.",
+      "On September 10, OpenAI introduced the Data agent for ChatGPT Work. It can connect to approved company data, investigate a business question, show the evidence behind its findings, and build an interactive dashboard that a team can refine and share. That is a much more useful direction than another AI tool that simply summarizes a CSV.",
+      "I see the biggest opportunity in closing the distance between a marketing question and a decision. The tool can help more people explore performance without waiting for every question to become a reporting request. It still depends on good metric definitions, appropriate permissions, clean source data, and a person who knows which questions matter.",
+    ],
+    sections: [
+      {
+        heading: "What OpenAI actually launched",
+        paragraphs: [
+          "[OpenAI describes the Data agent](https://openai.com/index/put-data-to-work/) as a new plugin in ChatGPT Work that connects to approved company data and business context. It can investigate changes, answer follow-up questions, build interactive dashboards, and recommend next steps.",
+          "The announced data connections include Amazon Redshift, Google BigQuery, ClickHouse, Databricks, MongoDB, Snowflake, Datadog, and others. It can also bring relevant files and documents from Google Drive and SharePoint into an analysis.",
+          "The important detail is that the agent can use the organization's existing business definitions and access rules. It can draw on semantic layers and trusted sources such as dbt, GitHub, Snowflake Horizon, Databricks Genie Ontology, and existing business intelligence dashboards. Queries are still subject to the connected account's table, row, and column permissions.",
+        ],
+      },
+      {
+        heading: "A plain-language question can become an investigation",
+        paragraphs: [
+          "A normal dashboard tells you what someone decided to put on the screen. A useful data agent should let you ask why a number changed, compare segments, test possible explanations, and follow the evidence into the next question.",
+          "Imagine an ecommerce marketing director asks, 'Why did new-customer revenue fall last week even though paid traffic increased?' A good investigation could compare channel spend, sessions, conversion rate, average order value, product availability, device performance, coupon usage, landing-page behavior, and the share of returning customers.",
+          "The first answer is rarely enough. The marketer might ask whether the decline was concentrated on mobile, whether one campaign sent weaker traffic, whether a popular product went out of stock, or whether a promotion attracted existing customers instead of new ones. That conversational follow-up is where this becomes more valuable than a static report.",
+        ],
+      },
+      {
+        heading: "The marketing workflows I would test first",
+        paragraphs: [
+          "I would begin with a recurring decision that already consumes time every week. The goal is not to connect every data source on day one. It is to prove that one governed workflow can produce a trustworthy answer faster and make the next action clearer.",
+        ],
+        bullets: [
+          "Campaign performance: Explain why revenue, qualified leads, or acquisition cost changed and identify the segments responsible.",
+          "Seasonal planning: Compare prior holiday periods, current demand, inventory, promotions, and channel performance before allocating budget.",
+          "Conversion analysis: Find where visitors drop out by landing page, device, audience, offer, or product category.",
+          "Customer growth: Compare first-time and returning customers, acquisition sources, repeat behavior, and early retention signals.",
+          "Creative analysis: Connect campaign results with approved creative labels so the team can see which messages and formats deserve another test.",
+          "Affiliate and creator performance: Review qualified traffic, activation, new-customer contribution, promotional timing, and partner-level trends using agreed definitions.",
+          "Leadership reporting: Turn monthly performance into a dashboard and written readout with actuals, comparisons, drivers, caveats, and recommended actions.",
+        ],
+      },
+      {
+        heading: "A holiday campaign is a useful real-world test",
+        paragraphs: [
+          "Holiday marketing forces teams to make decisions quickly across paid media, email, affiliates, creators, promotions, inventory, and landing pages. It is exactly the kind of situation where scattered data creates slow or contradictory answers.",
+          "A marketing team could ask the agent to build a daily holiday acquisition view that tracks spend, qualified revenue, new customers, conversion rate, average order value, margin where available, inventory risk, and promotion use. The team could then ask which changes deserve attention instead of scanning every chart manually.",
+          "The dashboard is only the beginning. If mobile conversion falls after a new holiday landing page launches, the agent can help isolate when the decline started, which traffic sources were affected, and whether the issue is connected to page behavior, offer eligibility, product availability, or checkout performance. A person should still verify the diagnosis in the source systems before changing live campaigns or website experiences.",
+        ],
+      },
+      {
+        heading: "Interactive dashboards make the work easier to share",
+        paragraphs: [
+          "OpenAI says the Data agent can turn an analysis into an interactive dashboard with built-in visualizations. Teams can edit, share, and refresh the result, and they can provide brand guidelines for the presentation.",
+          "It can also build and interact with dashboards in established business intelligence tools including Power BI, Tableau, Sigma, ThoughtSpot, Omni, and Oracle BI. That matters because many companies do not want a separate reporting universe. They want a faster way to work with the governed definitions and tools they already trust.",
+          "A strong dashboard should make the decision easier, not simply display more charts. Every view should answer a specific question, show the comparison that gives the number meaning, and expose enough evidence for someone to challenge the conclusion.",
+        ],
+      },
+      {
+        heading: "Your metric definitions matter more than the prompt",
+        paragraphs: [
+          "No AI agent can rescue a company that has five definitions of revenue, inconsistent campaign naming, missing cost data, and no agreement on what counts as a qualified lead. The agent may make analysis easier, but it will also expose weaknesses in the underlying measurement system.",
+          "Before a team relies on the output, document the business terms that affect the decision. Define revenue, new customer, qualified lead, active user, conversion, refund, cancellation, contribution margin, and attribution window. Make sure the same definitions are available through the trusted semantic layer or source the agent uses.",
+          "I would also give every important dashboard a short evidence checklist. Confirm the date range, comparison period, filters, exclusions, currency, time zone, attribution model, and data freshness. Those checks are far more valuable than trying to invent a magical prompt that never needs review.",
+        ],
+      },
+      {
+        heading: "Permissions and approved actions need real thought",
+        paragraphs: [
+          "The Data agent is designed to respect the connected user's existing permissions, while enterprise administrators decide which connections and roles are available. That is the right foundation, but access still needs to be planned carefully.",
+          "Give people and agents the least access required for the workflow. Separate broad analysis from actions that change campaigns, contact customers, publish dashboards, or send findings outside the team. OpenAI says the agent can share findings through Slack or email and carry out approved actions through connected tools. I would keep a clear human approval step before those external actions.",
+          "Sensitive customer, employee, financial, and health data may require additional governance, legal review, retention rules, or technical controls. Availability inside a product does not automatically make every data source appropriate to connect.",
+        ],
+      },
+      {
+        heading: "Availability and limits to understand",
+        paragraphs: [
+          "OpenAI says the Data agent appears as Data in the ChatGPT Work Plugins directory. An administrator can install it or make it available through Workspace settings, then configure the relevant data-source plugins and decide who can use them.",
+          "The launch page does not mean every organization has every connector configured or that every user can install it independently. Data-source credentials, administrator approval, workspace policy, source-system permissions, and the quality of the company's semantic layer all affect what the agent can actually do.",
+          "I would treat every early dashboard as an analysis that needs validation. Compare important totals with the source system, review the generated query or evidence where available, test a few known cases, and document any limitations before the result reaches executives or drives spending decisions.",
+        ],
+      },
+      {
+        heading: "How I would roll it out in one week",
+        paragraphs: [
+          "Choose one business question with a known owner and a decision attached to it. Connect only the sources needed to answer that question. Give the agent the approved definitions, comparison logic, and an example of a trusted report.",
+        ],
+        bullets: [
+          "Day 1: Define the question, owner, decision, metrics, and validation source.",
+          "Day 2: Confirm permissions and connect the minimum required data sources.",
+          "Day 3: Ask the agent to investigate the question and show the evidence behind each finding.",
+          "Day 4: Compare the result with trusted reports, correct definitions, and test follow-up questions.",
+          "Day 5: Build a focused dashboard, document the review process, and decide whether the workflow saved time or improved the decision.",
+        ],
+      },
+      {
+        heading: "The bigger shift is from reporting to decision support",
+        paragraphs: [
+          "The most interesting part of the Data agent is not that it can draw a chart. AI tools have been able to create charts for years. The change is that a business user can investigate governed company data in a conversation, build a shareable view, and move toward an approved action without handing the question through several disconnected tools.",
+          "That can make marketers more independent, but it also makes judgment more important. Someone still needs to ask the right question, recognize a weak explanation, understand how the business makes money, and decide whether the evidence supports the recommendation.",
+          "If you want to build practical ChatGPT Work, Codex, Claude Cowork, or AI analytics workflows around the work your team already does, [LearnCowork.net](https://learncowork.net/) offers hands-on training and implementation. We can start with one real assignment, connect the right context, build the workflow, and put the verification and approval steps in place.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "OpenAI introduced the Data agent for ChatGPT Work on September 10, 2026.",
+      "It can investigate approved company data, answer follow-up questions, and build interactive dashboards grounded in organizational definitions and permissions.",
+      "Marketing teams can use it for campaign diagnosis, seasonal planning, conversion analysis, customer growth, affiliate performance, and leadership reporting.",
+      "Reliable results still require clear metric definitions, appropriate access, source-system validation, and human approval before consequential actions.",
+      "The best first deployment is one recurring business question with a known decision, a trusted comparison, and a measurable time or quality benefit.",
+    ],
+    faqs: [
+      {
+        q: "What is the Data agent in ChatGPT Work?",
+        a: "The Data agent is a ChatGPT Work plugin that connects to approved company data and context, investigates business questions, supports follow-up analysis, and creates interactive dashboards.",
+      },
+      {
+        q: "Which data sources can the ChatGPT Work Data agent connect to?",
+        a: "OpenAI lists connections including Amazon Redshift, Google BigQuery, ClickHouse, Databricks, MongoDB, Snowflake, Datadog, Google Drive, SharePoint, and other supported sources. The exact connections available depend on workspace configuration and permissions.",
+      },
+      {
+        q: "Can marketing teams use the Data agent without writing SQL?",
+        a: "Yes. OpenAI says users can direct and refine analysis in plain language without writing queries. Teams should still validate important totals, filters, definitions, and conclusions against trusted source systems.",
+      },
+      {
+        q: "Can the Data agent create dashboards?",
+        a: "Yes. It can create interactive dashboards with built-in visualizations and can also build or interact with dashboards in supported business intelligence tools such as Power BI, Tableau, Sigma, ThoughtSpot, Omni, and Oracle BI.",
+      },
+      {
+        q: "How should a company start using the Data agent?",
+        a: "Start with one recurring business question, document the metrics and decision it supports, connect the minimum required sources, validate the findings against a trusted report, and keep human approval before external or consequential actions.",
+      },
+    ],
+  },
+  {
     slug: "gpt-6-astra-business-guide",
     title:
       "What Is GPT-6 Astra? A Practical Guide for Business and Marketing Teams",
