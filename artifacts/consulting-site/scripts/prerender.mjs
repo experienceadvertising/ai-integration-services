@@ -110,9 +110,14 @@ function hoistHeadTags(html) {
   return { head: hoisted.join("\n    "), body };
 }
 
-function outputPath(url) {
-  if (url === "/") return resolve(DIST, "index.html");
-  return resolve(DIST, `${url.replace(/^\//, "")}.html`);
+function outputPaths(url) {
+  if (url === "/") return [resolve(DIST, "index.html")];
+
+  const relativePath = url.replace(/^\//, "");
+  return [
+    resolve(DIST, `${relativePath}.html`),
+    resolve(DIST, relativePath, "index.html"),
+  ];
 }
 
 let wrote = 0;
@@ -145,10 +150,14 @@ for (const url of routes) {
     );
   }
 
-  const outFile = outputPath(url);
-  await mkdir(dirname(outFile), { recursive: true });
-  await writeFile(outFile, out, "utf8");
-  console.log(`prerender: ${url}  ->  ${outFile.replace(DIST + "/", "")}`);
+  const outFiles = outputPaths(url);
+  for (const outFile of outFiles) {
+    await mkdir(dirname(outFile), { recursive: true });
+    await writeFile(outFile, out, "utf8");
+  }
+  console.log(
+    `prerender: ${url}  ->  ${outFiles.map((file) => file.replace(DIST + "/", "")).join(", ")}`,
+  );
   wrote += 1;
 }
 
