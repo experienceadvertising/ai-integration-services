@@ -23,20 +23,20 @@ publicDir = "artifacts/consulting-site/dist/public"
 serve = "static"
 
 [[services.production.rewrites]]
-from = "/ai-report"
-to = "/ai-report.html"
+from = "/about"
+to = "/about.html"
 
 [[services.production.rewrites]]
-from = "/ai-report/"
-to = "/ai-report.html"
+from = "/about/"
+to = "/about.html"
 
 [[services.production.rewrites]]
-from = "/claude-cowork-training"
-to = "/claude-cowork-training.html"
+from = "/aeo-geo-training"
+to = "/aeo-geo-training.html"
 
 [[services.production.rewrites]]
-from = "/claude-cowork-training/"
-to = "/claude-cowork-training.html"
+from = "/aeo-geo-training/"
+to = "/aeo-geo-training.html"
 
 [[services.production.rewrites]]
 from = "/ai-coding-training"
@@ -47,36 +47,308 @@ from = "/ai-coding-training/"
 to = "/ai-coding-training.html"
 
 [[services.production.rewrites]]
-from = "/about"
-to = "/about.html"
+from = "/ai-readiness-quiz"
+to = "/ai-readiness-quiz.html"
 
 [[services.production.rewrites]]
-from = "/about/"
-to = "/about.html"
+from = "/ai-readiness-quiz/"
+to = "/ai-readiness-quiz.html"
 
 [[services.production.rewrites]]
-from = "/industries/marketing-agencies"
-to = "/industries/marketing-agencies.html"
+from = "/ai-report"
+to = "/ai-report.html"
 
 [[services.production.rewrites]]
-from = "/industries/marketing-agencies/"
-to = "/industries/marketing-agencies.html"
+from = "/ai-report/"
+to = "/ai-report.html"
 
 [[services.production.rewrites]]
-from = "/industries/law-firms"
-to = "/industries/law-firms.html"
+from = "/ai-time-savings-calculator"
+to = "/ai-time-savings-calculator.html"
 
 [[services.production.rewrites]]
-from = "/industries/law-firms/"
-to = "/industries/law-firms.html"
+from = "/ai-time-savings-calculator/"
+to = "/ai-time-savings-calculator.html"
 
 [[services.production.rewrites]]
-from = "/industries/real-estate"
-to = "/industries/real-estate.html"
+from = "/ai-workflow-consulting"
+to = "/ai-workflow-consulting.html"
 
 [[services.production.rewrites]]
-from = "/industries/real-estate/"
-to = "/industries/real-estate.html"
+from = "/ai-workflow-consulting/"
+to = "/ai-workflow-consulting.html"
+
+[[services.production.rewrites]]
+from = "/blog"
+to = "/blog.html"
+
+[[services.production.rewrites]]
+from = "/blog/"
+to = "/blog.html"
+
+[[services.production.rewrites]]
+from = "/blog/aeo-geo-explained"
+to = "/blog/aeo-geo-explained.html"
+
+[[services.production.rewrites]]
+from = "/blog/aeo-geo-explained/"
+to = "/blog/aeo-geo-explained.html"
+
+[[services.production.rewrites]]
+from = "/blog/ai-time-savings-guide"
+to = "/blog/ai-time-savings-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/ai-time-savings-guide/"
+to = "/blog/ai-time-savings-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/ai-training-plan-for-teams"
+to = "/blog/ai-training-plan-for-teams.html"
+
+[[services.production.rewrites]]
+from = "/blog/ai-training-plan-for-teams/"
+to = "/blog/ai-training-plan-for-teams.html"
+
+[[services.production.rewrites]]
+from = "/blog/can-ai-do-my-job"
+to = "/blog/can-ai-do-my-job.html"
+
+[[services.production.rewrites]]
+from = "/blog/can-ai-do-my-job/"
+to = "/blog/can-ai-do-my-job.html"
+
+[[services.production.rewrites]]
+from = "/blog/chatgpt-work-data-agent-marketing-guide"
+to = "/blog/chatgpt-work-data-agent-marketing-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/chatgpt-work-data-agent-marketing-guide/"
+to = "/blog/chatgpt-work-data-agent-marketing-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/claude-cowork-vs-chatgpt-work"
+to = "/blog/claude-cowork-vs-chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/blog/claude-cowork-vs-chatgpt-work/"
+to = "/blog/claude-cowork-vs-chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/blog/claude-cowork-vs-codex"
+to = "/blog/claude-cowork-vs-codex.html"
+
+[[services.production.rewrites]]
+from = "/blog/claude-cowork-vs-codex/"
+to = "/blog/claude-cowork-vs-codex.html"
+
+[[services.production.rewrites]]
+from = "/blog/gpt-6-astra-business-guide"
+to = "/blog/gpt-6-astra-business-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/gpt-6-astra-business-guide/"
+to = "/blog/gpt-6-astra-business-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/openai-agents-api-business-guide"
+to = "/blog/openai-agents-api-business-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/openai-agents-api-business-guide/"
+to = "/blog/openai-agents-api-business-guide.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-chatgpt-work"
+to = "/blog/what-is-chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-chatgpt-work/"
+to = "/blog/what-is-chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-claude-cowork"
+to = "/blog/what-is-claude-cowork.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-claude-cowork/"
+to = "/blog/what-is-claude-cowork.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-codex-app"
+to = "/blog/what-is-codex-app.html"
+
+[[services.production.rewrites]]
+from = "/blog/what-is-codex-app/"
+to = "/blog/what-is-codex-app.html"
+
+[[services.production.rewrites]]
+from = "/chatgpt-work-training"
+to = "/chatgpt-work-training.html"
+
+[[services.production.rewrites]]
+from = "/chatgpt-work-training/"
+to = "/chatgpt-work-training.html"
+
+[[services.production.rewrites]]
+from = "/claude-cowork-training"
+to = "/claude-cowork-training.html"
+
+[[services.production.rewrites]]
+from = "/claude-cowork-training/"
+to = "/claude-cowork-training.html"
+
+[[services.production.rewrites]]
+from = "/codex-training"
+to = "/codex-training.html"
+
+[[services.production.rewrites]]
+from = "/codex-training/"
+to = "/codex-training.html"
+
+[[services.production.rewrites]]
+from = "/glossary"
+to = "/glossary.html"
+
+[[services.production.rewrites]]
+from = "/glossary/"
+to = "/glossary.html"
+
+[[services.production.rewrites]]
+from = "/glossary/aeo"
+to = "/glossary/aeo.html"
+
+[[services.production.rewrites]]
+from = "/glossary/aeo/"
+to = "/glossary/aeo.html"
+
+[[services.production.rewrites]]
+from = "/glossary/agentic-ai"
+to = "/glossary/agentic-ai.html"
+
+[[services.production.rewrites]]
+from = "/glossary/agentic-ai/"
+to = "/glossary/agentic-ai.html"
+
+[[services.production.rewrites]]
+from = "/glossary/ai-workflow-automation"
+to = "/glossary/ai-workflow-automation.html"
+
+[[services.production.rewrites]]
+from = "/glossary/ai-workflow-automation/"
+to = "/glossary/ai-workflow-automation.html"
+
+[[services.production.rewrites]]
+from = "/glossary/chatgpt-work"
+to = "/glossary/chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/glossary/chatgpt-work/"
+to = "/glossary/chatgpt-work.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude"
+to = "/glossary/claude.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude/"
+to = "/glossary/claude.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude-code"
+to = "/glossary/claude-code.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude-code/"
+to = "/glossary/claude-code.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude-cowork"
+to = "/glossary/claude-cowork.html"
+
+[[services.production.rewrites]]
+from = "/glossary/claude-cowork/"
+to = "/glossary/claude-cowork.html"
+
+[[services.production.rewrites]]
+from = "/glossary/codex-app"
+to = "/glossary/codex-app.html"
+
+[[services.production.rewrites]]
+from = "/glossary/codex-app/"
+to = "/glossary/codex-app.html"
+
+[[services.production.rewrites]]
+from = "/glossary/computer-use"
+to = "/glossary/computer-use.html"
+
+[[services.production.rewrites]]
+from = "/glossary/computer-use/"
+to = "/glossary/computer-use.html"
+
+[[services.production.rewrites]]
+from = "/glossary/geo"
+to = "/glossary/geo.html"
+
+[[services.production.rewrites]]
+from = "/glossary/geo/"
+to = "/glossary/geo.html"
+
+[[services.production.rewrites]]
+from = "/glossary/human-in-the-loop"
+to = "/glossary/human-in-the-loop.html"
+
+[[services.production.rewrites]]
+from = "/glossary/human-in-the-loop/"
+to = "/glossary/human-in-the-loop.html"
+
+[[services.production.rewrites]]
+from = "/glossary/llm"
+to = "/glossary/llm.html"
+
+[[services.production.rewrites]]
+from = "/glossary/llm/"
+to = "/glossary/llm.html"
+
+[[services.production.rewrites]]
+from = "/glossary/mcp"
+to = "/glossary/mcp.html"
+
+[[services.production.rewrites]]
+from = "/glossary/mcp/"
+to = "/glossary/mcp.html"
+
+[[services.production.rewrites]]
+from = "/glossary/prompt-engineering"
+to = "/glossary/prompt-engineering.html"
+
+[[services.production.rewrites]]
+from = "/glossary/prompt-engineering/"
+to = "/glossary/prompt-engineering.html"
+
+[[services.production.rewrites]]
+from = "/glossary/vibe-coding"
+to = "/glossary/vibe-coding.html"
+
+[[services.production.rewrites]]
+from = "/glossary/vibe-coding/"
+to = "/glossary/vibe-coding.html"
+
+[[services.production.rewrites]]
+from = "/industries/consulting"
+to = "/industries/consulting.html"
+
+[[services.production.rewrites]]
+from = "/industries/consulting/"
+to = "/industries/consulting.html"
+
+[[services.production.rewrites]]
+from = "/industries/ecommerce"
+to = "/industries/ecommerce.html"
+
+[[services.production.rewrites]]
+from = "/industries/ecommerce/"
+to = "/industries/ecommerce.html"
 
 [[services.production.rewrites]]
 from = "/industries/financial-services"
@@ -95,22 +367,6 @@ from = "/industries/healthcare/"
 to = "/industries/healthcare.html"
 
 [[services.production.rewrites]]
-from = "/industries/ecommerce"
-to = "/industries/ecommerce.html"
-
-[[services.production.rewrites]]
-from = "/industries/ecommerce/"
-to = "/industries/ecommerce.html"
-
-[[services.production.rewrites]]
-from = "/industries/consulting"
-to = "/industries/consulting.html"
-
-[[services.production.rewrites]]
-from = "/industries/consulting/"
-to = "/industries/consulting.html"
-
-[[services.production.rewrites]]
 from = "/industries/hr-recruiting"
 to = "/industries/hr-recruiting.html"
 
@@ -127,6 +383,22 @@ from = "/industries/insurance/"
 to = "/industries/insurance.html"
 
 [[services.production.rewrites]]
+from = "/industries/law-firms"
+to = "/industries/law-firms.html"
+
+[[services.production.rewrites]]
+from = "/industries/law-firms/"
+to = "/industries/law-firms.html"
+
+[[services.production.rewrites]]
+from = "/industries/marketing-agencies"
+to = "/industries/marketing-agencies.html"
+
+[[services.production.rewrites]]
+from = "/industries/marketing-agencies/"
+to = "/industries/marketing-agencies.html"
+
+[[services.production.rewrites]]
 from = "/industries/nonprofits"
 to = "/industries/nonprofits.html"
 
@@ -135,8 +407,144 @@ from = "/industries/nonprofits/"
 to = "/industries/nonprofits.html"
 
 [[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
+from = "/industries/real-estate"
+to = "/industries/real-estate.html"
+
+[[services.production.rewrites]]
+from = "/industries/real-estate/"
+to = "/industries/real-estate.html"
+
+[[services.production.rewrites]]
+from = "/job-description-analyzer"
+to = "/job-description-analyzer.html"
+
+[[services.production.rewrites]]
+from = "/job-description-analyzer/"
+to = "/job-description-analyzer.html"
+
+[[services.production.rewrites]]
+from = "/privacy"
+to = "/privacy.html"
+
+[[services.production.rewrites]]
+from = "/privacy/"
+to = "/privacy.html"
+
+[[services.production.rewrites]]
+from = "/replit-consulting"
+to = "/replit-consulting.html"
+
+[[services.production.rewrites]]
+from = "/replit-consulting/"
+to = "/replit-consulting.html"
+
+[[services.production.rewrites]]
+from = "/roles/accountants"
+to = "/roles/accountants.html"
+
+[[services.production.rewrites]]
+from = "/roles/accountants/"
+to = "/roles/accountants.html"
+
+[[services.production.rewrites]]
+from = "/roles/customer-support-teams"
+to = "/roles/customer-support-teams.html"
+
+[[services.production.rewrites]]
+from = "/roles/customer-support-teams/"
+to = "/roles/customer-support-teams.html"
+
+[[services.production.rewrites]]
+from = "/roles/executive-assistants"
+to = "/roles/executive-assistants.html"
+
+[[services.production.rewrites]]
+from = "/roles/executive-assistants/"
+to = "/roles/executive-assistants.html"
+
+[[services.production.rewrites]]
+from = "/roles/financial-analysts"
+to = "/roles/financial-analysts.html"
+
+[[services.production.rewrites]]
+from = "/roles/financial-analysts/"
+to = "/roles/financial-analysts.html"
+
+[[services.production.rewrites]]
+from = "/roles/marketing-managers"
+to = "/roles/marketing-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/marketing-managers/"
+to = "/roles/marketing-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/operations-managers"
+to = "/roles/operations-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/operations-managers/"
+to = "/roles/operations-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/paralegals"
+to = "/roles/paralegals.html"
+
+[[services.production.rewrites]]
+from = "/roles/paralegals/"
+to = "/roles/paralegals.html"
+
+[[services.production.rewrites]]
+from = "/roles/project-managers"
+to = "/roles/project-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/project-managers/"
+to = "/roles/project-managers.html"
+
+[[services.production.rewrites]]
+from = "/roles/recruiters"
+to = "/roles/recruiters.html"
+
+[[services.production.rewrites]]
+from = "/roles/recruiters/"
+to = "/roles/recruiters.html"
+
+[[services.production.rewrites]]
+from = "/roles/sales-teams"
+to = "/roles/sales-teams.html"
+
+[[services.production.rewrites]]
+from = "/roles/sales-teams/"
+to = "/roles/sales-teams.html"
+
+[[services.production.rewrites]]
+from = "/terms"
+to = "/terms.html"
+
+[[services.production.rewrites]]
+from = "/terms/"
+to = "/terms.html"
+
+[[services.production.rewrites]]
+from = "/success"
+to = "/success.html"
+
+[[services.production.rewrites]]
+from = "/success/"
+to = "/success.html"
+
+[[services.production.rewrites]]
+from = "/cancel"
+to = "/cancel.html"
+
+[[services.production.rewrites]]
+from = "/cancel/"
+to = "/cancel.html"
+
+[[services.production.rewrites]]
+from = "/report/*"
+to = "/report.html"
 
 [services.env]
 PORT = "18707"

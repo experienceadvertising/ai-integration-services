@@ -1,12 +1,12 @@
-// Glossary of agentic-AI terms. Each term gets its own page for featured
-// snippets and LLM citation. The `short` field is written to stand alone as a
-// definition (it doubles as the meta description and the snippet bots quote).
+// Glossary of agentic AI terms. Each term has a concise search description
+// and a standalone definition for readers.
 
 export interface GlossaryTerm {
   slug: string;
   term: string;
   aliases?: string[];
   category: string;
+  metaDescription: string; // concise search description
   short: string; // 1–2 sentence standalone definition
   body: string[]; // longer explanation
   related: string[]; // related term slugs
@@ -17,6 +17,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "claude-cowork",
     term: "Claude Cowork",
+    metaDescription: "Learn what Claude Cowork does, how it works with files and apps, and when to use it for a multi-step task instead of a chat.",
     category: "Anthropic",
     short:
       "Claude Cowork is Anthropic's agentic desktop mode, available in the Claude desktop app, that lets Claude operate your computer — reading and writing files, running a sandboxed shell, driving apps, and connecting to your tools via MCP — instead of only chatting.",
@@ -31,6 +32,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "agentic-ai",
     term: "Agentic AI",
+    metaDescription: "Agentic AI can carry out multi-step work using tools and feedback. Learn what it means, where it helps and why human review still matters.",
     aliases: ["AI agent"],
     category: "Concept",
     short:
@@ -45,6 +47,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "mcp",
     term: "MCP (Model Context Protocol)",
+    metaDescription: "Model Context Protocol (MCP) helps AI tools connect to external data and services. Learn the basic idea and when a connector is useful.",
     aliases: ["Model Context Protocol"],
     category: "Standard",
     short:
@@ -58,6 +61,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "vibe-coding",
     term: "Vibe coding",
+    metaDescription: "Vibe coding uses natural language to help create software. Learn what the term means and why testing and code review still matter.",
     category: "Concept",
     short:
       "Vibe coding is the practice of building software by describing what you want in plain language and letting an AI write and edit the code, so people can ship working apps and automations without traditional hands-on-keyboard programming.",
@@ -70,6 +74,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "claude-code",
     term: "Claude Code",
+    metaDescription: "Claude Code is Anthropic’s AI coding tool. Learn how developers use it with repositories, tests and reviews.",
     category: "Anthropic",
     short:
       "Claude Code is Anthropic's agentic AI tool built specifically for software development. It works in the terminal and IDE, reading codebases, writing and refactoring code, running tests, and executing commands to help engineers ship software faster.",
@@ -82,6 +87,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "codex-app",
     term: "OpenAI Codex app",
+    metaDescription: "The OpenAI Codex app helps developers coordinate coding agents. Learn what it does and how it fits into a reviewed development workflow.",
     aliases: ["Codex", "Codex desktop app"],
     category: "OpenAI",
     short:
@@ -96,6 +102,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "chatgpt-work",
     term: "ChatGPT Work",
+    metaDescription: "ChatGPT Work helps people complete multi-step tasks using files, a browser and connected apps. Learn when to use it and what to review.",
     aliases: ["ChatGPT Work app", "ChatGPT desktop agent"],
     category: "OpenAI",
     short:
@@ -111,6 +118,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "computer-use",
     term: "Computer use",
+    metaDescription: "Computer use lets an AI interact with an app interface. Learn how it works, what permissions it needs and why actions should be reviewed.",
     category: "Concept",
     short:
       "Computer use is an AI capability where the model operates a computer the way a person does — viewing the screen, moving the cursor, clicking, and typing — so it can use any application directly instead of relying on a special API for each one.",
@@ -123,6 +131,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "human-in-the-loop",
     term: "Human-in-the-loop",
+    metaDescription: "Human-in-the-loop means a person reviews or approves important AI actions. Learn where this control fits in a practical workflow.",
     category: "Concept",
     short:
       "Human-in-the-loop is a design approach where an AI system pauses to get a person's approval before taking consequential actions, keeping a human in control of decisions that carry risk while still letting the AI do the heavy lifting.",
@@ -136,6 +145,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "llm",
     term: "LLM (Large Language Model)",
+    metaDescription: "A large language model (LLM) generates and works with language. Learn what it can do, where it can make mistakes and when to verify.",
     aliases: ["Large Language Model"],
     category: "Concept",
     short:
@@ -150,6 +160,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "claude",
     term: "Claude",
+    metaDescription: "Claude is Anthropic’s AI assistant. Learn how its chat, coding and work tools differ and which tasks each supports.",
     aliases: ["Anthropic Claude"],
     category: "Anthropic",
     short:
@@ -163,6 +174,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "prompt-engineering",
     term: "Prompt engineering",
+    metaDescription: "Prompt engineering is writing clear instructions and context for an AI task. Learn what to include and how to check the result.",
     category: "Concept",
     short:
       "Prompt engineering is the practice of writing clear, well-structured instructions that get an AI model to produce the result you want — specifying context, format, constraints, and examples so the output is accurate and useful.",
@@ -175,6 +187,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "ai-workflow-automation",
     term: "AI workflow automation",
+    metaDescription: "AI workflow automation connects a defined task, sources, tool actions and review steps. Learn what to automate first and where to keep a person involved.",
     category: "Concept",
     short:
       "AI workflow automation is using AI agents to carry out multi-step business processes end to end — gathering inputs, performing the work, and producing a finished output — turning recurring manual tasks like reporting, research, and intake into reviewable, on-demand results.",
@@ -188,6 +201,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "aeo",
     term: "AEO (Answer Engine Optimization)",
+    metaDescription: "Answer Engine Optimization (AEO) focuses on clear, useful answers in search. Learn how it relates to SEO and what to check first.",
     aliases: ["Answer Engine Optimization"],
     category: "AI Search",
     short:
@@ -202,6 +216,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     slug: "geo",
     term: "GEO (Generative Engine Optimization)",
+    metaDescription: "Generative Engine Optimization (GEO) focuses on visibility in AI-generated search answers. Learn how useful content and crawlability fit in.",
     aliases: ["Generative Engine Optimization", "AI search optimization"],
     category: "AI Search",
     short:

@@ -162,3 +162,18 @@ for (const url of routes) {
 }
 
 console.log(`prerender: wrote ${wrote} files; site=${SITE}`);
+
+// These routes need the client app, but their initial HTML must not advertise
+// the homepage to crawlers or expose a public canonical.
+for (const [name, title, description] of [
+  ["success", "Booking Confirmed", "Your training booking is confirmed."],
+  ["cancel", "Checkout Cancelled", "Your checkout was cancelled."],
+  ["report", "Shared AI Report", "A shared AI opportunity report."],
+]) {
+  const out = shell
+    .replace("<!--ssr-helmet-->", '<meta name="robots" content="noindex, nofollow" />')
+    .replace(/<!--fallback-seo-start-->[\s\S]*?<!--fallback-seo-end-->/,
+      `<title>${title}</title><meta name="description" content="${description}" />`)
+    .replace("<!--ssr-outlet-->", "");
+  await writeFile(resolve(DIST, `${name}.html`), out, "utf8");
+}
