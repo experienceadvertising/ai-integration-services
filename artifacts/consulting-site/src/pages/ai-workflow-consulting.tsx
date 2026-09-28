@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/seo";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
+import RelatedResources from "@/components/related-resources";
 import { CALENDLY_INTRO } from "@/lib/booking-links";
 
 const faqs = [
@@ -118,6 +119,8 @@ export default function AiWorkflowConsulting() {
           </div>
         </div>
       </section>
+
+      <RelatedResources heading="Plan your first team workflow" articleSlugs={["ai-training-plan-for-teams", "claude-cowork-vs-chatgpt-work"]} />
 
       <section className="py-24 px-6 text-center bg-card">
         <div className="container max-w-2xl mx-auto">

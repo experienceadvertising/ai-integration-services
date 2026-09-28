@@ -130,8 +130,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="AI Training and Replit Consulting | Evan Weber"
-        description="AI training and Replit consulting by Evan Weber. Build websites, software and mobile apps, or train your team on advanced AI coding workflows."
+
+        title="AI Training for Teams & Individuals: Claude, ChatGPT, Codex"
+        description="Hands-on AI training for teams and individuals using Claude Cowork, ChatGPT, Claude Code and OpenAI Codex. Build workflows around your real work with Evan Weber."
+
         canonical="https://learncowork.net/"
         schema={{
           "@context": "https://schema.org",
@@ -721,7 +723,7 @@ export default function Home() {
 
       <RelatedResources
         heading="New to agentic AI? Start here"
-        articleSlugs={["what-is-claude-cowork", "can-ai-do-my-job"]}
+        articleSlugs={["ai-training-plan-for-teams", "claude-cowork-vs-chatgpt-work"]}
         glossarySlug="agentic-ai"
       />
 

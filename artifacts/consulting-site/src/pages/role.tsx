@@ -84,7 +84,7 @@ export default function RolePage() {
           <div className="grid md:grid-cols-3 gap-10 items-start">
             <div className="md:col-span-1">
               <div className="bg-primary/10 border border-primary/20 rounded-2xl p-8 text-center">
-                <div className="text-5xl font-black text-primary mb-2">{role.stat}</div>
+                <div className="text-3xl md:text-4xl font-black text-primary mb-2 leading-tight">{role.stat}</div>
                 <div className="text-sm text-muted-foreground leading-snug">{role.statLabel}</div>
               </div>
             </div>
