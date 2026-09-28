@@ -34,7 +34,7 @@ export default function ArticlePage() {
   }
 
   const url = `https://learncowork.net/blog/${article.slug}`;
-  const ogImage = `https://learncowork.net/og-blog-${article.slug}.png`;
+  const ogImage = article.ogImage ?? `https://learncowork.net/og-blog-${article.slug}.png`;
   const others = articles.filter((a) => a.slug !== article.slug);
 
   const schema = {

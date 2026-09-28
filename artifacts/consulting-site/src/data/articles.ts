@@ -19,6 +19,7 @@ export interface Article {
   title: string; // on-page H1
   metaTitle: string; // <title> / OG title
   metaDescription: string;
+  ogImage?: string;
   excerpt: string; // index card + social description
   category: string;
   tags: string[];
@@ -45,6 +46,126 @@ export const ARTICLE_AUTHOR = {
 } as const;
 
 export const articles: Article[] = [
+  {
+    slug: "claude-cowork-vs-chatgpt-work",
+    title: "Claude Cowork vs ChatGPT Work: Which Fits Your Team's Work?",
+    metaTitle: "Claude Cowork vs ChatGPT Work for Teams | Evan Weber",
+    metaDescription: "Compare Claude Cowork and ChatGPT Work by the work your team needs to finish, the tools it uses, access controls and a practical pilot plan.",
+    excerpt: "A practical way to choose between two AI workspaces: test the same real assignment, check access and review the finished result.",
+    category: "AI Tool Comparison",
+    tags: ["Claude Cowork", "ChatGPT Work", "AI training", "AI for teams"],
+    readingTime: "7 min read",
+    datePublished: "2026-09-28",
+    dateModified: "2026-09-28",
+    intro: [
+      "Claude Cowork and ChatGPT Work both help people move beyond a single chat response to a finished work product. The better choice depends on your existing files and apps, the task you need completed, and the access your organization is willing to grant.",
+      "Do not choose from a feature checklist alone. Give each tool the same small, real assignment, use a safe copy of your materials, and compare the output, time spent correcting it, and permission prompts. [Claude Cowork training](/claude-cowork-training) and [ChatGPT Work training](/chatgpt-work-training) can then focus on the tool that fits your workflow.",
+    ],
+    sections: [
+      {
+        heading: "What each product is for",
+        paragraphs: [
+          "[Anthropic describes Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) as a way for Claude to work on multi-step tasks with files, connected tools and, when permitted, your computer. [OpenAI describes Work](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex) as the work mode in the ChatGPT desktop app, alongside Chat and Codex. Both products are evolving, and available features can vary by plan and workspace settings.",
+          "For a document-heavy assignment, start with the file locations and the desired deliverable. For an assignment spread across business apps, check whether the needed app connections are available and allowed in your workspace. [OpenAI's app guide](https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt) and Anthropic's Cowork help center are the right places to verify current availability before committing to a rollout.",
+        ],
+      },
+      {
+        heading: "A fair pilot takes one real task",
+        paragraphs: [
+          "Pick a recurring task with a clear finish line, such as turning three meeting notes and a status spreadsheet into a weekly update. Give each tool the same source material and acceptance checklist. Record how much setup was required, whether sources were cited correctly, what had to be fixed, and whether the result could be used after human review.",
+        ],
+        bullets: [
+          "Define the output first: format, audience, required facts and deadline.",
+          "Use sample or approved data. Keep credentials and sensitive customer records out of an initial test.",
+          "Note every permission request and check what the tool can read, change or send.",
+          "Compare finished work, correction time and repeatability, not only the first draft.",
+        ],
+      },
+      {
+        heading: "How to make the choice",
+        paragraphs: [
+          "Choose the product that works with your approved systems and completes the pilot reliably. If both work, use the one your team will actually adopt and support. A mixed setup can also make sense: one tool for a particular file workflow and another for work already centered in a different workspace. Avoid asking staff to learn two tools for the same task without a clear reason.",
+          "Computer access and connected apps deserve a separate review. [Anthropic's Cowork safety guidance](https://support.claude.com/en/articles/13364135-use-claude-cowork-safely) and [OpenAI's desktop browser guidance](https://help.openai.com/en/articles/20001277-using-the-built-in-browser-in-the-chatgpt-desktop-app) explain the permissions and controls to check. Your own workspace administrator may impose additional limits.",
+        ],
+      },
+      {
+        heading: "Train around the winning workflow",
+        paragraphs: [
+          "Once you have a useful pilot, teach the team the whole process: prepare the source files, give a clear assignment, inspect the tool's actions, review the output, and save a reusable example. Our [team AI training plan](/blog/ai-training-plan-for-teams) shows how to expand one working task without turning the rollout into a collection of disconnected demos.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Compare the tools on an identical, real assignment using approved data.",
+      "Check app access and review controls before a team rollout.",
+      "Measure the usable result and correction effort, then train around the workflow that wins.",
+    ],
+    faqs: [
+      { q: "Is Claude Cowork better than ChatGPT Work?", a: "There is no universal winner. The right choice depends on the task, approved tools, available features and quality of the result after review. Run the same pilot in both products." },
+      { q: "Can a team use both?", a: "Yes, if each has a distinct job and your access policies allow it. Document when to use each so employees do not duplicate work." },
+      { q: "What should we test first?", a: "Start with one recurring, low-risk task whose finished output can be checked against a clear acceptance list." },
+    ],
+  },
+  {
+    slug: "ai-training-plan-for-teams",
+    title: "A Practical AI Training Plan for Teams",
+    metaTitle: "AI Training Plan for Teams: A 30-Day Guide | Evan Weber",
+    metaDescription: "Build a practical 30-day AI training plan for your team. Pick one workflow, set access rules, practice on real work and measure usable results.",
+    excerpt: "A four-week plan for moving from AI demos to one repeatable team workflow, with clear review and ownership.",
+    category: "Team AI Training",
+    tags: ["AI training for teams", "AI adoption", "AI workflow", "ChatGPT Work", "Claude Cowork"],
+    readingTime: "7 min read",
+    datePublished: "2026-09-28",
+    dateModified: "2026-09-28",
+    intro: [
+      "A useful team AI training plan begins with one job people already do, not a tour of every tool. Pick a recurring task, agree on what a good result looks like, give staff a safe way to practice, and review the output before it reaches a customer or colleague.",
+      "This four-week plan is a starting framework, not a promise that every team will be fully trained in 30 days. The pace depends on data access, the difficulty of the task and how quickly the team can review examples. If you need help choosing the first workflow, start with [AI workflow consulting](/ai-workflow-consulting).",
+    ],
+    sections: [
+      {
+        heading: "Week 1: choose the work and set boundaries",
+        paragraphs: [
+          "Ask each participant to name a task they repeat at least weekly. Favor one with an obvious input and output, such as a client update, a research brief or a meeting summary. Capture how the task is done today and where errors are costly. Choose one owner who can approve the result.",
+          "Before connecting apps or uploading files, decide which information staff may use, who grants access, and which actions need a human sign-off. Start with sample or approved material. If a workflow touches regulated or confidential data, involve the person responsible for that data before testing it.",
+        ],
+      },
+      {
+        heading: "Week 2: teach one complete assignment",
+        paragraphs: [
+          "Show the team how to state the outcome, provide source context, specify the format and ask the tool to flag uncertainty. Demonstrate the full cycle on a real but safe example: prepare inputs, run the task, inspect sources, correct errors and save the final deliverable. A short reusable checklist beats a library of prompts nobody uses.",
+          "If the work centers on files and desktop tasks, consider [Claude Cowork training](/claude-cowork-training). If it centers on ChatGPT and approved app connections, consider [ChatGPT Work training](/chatgpt-work-training). Technical teams can use a separate [AI coding track](/ai-coding-training) for code review, tests and repositories.",
+        ],
+      },
+      {
+        heading: "Week 3: repeat and measure",
+        paragraphs: [
+          "Have two or three people repeat the same assignment with new inputs. Record the time to a usable result, the corrections made and whether the output met the original acceptance checklist. Keep a copy of a good example and one failure example. If review takes longer than the task saves, narrow the workflow or change the inputs before scaling it.",
+        ],
+        bullets: [
+          "Count completed, reviewed deliverables rather than tool logins or prompt volume.",
+          "Track factual errors, privacy concerns and rework separately from time saved.",
+          "Ask participants what they could not finish without help and update the instructions.",
+        ],
+      },
+      {
+        heading: "Week 4: hand off a repeatable process",
+        paragraphs: [
+          "Write down the task owner, approved inputs, tool and access settings, the review step, and what to do when the tool gets stuck. Give new staff one example they can reproduce. Then decide whether the next team should use the same process or start a different pilot.",
+          "For a tool comparison before training, use the [Claude Cowork vs ChatGPT Work guide](/blog/claude-cowork-vs-chatgpt-work). If you want someone to build the first workflow with your team, [book a training session](/#pricing) around that specific task.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Start with one recurring task and a named reviewer.",
+      "Teach a complete assignment with approved data and a clear acceptance checklist.",
+      "Expand only after repeated runs produce useful work with manageable corrections.",
+    ],
+    faqs: [
+      { q: "How long does AI training take for a team?", a: "A first useful workflow can often be piloted within a month, but training time depends on the task, access requirements and review capacity. Treat 30 days as a planning framework, not a guaranteed completion date." },
+      { q: "What should we teach first?", a: "Teach staff how to define the outcome, provide relevant context, inspect the tool's actions, verify facts and save a repeatable example for the next run." },
+      { q: "How do we know the training worked?", a: "Look for reviewed deliverables that meet the task's acceptance checklist across several runs. Include correction time and errors in the measure." },
+    ],
+  },
 {
   "slug": "openai-agents-api-business-guide",
   "title": "OpenAI's Agents API: What Business Teams Should Build First",
@@ -497,7 +618,7 @@ export const articles: Article[] = [
       "What the ChatGPT Work Desktop App Actually Is, and How It Compares to Claude Cowork",
     metaTitle: "What Is ChatGPT Work? A Plain-English 2026 Guide | Evan Weber",
     metaDescription:
-      "ChatGPT Work is OpenAI's new agentic desktop app that operates your computer, a built-in browser, and your connected work apps to deliver finished work. Here is what it actually is, and an honest comparison with Claude Cowork, from someone who trains teams on both.",
+      "Learn what ChatGPT Work does with files, browser tasks and connected apps, and how to compare it with Claude Cowork for your team's work.",
     excerpt:
       "OpenAI just shipped ChatGPT Work, a desktop agent that does the work instead of just chatting about it. Here is the plain-English rundown, and an honest side-by-side with Claude Cowork, from someone who runs both every day.",
     category: "ChatGPT",
@@ -610,7 +731,7 @@ export const articles: Article[] = [
     metaTitle:
       "What Is Claude Cowork? A Plain-English Guide (2026) | Evan Weber",
     metaDescription:
-      "Claude Cowork is Anthropic's agentic desktop AI that operates your computer, handles files, and runs multi-step work. Here's what it actually is — and how it differs from Claude.ai, Claude Code, and ChatGPT — from someone who uses it daily.",
+      "Learn what Claude Cowork does with files and multi-step tasks, and how it differs from Claude chat, Claude Code and ChatGPT Work.",
     excerpt:
       'I get asked "what is Claude Cowork, exactly?" in almost every session. Here\'s the plain-English answer, and the clear lines between Cowork, Claude.ai, Claude Code, and ChatGPT.',
     category: "Claude Cowork",
@@ -698,7 +819,7 @@ export const articles: Article[] = [
       "The Codex Desktop App, Explained: OpenAI's Answer to Agentic Desktop AI",
     metaTitle: "What Is the OpenAI Codex App? A 2026 Guide | Evan Weber",
     metaDescription:
-      "OpenAI's Codex app brings agentic AI to your Mac and Windows desktop — multiple agents in parallel, background computer use, automations, and skills. Here's what the Codex app actually is and who it's for, from a daily agentic-AI user.",
+      "Learn what the OpenAI Codex app does for coding teams, including agents, worktrees, skills and automations, and when it fits your workflow.",
     excerpt:
       "OpenAI's Codex app put agentic AI on the desktop — multi-agent, computer use, automations. Here's what it actually is, what it's genuinely good at, and where it fits.",
     category: "Codex",
@@ -780,7 +901,7 @@ export const articles: Article[] = [
       "Claude Cowork vs. the Codex App: Which Agentic Desktop AI Should Your Team Use?",
     metaTitle: "Claude Cowork vs. Codex App: Which to Use in 2026 | Evan Weber",
     metaDescription:
-      "A practical, no-hype comparison of Claude Cowork and OpenAI's Codex app from someone who uses both daily. Architecture, who each is for, pricing, and how to actually decide — for technical and non-technical teams.",
+      "Compare Claude Cowork and the OpenAI Codex app by task, audience, workflow and review needs, then decide which tool your team should test first.",
     excerpt:
       "I use both Claude Cowork and the Codex app every week. Here's the honest, side-by-side breakdown — and a simple way to decide which one your team should actually start with.",
     category: "Comparison",
@@ -868,9 +989,9 @@ export const articles: Article[] = [
     title:
       "How Much Time Can AI Actually Save Your Team? A Realistic, Task-by-Task Breakdown",
     metaTitle:
-      "AI Time Savings: A Realistic Breakdown by Task (2026) | Evan Weber",
+      "AI Time Savings by Task: A Realistic Guide | Evan Weber",
     metaDescription:
-      "How many hours can Claude Cowork and agentic AI actually save your team? A realistic, task-by-task breakdown from someone who trains business teams on this every week — plus how to calculate your own number.",
+      "How much time can Claude Cowork save your team? See realistic estimates by task and learn how to calculate savings for your own workflows.",
     excerpt:
       "\"AI will save you 40% of your time\" is a marketing number, not a real one. Here's the honest, task-by-task breakdown of where the time actually comes from — and how to calculate your own team's real savings.",
     category: "Productivity",
@@ -963,7 +1084,7 @@ export const articles: Article[] = [
       "Can AI Do My Job? A Realistic Answer for Business Teams (Not a Doom Headline)",
     metaTitle: "Can AI Do My Job? A Realistic 2026 Answer | Evan Weber",
     metaDescription:
-      "Worried agentic AI will replace your job? Here's the honest answer from an AI trainer who works with real teams every week — which tasks AI actually takes over, which don't, and how to come out ahead of it instead of behind it.",
+      "Can AI do your job? Look at the tasks it can assist with, the work that still needs human judgment, and a practical way to test your role.",
     excerpt:
       'I get asked some version of "is AI going to take my job?" in almost every training session. Here\'s the honest answer — no headline, no hype — from someone who watches this play out with real teams every week.',
     category: "Career",
@@ -1047,89 +1168,58 @@ export const articles: Article[] = [
 
   {
     slug: "aeo-geo-explained",
-    title:
-      "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
-    metaTitle: "AEO & GEO Explained: An AI Search Playbook (2026) | Evan Weber",
-    metaDescription:
-      "What Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) actually mean, why they matter now, and the concrete playbook — schema, llms.txt, FAQ structure, crawlable content — using this site as the worked example.",
-    excerpt:
-      "AEO and GEO aren't buzzwords for a keynote — they're the specific, mechanical reasons some businesses get cited by ChatGPT and Claude and most don't. Here's the real playbook, using this exact site as the case study.",
+    title: "AEO and GEO Explained: What Helps a Site Appear in AI Search?",
+    metaTitle: "AEO and GEO Explained: Practical AI Search SEO | Evan Weber",
+    metaDescription: "Learn what AEO and GEO mean, which SEO fundamentals matter for AI search, and how to check crawlability, useful content and actual visibility.",
+    excerpt: "A practical guide to AI search visibility that starts with crawlable pages, useful answers and measurement, without citation guarantees or special-file myths.",
     category: "AI Search",
-    tags: ["AEO", "GEO", "AI search", "SEO", "Answer engine optimization"],
-    readingTime: "10 min read",
+    tags: ["AEO", "GEO", "AI search", "SEO", "Search Console"],
+    readingTime: "7 min read",
     datePublished: "2026-07-01",
-    dateModified: "2026-07-01",
+    dateModified: "2026-09-28",
     intro: [
-      "I've spent 25 years watching search evolve — keyword stuffing, then content quality, then featured snippets, then voice search. Every shift had the same shape: the tactics that worked yesterday quietly stopped working, and the businesses that noticed first won for years. We're in the middle of one of those shifts right now, and it's the biggest one yet.",
-      "When someone asks ChatGPT, Claude, or Perplexity a question today, they usually don't get ten blue links back — they get a synthesized answer with two or three sources cited, or none at all. [AEO](/glossary/aeo) and [GEO](/glossary/geo) are the practices for making sure your business is one of those sources instead of invisible to the whole conversation. This isn't theory — it's the exact set of things I did to this site, and I'll show you all of it.",
+      "AEO and GEO are names for making useful website content easier to discover and understand in answer and generative search experiences. For Google AI features, the work still begins with ordinary SEO: an accessible page, helpful content, a clear topic and eligibility to appear in Search with a snippet.",
+      "There is no file, schema type or writing formula that guarantees a citation. [Google's current AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) says its generative search features draw on core Search systems and advises site owners to create original, useful content. That is the starting point for this guide and our [AEO and GEO training](/aeo-geo-training).",
     ],
     sections: [
       {
-        heading: "AEO vs. GEO — they're related, not the same thing",
+        heading: "What AEO and GEO mean",
         paragraphs: [
-          "[Answer Engine Optimization (AEO)](/glossary/aeo) is the older discipline: structuring content so a system can lift out a direct, self-contained answer — for Google's featured snippets, voice assistants like Siri and Alexa, and \"People Also Ask\" boxes. It's about being extractable.",
-          "[Generative Engine Optimization (GEO)](/glossary/geo) is the newer, adjacent discipline: getting your content cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — that synthesize an answer instead of extracting one verbatim. It's about being trustworthy enough, and clear enough, for an [LLM](/glossary/llm) to choose you as a source.",
-          "In practice they overlap heavily and the same underlying work supports both, which is why I treat them as one playbook, not two separate projects.",
+          "Answer Engine Optimization often refers to making a page answer a question clearly enough to be useful in search answers. Generative Engine Optimization refers to visibility when an AI system summarizes or cites sources. The labels describe an outcome, not a separate set of technical requirements shared by every search provider.",
+          "A useful page can give a direct answer near the top, then explain the conditions, evidence and next action. The answer still has to be accurate and useful for a person who clicks through.",
         ],
       },
       {
-        heading: "Why this matters now, not eventually",
+        heading: "Start with access and the right page",
         paragraphs: [
-          "The traditional SEO model was: rank a page, earn a click, the visitor lands on your site. AI answer engines break that model — the model answers the question directly, on its own surface, often without a click at all. If you're only optimized for the old model, you're optimizing for a shrinking share of how people actually find answers now.",
-          "The businesses winning this shift aren't doing anything mysterious. They're doing disciplined, structural work that most sites still skip: clear direct answers, correct structured data, and genuine crawlable access for AI bots. That's a gap you can close.",
+          "Check that the intended URL returns its own content, title and canonical in the initial HTML. Confirm that robots rules, meta robots and server responses allow the page to be crawled and indexed. A page that returns the homepage HTML for every article URL needs its routing fixed before another article is added.",
+          "Map each meaningful question to one useful page. If someone wants to choose a training provider, give them scope, delivery, price path and a contact or booking action. If they want an explanation, answer it before asking them to book. Separate pages should serve distinct tasks, not minor wording variations.",
         ],
       },
       {
-        heading: "The playbook — what actually moves the needle",
-        paragraphs: ["This is the concrete list, not the vague one:"],
-        bullets: [
-          "Lead with the direct answer. Put a plain, one-to-two sentence answer to the obvious question at the top of the page or section — before the nuance, not after it. Answer engines quote the sentence that already reads like an answer.",
-          "Structured data, done correctly. FAQPage, Article, Service, and DefinedTerm schema (schema.org / JSON-LD) tell machines exactly what a page contains instead of making them infer it. Critically, the schema has to match the visible content — mismatched structured data gets ignored or penalized.",
-          "Explicit Q&A formatting. Real, visible question headings with direct answers underneath outperform the same information buried in narrative paragraphs, for both featured snippets and LLM citation.",
-          "Author expertise signals (E-E-A-T). A named, credentialed author with a real bio and a consistent publishing history is a trust signal both Google and LLMs weigh — anonymous or unattributed content is easy to skip when a model is choosing what to cite.",
-          "Crawlable by AI bots, on purpose. Your robots.txt needs to explicitly allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and the other AI crawlers — many sites block these by default and never notice.",
-          "An llms.txt file. A plain-language summary of what your site is, who runs it, and what's on it, written for an AI system to read directly — the same idea as robots.txt, but aimed at comprehension instead of access control.",
-          "Topical depth through internal linking. A glossary, a blog, and genuine cross-links between them build the kind of topical authority that makes a domain look like a real source on a subject, not a single lucky page.",
+        heading: "Add evidence people can use",
+        paragraphs: [
+          "Original examples, a worked comparison, screenshots of a real process, limitations and an accountable author can make a page more useful than a generic summary. Link to primary sources for product and search claims that can change. Keep those sources current when the page is updated.",
+          "Use structured data only when it accurately represents visible content and is supported for the intended search feature. [Google's guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) does not require a special AI schema, a prescribed chunk size or llms.txt for its AI search features. A maintained llms.txt file can still be useful for other readers or systems, but it is not a Google ranking requirement.",
         ],
       },
       {
-        heading: "This site is the worked example",
+        heading: "Measure discovery separately from results",
         paragraphs: [
-          "I didn't write this article as theory — I built every item on that list into learncowork.net before writing it. The [/llms.txt file](/llms.txt) at the root of this site is a direct-read summary for AI systems. The robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, and every major AI crawler. Every training page, tool, and blog post carries FAQPage or Service schema that matches its visible content exactly — not close, exactly, because mismatches undermine the whole point.",
-          "This glossary you're reading terms from is itself an AEO/GEO tactic: short, quotable, standalone definitions that are easy for a model to lift and cite correctly, cross-linked into the blog posts and training pages that go deeper. That's not an accident — it's the structure this whole article is describing, applied to itself.",
-        ],
-      },
-      {
-        heading: "Where this fits for your business",
-        paragraphs: [
-          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. To make that audit faster, I built a tool for exactly this, [AEOImprovement.com](https://aeoimprovement.com), which audits your site's citability across ChatGPT, Claude, Gemini, and Perplexity and hands you a 6-dimension AEO score with evidence-backed fixes you can ship today. None of that requires new headcount — it requires someone who knows what to build and where.",
-          "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
+          "Use Search Console to compare queries, pages, impressions and clicks before and after a change. Check indexed status and the live URL when a page fails to appear. If an AI product sends referral traffic, label it separately from ordinary organic search and connect it to qualified leads when possible.",
+          "Citation spot checks are observations. Record the engine, question, locale, date and cited URL. A single answer with or without your site does not establish a citation rate. If you need help deciding what to fix first, [AI search training](/aeo-geo-training) can use your own pages as the working material.",
         ],
       },
     ],
     keyTakeaways: [
-      "AEO is about being extractable (featured snippets, voice search); GEO is about being citable by generative AI (ChatGPT, Claude, Perplexity, AI Overviews) — the same underlying work supports both.",
-      "AI answer engines synthesize an answer instead of showing ranked links, which shrinks the value of old-model SEO tactics and rewards clear, structured, verifiably authored content.",
-      "The concrete playbook: direct-answer content, correct and matching structured data, explicit Q&A formatting, author expertise signals, AI-bot-friendly robots.txt, an llms.txt file, and real topical depth via internal linking.",
-      "This exact site — its llms.txt, robots.txt, schema, and glossary/blog cross-linking — is a working example of every tactic in this article, not just a description of them.",
+      "For Google AI search, useful original content and ordinary Search eligibility remain the foundation.",
+      "Fix page routing, crawlability and intent match before adding more markup or articles.",
+      "Measure indexing, search traffic, AI referrals and qualified leads as separate outcomes.",
     ],
     faqs: [
-      {
-        q: "What's the difference between AEO and GEO?",
-        a: "AEO (Answer Engine Optimization) is about structuring content to be extracted as a direct answer, for featured snippets and voice search. GEO (Generative Engine Optimization) is about being cited or summarized by generative AI systems like ChatGPT and Claude. They overlap heavily and are usually pursued together.",
-      },
-      {
-        q: "Does GEO replace traditional SEO?",
-        a: "No — it extends it. Technical fundamentals like site speed, crawlability, and quality content still matter. GEO adds a specific layer on top: structured data, direct-answer formatting, and explicit AI-crawler access that traditional SEO doesn't require.",
-      },
-      {
-        q: "What is an llms.txt file?",
-        a: "It's a plain-language summary of a site's purpose and content, placed at the root of the domain, written for AI systems to read directly — conceptually similar to robots.txt, but aimed at giving models an accurate, direct understanding of the site rather than controlling crawler access.",
-      },
-      {
-        q: "How do I know if AI crawlers can access my site?",
-        a: "Check your robots.txt for explicit rules covering GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and similar AI user-agents. If they're not mentioned at all, some crawlers may still access the site by default, but an explicit allow rule removes any ambiguity.",
-      },
+      { q: "Does GEO replace SEO?", a: "No. For Google AI search, the same core search and quality systems apply. Other providers may use different retrieval systems, so check their own documentation and your actual referral data." },
+      { q: "Do I need llms.txt to appear in Google AI search?", a: "No. Google says its Search systems do not use llms.txt as a special requirement for generative AI features." },
+      { q: "Will FAQ schema make an AI cite my page?", a: "No. Structured data should match visible page content and meet feature policies, but markup alone does not guarantee indexing, a rich result or an AI citation." },
     ],
   },
 ];

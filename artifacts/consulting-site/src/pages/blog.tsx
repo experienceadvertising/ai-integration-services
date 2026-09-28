@@ -45,7 +45,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SEO
-        title="AI Productivity Blog: Claude Cowork, Codex & Agentic AI | Evan Weber"
+        title="AI Productivity Blog: Claude Cowork & Codex | Evan Weber"
         description="First-hand guides to Claude Cowork, the OpenAI Codex app, and agentic AI for business teams — written by AI trainer Evan Weber, who uses these tools every day."
         canonical={PAGE_URL}
         keywords="Claude Cowork blog, agentic AI guides, Codex app explained, AI productivity articles, Evan Weber, Claude Cowork vs Codex, AI for business teams"
@@ -87,7 +87,7 @@ export default function Blog() {
                 >
                   <Link href={`/blog/${a.slug}`} className="flex flex-col h-full">
                     <img
-                      src={`https://learncowork.net/og-blog-${a.slug}.png`}
+                      src={a.ogImage ?? `https://learncowork.net/og-blog-${a.slug}.png`}
                       alt={a.title}
                       width={1200}
                       height={630}
