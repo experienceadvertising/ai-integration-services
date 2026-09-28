@@ -239,14 +239,12 @@ export default function Home() {
               Live AI training and workflow implementation
             </div>
 
-            <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
-              Build with AI.<br />
-              <span className="text-primary">Train your team to do it right.</span><br />
-              <span className="text-muted-foreground">From workflow to working product.</span>
+            <h1 className="text-[2.1rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
+              <span className="text-primary">AI Training and Consulting</span> for Teams and Individuals
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              I build websites, software products, business systems, and mobile apps with Replit and AI coding tools. I also train individuals and teams on Replit, Codex, Claude Code, ChatGPT Work, Claude Cowork, and the workflows that turn AI into real business results.
+              On a live video call, Evan shows the process on his screen, then guides you through real work on yours, tailored to your job responsibilities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
