@@ -130,57 +130,82 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
       <SEO
-        title="AI Training and Replit Consulting | Evan Weber"
-        description="AI training and Replit consulting by Evan Weber. Build websites, software and mobile apps, or train your team on advanced AI coding workflows."
+
+        title="AI Training for Teams & Individuals: Claude, ChatGPT, Codex"
+        description="Hands-on AI training for teams and individuals using Claude Cowork, ChatGPT, Claude Code and OpenAI Codex. Build workflows around your real work with Evan Weber."
+
         canonical="https://learncowork.net/"
+        keywords="Claude Cowork training, ChatGPT Work training, agentic AI training for teams, AI productivity training, Evan Weber, live AI training session"
         schema={{
           "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
+          "@graph": [
             {
-              "@type": "Question",
-              name: "Do my team members need to be technical?",
-              acceptedAnswer: { "@type": "Answer", text: "No. Business training is designed for regular users in marketing, sales, operations, support, leadership, and other roles. Technical sessions are available separately for Codex, Claude Code, Replit, and development teams." },
+              "@type": "Service",
+              "@id": "https://learncowork.net/#training-services",
+              name: "AI Training by Evan Weber",
+              provider: { "@type": "Person", name: "Evan Weber", url: "https://learncowork.net/about" },
+              description: "Live 1-on-1 and team training on ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, and Replit. Sessions are on screen share, tailored to each team's real workflows, for both teams and individuals.",
+              url: "https://learncowork.net/",
+              areaServed: "US",
+              offers: [
+                { "@type": "Offer", name: "1-Hour Training Session", price: "300", priceCurrency: "USD" },
+                { "@type": "Offer", name: "4-Hour Deep Dive Workshop", price: "1000", priceCurrency: "USD" },
+              ],
             },
             {
-              "@type": "Question",
-              name: "Which AI tools can Evan train us on?",
-              acceptedAnswer: { "@type": "Answer", text: "Training can cover ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, ChatGPT apps and connectors, workspace agents, and practical multi-tool workflows for individuals or companies." },
-            },
-            {
-              "@type": "Question",
-              name: "Can Evan build a website, software product, or mobile app for us?",
-              acceptedAnswer: { "@type": "Answer", text: "Yes. Replit consulting can include product planning, hands-on development, troubleshooting, testing, integrations, and publishing for websites, business software, internal tools, prototypes, and mobile apps." },
-            },
-            {
-              "@type": "Question",
-              name: "Can you help us choose between ChatGPT Work, Codex, and Claude Cowork?",
-              acceptedAnswer: { "@type": "Answer", text: "Yes. Tool selection can be part of the session. The right choice depends on the work, team, existing software, security requirements, and whether the primary need is business productivity, software development, or both." },
-            },
-            {
-              "@type": "Question",
-              name: "How is this different from a YouTube tutorial or course?",
-              acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show someone else's workflow. Evan trains your team using your actual work, tools, files, and goals, then helps you build a workflow you can keep improving after the session." },
-            },
-            {
-              "@type": "Question",
-              name: "What if I'm a solo professional, not a team?",
-              acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works well for individuals. Solo professionals can focus on personal workflows, research, documents, reporting, coding, content, or tool setup." },
-            },
-            {
-              "@type": "Question",
-              name: "What if the session isn't what I expected?",
-              acceptedAnswer: { "@type": "Answer", text: "If your first hour with Evan is not worth the price, contact Evan for a full refund under the satisfaction guarantee described on the booking page." },
-            },
-            {
-              "@type": "Question",
-              name: "Can I expense this through my company?",
-              acceptedAnswer: { "@type": "Answer", text: "Yes. You'll receive a Stripe receipt immediately after checkout that's expensable as professional development or training. If you need an itemized invoice, just reply to your receipt and Evan will send one." },
-            },
-            {
-              "@type": "Question",
-              name: "What happens after I book?",
-              acceptedAnswer: { "@type": "Answer", text: "You will receive scheduling and intake steps so Evan can prepare around your role, tools, experience level, and desired workflow before the session." },
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Do my team members need to be technical?",
+                  acceptedAnswer: { "@type": "Answer", text: "No. Business training is designed for regular users in marketing, sales, operations, support, leadership, and other roles. Technical sessions are available separately for Codex, Claude Code, Replit, and development teams." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Which AI tools can Evan train us on?",
+                  acceptedAnswer: { "@type": "Answer", text: "Training can cover ChatGPT Work, OpenAI Codex, Claude Cowork, Claude Code, Replit, ChatGPT apps and connectors, workspace agents, and practical multi-tool workflows for individuals or companies." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can Evan build a website, software product, or mobile app for us?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. Replit consulting can include product planning, hands-on development, troubleshooting, testing, integrations, and publishing for websites, business software, internal tools, prototypes, and mobile apps." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can you help us choose between ChatGPT Work, Codex, and Claude Cowork?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. Tool selection can be part of the session. The right choice depends on the work, team, existing software, security requirements, and whether the primary need is business productivity, software development, or both." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is my company's data safe? Will Anthropic or OpenAI train on what we share?",
+                  acceptedAnswer: { "@type": "Answer", text: "No, as long as you configure this correctly. For Claude Cowork: turn off the 'Help improve Claude' toggle in Privacy Settings, or use a Claude for Work plan. For ChatGPT Work: turn off training in Settings > Data Controls, or use a ChatGPT Team/Enterprise plan. Evan covers data settings in every session before automating anything real." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How is this different from a YouTube tutorial or course?",
+                  acceptedAnswer: { "@type": "Answer", text: "Generic tutorials show someone else's workflow. Evan trains your team using your actual work, tools, files, and goals, then helps you build a workflow you can keep improving after the session." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What if I'm a solo professional, not a team?",
+                  acceptedAnswer: { "@type": "Answer", text: "The 1-hour session works great for individuals. Many solo consultants, lawyers, agents, and operators book it to build personal automations around their own daily work — proposals, research, client comms, reporting." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I expense this through my company?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. You'll receive a Stripe receipt immediately after checkout that's expensable as professional development or training. If you need an itemized invoice, just reply to your receipt and Evan will send one." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What if the session isn't what I expected?",
+                  acceptedAnswer: { "@type": "Answer", text: "100% satisfaction guarantee. If your first hour with Evan isn't worth the price, you get a full refund — no forms, no friction. Just email Evan and he'll process it." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What happens after I book?",
+                  acceptedAnswer: { "@type": "Answer", text: "You'll get a confirmation page with a Calendly to lock in your time and a short intake form so Evan arrives prepared. You'll get a calendar invite immediately and a session prep email shortly after with what to have ready." },
+                },
+              ],
             },
           ],
         }}
@@ -216,14 +241,12 @@ export default function Home() {
               Live AI training and workflow implementation
             </div>
 
-            <h1 className="text-[2.1rem] leading-[1.1] md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
-              Build with AI.<br />
-              <span className="text-primary">Train your team to do it right.</span><br />
-              <span className="text-muted-foreground">From workflow to working product.</span>
+            <h1 className="text-[2.1rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-8 text-balance">
+              <span className="text-primary">AI Training and Consulting</span> for Teams and Individuals
             </h1>
 
             <p className="text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-6 md:mb-12">
-              I build websites, software products, business systems, and mobile apps with Replit and AI coding tools. I also train individuals and teams on Replit, Codex, Claude Code, ChatGPT Work, Claude Cowork, and the workflows that turn AI into real business results.
+              On a live video call, Evan shows the process on his screen, then guides you through real work on yours, tailored to your job responsibilities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -684,7 +707,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3 text-sm md:text-base">
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      <span>Actionable setup for the AI tools covered</span>
+                      <span>Claude Cowork or ChatGPT Work — your choice</span>
                     </li>
                   </ul>
 
@@ -721,7 +744,7 @@ export default function Home() {
 
       <RelatedResources
         heading="New to agentic AI? Start here"
-        articleSlugs={["what-is-claude-cowork", "can-ai-do-my-job"]}
+        articleSlugs={["what-is-chatgpt-work", "what-is-claude-cowork", "can-ai-do-my-job", "ai-training-plan-for-teams", "claude-cowork-vs-chatgpt-work"]}
         glossarySlug="agentic-ai"
       />
 
