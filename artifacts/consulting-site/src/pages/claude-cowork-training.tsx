@@ -237,7 +237,7 @@ export default function ClaudeCoworkTraining() {
 
       <RelatedResources
         heading="Learn more about Claude Cowork"
-        articleSlugs={["what-is-claude-cowork", "claude-cowork-vs-codex"]}
+        articleSlugs={["what-is-claude-cowork", "claude-cowork-vs-chatgpt-work"]}
         glossarySlug="claude-cowork"
       />
 

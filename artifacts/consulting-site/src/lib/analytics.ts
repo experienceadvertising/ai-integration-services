@@ -4,21 +4,32 @@ declare global {
   }
 }
 
-export function initializeAnalytics() {
-  if (typeof window === "undefined") return;
-  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim();
-  if (!measurementId || document.querySelector(`script[data-ga-id="${measurementId}"]`)) return;
+const LEADPOST_AUDIENCE_ID = "35597";
+const LEADPOST_SCRIPT_URL = `https://rdcdn.com/rtjs?aid=${LEADPOST_AUDIENCE_ID}`;
 
-  window.dataLayer = window.dataLayer || [];
+function browserOptedOutOfTracking(): boolean {
+  const navigatorWithPrivacySignals = navigator as Navigator & {
+    globalPrivacyControl?: boolean;
+    msDoNotTrack?: string;
+  };
+
+  return (
+    navigatorWithPrivacySignals.globalPrivacyControl === true ||
+    navigator.doNotTrack === "1" ||
+    navigatorWithPrivacySignals.msDoNotTrack === "1"
+  );
+}
+
+export function initializeLeadPost() {
+  if (typeof window === "undefined" || browserOptedOutOfTracking()) return;
+  if (document.querySelector(`script[data-leadpost-audience-id="${LEADPOST_AUDIENCE_ID}"]`)) return;
 
   const script = document.createElement("script");
   script.async = true;
-  script.dataset.gaId = measurementId;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+  script.dataset.leadpostAudienceId = LEADPOST_AUDIENCE_ID;
+  script.referrerPolicy = "strict-origin-when-cross-origin";
+  script.src = LEADPOST_SCRIPT_URL;
   document.head.appendChild(script);
-
-  window.dataLayer.push(["js", new Date()]);
-  window.dataLayer.push(["config", measurementId]);
 }
 
 export function trackEvent(event: string, details: Record<string, unknown> = {}) {

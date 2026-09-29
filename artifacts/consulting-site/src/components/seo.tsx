@@ -25,9 +25,10 @@ export default function SEO({
   schema,
   keywords = DEFAULT_KEYWORDS,
 }: SEOProps) {
-  const fullTitle = title.includes("Evan Weber") || title.includes("learncowork")
+  const fullTitle = title.includes("Evan Weber") || title.includes("learncowork") || `${title} | Evan Weber`.length > 65
     ? title
     : `${title} | Evan Weber`;
+  const canonicalUrl = canonical && (canonical.endsWith("/") ? canonical : `${canonical}/`);
 
   const schemas = schema ? [schema] : [];
 
@@ -42,14 +43,14 @@ export default function SEO({
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Evan Weber" />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_US" />
-      {canonical && <meta property="og:url" content={canonical} />}
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:secure_url" content={ogImage} />
       <meta property="og:image:type" content={ogImageType} />

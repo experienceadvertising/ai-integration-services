@@ -61,8 +61,8 @@ export default function GlossaryTermPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <SEO
-        title={`What Is ${term.term}? Definition & Meaning | Evan Weber`}
-        description={term.short}
+        title={`What Is ${term.term.replace(/\s+\([^)]*\)$/, "")}? Definition & Meaning | Evan Weber`}
+        description={term.metaDescription}
         canonical={url}
         ogImage={ogImage}
         ogType="article"
