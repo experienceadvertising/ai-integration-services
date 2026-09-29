@@ -105,8 +105,8 @@ export default function AiTimeSavingsCalculator() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="AI Time-Savings Calculator — How Many Hours Could Claude Cowork Save You?"
-        description="Free calculator: estimate how many hours and dollars Claude Cowork could reclaim from your week across writing, research, email, admin, and meeting prep. Conservative, role-based estimates."
+        title="AI Time Savings Calculator for Claude Cowork"
+        description="Estimate time and cost savings from Claude Cowork across writing, research, email and admin work. Free calculator with role-based estimates."
         canonical={PAGE_URL}
         ogImage="https://learncowork.net/og-calculator.png"
         keywords="AI time savings calculator, AI ROI calculator, Claude Cowork ROI, AI productivity calculator, hours saved with AI, AI automation savings, business AI calculator"

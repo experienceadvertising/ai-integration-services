@@ -34,7 +34,8 @@ export default function ArticlePage() {
   }
 
   const url = `https://learncowork.net/blog/${article.slug}`;
-  const ogImage = `https://learncowork.net/og-blog-${article.slug}.png`;
+  const ogImage = article.ogImage ?? `https://learncowork.net/og-blog-${article.slug}.png`;
+  const localImage = ogImage.replace(/^https:\/\/learncowork\.net/, "");
   const others = articles.filter((a) => a.slug !== article.slug);
 
   const schema = {
@@ -121,7 +122,7 @@ export default function ArticlePage() {
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground border-y border-border py-4">
                 <Link href="/about" className="inline-flex items-center gap-2 font-medium text-foreground hover:text-primary transition-colors">
                   <img
-                    src="https://learncowork.net/og-evan.jpg"
+                    src="/og-evan.jpg"
                     alt={ARTICLE_AUTHOR.name}
                     width={28}
                     height={28}
@@ -143,7 +144,7 @@ export default function ArticlePage() {
 
             {/* Hero image */}
             <img
-              src={ogImage}
+              src={localImage}
               alt={article.title}
               width={1200}
               height={630}
@@ -212,7 +213,7 @@ export default function ArticlePage() {
             {/* Author bio */}
             <div className="mt-12 rounded-2xl border border-border p-6 md:p-8 flex flex-col sm:flex-row gap-5 items-start">
               <img
-                src="https://learncowork.net/og-evan.jpg"
+                src="/og-evan.jpg"
                 alt={ARTICLE_AUTHOR.name}
                 width={64}
                 height={64}
