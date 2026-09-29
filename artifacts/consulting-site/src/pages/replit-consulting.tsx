@@ -54,7 +54,7 @@ export default function ReplitConsulting() {
         title="Replit Consulting and Training | Evan Weber"
         description="Replit consulting and advanced training for websites, software and mobile apps. Build a real product or teach your team to use Replit Agent well."
         canonical="https://learncowork.net/replit-consulting"
-        ogImage="https://learncowork.net/og-ai-coding-training.png"
+        ogImage="https://learncowork.net/og-replit-consulting.png"
         keywords="Replit consulting, Replit consultant, Replit training, Replit Agent training, Replit developer, vibe coding consultant, AI coding training, build app with Replit, Replit mobile app"
         schema={{
           "@context": "https://schema.org",

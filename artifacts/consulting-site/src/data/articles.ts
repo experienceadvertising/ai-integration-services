@@ -19,6 +19,7 @@ export interface Article {
   title: string; // on-page H1
   metaTitle: string; // <title> / OG title
   metaDescription: string;
+  ogImage?: string;
   excerpt: string; // index card + social description
   category: string;
   tags: string[];
@@ -45,6 +46,126 @@ export const ARTICLE_AUTHOR = {
 } as const;
 
 export const articles: Article[] = [
+  {
+    slug: "claude-cowork-vs-chatgpt-work",
+    title: "Claude Cowork vs ChatGPT Work: Which Fits Your Team's Work?",
+    metaTitle: "Claude Cowork vs ChatGPT Work for Teams | Evan Weber",
+    metaDescription: "Compare Claude Cowork and ChatGPT Work by the work your team needs to finish, the tools it uses, access controls and a practical pilot plan.",
+    excerpt: "A practical way to choose between two AI workspaces: test the same real assignment, check access and review the finished result.",
+    category: "AI Tool Comparison",
+    tags: ["Claude Cowork", "ChatGPT Work", "AI training", "AI for teams"],
+    readingTime: "7 min read",
+    datePublished: "2026-09-28",
+    dateModified: "2026-09-28",
+    intro: [
+      "Claude Cowork and ChatGPT Work both help people move beyond a single chat response to a finished work product. The better choice depends on your existing files and apps, the task you need completed, and the access your organization is willing to grant.",
+      "Do not choose from a feature checklist alone. Give each tool the same small, real assignment, use a safe copy of your materials, and compare the output, time spent correcting it, and permission prompts. [Claude Cowork training](/claude-cowork-training) and [ChatGPT Work training](/chatgpt-work-training) can then focus on the tool that fits your workflow.",
+    ],
+    sections: [
+      {
+        heading: "What each product is for",
+        paragraphs: [
+          "[Anthropic describes Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) as a way for Claude to work on multi-step tasks with files, connected tools and, when permitted, your computer. [OpenAI describes Work](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex) as the work mode in the ChatGPT desktop app, alongside Chat and Codex. Both products are evolving, and available features can vary by plan and workspace settings.",
+          "For a document-heavy assignment, start with the file locations and the desired deliverable. For an assignment spread across business apps, check whether the needed app connections are available and allowed in your workspace. [OpenAI's app guide](https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt) and Anthropic's Cowork help center are the right places to verify current availability before committing to a rollout.",
+        ],
+      },
+      {
+        heading: "A fair pilot takes one real task",
+        paragraphs: [
+          "Pick a recurring task with a clear finish line, such as turning three meeting notes and a status spreadsheet into a weekly update. Give each tool the same source material and acceptance checklist. Record how much setup was required, whether sources were cited correctly, what had to be fixed, and whether the result could be used after human review.",
+        ],
+        bullets: [
+          "Define the output first: format, audience, required facts and deadline.",
+          "Use sample or approved data. Keep credentials and sensitive customer records out of an initial test.",
+          "Note every permission request and check what the tool can read, change or send.",
+          "Compare finished work, correction time and repeatability, not only the first draft.",
+        ],
+      },
+      {
+        heading: "How to make the choice",
+        paragraphs: [
+          "Choose the product that works with your approved systems and completes the pilot reliably. If both work, use the one your team will actually adopt and support. A mixed setup can also make sense: one tool for a particular file workflow and another for work already centered in a different workspace. Avoid asking staff to learn two tools for the same task without a clear reason.",
+          "Computer access and connected apps deserve a separate review. [Anthropic's Cowork safety guidance](https://support.claude.com/en/articles/13364135-use-claude-cowork-safely) and [OpenAI's desktop browser guidance](https://help.openai.com/en/articles/20001277-using-the-built-in-browser-in-the-chatgpt-desktop-app) explain the permissions and controls to check. Your own workspace administrator may impose additional limits.",
+        ],
+      },
+      {
+        heading: "Train around the winning workflow",
+        paragraphs: [
+          "Once you have a useful pilot, teach the team the whole process: prepare the source files, give a clear assignment, inspect the tool's actions, review the output, and save a reusable example. Our [team AI training plan](/blog/ai-training-plan-for-teams) shows how to expand one working task without turning the rollout into a collection of disconnected demos.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Compare the tools on an identical, real assignment using approved data.",
+      "Check app access and review controls before a team rollout.",
+      "Measure the usable result and correction effort, then train around the workflow that wins.",
+    ],
+    faqs: [
+      { q: "Is Claude Cowork better than ChatGPT Work?", a: "There is no universal winner. The right choice depends on the task, approved tools, available features and quality of the result after review. Run the same pilot in both products." },
+      { q: "Can a team use both?", a: "Yes, if each has a distinct job and your access policies allow it. Document when to use each so employees do not duplicate work." },
+      { q: "What should we test first?", a: "Start with one recurring, low-risk task whose finished output can be checked against a clear acceptance list." },
+    ],
+  },
+  {
+    slug: "ai-training-plan-for-teams",
+    title: "A Practical AI Training Plan for Teams",
+    metaTitle: "AI Training Plan for Teams: A 30-Day Guide | Evan Weber",
+    metaDescription: "Build a practical 30-day AI training plan for your team. Pick one workflow, set access rules, practice on real work and measure usable results.",
+    excerpt: "A four-week plan for moving from AI demos to one repeatable team workflow, with clear review and ownership.",
+    category: "Team AI Training",
+    tags: ["AI training for teams", "AI adoption", "AI workflow", "ChatGPT Work", "Claude Cowork"],
+    readingTime: "7 min read",
+    datePublished: "2026-09-28",
+    dateModified: "2026-09-28",
+    intro: [
+      "A useful team AI training plan begins with one job people already do, not a tour of every tool. Pick a recurring task, agree on what a good result looks like, give staff a safe way to practice, and review the output before it reaches a customer or colleague.",
+      "This four-week plan is a starting framework, not a promise that every team will be fully trained in 30 days. The pace depends on data access, the difficulty of the task and how quickly the team can review examples. If you need help choosing the first workflow, start with [AI workflow consulting](/ai-workflow-consulting).",
+    ],
+    sections: [
+      {
+        heading: "Week 1: choose the work and set boundaries",
+        paragraphs: [
+          "Ask each participant to name a task they repeat at least weekly. Favor one with an obvious input and output, such as a client update, a research brief or a meeting summary. Capture how the task is done today and where errors are costly. Choose one owner who can approve the result.",
+          "Before connecting apps or uploading files, decide which information staff may use, who grants access, and which actions need a human sign-off. Start with sample or approved material. If a workflow touches regulated or confidential data, involve the person responsible for that data before testing it.",
+        ],
+      },
+      {
+        heading: "Week 2: teach one complete assignment",
+        paragraphs: [
+          "Show the team how to state the outcome, provide source context, specify the format and ask the tool to flag uncertainty. Demonstrate the full cycle on a real but safe example: prepare inputs, run the task, inspect sources, correct errors and save the final deliverable. A short reusable checklist beats a library of prompts nobody uses.",
+          "If the work centers on files and desktop tasks, consider [Claude Cowork training](/claude-cowork-training). If it centers on ChatGPT and approved app connections, consider [ChatGPT Work training](/chatgpt-work-training). Technical teams can use a separate [AI coding track](/ai-coding-training) for code review, tests and repositories.",
+        ],
+      },
+      {
+        heading: "Week 3: repeat and measure",
+        paragraphs: [
+          "Have two or three people repeat the same assignment with new inputs. Record the time to a usable result, the corrections made and whether the output met the original acceptance checklist. Keep a copy of a good example and one failure example. If review takes longer than the task saves, narrow the workflow or change the inputs before scaling it.",
+        ],
+        bullets: [
+          "Count completed, reviewed deliverables rather than tool logins or prompt volume.",
+          "Track factual errors, privacy concerns and rework separately from time saved.",
+          "Ask participants what they could not finish without help and update the instructions.",
+        ],
+      },
+      {
+        heading: "Week 4: hand off a repeatable process",
+        paragraphs: [
+          "Write down the task owner, approved inputs, tool and access settings, the review step, and what to do when the tool gets stuck. Give new staff one example they can reproduce. Then decide whether the next team should use the same process or start a different pilot.",
+          "For a tool comparison before training, use the [Claude Cowork vs ChatGPT Work guide](/blog/claude-cowork-vs-chatgpt-work). If you want someone to build the first workflow with your team, [book a training session](/#pricing) around that specific task.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Start with one recurring task and a named reviewer.",
+      "Teach a complete assignment with approved data and a clear acceptance checklist.",
+      "Expand only after repeated runs produce useful work with manageable corrections.",
+    ],
+    faqs: [
+      { q: "How long does AI training take for a team?", a: "A first useful workflow can often be piloted within a month, but training time depends on the task, access requirements and review capacity. Treat 30 days as a planning framework, not a guaranteed completion date." },
+      { q: "What should we teach first?", a: "Teach staff how to define the outcome, provide relevant context, inspect the tool's actions, verify facts and save a repeatable example for the next run." },
+      { q: "How do we know the training worked?", a: "Look for reviewed deliverables that meet the task's acceptance checklist across several runs. Include correction time and errors in the measure." },
+    ],
+  },
 {
   "slug": "openai-agents-api-business-guide",
   "title": "OpenAI's Agents API: What Business Teams Should Build First",
@@ -497,7 +618,7 @@ export const articles: Article[] = [
       "What the ChatGPT Work Desktop App Actually Is, and How It Compares to Claude Cowork",
     metaTitle: "What Is ChatGPT Work? A Plain-English 2026 Guide | Evan Weber",
     metaDescription:
-      "ChatGPT Work is OpenAI's new agentic desktop app that operates your computer, a built-in browser, and your connected work apps to deliver finished work. Here is what it actually is, and an honest comparison with Claude Cowork, from someone who trains teams on both.",
+      "Learn what ChatGPT Work does with files, browser tasks and connected apps, and how to compare it with Claude Cowork for your team's work.",
     excerpt:
       "OpenAI just shipped ChatGPT Work, a desktop agent that does the work instead of just chatting about it. Here is the plain-English rundown, and an honest side-by-side with Claude Cowork, from someone who runs both every day.",
     category: "ChatGPT",
@@ -610,7 +731,7 @@ export const articles: Article[] = [
     metaTitle:
       "What Is Claude Cowork? A Plain-English Guide (2026) | Evan Weber",
     metaDescription:
-      "Claude Cowork is Anthropic's agentic desktop AI that operates your computer, handles files, and runs multi-step work. Here's what it actually is — and how it differs from Claude.ai, Claude Code, and ChatGPT — from someone who uses it daily.",
+      "Learn what Claude Cowork does with files and multi-step tasks, and how it differs from Claude chat, Claude Code and ChatGPT Work.",
     excerpt:
       'I get asked "what is Claude Cowork, exactly?" in almost every session. Here\'s the plain-English answer, and the clear lines between Cowork, Claude.ai, Claude Code, and ChatGPT.',
     category: "Claude Cowork",
@@ -698,7 +819,7 @@ export const articles: Article[] = [
       "The Codex Desktop App, Explained: OpenAI's Answer to Agentic Desktop AI",
     metaTitle: "What Is the OpenAI Codex App? A 2026 Guide | Evan Weber",
     metaDescription:
-      "OpenAI's Codex app brings agentic AI to your Mac and Windows desktop — multiple agents in parallel, background computer use, automations, and skills. Here's what the Codex app actually is and who it's for, from a daily agentic-AI user.",
+      "Learn what the OpenAI Codex app does for coding teams, including agents, worktrees, skills and automations, and when it fits your workflow.",
     excerpt:
       "OpenAI's Codex app put agentic AI on the desktop — multi-agent, computer use, automations. Here's what it actually is, what it's genuinely good at, and where it fits.",
     category: "Codex",
@@ -780,7 +901,7 @@ export const articles: Article[] = [
       "Claude Cowork vs. the Codex App: Which Agentic Desktop AI Should Your Team Use?",
     metaTitle: "Claude Cowork vs. Codex App: Which to Use in 2026 | Evan Weber",
     metaDescription:
-      "A practical, no-hype comparison of Claude Cowork and OpenAI's Codex app from someone who uses both daily. Architecture, who each is for, pricing, and how to actually decide — for technical and non-technical teams.",
+      "Compare Claude Cowork and the OpenAI Codex app by task, audience, workflow and review needs, then decide which tool your team should test first.",
     excerpt:
       "I use both Claude Cowork and the Codex app every week. Here's the honest, side-by-side breakdown — and a simple way to decide which one your team should actually start with.",
     category: "Comparison",
@@ -868,9 +989,9 @@ export const articles: Article[] = [
     title:
       "How Much Time Can AI Actually Save Your Team? A Realistic, Task-by-Task Breakdown",
     metaTitle:
-      "AI Time Savings: A Realistic Breakdown by Task (2026) | Evan Weber",
+      "AI Time Savings by Task: A Realistic Guide | Evan Weber",
     metaDescription:
-      "How many hours can Claude Cowork and agentic AI actually save your team? A realistic, task-by-task breakdown from someone who trains business teams on this every week — plus how to calculate your own number.",
+      "How much time can Claude Cowork save your team? See realistic estimates by task and learn how to calculate savings for your own workflows.",
     excerpt:
       "\"AI will save you 40% of your time\" is a marketing number, not a real one. Here's the honest, task-by-task breakdown of where the time actually comes from — and how to calculate your own team's real savings.",
     category: "Productivity",
@@ -963,7 +1084,7 @@ export const articles: Article[] = [
       "Can AI Do My Job? A Realistic Answer for Business Teams (Not a Doom Headline)",
     metaTitle: "Can AI Do My Job? A Realistic 2026 Answer | Evan Weber",
     metaDescription:
-      "Worried agentic AI will replace your job? Here's the honest answer from an AI trainer who works with real teams every week — which tasks AI actually takes over, which don't, and how to come out ahead of it instead of behind it.",
+      "Can AI do your job? Look at the tasks it can assist with, the work that still needs human judgment, and a practical way to test your role.",
     excerpt:
       'I get asked some version of "is AI going to take my job?" in almost every training session. Here\'s the honest answer — no headline, no hype — from someone who watches this play out with real teams every week.',
     category: "Career",
@@ -1047,88 +1168,249 @@ export const articles: Article[] = [
 
   {
     slug: "aeo-geo-explained",
-    title:
-      "AEO & GEO Explained: How Businesses Actually Get Cited by ChatGPT, Claude, and AI Search in 2026",
-    metaTitle: "AEO & GEO Explained: An AI Search Playbook (2026) | Evan Weber",
-    metaDescription:
-      "What Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) actually mean, why they matter now, and the concrete playbook — schema, llms.txt, FAQ structure, crawlable content — using this site as the worked example.",
-    excerpt:
-      "AEO and GEO aren't buzzwords for a keynote — they're the specific, mechanical reasons some businesses get cited by ChatGPT and Claude and most don't. Here's the real playbook, using this exact site as the case study.",
+    title: "AEO and GEO Explained: What Helps a Site Appear in AI Search?",
+    metaTitle: "AEO and GEO Explained: Practical AI Search SEO | Evan Weber",
+    metaDescription: "Learn what AEO and GEO mean, which SEO fundamentals matter for AI search, and how to check crawlability, useful content and actual visibility.",
+    excerpt: "A practical guide to AI search visibility that starts with crawlable pages, useful answers and measurement, without citation guarantees or special-file myths.",
     category: "AI Search",
-    tags: ["AEO", "GEO", "AI search", "SEO", "Answer engine optimization"],
-    readingTime: "10 min read",
+    tags: ["AEO", "GEO", "AI search", "SEO", "Search Console"],
+    readingTime: "7 min read",
     datePublished: "2026-07-01",
-    dateModified: "2026-07-01",
+    dateModified: "2026-09-28",
     intro: [
-      "I've spent 25 years watching search evolve — keyword stuffing, then content quality, then featured snippets, then voice search. Every shift had the same shape: the tactics that worked yesterday quietly stopped working, and the businesses that noticed first won for years. We're in the middle of one of those shifts right now, and it's the biggest one yet.",
-      "When someone asks ChatGPT, Claude, or Perplexity a question today, they usually don't get ten blue links back — they get a synthesized answer with two or three sources cited, or none at all. [AEO](/glossary/aeo) and [GEO](/glossary/geo) are the practices for making sure your business is one of those sources instead of invisible to the whole conversation. This isn't theory — it's the exact set of things I did to this site, and I'll show you all of it.",
+      "AEO and GEO are names for making useful website content easier to discover and understand in answer and generative search experiences. For Google AI features, the work still begins with ordinary SEO: an accessible page, helpful content, a clear topic and eligibility to appear in Search with a snippet.",
+      "There is no file, schema type or writing formula that guarantees a citation. [Google's current AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) says its generative search features draw on core Search systems and advises site owners to create original, useful content. That is the starting point for this guide and our [AEO and GEO training](/aeo-geo-training).",
     ],
     sections: [
       {
-        heading: "AEO vs. GEO — they're related, not the same thing",
+        heading: "What AEO and GEO mean",
         paragraphs: [
-          "[Answer Engine Optimization (AEO)](/glossary/aeo) is the older discipline: structuring content so a system can lift out a direct, self-contained answer — for Google's featured snippets, voice assistants like Siri and Alexa, and \"People Also Ask\" boxes. It's about being extractable.",
-          "[Generative Engine Optimization (GEO)](/glossary/geo) is the newer, adjacent discipline: getting your content cited, summarized, or recommended by generative AI systems — ChatGPT, Claude, Perplexity, Google AI Overviews — that synthesize an answer instead of extracting one verbatim. It's about being trustworthy enough, and clear enough, for an [LLM](/glossary/llm) to choose you as a source.",
-          "In practice they overlap heavily and the same underlying work supports both, which is why I treat them as one playbook, not two separate projects.",
+          "Answer Engine Optimization often refers to making a page answer a question clearly enough to be useful in search answers. Generative Engine Optimization refers to visibility when an AI system summarizes or cites sources. The labels describe an outcome, not a separate set of technical requirements shared by every search provider.",
+          "A useful page can give a direct answer near the top, then explain the conditions, evidence and next action. The answer still has to be accurate and useful for a person who clicks through.",
         ],
       },
       {
-        heading: "Why this matters now, not eventually",
+        heading: "Start with access and the right page",
         paragraphs: [
-          "The traditional SEO model was: rank a page, earn a click, the visitor lands on your site. AI answer engines break that model — the model answers the question directly, on its own surface, often without a click at all. If you're only optimized for the old model, you're optimizing for a shrinking share of how people actually find answers now.",
-          "The businesses winning this shift aren't doing anything mysterious. They're doing disciplined, structural work that most sites still skip: clear direct answers, correct structured data, and genuine crawlable access for AI bots. That's a gap you can close.",
+          "Check that the intended URL returns its own content, title and canonical in the initial HTML. Confirm that robots rules, meta robots and server responses allow the page to be crawled and indexed. A page that returns the homepage HTML for every article URL needs its routing fixed before another article is added.",
+          "Map each meaningful question to one useful page. If someone wants to choose a training provider, give them scope, delivery, price path and a contact or booking action. If they want an explanation, answer it before asking them to book. Separate pages should serve distinct tasks, not minor wording variations.",
         ],
       },
       {
-        heading: "The playbook — what actually moves the needle",
-        paragraphs: ["This is the concrete list, not the vague one:"],
-        bullets: [
-          "Lead with the direct answer. Put a plain, one-to-two sentence answer to the obvious question at the top of the page or section — before the nuance, not after it. Answer engines quote the sentence that already reads like an answer.",
-          "Structured data, done correctly. FAQPage, Article, Service, and DefinedTerm schema (schema.org / JSON-LD) tell machines exactly what a page contains instead of making them infer it. Critically, the schema has to match the visible content — mismatched structured data gets ignored or penalized.",
-          "Explicit Q&A formatting. Real, visible question headings with direct answers underneath outperform the same information buried in narrative paragraphs, for both featured snippets and LLM citation.",
-          "Author expertise signals (E-E-A-T). A named, credentialed author with a real bio and a consistent publishing history is a trust signal both Google and LLMs weigh — anonymous or unattributed content is easy to skip when a model is choosing what to cite.",
-          "Crawlable by AI bots, on purpose. Your robots.txt needs to explicitly allow GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and the other AI crawlers — many sites block these by default and never notice.",
-          "An llms.txt file. A plain-language summary of what your site is, who runs it, and what's on it, written for an AI system to read directly — the same idea as robots.txt, but aimed at comprehension instead of access control.",
-          "Topical depth through internal linking. A glossary, a blog, and genuine cross-links between them build the kind of topical authority that makes a domain look like a real source on a subject, not a single lucky page.",
+        heading: "Add evidence people can use",
+        paragraphs: [
+          "Original examples, a worked comparison, screenshots of a real process, limitations and an accountable author can make a page more useful than a generic summary. Link to primary sources for product and search claims that can change. Keep those sources current when the page is updated.",
+          "Use structured data only when it accurately represents visible content and is supported for the intended search feature. [Google's guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) does not require a special AI schema, a prescribed chunk size or llms.txt for its AI search features. A maintained llms.txt file can still be useful for other readers or systems, but it is not a Google ranking requirement.",
         ],
       },
       {
-        heading: "This site is the worked example",
+        heading: "Measure discovery separately from results",
         paragraphs: [
-          "I didn't write this article as theory — I built every item on that list into learncowork.net before writing it. The [/llms.txt file](/llms.txt) at the root of this site is a direct-read summary for AI systems. The robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, and every major AI crawler. Every training page, tool, and blog post carries FAQPage or Service schema that matches its visible content exactly — not close, exactly, because mismatches undermine the whole point.",
-          "This glossary you're reading terms from is itself an AEO/GEO tactic: short, quotable, standalone definitions that are easy for a model to lift and cite correctly, cross-linked into the blog posts and training pages that go deeper. That's not an accident — it's the structure this whole article is describing, applied to itself.",
-        ],
-      },
-      {
-        heading: "Where this fits for your business",
-        paragraphs: [
-          "Most of this is content and technical structure, not a giant redesign: audit your top pages for a missing direct-answer paragraph, add FAQPage schema that matches what's actually on the page, check whether your robots.txt is silently blocking AI crawlers, and publish an llms.txt. To make that audit faster, I built a tool for exactly this, [AEOImprovement.com](https://aeoimprovement.com), which audits your site's citability across ChatGPT, Claude, Gemini, and Perplexity and hands you a 6-dimension AEO score with evidence-backed fixes you can ship today. None of that requires new headcount — it requires someone who knows what to build and where.",
-          "If your team is already using [Claude Cowork](/claude-cowork-training) or AI coding tools, this is exactly the kind of structured, repeatable work an agentic AI workflow is good at once it's set up correctly — auditing pages, drafting schema, checking crawlability. I cover this as part of training when a team's goal is AI-search visibility specifically. For full execution — content strategy, technical SEO, and paid alongside it — that's the kind of work my agency, [Experience Advertising](https://experienceadvertising.com), does for clients directly.",
+          "Use Search Console to compare queries, pages, impressions and clicks before and after a change. Check indexed status and the live URL when a page fails to appear. If an AI product sends referral traffic, label it separately from ordinary organic search and connect it to qualified leads when possible.",
+          "Citation spot checks are observations. Record the engine, question, locale, date and cited URL. A single answer with or without your site does not establish a citation rate. If you need help deciding what to fix first, [AI search training](/aeo-geo-training) can use your own pages as the working material.",
         ],
       },
     ],
     keyTakeaways: [
-      "AEO is about being extractable (featured snippets, voice search); GEO is about being citable by generative AI (ChatGPT, Claude, Perplexity, AI Overviews) — the same underlying work supports both.",
-      "AI answer engines synthesize an answer instead of showing ranked links, which shrinks the value of old-model SEO tactics and rewards clear, structured, verifiably authored content.",
-      "The concrete playbook: direct-answer content, correct and matching structured data, explicit Q&A formatting, author expertise signals, AI-bot-friendly robots.txt, an llms.txt file, and real topical depth via internal linking.",
-      "This exact site — its llms.txt, robots.txt, schema, and glossary/blog cross-linking — is a working example of every tactic in this article, not just a description of them.",
+      "For Google AI search, useful original content and ordinary Search eligibility remain the foundation.",
+      "Fix page routing, crawlability and intent match before adding more markup or articles.",
+      "Measure indexing, search traffic, AI referrals and qualified leads as separate outcomes.",
+    ],
+    faqs: [
+      { q: "Does GEO replace SEO?", a: "No. For Google AI search, the same core search and quality systems apply. Other providers may use different retrieval systems, so check their own documentation and your actual referral data." },
+      { q: "Do I need llms.txt to appear in Google AI search?", a: "No. Google says its Search systems do not use llms.txt as a special requirement for generative AI features." },
+      { q: "Will FAQ schema make an AI cite my page?", a: "No. Structured data should match visible page content and meet feature policies, but markup alone does not guarantee indexing, a rich result or an AI citation." },
+    ],
+  },
+  {
+    slug: "chatgpt-work-for-teams",
+    title: "How to Roll Out ChatGPT Work Across Your Team: A Practical Guide",
+    metaTitle: "ChatGPT Work for Teams: A Practical Rollout Guide (2026) | Evan Weber",
+    metaDescription:
+      "A practical, step-by-step guide to rolling out ChatGPT Work across a business team — from setup and connector configuration to building your first real workflow and getting the whole department productive. Written by a trainer who does this every week.",
+    excerpt:
+      "Most ChatGPT Work rollouts fail the same way: someone installs it, tries it on a hard task, gets a mediocre result, and quietly goes back to doing everything by hand. Here is the rollout sequence that actually works.",
+    category: "ChatGPT",
+    tags: ["ChatGPT Work", "Team training", "AI rollout", "Agentic AI", "OpenAI"],
+    readingTime: "9 min read",
+    datePublished: "2026-07-29",
+    dateModified: "2026-07-29",
+    intro: [
+      "I have watched dozens of AI tool rollouts go sideways in exactly the same way. A team leader installs ChatGPT Work, sends a Slack message telling everyone it's available, and waits. Three weeks later, two people are using it inconsistently and the rest never opened it. The tool isn't the problem. The rollout is.",
+      "ChatGPT Work is OpenAI's agentic desktop app — it can operate your computer, a built-in browser, and connected work apps to produce finished deliverables instead of just answering questions. That power is also what makes an unguided rollout hard. Here is the sequence I use with teams that actually sticks.",
+    ],
+    sections: [
+      {
+        heading: "Step 1: Pick one department and one real task before you touch the app",
+        paragraphs: [
+          "The instinct is to install it, open it up, and start exploring. That instinct produces curiosity, not adoption. Instead, before anyone opens the app, sit down with the team lead and identify a single recurring task that meets three criteria: it happens at least weekly, it currently takes more than an hour, and the output is consistently shaped (a report, a summary, a first-draft email, a set of notes formatted a specific way).",
+          "That task is your proof of concept. Everything else can wait. The goal of week one is to have one workflow that the team sees running reliably — not ten workflows nobody has touched twice.",
+        ],
+      },
+      {
+        heading: "Step 2: Set up the app and configure data settings before any real work",
+        paragraphs: [
+          "Before your team runs anything against real business data, configure data and privacy settings. This is non-negotiable, and it is the first thing I cover in every session.",
+        ],
+        bullets: [
+          "Personal plan users: go to Settings → Data Controls and turn off 'Improve the model for everyone.' This stops your prompts and outputs from being used in OpenAI's training data.",
+          "ChatGPT Team or Enterprise plans: training data exclusion is the default under these commercial terms. Verify your organization's plan before assuming.",
+          "Computer use permissions: review which apps and files you are granting access to before enabling computer use. Scoped permissions are safer than broad ones.",
+        ],
+      },
+      {
+        heading: "Step 3: Connect the right tools — and only the right tools",
+        paragraphs: [
+          "ChatGPT Work connects to Slack, Microsoft Teams, Google Drive, SharePoint, email, calendars, CRMs, and project trackers. The temptation is to connect everything. The right move is to connect only the tools involved in the proof-of-concept task you identified in step one.",
+          "Two reasons: first, over-permissioning is a real risk when a tool can act on connected accounts. Second, a smaller initial scope means faster first results, and first results are what create team buy-in. You can add connectors once the workflow is proven.",
+        ],
+      },
+      {
+        heading: "Step 4: Build the proof-of-concept workflow on a live screen share",
+        paragraphs: [
+          "This is the step most teams skip, and it is the most important one. The first real workflow should be built with the whole team watching — ideally with the person who does the task most often driving, with a trainer or lead guiding them through the task structure, scope, and prompting approach.",
+          "Why a screen share? Because building it live answers every question the team has, they see the tool handle an actual task from their day, and they leave with a workflow they built themselves instead of one someone handed them. Ownership matters for adoption.",
+        ],
+      },
+      {
+        heading: "Step 5: Scope the task correctly — this is where most prompts fail",
+        paragraphs: [
+          "The single biggest reason teams get mediocre results from ChatGPT Work is a prompting problem, not a capability problem. ChatGPT Work is goal-directed, which means it needs a well-scoped outcome, not an open-ended instruction. The difference looks like this:",
+        ],
+        bullets: [
+          "Too vague: 'Help me with the weekly report.' ChatGPT Work will produce something, but it won't match your format or know what to emphasize.",
+          "Well-scoped: 'Using the attached exports from [source A] and [source B], build the weekly performance summary in our standard format. Highlight any metric that moved more than 10% week over week, and flag the three items I should discuss in the team meeting.' That gives it a goal, inputs, format, and a decision rule.",
+          "Reference files matter: if your team has a template they use for the output, attach it. ChatGPT Work will follow the structure instead of inventing one.",
+        ],
+      },
+      {
+        heading: "Step 6: Document the workflow and make it repeatable",
+        paragraphs: [
+          "Once the proof-of-concept works once, write it down. A simple doc with the task description, the reference files needed, and the prompt structure is all it takes. This sounds obvious; teams almost never do it without prompting, and when they skip it, the workflow lives in one person's memory and dies when they're out sick or leave the team.",
+          "The goal of a rollout is not one person who is good at ChatGPT Work. It is a team that has documented, repeatable workflows they can improve over time. That is the version of AI adoption that compounds.",
+        ],
+      },
+      {
+        heading: "Step 7: Expand gradually — don't launch everything at once",
+        paragraphs: [
+          "Once the first workflow is running reliably, add a second. Then a third. The pace matters: teams that try to automate everything in week one typically adopt nothing, because nothing is tuned well enough to trust. Teams that automate one thing well, then two, then three, build real fluency over time.",
+          "The comparison to [Claude Cowork](/claude-cowork-training) is useful here: both tools reward this gradual-but-deliberate approach, and the skill of scoping work correctly for one transfers cleanly to the other. If your team is on the Microsoft and ChatGPT ecosystem, ChatGPT Work is the natural fit. If you're evaluating both, I cover them honestly side by side in every session that asks.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "Pick one recurring task with a consistent output format as your proof of concept before anyone opens the app.",
+      "Configure data and privacy settings before running any real business data through the tool — non-negotiable.",
+      "Connect only the tools involved in your proof-of-concept task; over-permissioning and over-scoping both kill early adoption.",
+      "Build the first workflow on a live screen share with the whole team — ownership and visibility are what drive adoption, not documentation.",
+      "Document every workflow that works; repeatable prompts with reference files are the difference between one person who uses ChatGPT Work and a team that does.",
     ],
     faqs: [
       {
-        q: "What's the difference between AEO and GEO?",
-        a: "AEO (Answer Engine Optimization) is about structuring content to be extracted as a direct answer, for featured snippets and voice search. GEO (Generative Engine Optimization) is about being cited or summarized by generative AI systems like ChatGPT and Claude. They overlap heavily and are usually pursued together.",
+        q: "How long does a ChatGPT Work team rollout take?",
+        a: "A well-structured rollout can get a team from zero to one reliable, working workflow in a single 1-hour training session. Expanding to a full departmental playbook typically takes 2–4 weeks if the team commits to one new workflow per week. The 4-hour deep dive compresses the whole process into one day.",
       },
       {
-        q: "Does GEO replace traditional SEO?",
-        a: "No — it extends it. Technical fundamentals like site speed, crawlability, and quality content still matter. GEO adds a specific layer on top: structured data, direct-answer formatting, and explicit AI-crawler access that traditional SEO doesn't require.",
+        q: "How many people should be in a ChatGPT Work training session?",
+        a: "Up to 6–8 people works well in a 1-hour session. For larger departments, Evan recommends the 4-hour format or splitting into multiple sessions so each person can participate actively.",
       },
       {
-        q: "What is an llms.txt file?",
-        a: "It's a plain-language summary of a site's purpose and content, placed at the root of the domain, written for AI systems to read directly — conceptually similar to robots.txt, but aimed at giving models an accurate, direct understanding of the site rather than controlling crawler access.",
+        q: "What if our team is already using Claude Cowork?",
+        a: "The rollout principles are very similar, and the workflow-building skills transfer. If your team already has Cowork workflows running, a ChatGPT Work session can focus on the differences — connectors, interface, and prompting nuances — rather than starting from scratch.",
       },
       {
-        q: "How do I know if AI crawlers can access my site?",
-        a: "Check your robots.txt for explicit rules covering GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and similar AI user-agents. If they're not mentioned at all, some crawlers may still access the site by default, but an explicit allow rule removes any ambiguity.",
+        q: "Does ChatGPT Work work on both Mac and Windows?",
+        a: "Yes. The unified ChatGPT desktop app that includes the Work experience is available for both macOS and Windows.",
+      },
+    ],
+  },
+
+  {
+    slug: "chatgpt-work-for-individuals",
+    title: "ChatGPT Work for Solo Professionals: How to Automate Your Daily Work",
+    metaTitle: "ChatGPT Work for Individuals: A Solo Professional's Guide (2026) | Evan Weber",
+    metaDescription:
+      "A practical guide for solo professionals, consultants, and individual contributors on using ChatGPT Work to automate the recurring, time-intensive tasks that fill their week — from proposals to research to inbox management.",
+    excerpt:
+      "You don't need a team to get serious value from ChatGPT Work. Here's how solo consultants, executives, agents, and operators are using it to reclaim hours every week — and how to set it up for your actual workflow.",
+    category: "ChatGPT",
+    tags: ["ChatGPT Work", "Solo professional", "Individuals", "AI productivity", "OpenAI"],
+    readingTime: "8 min read",
+    datePublished: "2026-07-29",
+    dateModified: "2026-07-29",
+    intro: [
+      "Most of the conversation about ChatGPT Work is framed around teams and enterprise rollouts. That framing misses something: some of the fastest, most dramatic results I see are with solo professionals — consultants, real estate agents, financial advisors, attorneys, executives — who run their own day and don't need to wait for a team decision to try something new.",
+      "When you are your own bottleneck, reclaiming two hours a day is not a nice-to-have. It is a direct multiplier on your income and on the quality of work you can deliver. Here is how to actually do it with ChatGPT Work.",
+    ],
+    sections: [
+      {
+        heading: "What ChatGPT Work actually does for a solo operator",
+        paragraphs: [
+          "ChatGPT Work is OpenAI's [agentic](/glossary/agentic-ai) desktop app — it can operate your computer, a built-in browser, and your connected work apps to deliver finished work. For a solo professional, that distinction matters more than it sounds: this is not a tool you ask questions to, it is a tool you hand tasks to.",
+          "The most useful framing for an individual is this: think of ChatGPT Work as a capable junior assistant who never sleeps, never forgets your format preferences, and gets better the more clearly you scope the work. You are still the one making the calls and reviewing the output. But the assembly, research, drafting, and formatting — most of the mechanical time-consumption — shifts to it.",
+        ],
+      },
+      {
+        heading: "The highest-leverage tasks for solo professionals",
+        paragraphs: [
+          "Not every task compresses equally. These are the ones where I consistently see individual users recover the most time:",
+        ],
+        bullets: [
+          "Proposals and client-facing documents: give ChatGPT Work your notes, a previous proposal you like, and the client context, and it assembles the first draft in your format. You refine and send. A task that used to take 2–3 hours becomes 20 minutes of review.",
+          "Research and competitive intelligence: point it at a list of sources or companies and have it synthesize findings into a structured summary. It reads fast and doesn't skim. An hour of reading becomes 10 minutes of reviewing a brief.",
+          "Recurring reports and performance summaries: if you produce a consistent report weekly or monthly, ChatGPT Work can pull the source data, run the calculations, and write the narrative in your house format. This is one of the cleanest use cases — consistent input, consistent output.",
+          "Inbox management and correspondence drafting: ChatGPT Work can read your inbox, identify threads that need a response, draft replies in your voice, and queue them for your approval. You review and send — you don't originate from scratch.",
+          "Meeting prep: before any important call, give it the account history, relevant emails, and your goals, and have it produce a prep brief with context, open items, and suggested questions.",
+        ],
+      },
+      {
+        heading: "Setting it up for your specific workflow",
+        paragraphs: [
+          "The setup that matters most for individuals is different from the team setup. You are not managing permissions for 15 people — you are connecting the specific accounts that hold your actual work.",
+        ],
+        bullets: [
+          "Connect the accounts you live in: your email, calendar, Google Drive or OneDrive, and any CRM or project tool you use daily. These are the sources ChatGPT Work needs to reach your real work.",
+          "Build a 'voice' reference: create a short document with your typical email tone, common phrases you use, and formats you prefer for deliverables. Attach it to tasks that produce client-facing output. ChatGPT Work will stay in your register instead of defaulting to generic AI prose.",
+          "Start with one task and tune it: pick the most painful recurring task in your week, build the prompt structure for it, and run it three times until it produces something you would send without significant editing. Then add the next task.",
+        ],
+      },
+      {
+        heading: "The comparison with Claude Cowork",
+        paragraphs: [
+          "If you're evaluating both tools, the honest individual-user comparison is this: [Claude Cowork](/claude-cowork-training) is a strong general fit for knowledge workers across every sector, and its MCP integration model gives you deep, reliable connections to tools like Google Drive, Notion, and custom databases. ChatGPT Work leans naturally into the Microsoft ecosystem — Teams, SharePoint, Outlook — and bundles Codex into the same app, which matters if you do any light building.",
+          "For a solo professional who is not heavily embedded in Microsoft's stack, Cowork is often the faster starting point. For someone who runs on Teams and Microsoft 365, or who is already a ChatGPT power user, ChatGPT Work is the more natural fit. Many solo operators end up using both — different tasks, different tools — and the core skill of scoping work correctly transfers between them cleanly.",
+        ],
+      },
+      {
+        heading: "What a 1-hour solo training session looks like",
+        paragraphs: [
+          "My 1-hour sessions for individuals are not overviews. We skip the introduction-to-agentic-AI framing and go straight to your actual work. You bring one or two recurring tasks you want to automate. We build the workflow live, together, on screen share — connecting the right apps, getting the prompt structure right, and running it against real data.",
+          "You leave with something that runs. Not a list of ideas for what ChatGPT Work could do in theory, but a working workflow you used in the session and can run again tomorrow. That is the entire point of live training versus a tutorial.",
+        ],
+      },
+    ],
+    keyTakeaways: [
+      "ChatGPT Work is as useful for solo professionals as it is for teams — sometimes more so, because every hour recovered goes directly to you.",
+      "The highest-leverage individual use cases are proposals, research synthesis, recurring reports, inbox drafting, and meeting prep.",
+      "The setup that matters for individuals: connect your actual accounts, build a voice reference document, and tune one workflow before adding the next.",
+      "If you're on Microsoft 365 and Teams, ChatGPT Work is the natural fit. If not, Claude Cowork is often the faster start — and the skills transfer between both.",
+    ],
+    faqs: [
+      {
+        q: "Is ChatGPT Work worth it for a solo professional, not a team?",
+        a: "Yes — often more immediately than for teams, because an individual sees the time savings directly in their own day. Solo consultants, agents, and operators frequently recover 1–2 hours per day once they have 3–4 workflows tuned to their actual recurring tasks.",
+      },
+      {
+        q: "What plan do I need to use ChatGPT Work as an individual?",
+        a: "A ChatGPT Plus or Pro plan gives you access to the full ChatGPT desktop app that includes the Work experience. The Plus plan is around $20/month. For heavier usage, the Pro plan at $200/month removes most token limits and gives access to the most capable models.",
+      },
+      {
+        q: "How is live training better than just watching tutorials?",
+        a: "Tutorials show you the tool in someone else's workflow with demo tasks. Live training builds a workflow for your actual work in the session — so you leave with something that runs, not a list of ideas to try someday.",
+      },
+      {
+        q: "Can I use ChatGPT Work and Claude Cowork together?",
+        a: "Yes, and many solo operators do. ChatGPT Work works naturally in the Microsoft ecosystem; Claude Cowork connects deeply to Google Drive, Notion, and MCP-compatible tools. The prompting and workflow-building skills carry across both cleanly.",
       },
     ],
   },

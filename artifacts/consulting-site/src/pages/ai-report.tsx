@@ -60,7 +60,7 @@ export default function AiReport() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Free Claude Cowork Opportunity Report for Your Business"
+        title="Free Claude Cowork Opportunity Report"
         description="Enter your website and get 5 personalized Claude Cowork workflows in 30 seconds — with realistic time-saved estimates based on your actual business. Free, no credit card required."
         canonical={PAGE_URL}
         ogImage={OG_IMAGE}

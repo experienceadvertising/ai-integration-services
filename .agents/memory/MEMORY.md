@@ -1,0 +1,1 @@
+- [Static routing requires explicit rewrites](static-routing-rewrites.md) — consulting site uses `serve = "static"`; new pages need rewrite entries in artifact.toml or they serve index.html.

@@ -98,6 +98,11 @@ const pages: OGPage[] = [
     title: "Build Real Software with Claude Code",
   },
   {
+    filename: "og-replit-consulting.png",
+    category: "Replit Consulting & Training",
+    title: "Build Websites, Software & Mobile Apps with Replit",
+  },
+  {
     filename: "og-aeo-geo-training.png",
     category: "AEO/GEO Training",
     title: "Get Cited by ChatGPT & Claude",
@@ -105,7 +110,7 @@ const pages: OGPage[] = [
   {
     filename: "og-chatgpt-work-training.png",
     category: "ChatGPT Work Training",
-    title: "Train Your Team on ChatGPT Work",
+    title: "ChatGPT Work Training: Teams & Individuals",
   },
   // Industry pages
   {
@@ -249,6 +254,16 @@ const pages: OGPage[] = [
     filename: "og-blog-aeo-geo-explained.png",
     category: "Guide · AI Search",
     title: "AEO & GEO Explained",
+  },
+  {
+    filename: "og-blog-chatgpt-work-for-teams.png",
+    category: "Guide · ChatGPT Work",
+    title: "Rolling Out ChatGPT Work Across Your Team",
+  },
+  {
+    filename: "og-blog-chatgpt-work-for-individuals.png",
+    category: "Guide · ChatGPT Work",
+    title: "ChatGPT Work for Solo Professionals",
   },
   // Glossary terms
   { filename: "og-glossary-claude-cowork.png", category: "AI Glossary", title: "Claude Cowork" },
