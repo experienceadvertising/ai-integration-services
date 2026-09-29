@@ -187,7 +187,7 @@ export default function JobDescriptionAnalyzer() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Job Description Analyzer — What Can Claude Cowork Take Off This Role's Plate?"
+        title="AI Job Description Analyzer for Claude Cowork"
         description="Paste any job description and get a free AI breakdown: which tasks Claude Cowork can run end-to-end, which it accelerates, and which stay human. Instant, no credit card."
         canonical={PAGE_URL}
         ogImage="https://learncowork.net/og-jd-analyzer.png"

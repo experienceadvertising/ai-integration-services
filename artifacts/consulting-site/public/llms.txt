@@ -105,6 +105,8 @@ Details: https://learncowork.net/aeo-geo-training
 - Codex app overview: https://learncowork.net/blog/what-is-codex-app
 - Claude Cowork overview: https://learncowork.net/blog/what-is-claude-cowork
 - Claude Cowork versus Codex: https://learncowork.net/blog/claude-cowork-vs-codex
+- Claude Cowork versus ChatGPT Work: https://learncowork.net/blog/claude-cowork-vs-chatgpt-work/
+- AI training plan for teams: https://learncowork.net/blog/ai-training-plan-for-teams/
 - AI time-savings guide: https://learncowork.net/blog/ai-time-savings-guide
 - AEO and GEO explained: https://learncowork.net/blog/aeo-geo-explained
 

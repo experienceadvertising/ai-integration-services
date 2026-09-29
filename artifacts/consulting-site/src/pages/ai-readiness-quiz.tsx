@@ -226,7 +226,7 @@ export default function AiReadinessQuiz() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="AI Readiness Quiz — Is Your Team Ready for Claude Cowork?"
+        title="AI Readiness Quiz for Teams"
         description="Free 2-minute quiz: score your team's AI readiness across 8 dimensions — repetitive work, data access, leadership support, and more. Instant grade with specific next steps."
         canonical={PAGE_URL}
         ogImage="https://learncowork.net/og-quiz.png"

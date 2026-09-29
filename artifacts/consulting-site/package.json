@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "BASE_PATH=/ PORT=5173 vite build --config vite.config.ts && BASE_PATH=/ PORT=5173 node scripts/prerender.mjs",
+    "build": "BASE_PATH=/ PORT=5173 vite build --config vite.config.ts && BASE_PATH=/ PORT=5173 node scripts/prerender.mjs && node scripts/check-static-routes.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

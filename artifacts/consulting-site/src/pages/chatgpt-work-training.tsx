@@ -302,7 +302,7 @@ export default function ChatGptWorkTraining() {
 
       <RelatedResources
         heading="Learn more about ChatGPT Work"
-        articleSlugs={["what-is-chatgpt-work", "chatgpt-work-for-teams", "chatgpt-work-for-individuals"]}
+        articleSlugs={["what-is-chatgpt-work", "chatgpt-work-for-teams", "chatgpt-work-for-individuals", "claude-cowork-vs-chatgpt-work"]}
         glossarySlug="chatgpt-work"
       />
 

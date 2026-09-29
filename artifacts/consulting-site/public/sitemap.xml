@@ -2,374 +2,390 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learncowork.net/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/claude-cowork-training</loc>
+    <loc>https://learncowork.net/claude-cowork-training/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/ai-coding-training</loc>
+    <loc>https://learncowork.net/ai-coding-training/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/aeo-geo-training</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://learncowork.net/aeo-geo-training/</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/chatgpt-work-training</loc>
+    <loc>https://learncowork.net/chatgpt-work-training/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/codex-training</loc>
+    <loc>https://learncowork.net/codex-training/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/ai-workflow-consulting</loc>
+    <loc>https://learncowork.net/ai-workflow-consulting/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/replit-consulting</loc>
+    <loc>https://learncowork.net/replit-consulting/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/about</loc>
+    <loc>https://learncowork.net/about/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/privacy</loc>
+    <loc>https://learncowork.net/privacy/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/terms</loc>
+    <loc>https://learncowork.net/terms/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/ai-report</loc>
+    <loc>https://learncowork.net/ai-report/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/marketing-agencies</loc>
+    <loc>https://learncowork.net/industries/marketing-agencies/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/law-firms</loc>
+    <loc>https://learncowork.net/industries/law-firms/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/real-estate</loc>
+    <loc>https://learncowork.net/industries/real-estate/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/financial-services</loc>
+    <loc>https://learncowork.net/industries/financial-services/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/healthcare</loc>
+    <loc>https://learncowork.net/industries/healthcare/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/ecommerce</loc>
+    <loc>https://learncowork.net/industries/ecommerce/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/consulting</loc>
+    <loc>https://learncowork.net/industries/consulting/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/hr-recruiting</loc>
+    <loc>https://learncowork.net/industries/hr-recruiting/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/insurance</loc>
+    <loc>https://learncowork.net/industries/insurance/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/industries/nonprofits</loc>
+    <loc>https://learncowork.net/industries/nonprofits/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog</loc>
+    <loc>https://learncowork.net/blog/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/gpt-6-astra-business-guide</loc>
+    <loc>https://learncowork.net/blog/gpt-6-astra-business-guide/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/what-is-chatgpt-work</loc>
+    <loc>https://learncowork.net/blog/what-is-chatgpt-work/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/chatgpt-work-for-teams</loc>
+    <loc>https://learncowork.net/blog/chatgpt-work-for-teams/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/chatgpt-work-for-individuals</loc>
+    <loc>https://learncowork.net/blog/chatgpt-work-for-individuals/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/what-is-claude-cowork</loc>
+    <loc>https://learncowork.net/blog/what-is-claude-cowork/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/what-is-codex-app</loc>
+    <loc>https://learncowork.net/blog/what-is-codex-app/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/claude-cowork-vs-codex</loc>
+    <loc>https://learncowork.net/blog/claude-cowork-vs-codex/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/ai-time-savings-guide</loc>
+    <loc>https://learncowork.net/blog/ai-time-savings-guide/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/can-ai-do-my-job</loc>
+    <loc>https://learncowork.net/blog/can-ai-do-my-job/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/blog/aeo-geo-explained</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://learncowork.net/blog/aeo-geo-explained/</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary</loc>
+    <loc>https://learncowork.net/glossary/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/claude-cowork</loc>
+    <loc>https://learncowork.net/glossary/claude-cowork/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/agentic-ai</loc>
+    <loc>https://learncowork.net/glossary/agentic-ai/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/mcp</loc>
+    <loc>https://learncowork.net/glossary/mcp/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/vibe-coding</loc>
+    <loc>https://learncowork.net/glossary/vibe-coding/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/claude-code</loc>
+    <loc>https://learncowork.net/glossary/claude-code/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/codex-app</loc>
+    <loc>https://learncowork.net/glossary/codex-app/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/chatgpt-work</loc>
+    <loc>https://learncowork.net/glossary/chatgpt-work/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/computer-use</loc>
+    <loc>https://learncowork.net/glossary/computer-use/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/human-in-the-loop</loc>
+    <loc>https://learncowork.net/glossary/human-in-the-loop/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/llm</loc>
+    <loc>https://learncowork.net/glossary/llm/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/claude</loc>
+    <loc>https://learncowork.net/glossary/claude/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/prompt-engineering</loc>
+    <loc>https://learncowork.net/glossary/prompt-engineering/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/ai-workflow-automation</loc>
+    <loc>https://learncowork.net/glossary/ai-workflow-automation/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/aeo</loc>
+    <loc>https://learncowork.net/glossary/aeo/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/glossary/geo</loc>
+    <loc>https://learncowork.net/glossary/geo/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/job-description-analyzer</loc>
+    <loc>https://learncowork.net/job-description-analyzer/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/ai-time-savings-calculator</loc>
+    <loc>https://learncowork.net/ai-time-savings-calculator/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/ai-readiness-quiz</loc>
+    <loc>https://learncowork.net/ai-readiness-quiz/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/marketing-managers</loc>
+    <loc>https://learncowork.net/roles/marketing-managers/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/sales-teams</loc>
+    <loc>https://learncowork.net/roles/sales-teams/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/recruiters</loc>
+    <loc>https://learncowork.net/roles/recruiters/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/paralegals</loc>
+    <loc>https://learncowork.net/roles/paralegals/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/financial-analysts</loc>
+    <loc>https://learncowork.net/roles/financial-analysts/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/executive-assistants</loc>
+    <loc>https://learncowork.net/roles/executive-assistants/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/project-managers</loc>
+    <loc>https://learncowork.net/roles/project-managers/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/customer-support-teams</loc>
+    <loc>https://learncowork.net/roles/customer-support-teams/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/accountants</loc>
+    <loc>https://learncowork.net/roles/accountants/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://learncowork.net/roles/operations-managers</loc>
+    <loc>https://learncowork.net/roles/operations-managers/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/chatgpt-work-data-agent-marketing-guide/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/claude-cowork-vs-chatgpt-work/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/ai-training-plan-for-teams/</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://learncowork.net/blog/openai-agents-api-business-guide/</loc>
+    <lastmod>2026-09-28</lastmod>
   </url>
 </urlset>

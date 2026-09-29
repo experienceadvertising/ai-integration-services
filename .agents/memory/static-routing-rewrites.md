@@ -17,10 +17,10 @@ from = "/new-page/"
 to = "/new-page.html"
 ```
 
-Without these entries, the catch-all `/* → /index.html` fires and serves the SPA shell with the homepage title.
+Without these entries, a clean URL is not guaranteed to serve its prerendered page.
 
-**Why:** The catch-all rewrite is intentional (SPA fallback for client-only routes like /success and /cancel). Explicit rewrites above it take priority.
+**Why:** A former `/* → /index.html` fallback returned homepage metadata and HTTP 200 for unknown routes. It was removed to avoid soft 404s. Client-only checkout and shared-report URLs now have their own explicit HTML rewrites and noindex pages.
 
-**How to apply:** Any time a new page is added to the consulting site and added to the prerender list, also add its rewrite pair to artifact.toml using `verifyAndReplaceArtifactToml`. The API server's `servePrerenderedRoute` middleware only affects the dev workflow — it has no effect in production.
+**How to apply:** Any time a new page is added to the consulting site and added to the prerender list, also add its rewrite pair to artifact.toml using `verifyAndReplaceArtifactToml`, add its canonical URL to the sitemap, and run the static route check. The API server's `servePrerenderedRoute` middleware does not serve production site routes.
 
-**Diagnostic signature of missing rewrite:** Live route returns 98,511 bytes (index.html size) with the homepage title; the `.html`-suffixed URL (e.g. `/new-page.html`) returns the correct byte count and title.
+**Diagnostic:** Check the live clean URL's initial HTML title, canonical, and HTTP status; checking only its `.html` URL does not verify the rewrite.
