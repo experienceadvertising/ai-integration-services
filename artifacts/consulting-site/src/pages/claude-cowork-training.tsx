@@ -37,7 +37,7 @@ export default function ClaudeCoworkTraining() {
             {
               "@type": "Question",
               name: "How many people can attend a session?",
-              acceptedAnswer: { "@type": "Answer", text: "Sessions work best with up to 6 to 8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department." },
+              acceptedAnswer: { "@type": "Answer", text: "The 1-hour session is best for an individual or a small team of 1 to 4 people. The 4-hour Deep Dive supports a team of up to 8. For larger groups, discuss multiple sessions or a broader implementation plan with Evan." },
             },
             {
               "@type": "Question",
@@ -82,6 +82,28 @@ export default function ClaudeCoworkTraining() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-14 px-6 lg:px-12 border-b border-border" aria-labelledby="choose-session">
+        <div className="container max-w-5xl mx-auto">
+          <h2 id="choose-session" className="text-3xl font-bold tracking-tight mb-4">Choose the session that fits your work</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-3xl">Both options are live screen-share training with Evan Weber. Bring a real task you want help with so the session starts with something useful to you.</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h3 className="text-xl font-bold mb-2">1-hour training session</h3>
+              <p className="text-2xl font-bold text-primary mb-3">$300</p>
+              <p className="text-muted-foreground mb-5">A focused starting point for an individual or a small team of 1 to 4 people. Bring one priority workflow and the questions holding you up.</p>
+              <Link href="/#pricing" className="font-semibold text-primary underline underline-offset-4">Review the 1-hour session</Link>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h3 className="text-xl font-bold mb-2">4-hour Deep Dive</h3>
+              <p className="text-2xl font-bold text-primary mb-3">$1,000</p>
+              <p className="text-muted-foreground mb-5">More working time for a team of up to 8 people, multiple workflows, and custom integrations. Review the full package before booking.</p>
+              <Link href="/#pricing" className="font-semibold text-primary underline underline-offset-4">Review the 4-hour workshop</Link>
+            </div>
+          </div>
+          <p className="mt-6 text-muted-foreground leading-relaxed"><strong className="text-foreground">Come prepared:</strong> Choose a task, bring sample files your organization allows you to use, and describe what a good result looks like. Have access to the Claude plan and approved tools you intend to use. Tool subscriptions are separate from the training fee.</p>
         </div>
       </section>
 
@@ -148,10 +170,10 @@ export default function ClaudeCoworkTraining() {
           <div className="grid md:grid-cols-3 gap-5">
             {[
               { num: "01", title: "Setup & Configuration", desc: "Get Cowork properly configured for your environment, connected to your tools and file systems." },
-              { num: "02", title: "Your First Real Workflow", desc: "We start with a task your team actually does - and automate it live, on screen share, together." },
-              { num: "03", title: "MCP Server Integration", desc: "Connect Claude to your apps - Google Drive, Notion, Slack, CRM - using MCP plugins for deeper automation." },
+              { num: "02", title: "Your First Real Workflow", desc: "Evan demonstrates on his screen, then guides you through a real task from your work. Together, you test the result and decide what needs review." },
+              { num: "03", title: "MCP Server Integration", desc: "Review supported connections for your tools, the access they need, and where an integration would help. Custom integration work is part of the 4-hour format." },
               { num: "04", title: "Department-Specific Use Cases", desc: "Marketing, sales, ops, support, dev, and leadership each get specific workflows and examples." },
-              { num: "05", title: "Prompt Engineering for Cowork", desc: "How to give Cowork the right instructions so it executes correctly every time, not just sometimes." },
+              { num: "05", title: "Prompt Engineering for Cowork", desc: "Define the task, supply useful context, set review checkpoints, and check the output before using it." },
               { num: "06", title: "Building a Team Playbook", desc: "You leave with a repeatable playbook your whole team can reference - not just what we covered on the call." }
             ].map((item, i) => (
               <motion.div
@@ -215,7 +237,7 @@ export default function ClaudeCoworkTraining() {
               },
               {
                 q: "How many people can attend a session?",
-                a: "Sessions work best with up to 6 to 8 participants. For larger teams, Evan recommends the 4-hour Deep Dive format or scheduling multiple sessions per department."
+                a: "The 1-hour session is best for an individual or a small team of 1 to 4 people. The 4-hour Deep Dive supports a team of up to 8. For larger groups, discuss multiple sessions or a broader implementation plan with Evan."
               },
               {
                 q: "Will the session be recorded?",

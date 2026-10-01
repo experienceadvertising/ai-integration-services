@@ -1,6 +1,8 @@
 import { Router, type IRouter } from "express";
 import { getUncachableStripeClient } from "../stripeClient";
 
+import { PREP_ENROLLMENT } from "../lib/session-prep-reminders";
+
 const router: IRouter = Router();
 
 // List consulting packages — fetches directly from Stripe API
@@ -70,6 +72,7 @@ router.post("/checkout", async (req, res) => {
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
       mode: "payment",
+      metadata: { ...PREP_ENROLLMENT },
       success_url: successUrl,
       cancel_url: cancelUrl,
     });
