@@ -5,6 +5,7 @@ import { isNull, lte, and, eq } from "drizzle-orm";
 import { sendDripEmail, sendSessionPrepReminder } from "./postmark";
 import { getUncachableStripeClient } from "../stripeClient";
 import { logger } from "./logger";
+import { eligibleForPrep, sendPrepOnce } from "./session-prep-reminders";
 
 function daysAgo(n: number): Date {
   const d = new Date();
@@ -12,15 +13,13 @@ function daysAgo(n: number): Date {
   return d;
 }
 
-// In-memory dedup. Acceptable for current single-instance, low-volume deployment.
-// If we ever scale horizontally or add HA, persist this in a `prep_reminders_sent`
-// table keyed by stripe checkout session id.
-const reminderSent = new Set<string>();
-
-const PREP_DELAY_MS = 2 * 60 * 60 * 1000;          // send 2h after purchase
 const SCAN_WINDOW_MS = 5 * 24 * 60 * 60 * 1000;    // scan last 5 days of sessions
 
 async function runSessionReminders() {
+  if (!process.env.POSTMARK_API_KEY) {
+    logger.warn("Prep reminders skipped: Postmark is not configured");
+    return;
+  }
   try {
     const stripe = await getUncachableStripeClient();
     const now = Date.now();
@@ -39,22 +38,17 @@ async function runSessionReminders() {
       pagesScanned++;
 
       for (const session of result.data) {
-        if (session.payment_status !== "paid") continue;
-        if (!session.customer_details?.email) continue;
-        if (reminderSent.has(session.id)) continue;
-
-        const ageMs = now - (session.created ?? 0) * 1000;
-        if (ageMs < PREP_DELAY_MS) continue;
-
+        if (!eligibleForPrep(session, now)) continue;
         try {
-          await sendSessionPrepReminder({
-            email: session.customer_details.email,
-            name: session.customer_details.name ?? undefined,
-          });
-          reminderSent.add(session.id);
-          logger.info({ sessionId: session.id, email: session.customer_details.email }, "Session prep guide sent");
+          const outcome = await sendPrepOnce(
+            stripe.checkout.sessions, session.id, sendSessionPrepReminder, now,
+          );
+          if (outcome === "sent") {
+            logger.info({ sessionId: session.id }, "Session prep guide sent");
+          }
         } catch (err) {
-          logger.error({ err, sessionId: session.id }, "Failed to send session prep guide");
+          logger.error({ err, sessionId: session.id },
+            "Prep reminder not confirmed; inspect Stripe claim and Postmark before retrying");
         }
       }
 
