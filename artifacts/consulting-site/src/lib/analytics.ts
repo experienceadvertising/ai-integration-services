@@ -54,7 +54,7 @@ export async function submitTrackedLead(url: string, payload: Record<string, unk
     });
     if (!response.ok) return false;
     const result = await response.json();
-    if (result.success !== true || result.id == null) return false;
+    if (result.success !== true || !Number.isInteger(result.id) || result.id <= 0) return false;
     trackEvent("generate_lead", { lead_type: payload.type, method: "web_form" });
     return true;
   } catch {
