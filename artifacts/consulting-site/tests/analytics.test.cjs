@@ -26,7 +26,14 @@ test('rejected and unsaved leads do not count', async () => {
   assert.equal(await submitTrackedLead('/api/leads', {type:'quiz'}), false);
   assert.equal(calls.length, 0);
 });
-test('browser privacy signals suppress business events', () => {
+test('blocked analytics cannot turn a saved lead into a failed submission', async () => {
+  global.fetch = async () => ({ ok: true, json: async () => ({ success: true, id: 124 }) });
+  const original = window.gtag;
+  window.gtag = () => { throw new Error('tag blocked'); };
+  assert.equal(await submitTrackedLead('/api/leads', {type:'quiz'}), true);
+  window.gtag = original;
+});
+test('browser privacy signals suppress business events' , () => {
   calls.length = 0;
   navigator.globalPrivacyControl = true;
   trackEvent('generate_lead');
