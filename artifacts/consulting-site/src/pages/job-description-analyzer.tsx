@@ -1,3 +1,4 @@
+import { submitTrackedLead } from "@/lib/analytics";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -124,18 +125,14 @@ export default function JobDescriptionAnalyzer() {
               setReportHtml(cleaned);
               setPhase("done");
 
-              fetch(`${BASE_URL}/api/leads`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
+              void submitTrackedLead(`${BASE_URL}/api/leads`, {
                   name: name || undefined,
                   email,
                   type: "job-description",
                   industry: industry || undefined,
                   description: jd.slice(0, 2000),
                   reportHtml: fullReport,
-                }),
-              }).catch(() => {});
+                });
 
               fetch(`${BASE_URL}/api/reports`, {
                 method: "POST",

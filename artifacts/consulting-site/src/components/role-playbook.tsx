@@ -1,3 +1,4 @@
+import { submitTrackedLead } from "@/lib/analytics";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -25,16 +26,12 @@ export default function RolePlaybook({ role }: Props) {
     // Capture the lead, then unlock regardless of outcome — the playbook is
     // the promise, not the email delivery
     try {
-      await fetch(`${BASE_URL}/api/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      await submitTrackedLead(`${BASE_URL}/api/leads`, {
           name: name || undefined,
           email,
           type: "playbook",
           description: `Downloaded the ${role.title} playbook (/roles/${role.slug})`,
-        }),
-      });
+        });
     } catch {}
     setUnlocked(true);
     setSubmitting(false);
