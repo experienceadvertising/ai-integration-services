@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, Building2, User, Loader2, RotateCcw, Link2, Check } from "lucide-react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, submitTrackedLead } from "@/lib/analytics";
 
 type UserType = "business" | "individual";
 type Phase = "form" | "streaming" | "done" | "error";
@@ -93,13 +93,9 @@ export default function CoworkAnalyzer({
                 .trim();
               setReportHtml(cleaned);
               setPhase("done");
-              trackEvent("generate_lead", { lead_type: userType, source: "ai_report" });
 
-              // Fire-and-forget: save lead + send emails
-              fetch(`${BASE_URL}/api/leads`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
+              // Save the lead, then count the accepted conversion.
+              void submitTrackedLead(`${BASE_URL}/api/leads`, {
                   name: name || undefined,
                   email,
                   type: userType,
@@ -107,8 +103,7 @@ export default function CoworkAnalyzer({
                   industry: industry || undefined,
                   description: description || undefined,
                   reportHtml: fullReport,
-                }),
-              }).catch(() => {});
+                });
 
               // Persist the report so the user gets a shareable /report/:id link
               fetch(`${BASE_URL}/api/reports`, {

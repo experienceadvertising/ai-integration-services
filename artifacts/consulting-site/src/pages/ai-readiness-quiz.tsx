@@ -1,3 +1,4 @@
+import { submitTrackedLead } from "@/lib/analytics";
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -209,15 +210,12 @@ export default function AiReadinessQuiz() {
       .map((q, i) => `${q.dimension}: ${answers[i] !== null ? q.options[answers[i]!].points : 0}/3`)
       .join("; ");
     try {
-      await fetch(`${BASE_URL}/api/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const accepted = await submitTrackedLead(`${BASE_URL}/api/leads`, {
           email,
           type: "quiz",
           description: `AI Readiness Quiz: grade ${band.grade} (${score}/${MAX_SCORE}). ${detail}`,
-        }),
-      });
+        });
+      if (!accepted) { setSending(false); return; }
     } catch {}
     setEmailSent(true);
     setSending(false);
