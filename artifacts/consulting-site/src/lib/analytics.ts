@@ -36,7 +36,11 @@ export function initializeLeadPost() {
 export function trackEvent(event: string, details: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
   if (browserOptedOutOfTracking()) return;
-  window.gtag?.("event", event, { ...details, send_to: "G-170RH5EVJF" });
+  try {
+    window.gtag?.("event", event, { ...details, send_to: "G-170RH5EVJF" });
+  } catch {
+    // A blocked analytics tag must not change a successful product action.
+  }
 }
 
 // A lead conversion means the API accepted and saved the record.
