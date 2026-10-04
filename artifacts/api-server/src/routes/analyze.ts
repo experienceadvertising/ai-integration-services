@@ -1,6 +1,7 @@
 import { Router, type IRouter } from "express";
 import { anthropic } from "@workspace/integrations-anthropic-ai";
 import { db } from "@workspace/db";
+import { eq } from "drizzle-orm";
 import { leadsTable } from "@workspace/db/schema";
 import { sendLeadNotification, sendWelcomeEmail } from "../lib/postmark";
 
@@ -434,12 +435,12 @@ router.post("/leads", async (req, res) => {
     Promise.allSettled([
       sendLeadNotification(lead).then(async () => {
         await db.update(leadsTable)
-          .set({ notificationSent: true });
+          .set({ notificationSent: true }).where(eq(leadsTable.id, lead.id));
       }),
       ...(reportHtml
         ? [sendWelcomeEmail(lead).then(async () => {
             await db.update(leadsTable)
-              .set({ welcomeSent: true });
+              .set({ welcomeSent: true }).where(eq(leadsTable.id, lead.id));
           })]
         : []),
     ]).catch((err) => {
