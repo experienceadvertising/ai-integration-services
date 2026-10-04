@@ -1,3 +1,4 @@
+import { submitTrackedLead } from "@/lib/analytics";
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -88,15 +89,12 @@ export default function AiTimeSavingsCalculator() {
       .map((c) => `${c.label}: ${hours[c.key]} hrs/wk → ~${(hours[c.key] * c.factor).toFixed(1)} hrs reclaimed`)
       .join("; ");
     try {
-      await fetch(`${BASE_URL}/api/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const accepted = await submitTrackedLead(`${BASE_URL}/api/leads`, {
           email,
           type: "calculator",
           description: `Time-savings calculator: ~${results.weeklyHours.toFixed(1)} hrs/week (${fmt(results.yearlyDollars)} USD/year) across ${teamSize} ${teamSize === 1 ? "person" : "people"} at $${hourlyRate}/hr. ${breakdown}`,
-        }),
-      });
+        });
+      if (!accepted) { setSending(false); return; }
     } catch {}
     setEmailSent(true);
     setSending(false);

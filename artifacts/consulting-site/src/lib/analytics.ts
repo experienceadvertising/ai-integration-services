@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -34,6 +35,25 @@ export function initializeLeadPost() {
 
 export function trackEvent(event: string, details: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(["event", event, details]);
+  if (browserOptedOutOfTracking()) return;
+  window.gtag?.("event", event, { ...details, send_to: "G-170RH5EVJF" });
+}
+
+// A lead conversion means the API accepted and saved the record.
+// Never include names, emails, descriptions or generated reports in GA4.
+export async function submitTrackedLead(url: string, payload: Record<string, unknown>): Promise<boolean> {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) return false;
+    const result = await response.json();
+    if (result.success !== true || result.id == null) return false;
+    trackEvent("generate_lead", { lead_type: payload.type, method: "web_form" });
+    return true;
+  } catch {
+    return false;
+  }
 }
