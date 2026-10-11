@@ -11,6 +11,8 @@ await build({
   packages: "external",
   outfile: "artifacts/api-server/tests/.inquiry-test.mjs",
 });
+// Never use the host email credential in test fixtures.
+delete process.env.POSTMARK_API_KEY;
 const { createInquiryRouter, validateInquiry } =
   await import("./.inquiry-test.mjs");
 const valid = {
