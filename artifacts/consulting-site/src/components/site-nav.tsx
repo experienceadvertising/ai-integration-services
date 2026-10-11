@@ -10,7 +10,8 @@ const links = [
   { href: "/replit-consulting", label: "Replit" },
   { href: "/ai-coding-training", label: "AI Coding" },
   { href: "/ai-workflow-consulting", label: "Consulting" },
-  { href: "/about", label: "About Evan" },
+  { href: "/corporate-ai-training/", label: "Teams" },
+  { href: "/hire-ai-developer/", label: "Hire Evan" },
 ];
 
 export default function SiteNav() {
@@ -29,7 +30,7 @@ export default function SiteNav() {
           <div className="hidden lg:flex items-center gap-1">
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
-                <span className={`px-3 py-1.5 text-sm rounded-md transition-colors cursor-pointer ${
+                <span className={`px-2 py-1.5 text-sm rounded-md transition-colors cursor-pointer ${
                   location === link.href
                     ? "bg-secondary text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
@@ -49,6 +50,7 @@ export default function SiteNav() {
               className="lg:hidden p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
+              aria-expanded={open}
             >
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

@@ -52,6 +52,8 @@ if (!Array.isArray(glossaryTerms)) {
 //    window.location at render time. The api-server SPA fallback returns
 //    index.html for them so the SPA still works after Stripe redirects.
 const routes = [
+  "/corporate-ai-training",
+  "/hire-ai-developer",
   "/",
   "/claude-cowork-training",
   "/ai-coding-training",

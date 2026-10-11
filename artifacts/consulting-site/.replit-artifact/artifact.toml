@@ -151,6 +151,14 @@ from = "/blog/gpt-6-astra-business-guide/"
 to = "/blog/gpt-6-astra-business-guide.html"
 
 [[services.production.rewrites]]
+from = "/blog/review-ai-generated-work-before-sharing"
+to = "/blog/review-ai-generated-work-before-sharing.html"
+
+[[services.production.rewrites]]
+from = "/blog/review-ai-generated-work-before-sharing/"
+to = "/blog/review-ai-generated-work-before-sharing.html"
+
+[[services.production.rewrites]]
 from = "/blog/openai-agents-api-business-guide"
 to = "/blog/openai-agents-api-business-guide.html"
 
@@ -565,3 +573,19 @@ to = "/report.html"
 [services.env]
 PORT = "18707"
 BASE_PATH = "/"
+
+[[services.production.rewrites]]
+from = "/corporate-ai-training"
+to = "/corporate-ai-training.html"
+
+[[services.production.rewrites]]
+from = "/corporate-ai-training/"
+to = "/corporate-ai-training.html"
+
+[[services.production.rewrites]]
+from = "/hire-ai-developer"
+to = "/hire-ai-developer.html"
+
+[[services.production.rewrites]]
+from = "/hire-ai-developer/"
+to = "/hire-ai-developer.html"

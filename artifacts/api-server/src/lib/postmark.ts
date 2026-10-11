@@ -222,3 +222,25 @@ export async function sendDripEmail(lead: {
     await sendEmail(lead.email, subject, html, EVAN_EMAIL);
   }
 }
+
+// Service inquiries notify the existing owner only. No welcome or drip emails.
+export async function sendServiceInquiry(inquiry: {
+  name: string; email: string; company: string; service: "corporate-training" | "ai-development"; details: string;
+}): Promise<string> {
+  if (!POSTMARK_API_KEY) throw new Error("Inquiry email is not configured");
+  const escape = (value: string) => value.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]!));
+  const service = inquiry.service === "corporate-training" ? "Corporate AI workshop" : "AI development project";
+  const subject = `${service} inquiry: ${inquiry.company.replace(/[\r\n]/g, " ")}`;
+  const text = `${service}\nName: ${inquiry.name}\nEmail: ${inquiry.email}\nCompany: ${inquiry.company}\n\n${inquiry.details}`;
+  const response = await fetch("https://api.postmarkapp.com/email", {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json", "X-Postmark-Server-Token": POSTMARK_API_KEY },
+    body: JSON.stringify({ From: `${FROM_NAME} <${FROM_EMAIL}>`, To: EVAN_EMAIL, ReplyTo: inquiry.email, Subject: subject, TextBody: text,
+      HtmlBody: `<h2>${service}</h2><p><strong>Name:</strong> ${escape(inquiry.name)}<br><strong>Email:</strong> ${escape(inquiry.email)}<br><strong>Company:</strong> ${escape(inquiry.company)}</p><p style="white-space:pre-wrap">${escape(inquiry.details)}</p>`, MessageStream: "outbound" }),
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!response.ok) throw new Error(`Inquiry email provider returned ${response.status}`);
+  const result = await response.json() as { ErrorCode?: number; MessageID?: string };
+  if (result.ErrorCode !== 0 || typeof result.MessageID !== "string") throw new Error("Inquiry email provider did not confirm acceptance");
+  return result.MessageID;
+}

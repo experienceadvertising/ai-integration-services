@@ -6,9 +6,12 @@ import intakeRouter from "./intake";
 import statsRouter from "./stats";
 import reportsRouter from "./reports";
 
+import inquiriesRouter from "./inquiries";
+
 const router: IRouter = Router();
 
 router.use(healthRouter);
+router.use(inquiriesRouter);
 router.use(consultingRouter);
 router.use(analyzeRouter);
 router.use(intakeRouter);

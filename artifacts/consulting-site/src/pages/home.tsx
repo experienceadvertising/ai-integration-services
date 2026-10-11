@@ -748,6 +748,7 @@ export default function Home() {
         glossarySlug="agentic-ai"
       />
 
+      <section className="px-5 py-12 border-t border-border"><div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8"><div><h2 className="text-2xl font-bold mb-3">Training for your company</h2><p className="text-muted-foreground mb-4">Build practical AI skills around your team's approved tools and everyday work.</p><Link href="/corporate-ai-training/" className="text-primary underline">Explore corporate AI workshops and request a quote</Link></div><div><h2 className="text-2xl font-bold mb-3">Have a project you want built?</h2><p className="text-muted-foreground mb-4">Work with Evan on planning, development, testing, launch, and continued improvement.</p><Link href="/hire-ai-developer/" className="text-primary underline">Hire Evan for an AI-assisted development project</Link></div></div></section>
       <SiteFooter />
     </div>
   );
