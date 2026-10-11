@@ -565,3 +565,19 @@ to = "/report.html"
 [services.env]
 PORT = "18707"
 BASE_PATH = "/"
+
+[[services.production.rewrites]]
+from = "/corporate-ai-training"
+to = "/corporate-ai-training.html"
+
+[[services.production.rewrites]]
+from = "/corporate-ai-training/"
+to = "/corporate-ai-training.html"
+
+[[services.production.rewrites]]
+from = "/hire-ai-developer"
+to = "/hire-ai-developer.html"
+
+[[services.production.rewrites]]
+from = "/hire-ai-developer/"
+to = "/hire-ai-developer.html"

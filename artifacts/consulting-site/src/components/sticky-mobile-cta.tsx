@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { ArrowRight, X } from "lucide-react";
 
-const HIDDEN_PATHS = ["/success", "/cancel"];
+const HIDDEN_PATHS = ["/success", "/cancel", "/corporate-ai-training", "/corporate-ai-training/", "/hire-ai-developer", "/hire-ai-developer/"];
 const DISMISS_KEY = "sticky-cta-dismissed";
 
 export default function StickyMobileCta() {

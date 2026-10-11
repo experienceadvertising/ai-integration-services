@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, X, ArrowRight } from "lucide-react";
 
-const HIDDEN_PATHS = ["/success", "/cancel"];
+const HIDDEN_PATHS = ["/success", "/cancel", "/corporate-ai-training", "/corporate-ai-training/", "/hire-ai-developer", "/hire-ai-developer/"];
 const SHOWN_KEY = "exit-intent-shown";
 const MIN_TIME_ON_PAGE_MS = 20000;
 

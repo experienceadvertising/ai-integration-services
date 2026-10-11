@@ -32,6 +32,9 @@ import ArticlePage from "@/pages/article";
 import Glossary from "@/pages/glossary";
 import GlossaryTermPage from "@/pages/glossary-term";
 
+import CorporateAiTraining from "@/pages/corporate-ai-training";
+import HireAiDeveloper from "@/pages/hire-ai-developer";
+
 const queryClient = new QueryClient();
 
 function Routes() {
@@ -40,6 +43,8 @@ function Routes() {
       <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/corporate-ai-training" component={CorporateAiTraining} />
+        <Route path="/hire-ai-developer" component={HireAiDeveloper} />
         <Route path="/claude-cowork-training" component={ClaudeCoworkTraining} />
         <Route path="/ai-coding-training" component={AiCodingTraining} />
         <Route path="/aeo-geo-training" component={AeoGeoTraining} />

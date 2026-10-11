@@ -27,6 +27,8 @@ const roleLinks = [
 ];
 
 const trainingLinks = [
+  { href: "/corporate-ai-training/", label: "Corporate AI Workshops" },
+  { href: "/hire-ai-developer/", label: "Hire Evan as an AI Developer" },
   { href: "/claude-cowork-training", label: "Claude Cowork Training" },
   { href: "/chatgpt-work-training", label: "ChatGPT Work Training" },
   { href: "/codex-training", label: "OpenAI Codex Training" },
