@@ -151,6 +151,14 @@ from = "/blog/gpt-6-astra-business-guide/"
 to = "/blog/gpt-6-astra-business-guide.html"
 
 [[services.production.rewrites]]
+from = "/blog/review-ai-generated-work-before-sharing"
+to = "/blog/review-ai-generated-work-before-sharing.html"
+
+[[services.production.rewrites]]
+from = "/blog/review-ai-generated-work-before-sharing/"
+to = "/blog/review-ai-generated-work-before-sharing.html"
+
+[[services.production.rewrites]]
 from = "/blog/openai-agents-api-business-guide"
 to = "/blog/openai-agents-api-business-guide.html"
 

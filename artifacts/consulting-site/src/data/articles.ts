@@ -46,6 +46,68 @@ export const ARTICLE_AUTHOR = {
 } as const;
 
 export const articles: Article[] = [
+{
+ "slug":"review-ai-generated-work-before-sharing",
+ "title":"How to Review AI-Generated Work Before Sharing It with Your Team",
+ "metaTitle":"How to Review AI-Generated Work | LearnCowork",
+ "metaDescription":"A practical review process for AI reports, research, documents and code: verify sources, recalculate numbers, test the deliverable and record what remains uncertain.",
+ "excerpt":"A repeatable review process for checking AI research, numbers, documents and code before colleagues rely on the finished work.",
+ "category":"Team AI Workflows",
+ "tags":["AI output review","AI training","Quality assurance","Team workflows"],
+ "readingTime":"8 min read",
+ "datePublished":"2026-10-05",
+ "dateModified":"2026-10-05",
+ "intro":[
+ "Before sharing AI-generated work, check that it answers the original assignment, verify consequential facts against the underlying sources, recalculate important numbers and open the actual deliverable. Give a named person responsibility for deciding whether it is ready. A polished response can still contain an unsupported conclusion, an incorrect calculation or a broken file.",
+ "The review should fit the work. A rough list of meeting ideas needs a lighter check than a client report, a public article or a change to a business application. The following process is a practical starting point for teams using AI to produce documents, research, spreadsheets and code. It is a suggested workflow, not a claim that a checklist can eliminate every error."
+ ],
+ "sections":[
+  {"heading":"Write down what finished means before the AI starts","paragraphs":[
+   "Review becomes easier when the assignment has a clear acceptance checklist. Specify the audience, the decision the work should support, the approved inputs, the required format and the action that needs permission. For a weekly marketing report, that might mean matching the reporting period, using the supplied exports, separating observations from explanations and linking each recommendation to evidence.",
+   "Keep the initial instructions with the final output. Otherwise, the reviewer may judge whether the document sounds good without noticing that it omitted the question people actually needed answered. If the AI reports that a source was unavailable, treat that as a gap to resolve or disclose, not permission to silently substitute a different period or dataset."
+  ],"bullets":["Outcome: what should the reader understand or be able to do?","Inputs: which files, dates and sources are approved?","Acceptance: what must be present and what must be checked?","Boundary: may the tool draft, edit, publish or change a live system?","Reviewer: who makes the final readiness decision?"]},
+  {"heading":"Decide how much review the consequences require","paragraphs":[
+   "Ask what happens if the output is wrong. An internal brainstorming note may need a relevance and privacy check. A report used to allocate a budget needs careful numerical review. A public product claim needs evidence and the appropriate business owner. Work affecting legal, medical, employment or financial decisions needs the relevant qualified review and organizational process.",
+   "Choose the reviewer for the subject, rather than simply asking whoever has time to skim the output. The writer can check tone and completeness, while the person responsible for the data checks calculations. Keep external publication and production changes behind the authorization your organization already requires. Generating a draft does not establish permission to act on it."
+  ]},
+  {"heading":"Open the sources and check what they actually support","paragraphs":[
+   "For each consequential factual statement, open the original source. Confirm the publisher, publication or update date, scope and specific supporting passage. A citation can lead to a real page while still failing to support the sentence beside it. Check whether the source describes a current feature, an announced preview, an opinion or a measured result.",
+   "NIST's [Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), published in 2024, includes reviewing and verifying output sources and citations among its suggested risk-management actions. It also cautions against extrapolating performance from narrow or anecdotal assessments. Those points support a habit of checking the evidence; the steps in this article are a practical team workflow, not a NIST certification or mandated checklist.",
+   "Separate the source's finding from your interpretation. A report showing lower conversion in one period does not establish why it happened. A provider describing a capability does not prove that your team has access to it. If a claim cannot be verified, remove it, label the uncertainty or return it for more research. Do not ask the same model to declare its answer accurate and count that as independent verification."
+  ]},
+  {"heading":"Recalculate the numbers that drive the decision","paragraphs":[
+   "Check totals, rates, denominators, dates, units and rounding against the original data. Open the workbook or report and inspect the actual formulas. Confirm that filters, time zones and exclusions match the task. A plausible total can conceal missing rows, duplicate records or a comparison between different reporting windows.",
+   "Here is a hypothetical example. An AI summary says leads rose from 80 to 100, a 25% increase. That calculation is correct: the increase of 20 is divided by the original 80. But if the first export covers seven days and the second covers ten, the percentage does not provide a fair weekly comparison. Correct arithmetic and a useful comparison are separate checks.",
+   "Reconcile important totals to the source before interpreting them. Record when a value is an estimate or data is incomplete. Keep attributed sales, approved sales, revenue and profit distinct. For a spreadsheet intended for regular use, test an ordinary input and a relevant edge case such as an empty period or zero denominator. Use a copy so testing cannot change business records."
+  ]},
+  {"heading":"Inspect the deliverable where people will use it","paragraphs":[
+   "Open the final file, page or application. The AI's message about what it created is useful context, but the artifact is what colleagues will rely on. Check paragraph spacing, headings, tables, charts, clickable links and whether the intended audience can open it. Confirm that the final revision contains the corrections you requested.",
+   "For a presentation, read the exported slides and charts at presentation size. For a PDF, inspect the actual pages for cut-off text and missing content. For a public page, check the live URL on desktop and mobile. A local preview, a submitted draft and a published page are different states. Report the state you actually verified.",
+   "For code, review the change against the requested behavior, run meaningful checks and exercise the affected flow. A successful build does not prove that a form submits correctly, permissions work or a link reaches the right destination. Changes involving data deletion, billing or access need their own authorized review before a live action. [AI coding training](/ai-coding-training) can focus on that full cycle rather than stopping at generated code."
+  ]},
+  {"heading":"Check privacy, ownership and the intended recipient","paragraphs":[
+   "Before sharing, inspect the output for confidential details, personal information, internal notes and material the audience is not authorized to receive. Look inside comments, notes, hidden spreadsheet sheets and attachments when those are part of the deliverable. Use your organization's approved handling rules for the actual tool and data.",
+   "Confirm the account and destination immediately before an external action. A correct message posted under the wrong person or company can create a separate problem. Check the sender, page, community, recipient or workspace as applicable, then read back the published result. Avoid solving an access problem by substituting another identity or widening permissions without authorization."
+  ]},
+  {"heading":"Use a short review record your team can repeat","paragraphs":[
+   "Keep the record small enough to use on ordinary work. Save the assignment, source links or input version, checks performed, corrections, unresolved limits and reviewer. A status such as ready for internal review, approved for this audience or blocked pending source data tells the next person what they can rely on.",
+   "For example, a hypothetical review note might say: October report draft; checked October 1 through 31 exports; reconciled spend total; corrected a percentage; removed an unsupported explanation; chart export reviewed; customer-level appendix excluded; ready for the marketing lead's review. This is more useful than a general statement that the AI checked everything.",
+   "When a recurring error appears, fix the task instructions or input process. If the tool repeatedly compares unequal dates, specify the comparison window and require a period check. If it repeatedly invents explanations, require an observations section and a separate hypotheses section. Test the revised instructions on a new example before assuming the problem is resolved."
+  ],"bullets":["Assignment and audience","Input versions and source dates","Facts and calculations checked","Artifact and user flow inspected","Corrections and remaining uncertainty","Reviewer, date and approved next action"]},
+  {"heading":"Teach the review through one real assignment","paragraphs":[
+   "A useful team exercise is to take a completed, approved assignment and have participants check an AI draft against the same inputs. Demonstrate the review on a live screen share, then let participants inspect their own result and explain the corrections they made. Use safe material and a known example so the exercise has a concrete reference.",
+   "Include review time when assessing value. Track time spent preparing inputs, generating the draft, checking it and correcting it. Compare the time to a usable result with the existing process over repeated assignments. Faster generation alone does not establish a saving, and one good run does not prove the workflow is reliable.",
+   "Start with one recurring task and a named reviewer this week. Use the checklist on the next deliverable, save the review note and adjust one instruction based on an actual error. The [team AI training plan](/blog/ai-training-plan-for-teams) covers the wider rollout. If you want to practice this with your team's real work, [AI workflow consulting](/ai-workflow-consulting) can help structure a live session that demonstrates the process and guides participants through their own assignment."
+  ]}
+ ],
+ "keyTakeaways":["Define the audience, approved inputs and acceptance checks before generating work.","Verify consequential claims and recalculate important numbers from their original sources.","Inspect the actual artifact and the relevant user flow, including the live result when publishing.","Record the reviewer, corrections, uncertainty and authorized next action.","Measure time to a usable, reviewed result across repeated assignments."],
+ "faqs":[
+  {"q":"Can AI review its own output?","a":"It can help identify gaps, suggest tests and compare a draft with instructions. Use that as assistance. Verify important claims against original sources, inspect the artifact and have the appropriate person decide whether the result is ready."},
+  {"q":"Do we need to check every sentence?","a":"Match the review to the consequences. Check consequential factual claims, numbers and commitments carefully. A rough brainstorming list needs a different review from a public claim or a report driving a business decision."},
+  {"q":"What should we do when a source is unavailable?","a":"Record the gap. Find an authorized, relevant source, remove the unsupported claim or label the uncertainty. Do not present an estimate or substitute dataset as the original evidence."},
+  {"q":"How do we know a reviewed workflow is saving time?","a":"Measure preparation, generation, review and correction time together. Compare repeated assignments with the prior process and include errors and rework in the evaluation."}
+ ]
+},
   {
     slug: "claude-cowork-vs-chatgpt-work",
     title: "Claude Cowork vs ChatGPT Work: Which Fits Your Team's Work?",
@@ -133,6 +195,7 @@ export const articles: Article[] = [
         heading: "Week 2: teach one complete assignment",
         paragraphs: [
           "Show the team how to state the outcome, provide source context, specify the format and ask the tool to flag uncertainty. Demonstrate the full cycle on a real but safe example: prepare inputs, run the task, inspect sources, correct errors and save the final deliverable. A short reusable checklist beats a library of prompts nobody uses.",
+          "Use the [AI-generated work review checklist](/blog/review-ai-generated-work-before-sharing) to practice verifying sources, recalculating important numbers and inspecting the finished deliverable before sharing it.",
           "If the work centers on files and desktop tasks, consider [Claude Cowork training](/claude-cowork-training). If it centers on ChatGPT and approved app connections, consider [ChatGPT Work training](/chatgpt-work-training). Technical teams can use a separate [AI coding track](/ai-coding-training) for code review, tests and repositories.",
         ],
       },
